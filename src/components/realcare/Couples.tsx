@@ -4,9 +4,9 @@ const Couples = () => (
       <span className="inline-block bg-red text-primary-foreground text-[0.6rem] font-bold tracking-[0.14em] uppercase px-3.5 py-1.5 rounded mb-6">
         New — Couples Plan
       </span>
-      <h2 className="font-display font-black text-warm-800 mb-4 leading-[1.05] text-[clamp(2.1rem,4.2vw,3.2rem)]">
+      <h2 className="font-display font-black text-warm-800 mb-4 leading-[1.05] text-[clamp(1.8rem,3.5vw,2.8rem)]">
         Better Together.<br />
-        <span className="text-red">Save More. Get Treated Together.</span>
+        <span className="text-red whitespace-nowrap">Save More. Get Treated Together.</span>
       </h2>
       <p className="text-[0.95rem] text-warm-600 max-w-[760px] mx-auto mb-7 leading-[1.7]">
         The only telehealth brand built for couples. Two people, one plan, real results — with shared coaching, shared shipping, and one simple payment.
