@@ -5,8 +5,8 @@ const Check = () => (
 );
 
 const Hero = () => (
-  <div className="bg-warm-50 px-5 md:px-12 pt-20 pb-36 md:pb-[9.5rem]">
-    <div className="max-w-[1280px] mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-16 items-center fade-up">
+  <div className="bg-warm-50 px-5 md:px-12 pt-8 pb-12 md:pt-10 md:pb-14">
+    <div className="max-w-[1280px] mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center fade-up">
       <div>
         <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.68rem] font-bold tracking-[0.12em] uppercase px-3.5 py-1.5 rounded-full mb-5">
           500,000+ Patients · Licensed Providers · All 50 States
