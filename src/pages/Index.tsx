@@ -33,6 +33,7 @@ import pLibido from "@/assets/p-libido.jpg";
 import pBC from "@/assets/p-bc.jpg";
 import pMeals from "@/assets/p-meals.jpg";
 import pSuppsW from "@/assets/p-supps-w.jpg";
+import pSleepW from "@/assets/p-sleep-w.jpg";
 
 const menProducts = [
   { img: pWeightM, name: "GLP-1 Weight Loss", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — fraction of the cost.", price: "From $179/mo", pill: "Most Popular" },
@@ -48,12 +49,13 @@ const menProducts = [
 const womenProducts = [
   { img: pSkinW, name: "Prescription Skincare", desc: "Custom formulas for acne, anti-aging, dark spots, and texture — prescription strength.", price: "From $35/mo", pill: "Most Popular" },
   { img: pHairW, name: "Fuller, Thicker Hair", desc: "Prescription minoxidil blends and serums to stop shedding and restore volume and density.", price: "From $39/mo", pill: "Top Rated" },
-  { img: pMentalW, name: "Mental Health", desc: "Anxiety, depression, burnout, and sleep — treated with empathy by licensed providers.", price: "From $49/mo" },
+  { img: pMentalW, name: "Reduce Stress", desc: "Anxiety, burnout, and low mood — gentle, effective treatment from licensed providers.", price: "From $49/mo" },
+  { img: pSleepW, name: "Sleep Better", desc: "Personalized sleep support from licensed providers — wake up rested.", price: "From $39/mo" },
   { img: pLibido, name: "Sexual Health & Libido", desc: "Low libido treatment, vaginal dryness, and sexual wellness — private and effective.", price: "From $49/mo" },
   { img: pMeals, name: "Nutrition & Meals", desc: "Chef-prepared, medically aligned meals to complement your GLP-1 or hormone therapy.", price: "From $12/meal", pill: "New" },
   { img: pSuppsW, name: "Women's Supplements", desc: "Collagen, hormone support, GLP-1 companion vitamins — doctor-formulated for women.", price: "From $45/mo" },
   { img: pBC, name: "Birth Control", desc: "Pill, patch, and ring — prescribed online, shipped free. No in-person visit required.", price: "From $20/mo" },
-  { img: goalMenopause, name: "Menopause Relief (HRT)", desc: "Bioidentical hormone therapy for hot flashes, night sweats, brain fog, and mood — prescribed online.", price: "From $89/mo" },
+  { img: goalMenopause, name: "Balance Hormones", desc: "Bioidentical hormone therapy for energy, mood, sleep, hot flashes, and brain fog — prescribed online.", price: "From $89/mo" },
 ];
 
 const Index = () => {
