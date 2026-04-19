@@ -27,7 +27,7 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <section id="how" className="bg-warm-50 px-5 md:px-12 pt-14 pb-24 border-t border-warm-100">
+  <section id="how" className="bg-background px-5 md:px-12 pt-14 pb-24 border-t border-warm-100">
     <div className="max-w-[1280px] mx-auto">
       <div className="flex items-end justify-between flex-wrap gap-8 fade-up">
         <div>
