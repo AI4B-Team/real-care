@@ -34,7 +34,7 @@ const Hero = () => (
           </a>
         </div>
         <div className="flex gap-4 flex-wrap mt-3.5">
-          {["Money-Back Guarantee", "HSA / FSA Accepted", "Free Discreet Shipping"].map((t) => (
+          {["No Membership or Hidden Fees", "Money-Back Guarantee", "HSA / FSA Accepted", "Free Discreet Shipping"].map((t) => (
             <div key={t} className="flex items-center gap-1.5 text-[0.7rem] text-warm-600">
               <span className="text-red"><Check /></span>{t}
             </div>
