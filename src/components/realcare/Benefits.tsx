@@ -18,6 +18,7 @@ const Benefits = () => (
         label="Why Real Care"
         title={<>Look Better. Feel Better. <em className="not-italic italic text-red">Perform Better.</em><br />Doctor-Led Care — 100% Online.<br />Prescriptions Delivered To Your Door.</>}
         sub="Skip the waiting room, the insurance battle, and the pharmacy line. Real treatment from real doctors."
+        subClassName="max-w-none mx-auto whitespace-nowrap"
         className="fade-up mb-12"
       />
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 fade-up delay-1">
