@@ -15,7 +15,7 @@ const StatsCTA = () => (
       Real Care patients report real, trackable results — monitored through our Care Score system that updates with your progress every month.
     </p>
     <a href="#health-check" className="inline-block bg-background text-red text-[0.85rem] font-bold px-8 py-3.5 rounded-lg hover:bg-warm-50 transition-colors">
-      Take Your Health Check →
+      See What I Qualify For →
     </a>
     <div className="flex justify-center gap-8 md:gap-16 mt-14 flex-wrap">
       {stats.map((s, i) => (
