@@ -9,6 +9,7 @@ const steps = [
     alt: "Complete a quick health assessment on your phone",
     title: "Complete Your Assessment",
     desc: "Answer a few questions about your health goals and history. Takes under 5 minutes. No waiting room. No judgment.",
+    badge: "Reviewed by a licensed provider",
   },
   {
     n: "02",
@@ -16,6 +17,7 @@ const steps = [
     alt: "Meet with a licensed doctor over video on your phone",
     title: "Meet Your Doctor",
     desc: "A licensed medical provider reviews your intake and creates a personalized treatment plan. Ongoing messaging always included — ask anything, anytime.",
+    badge: "1:1 physician guidance",
   },
   {
     n: "03",
@@ -23,6 +25,7 @@ const steps = [
     alt: "Treatment delivered discreetly to your door",
     title: "Treatment Delivered To You",
     desc: "Your prescription ships free from a certified U.S. pharmacy in discreet packaging — directly to your door in days, not weeks.",
+    badge: "Ongoing support, 24/7 access",
   },
 ];
 
@@ -88,6 +91,12 @@ const HowItWorks = () => (
             <div className="p-6 pt-5">
               <div className="font-display text-xl font-bold text-warm-800 mb-2.5">{s.title}</div>
               <p className="text-[0.81rem] text-warm-600 leading-[1.75]">{s.desc}</p>
+              <div className="mt-4 inline-flex items-center gap-1.5 text-[0.7rem] font-semibold text-red bg-red/[0.08] border border-red/20 rounded-full px-3 py-1.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {s.badge}
+              </div>
             </div>
           </div>
         ))}
