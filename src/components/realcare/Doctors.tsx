@@ -48,64 +48,66 @@ const Doctors = () => {
   return (
     <section id="doctors" className="bg-warm-50 px-5 md:px-12 pt-16 pb-24">
       <div className="max-w-[1280px] mx-auto">
-        <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
+        <div className="mb-12">
           <SectionHeader
             label="Meet Your Care Team"
             title={<>Real Doctors. Real Credentials.<br /><em className="not-italic italic text-red">Real Accountability.</em></>}
             sub="Every prescription is reviewed and signed by a U.S. board-certified physician — not a chatbot, not an algorithm. The same doctors you'd find at top hospitals, now available 24/7 from your phone."
-            className="max-w-[760px]"
+            align="center"
+            className="mx-auto max-w-[760px]"
           />
-          <div className="flex gap-2.5">
-            <button
-              onClick={() => scroll("left")}
-              aria-label="Previous doctors"
-              className="w-11 h-11 rounded-full bg-card border border-warm-200 text-warm-800 hover:bg-red hover:text-primary-foreground hover:border-red flex items-center justify-center transition-colors"
-            >
-              <Arrow dir="left" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              aria-label="More doctors"
-              className="w-11 h-11 rounded-full bg-card border border-warm-200 text-warm-800 hover:bg-red hover:text-primary-foreground hover:border-red flex items-center justify-center transition-colors"
-            >
-              <Arrow dir="right" />
-            </button>
-          </div>
         </div>
 
-        <div
-          ref={scrollerRef}
-          className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 mb-12 scrollbar-hide"
-          style={{ scrollbarWidth: "none" }}
-        >
-          {doctors.map((d) => (
-            <div
-              key={d.name}
-              data-doc-card
-              className="snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[295px] bg-card rounded-2xl overflow-hidden border border-warm-100 group"
-            >
-              <div className="aspect-[4/5] overflow-hidden relative bg-warm-100">
-                <img
-                  src={d.img}
-                  alt={`${d.name} — ${d.cred}`}
-                  width={640}
-                  height={800}
-                  loading="lazy"
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                <div className="absolute top-3 left-3 bg-background/95 backdrop-blur text-warm-800 text-[0.58rem] font-bold tracking-[0.1em] uppercase px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-warm-100">
-                  <div className="w-[5px] h-[5px] bg-red rounded-full" />
-                  {d.years} Practicing
+        <div className="relative">
+          <button
+            onClick={() => scroll("left")}
+            aria-label="Previous doctors"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-11 h-11 rounded-full bg-card border border-warm-200 text-warm-800 hover:bg-red hover:text-primary-foreground hover:border-red items-center justify-center transition-colors shadow-soft"
+          >
+            <Arrow dir="left" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            aria-label="More doctors"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-11 h-11 rounded-full bg-card border border-warm-200 text-warm-800 hover:bg-red hover:text-primary-foreground hover:border-red items-center justify-center transition-colors shadow-soft"
+          >
+            <Arrow dir="right" />
+          </button>
+
+          <div
+            ref={scrollerRef}
+            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 mb-12 scrollbar-hide"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {doctors.map((d) => (
+              <div
+                key={d.name}
+                data-doc-card
+                className="snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[295px] bg-card rounded-2xl overflow-hidden border border-warm-100 group"
+              >
+                <div className="aspect-[4/5] overflow-hidden relative bg-warm-100">
+                  <img
+                    src={d.img}
+                    alt={`${d.name} — ${d.cred}`}
+                    width={640}
+                    height={800}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute top-3 left-3 bg-background/95 backdrop-blur text-warm-800 text-[0.58rem] font-bold tracking-[0.1em] uppercase px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-warm-100">
+                    <div className="w-[5px] h-[5px] bg-red rounded-full" />
+                    {d.years} Practicing
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="font-display text-[1.05rem] font-bold text-warm-800 leading-tight mb-1">{d.name}</div>
+                  <div className="text-[0.68rem] font-semibold tracking-[0.06em] uppercase text-red mb-2.5">{d.cred}</div>
+                  <div className="text-[0.74rem] text-warm-600 leading-[1.55] mb-2">{d.specialty}</div>
+                  <div className="text-[0.68rem] text-warm-400 italic">{d.school}</div>
                 </div>
               </div>
-              <div className="p-5">
-                <div className="font-display text-[1.05rem] font-bold text-warm-800 leading-tight mb-1">{d.name}</div>
-                <div className="text-[0.68rem] font-semibold tracking-[0.06em] uppercase text-red mb-2.5">{d.cred}</div>
-                <div className="text-[0.74rem] text-warm-600 leading-[1.55] mb-2">{d.specialty}</div>
-                <div className="text-[0.68rem] text-warm-400 italic">{d.school}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="bg-card border border-warm-100 rounded-2xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
