@@ -94,4 +94,7 @@
   .delay-2 { transition-delay: .2s; }
   .delay-3 { transition-delay: .3s; }
   .delay-4 { transition-delay: .4s; }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 }
