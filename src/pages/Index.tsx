@@ -67,8 +67,8 @@ const Index = () => {
       <Announce />
       <Nav />
       <Hero />
-      <Positioning />
       <Goals />
+      <Positioning />
       <HowItWorks />
       <HealthCheck />
       <Benefits />
