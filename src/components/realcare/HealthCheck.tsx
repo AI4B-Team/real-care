@@ -120,7 +120,7 @@ const HealthCheck = () => {
               <div className="flex items-center justify-end mt-auto pt-5 border-t border-warm-100">
                 <button
                   disabled={!who}
-                  onClick={() => setStep(2)}
+                  onClick={() => goToStep(2)}
                   className="bg-red hover:bg-red-dark disabled:opacity-40 disabled:cursor-not-allowed text-primary-foreground text-[0.78rem] font-semibold px-6 py-2.5 rounded-[7px] transition-colors"
                 >
                   Next →
@@ -152,10 +152,10 @@ const HealthCheck = () => {
                 ))}
               </div>
               <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">
-                <button onClick={() => setStep(1)} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Back</button>
+                <button onClick={() => goToStep(1)} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Back</button>
                 <button
                   disabled={!goal}
-                  onClick={() => setStep(3)}
+                  onClick={() => goToStep(3)}
                   className="bg-red hover:bg-red-dark disabled:opacity-40 disabled:cursor-not-allowed text-primary-foreground text-[0.78rem] font-semibold px-6 py-2.5 rounded-[7px] transition-colors"
                 >
                   See My Matches →
