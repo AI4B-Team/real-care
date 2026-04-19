@@ -5,7 +5,7 @@ const Check = () => (
 );
 
 const Hero = () => (
-  <div className="bg-warm-50 px-5 md:px-12 pt-6 pb-8 md:pt-8 md:pb-10">
+  <div className="bg-warm-50 px-5 md:px-12 pt-4 pb-16 md:pt-6 md:pb-20">
     <div className="max-w-[1280px] mx-auto grid lg:grid-cols-[1.15fr_0.85fr] gap-6 lg:gap-10 items-center fade-up">
       <div>
         <div className="flex flex-wrap items-center gap-2 mb-3">
