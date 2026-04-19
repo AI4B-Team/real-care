@@ -147,7 +147,7 @@ const HealthCheck = () => {
                   </button>
                 ))}
               </div>
-              <div className="flex items-center justify-between mt-7 pt-5 border-t border-warm-100">
+              <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">
                 <button onClick={() => setStep(1)} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Back</button>
                 <button
                   disabled={!goal}
@@ -175,7 +175,7 @@ const HealthCheck = () => {
               <a href="#men" className="block w-full text-center bg-red hover:bg-red-dark text-primary-foreground text-[0.77rem] font-semibold px-5 py-2.5 rounded-[7px] transition-colors">
                 View All Treatments →
               </a>
-              <div className="flex items-center justify-between mt-4 pt-5 border-t border-warm-100">
+              <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">
                 <button onClick={restart} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Start Over</button>
               </div>
             </>
