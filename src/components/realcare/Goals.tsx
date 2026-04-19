@@ -19,7 +19,7 @@ const Goals = () => (
     <div className="bg-card rounded-[20px] shadow-card overflow-hidden border border-warm-100">
       <div className="px-8 pt-5 pb-2">
         <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red">
-          Prescription Treatments For Your Health Goals
+          What Would You Like To Improve?
         </div>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3">
