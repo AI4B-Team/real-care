@@ -65,8 +65,8 @@ const Index = () => {
       <Hero />
       <Goals />
       <HowItWorks />
-      <Benefits />
       <HealthCheck />
+      <Benefits />
       <ProductSection
         id="men"
         bg="white"
