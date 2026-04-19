@@ -64,6 +64,7 @@ const Index = () => {
       <Nav />
       <Hero />
       <Goals />
+      <HowItWorks />
       <Benefits />
       <HealthCheck />
       <ProductSection
@@ -102,7 +103,6 @@ const Index = () => {
         }}
         products={womenProducts}
       />
-      <HowItWorks />
       <Doctors />
       <Reviews />
       <StatsCTA />
