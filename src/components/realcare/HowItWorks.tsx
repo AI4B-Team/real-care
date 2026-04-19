@@ -44,9 +44,17 @@ const HowItWorks = () => (
         </a>
       </div>
       <div className="grid lg:grid-cols-3 gap-6 mt-14 fade-up delay-1">
-        {steps.map((s) => (
+        {steps.map((s, i) => (
           <div key={s.n} className="bg-card rounded-2xl border border-warm-100 overflow-hidden flex flex-col">
-            <div className="relative aspect-[4/3] bg-warm-100 overflow-hidden">
+            <div className="flex items-center gap-3 px-6 pt-5 pb-3">
+              <div className="w-9 h-9 rounded-full bg-red text-primary-foreground font-display text-[0.95rem] font-bold flex items-center justify-center">
+                {parseInt(s.n)}
+              </div>
+              <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-warm-400">
+                Step {parseInt(s.n)} of 3
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] bg-warm-100 overflow-hidden mx-4 rounded-xl">
               <img
                 src={s.img}
                 alt={s.alt}
@@ -55,11 +63,29 @@ const HowItWorks = () => (
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-background border border-warm-100 shadow-soft flex items-center justify-center font-display text-[0.95rem] font-bold text-warm-800">
-                {parseInt(s.n)}
+              <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-red text-primary-foreground flex items-center justify-center shadow-soft">
+                {i === 0 && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="9" y1="13" x2="15" y2="13" />
+                    <line x1="9" y1="17" x2="13" y2="17" />
+                  </svg>
+                )}
+                {i === 1 && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="23 7 16 12 23 17 23 7" />
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                  </svg>
+                )}
+                {i === 2 && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                )}
               </div>
             </div>
-            <div className="p-7">
+            <div className="p-6 pt-5">
               <div className="font-display text-xl font-bold text-warm-800 mb-2.5">{s.title}</div>
               <p className="text-[0.81rem] text-warm-600 leading-[1.75]">{s.desc}</p>
             </div>
