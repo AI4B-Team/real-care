@@ -11,7 +11,7 @@ const Hero = () => (
       <div>
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
-            Licensed Doctors · All 50 States · 100% Online
+            Licensed Doctors · All 50 States
           </div>
           <div className="inline-flex items-center gap-1.5 bg-red text-primary-foreground text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
             <Check /> 100% Online
