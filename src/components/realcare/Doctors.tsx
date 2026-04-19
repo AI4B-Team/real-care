@@ -48,7 +48,7 @@ const Doctors = () => {
   return (
     <section id="doctors" className="bg-warm-50 px-5 md:px-12 pt-16 pb-24">
       <div className="max-w-[1280px] mx-auto">
-        <div className="flex items-end justify-between gap-6 mb-12 fade-up flex-wrap">
+        <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
           <SectionHeader
             label="Meet Your Care Team"
             title={<>Real Doctors. Real Credentials.<br /><em className="not-italic italic text-red">Real Accountability.</em></>}
@@ -108,7 +108,7 @@ const Doctors = () => {
           ))}
         </div>
 
-        <div className="bg-card border border-warm-100 rounded-2xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 fade-up delay-2">
+        <div className="bg-card border border-warm-100 rounded-2xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s) => (
             <div key={s.l} className="text-center">
               <div className="font-display text-3xl md:text-4xl font-black text-warm-800 leading-none mb-1.5">{s.n}</div>
