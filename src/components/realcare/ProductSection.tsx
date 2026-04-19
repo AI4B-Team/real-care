@@ -32,7 +32,7 @@ interface Props {
 const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products }: Props) => {
   const sectionBg = bg === "white" ? "bg-background" : "bg-warm-50";
   return (
-    <section id={id} className={`${sectionBg} px-5 md:px-12 py-24`}>
+    <section id={id} className={`${sectionBg} px-5 md:px-12 pt-14 pb-24`}>
       <div className="max-w-[1280px] mx-auto">
         <div className="flex items-end justify-between mb-10 gap-6 flex-wrap fade-up">
           <div>
