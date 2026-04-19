@@ -11,6 +11,8 @@ import Reviews from "@/components/realcare/Reviews";
 import StatsCTA from "@/components/realcare/StatsCTA";
 import Couples from "@/components/realcare/Couples";
 import Doctors from "@/components/realcare/Doctors";
+import Positioning from "@/components/realcare/Positioning";
+import FAQ from "@/components/realcare/FAQ";
 import Footer from "@/components/realcare/Footer";
 
 import featMen from "@/assets/feat-men.jpg";
@@ -65,6 +67,7 @@ const Index = () => {
       <Announce />
       <Nav />
       <Hero />
+      <Positioning />
       <Goals />
       <HowItWorks />
       <HealthCheck />
@@ -109,6 +112,7 @@ const Index = () => {
       <Reviews />
       <StatsCTA />
       <Couples />
+      <FAQ />
       <Footer />
     </main>
   );
