@@ -9,7 +9,7 @@ const steps = [
     alt: "Complete a quick health assessment on your phone",
     title: "Complete Your Assessment",
     desc: "Answer a few questions about your health goals and history. Takes under 5 minutes. No waiting room. No judgment.",
-    badge: "Reviewed by a licensed provider",
+    badge: "Reviewed By A Licensed Provider",
   },
   {
     n: "02",
@@ -17,7 +17,7 @@ const steps = [
     alt: "Meet with a licensed doctor over video on your phone",
     title: "Meet Your Doctor",
     desc: "A licensed medical provider reviews your intake and creates a personalized treatment plan. 1:1 physician guidance and 24/7 support included throughout your entire treatment — no extra charge.",
-    badge: "1:1 physician guidance",
+    badge: "1:1 Physician Guidance",
   },
   {
     n: "03",
@@ -25,7 +25,7 @@ const steps = [
     alt: "Treatment delivered discreetly to your door",
     title: "Treatment Delivered To You",
     desc: "Your prescription ships free from a certified U.S. pharmacy in discreet packaging — directly to your door in days, not weeks.",
-    badge: "Ongoing support, 24/7 access",
+    badge: "Ongoing Support, 24/7 Access",
   },
 ];
 
