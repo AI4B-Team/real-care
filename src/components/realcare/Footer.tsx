@@ -17,12 +17,12 @@ const Footer = () => (
           width={768}
           height={1024}
           loading="lazy"
-          className="hidden lg:block absolute right-[8%] top-1/2 -translate-y-1/2 h-[120%] w-auto pointer-events-none select-none z-10"
+          className="hidden lg:block absolute right-[20%] top-1/2 -translate-y-1/2 h-[120%] w-auto pointer-events-none select-none z-10"
         />
         {/* Red video icon to the left of the phone */}
         <div
           aria-hidden="true"
-          className="hidden lg:flex absolute right-[20%] top-[18%] z-20 w-11 h-11 rounded-full bg-red items-center justify-center shadow-lg"
+          className="hidden lg:flex absolute right-[32%] top-[18%] z-20 w-11 h-11 rounded-full bg-red items-center justify-center shadow-lg"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 10.5V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3.5l5 4.5V6l-5 4.5z" fill="white"/>
