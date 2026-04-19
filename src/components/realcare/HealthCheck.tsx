@@ -57,7 +57,7 @@ const HealthCheck = () => {
 
   return (
     <section id="health-check" className="scroll-mt-2 bg-warm-50 px-5 md:px-12 pt-14 pb-24 border-y border-warm-100">
-      <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
         <div className="fade-up">
           <SectionHeader
             label="Personalized Care"
@@ -84,7 +84,7 @@ const HealthCheck = () => {
           </div>
         </div>
 
-        <div className="bg-card rounded-[20px] p-9 border border-warm-100 shadow-soft fade-up delay-1">
+        <div className="bg-card rounded-[20px] p-9 border border-warm-100 shadow-soft fade-up delay-1 flex flex-col h-full">
           <div className="flex gap-1.5 mb-7">
             {[1, 2, 3].map((i) => (
               <div key={i} className={`h-[3px] rounded flex-1 transition-colors ${step >= i ? "bg-red" : "bg-warm-100"}`} />
@@ -113,7 +113,7 @@ const HealthCheck = () => {
                   </button>
                 ))}
               </div>
-              <div className="flex items-center justify-end mt-7 pt-5 border-t border-warm-100">
+              <div className="flex items-center justify-end mt-auto pt-5 border-t border-warm-100">
                 <button
                   disabled={!who}
                   onClick={() => setStep(2)}
@@ -147,7 +147,7 @@ const HealthCheck = () => {
                   </button>
                 ))}
               </div>
-              <div className="flex items-center justify-between mt-7 pt-5 border-t border-warm-100">
+              <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">
                 <button onClick={() => setStep(1)} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Back</button>
                 <button
                   disabled={!goal}
@@ -175,7 +175,7 @@ const HealthCheck = () => {
               <a href="#men" className="block w-full text-center bg-red hover:bg-red-dark text-primary-foreground text-[0.77rem] font-semibold px-5 py-2.5 rounded-[7px] transition-colors">
                 View All Treatments →
               </a>
-              <div className="flex items-center justify-between mt-4 pt-5 border-t border-warm-100">
+              <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">
                 <button onClick={restart} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Start Over</button>
               </div>
             </>
