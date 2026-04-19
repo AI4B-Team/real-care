@@ -15,7 +15,7 @@ const goals = [
 ];
 
 const Goals = () => (
-  <div className="max-w-[1280px] mx-auto mt-6 px-5 md:px-12 relative z-10 fade-up delay-2">
+  <div className="max-w-[1280px] mx-auto -mt-10 px-5 md:px-12 relative z-10 fade-up delay-2">
     <div className="bg-card rounded-[20px] shadow-card overflow-hidden border border-warm-100">
       <div className="px-8 pt-5 pb-2">
         <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red">

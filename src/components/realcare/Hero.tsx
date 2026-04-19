@@ -40,7 +40,7 @@ const Hero = () => (
           ))}
         </div>
       </div>
-      <div className="relative rounded-[18px] overflow-hidden aspect-[4/5] max-h-[60vh] bg-warm-100 fade-up delay-1">
+      <div className="relative rounded-[18px] overflow-hidden aspect-[5/4] max-h-[48vh] bg-warm-100 fade-up delay-1">
         <img src={heroImg} alt="Real Care patient — 100% online healthcare" className="w-full h-full object-cover object-top" />
         <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-md rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-soft">
           <div className="font-display text-xl font-black text-red leading-none">4.8★</div>
