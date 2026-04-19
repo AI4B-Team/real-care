@@ -84,7 +84,7 @@ const HealthCheck = () => {
           </div>
         </div>
 
-        <div className="bg-card rounded-[20px] p-9 border border-warm-100 shadow-soft fade-up delay-1">
+        <div className="bg-card rounded-[20px] p-9 border border-warm-100 shadow-soft fade-up delay-1 flex flex-col h-full">
           <div className="flex gap-1.5 mb-7">
             {[1, 2, 3].map((i) => (
               <div key={i} className={`h-[3px] rounded flex-1 transition-colors ${step >= i ? "bg-red" : "bg-warm-100"}`} />
