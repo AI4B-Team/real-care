@@ -45,7 +45,7 @@ const Hero = () => (
         <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-warm-100">
           <img src={heroImg} alt="Real Care patient — 100% online healthcare" className="w-full h-full object-cover object-center" />
         </div>
-        <div className="absolute -top-3 -right-2 md:top-3 md:-right-4 w-[34%] aspect-square rounded-2xl overflow-hidden border-4 border-background shadow-soft bg-warm-100">
+        <div className="absolute -top-3 -right-3 md:-top-4 md:-right-8 lg:-right-12 w-[30%] aspect-square rounded-2xl overflow-hidden border-4 border-background shadow-soft bg-warm-100">
           <img src={doctorImg} alt="Licensed Real Care provider" className="w-full h-full object-cover object-center" />
         </div>
         <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-md rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-soft">
