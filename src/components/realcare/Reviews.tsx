@@ -27,7 +27,7 @@ const Reviews = () => (
         {reviews.map((r) => (
           <div key={r.name} className="bg-card border border-warm-100 rounded-[14px] p-7">
             <span className="inline-block bg-red/[0.08] text-red text-[0.6rem] font-bold tracking-[0.1em] uppercase px-2.5 py-1 rounded mb-3.5">{r.tag}</span>
-            <p className="font-display italic text-base text-warm-800 leading-[1.6] mb-5">"{r.quote}"</p>
+            <p className="text-[0.92rem] text-warm-800 leading-[1.65] mb-5">"{r.quote}"</p>
             <div className="flex items-center gap-2.5">
               <img src={r.img} alt={r.name} className="w-9 h-9 rounded-full object-cover border-2 border-warm-100" />
               <div>
