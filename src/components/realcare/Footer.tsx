@@ -20,7 +20,7 @@ const Footer = () => (
           className="hidden lg:block absolute right-[42%] top-1/2 -translate-y-1/2 h-[120%] w-auto pointer-events-none select-none"
         />
         <div className="relative">
-          <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Get The Real Care App</div>
+          <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Get The App</div>
           <h3 className="font-display text-2xl md:text-3xl font-black leading-[1.15] text-white mb-3">
             REAL Care.<br />In Your Pocket.
           </h3>
