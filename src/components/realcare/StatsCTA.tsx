@@ -17,6 +17,9 @@ const StatsCTA = () => (
     <a href="#health-check" className="inline-block bg-background text-red text-[0.85rem] font-bold px-8 py-3.5 rounded-lg hover:bg-warm-50 transition-colors">
       See What I Qualify For →
     </a>
+    <div className="mt-4 text-[0.75rem] text-primary-foreground/70 font-medium">
+      ✓ No membership or hidden fees — everything you need is included
+    </div>
     <div className="flex justify-center gap-8 md:gap-16 mt-14 flex-wrap">
       {stats.map((s, i) => (
         <div key={s.l} className="flex items-center gap-8 md:gap-16">

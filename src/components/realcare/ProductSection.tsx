@@ -39,6 +39,9 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
             <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3.5">{label}</div>
             <h2 className="font-display font-black leading-[1.1] text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)]">{title}</h2>
             <p className="text-[0.88rem] text-warm-600 leading-[1.75] mt-3 max-w-[460px]">{sub}</p>
+            <div className="inline-flex items-center gap-2 mt-4 bg-red/[0.08] text-red text-[0.7rem] font-semibold px-3 py-1.5 rounded-full">
+              ✓ No membership or hidden fees — everything you need is included
+            </div>
           </div>
           <a href="#" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.8rem] font-semibold px-5 py-2.5 rounded-md transition-colors">
             {ctaText}
