@@ -17,8 +17,17 @@ const Footer = () => (
           width={768}
           height={1024}
           loading="lazy"
-          className="hidden lg:block absolute right-[42%] top-1/2 -translate-y-1/2 h-[120%] w-auto pointer-events-none select-none"
+          className="hidden lg:block absolute right-[28%] top-1/2 -translate-y-1/2 h-[120%] w-auto pointer-events-none select-none z-10"
         />
+        {/* Red video icon to the left of the phone */}
+        <div
+          aria-hidden="true"
+          className="hidden lg:flex absolute right-[40%] top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-red items-center justify-center shadow-lg"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 10.5V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3.5l5 4.5V6l-5 4.5z" fill="white"/>
+          </svg>
+        </div>
         <div className="relative">
           <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Get The App</div>
           <h3 className="font-display text-2xl md:text-3xl font-black leading-[1.15] text-white mb-3">
@@ -32,8 +41,8 @@ const Footer = () => (
             <a href="#" className="border border-white/30 text-white text-[0.78rem] font-semibold px-5 py-2.5 rounded-lg hover:border-white transition-colors">Download for Android</a>
           </div>
         </div>
-        <div className="relative flex items-center gap-5 lg:justify-end">
-          <div className="bg-white p-3 rounded-xl">
+        <div className="relative flex items-center gap-5 lg:justify-end z-20 lg:-ml-10">
+          <div className="bg-white p-3 rounded-xl shadow-xl">
             <img src={qrReal} alt="Scan to download the Real Care app" width={140} height={140} loading="lazy" className="w-[140px] h-[140px] block" />
           </div>
           <div className="text-[0.78rem] text-white/70 leading-[1.5] max-w-[140px]">
