@@ -1,4 +1,5 @@
 import qrReal from "@/assets/qr-real.png";
+import phoneDoctor from "@/assets/app-phone-doctor.png";
 
 const sections = [
   { title: "Treatment", links: ["Weight Loss", "Better Sex (ED)", "Testosterone (TRT)", "Fuller Hair", "Skincare", "Menopause & HRT", "Mental Health", "Peptides & Longevity", "Lab Testing"] },
@@ -9,8 +10,16 @@ const sections = [
 const Footer = () => (
   <footer className="bg-black text-white px-5 md:px-12 pt-14 pb-10">
     <div className="max-w-[1280px] mx-auto">
-      <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-center bg-white/[0.04] border border-white/10 rounded-2xl p-6 md:p-8 mb-12">
-        <div>
+      <div className="relative grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-center bg-white/[0.04] border border-white/10 rounded-2xl p-6 md:p-8 mb-12 overflow-hidden">
+        <img
+          src={phoneDoctor}
+          alt="Real Care app on a phone showing a video call with a doctor"
+          width={768}
+          height={1024}
+          loading="lazy"
+          className="hidden lg:block absolute right-[42%] top-1/2 -translate-y-1/2 h-[120%] w-auto pointer-events-none select-none"
+        />
+        <div className="relative">
           <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Get The Real Care App</div>
           <h3 className="font-display text-2xl md:text-3xl font-black leading-[1.15] text-white mb-3">
             REAL Care.<br />In Your Pocket.
@@ -23,7 +32,7 @@ const Footer = () => (
             <a href="#" className="border border-white/30 text-white text-[0.78rem] font-semibold px-5 py-2.5 rounded-lg hover:border-white transition-colors">Download for Android</a>
           </div>
         </div>
-        <div className="flex items-center gap-5 lg:justify-end">
+        <div className="relative flex items-center gap-5 lg:justify-end">
           <div className="bg-white p-3 rounded-xl">
             <img src={qrReal} alt="Scan to download the Real Care app" width={140} height={140} loading="lazy" className="w-[140px] h-[140px] block" />
           </div>
