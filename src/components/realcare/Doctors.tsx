@@ -49,6 +49,9 @@ const Doctors = () => {
     <section id="doctors" className="bg-warm-50 px-5 md:px-12 pt-16 pb-24">
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-12">
+          <p className="text-center font-display text-[clamp(1.05rem,1.6vw,1.35rem)] font-bold text-red mb-3">
+            Real Doctors. Real Accountability. No Guesswork.
+          </p>
           <SectionHeader
             label="Meet Your Care Team"
             title={<>Real Doctors. Real Credentials.<br /><em className="not-italic italic text-red">Real Accountability.</em></>}
