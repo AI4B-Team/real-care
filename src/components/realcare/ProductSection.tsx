@@ -73,8 +73,10 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {products.map((p, i) => (
-            <a href="#" key={p.name} className={`bg-card border border-warm-100 rounded-[14px] overflow-hidden hover:shadow-hover hover:-translate-y-0.5 transition-all group fade-up delay-${(i % 4) + 1}`}>
+          {products.map((p, i) => {
+            const isGLP1 = /GLP-1|Weight Loss/i.test(p.name);
+            return (
+            <a href="#" key={p.name} className={`bg-card border border-warm-100 rounded-[14px] overflow-hidden hover:shadow-hover hover:-translate-y-0.5 transition-all group flex flex-col fade-up delay-${(i % 4) + 1}`}>
               <div className="relative aspect-[4/3] overflow-hidden bg-warm-50">
                 <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                 {p.pill && (
@@ -82,8 +84,14 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                     {p.pill}
                   </span>
                 )}
+                {isGLP1 && (
+                  <span className="absolute top-2.5 right-2.5 bg-red text-primary-foreground text-[0.56rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow-soft">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground" />
+                    Lose weight or your money back
+                  </span>
+                )}
               </div>
-              <div className="p-4">
+              <div className="p-4 flex flex-col flex-1">
                 <div className="font-display text-[1.07rem] font-bold text-warm-800 mb-1">{p.name}</div>
                 <div className="text-[0.72rem] text-warm-400 leading-[1.5] mb-3">{p.desc}</div>
                 <ul className="flex flex-wrap gap-x-2 gap-y-1 mb-3">
@@ -96,13 +104,18 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center justify-between pt-3 border-t border-warm-100">
-                  <div className="text-[0.8rem] font-bold text-red">{p.price}</div>
-                  <span className="text-[0.7rem] font-semibold text-warm-600 group-hover:text-red transition-colors">Start →</span>
+                <div className="mt-auto pt-3 border-t border-warm-100">
+                  <div className="text-[0.8rem] font-bold text-red leading-tight">{p.price} <span className="text-warm-800 font-semibold">— Everything Included</span></div>
+                  <div className="text-[0.66rem] text-warm-600 mt-1 leading-snug">Doctor visit · Medication · Shipping · 24/7 Support</div>
+                  <div className="text-[0.62rem] text-warm-400 mt-1">No membership fee. Cancel anytime.</div>
+                  <div className="flex items-center justify-end mt-2">
+                    <span className="text-[0.7rem] font-semibold text-warm-600 group-hover:text-red transition-colors">Start →</span>
+                  </div>
                 </div>
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
