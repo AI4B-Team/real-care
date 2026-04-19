@@ -13,7 +13,7 @@ const Footer = () => (
         <div>
           <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Get The Real Care App</div>
           <h3 className="font-display text-2xl md:text-3xl font-black leading-[1.15] text-white mb-3">
-            Total care.<br />In your pocket.
+            REAL Care.<br />In Your Pocket.
           </h3>
           <p className="text-[0.82rem] text-white/70 leading-[1.6] max-w-[380px] mb-5">
             Track your treatment, message your provider, and reorder in seconds. Available on iOS and Android.
