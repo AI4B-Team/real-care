@@ -17,8 +17,9 @@ const Hero = () => (
           </div>
         </div>
         <h1 className="font-display font-black leading-[1.04] tracking-tight text-warm-800 mb-3 text-[clamp(1.85rem,3.4vw,3.2rem)]">
-          Weight Loss, <em className="not-italic italic text-red">Better Sex,</em>{" "}
-          <span className="text-red">Fuller Hair</span> & More.
+          Weight Loss, <em className="not-italic italic text-red">Better Sex,</em>
+          <br />
+          <span className="text-red">Fuller Hair</span> <span className="text-warm-800">& More.</span>
         </h1>
         <p className="text-[0.85rem] text-warm-600 leading-[1.55] max-w-[560px] mb-4">
           Doctor-prescribed treatment for the things that matter most — no waiting room, no insurance battles, no runaround. For him and for her.
