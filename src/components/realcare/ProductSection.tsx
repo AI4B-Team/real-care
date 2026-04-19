@@ -107,7 +107,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                 <div className="mt-auto pt-3 border-t border-warm-100">
                   <div className="text-[0.8rem] font-bold text-red leading-tight">{p.price} <span className="text-warm-800 font-semibold">— Everything Included</span></div>
                   <div className="text-[0.66rem] text-warm-600 mt-1 leading-snug">Doctor visit · Medication · Shipping · 24/7 Support</div>
-                  <div className="text-[0.62rem] text-warm-400 mt-1">No membership fee. Cancel anytime.</div>
+                  <div className="text-[0.62rem] text-warm-400 mt-1">No Membership Fee. Cancel Anytime</div>
                   <div className="flex items-center justify-end mt-2">
                     <span className="text-[0.7rem] font-semibold text-warm-600 group-hover:text-red transition-colors">Start →</span>
                   </div>
