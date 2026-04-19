@@ -15,7 +15,7 @@ const Reviews = () => (
         <div>
           <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3.5">Real Patient Stories</div>
           <h2 className="font-display font-black leading-[1.1] text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)]">
-            Real People.<br />Real Results.
+            Real People.<br /><span className="text-red">Real Results.</span>
           </h2>
         </div>
         <div className="bg-card border border-warm-100 rounded-full px-4 py-2 flex items-center gap-2 text-[0.73rem] text-warm-600">
