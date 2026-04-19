@@ -61,7 +61,7 @@ const HealthCheck = () => {
         <div className="fade-up">
           <SectionHeader
             label="Personalized Care"
-            title={<>Your Real Care<br />Health Check</>}
+            title={<>Your Real Care<br /><span className="text-red">Health Check</span></>}
             sub="Answer 3 quick questions and we'll match you to the right treatments in under 2 minutes."
             align="left"
           />
