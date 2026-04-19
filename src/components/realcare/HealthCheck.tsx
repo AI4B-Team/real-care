@@ -60,7 +60,7 @@ const HealthCheck = () => {
   const cards = who && goal ? recommendations[goal][who] : [];
 
   return (
-    <section id="health-check" className="scroll-mt-2 bg-warm-50 px-5 md:px-12 pt-14 pb-24 border-y border-warm-100">
+    <section id="health-check" className="scroll-mt-20 bg-warm-50 px-5 md:px-12 pt-14 pb-24 border-y border-warm-100">
       <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
         <div className="fade-up">
           <SectionHeader
