@@ -86,7 +86,17 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
               <div className="p-4">
                 <div className="font-display text-[1.07rem] font-bold text-warm-800 mb-1">{p.name}</div>
                 <div className="text-[0.72rem] text-warm-400 leading-[1.5] mb-3">{p.desc}</div>
-                <div className="flex items-center justify-between">
+                <ul className="flex flex-wrap gap-x-2 gap-y-1 mb-3">
+                  {["1:1 Physician Guidance", "24/7 Support", "Money-Back Guarantee", "HSA/FSA Accepted", "Free Discreet Shipping"].map((b) => (
+                    <li key={b} className="inline-flex items-center gap-1 text-[0.62rem] font-medium text-warm-600">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="text-red flex-shrink-0">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex items-center justify-between pt-3 border-t border-warm-100">
                   <div className="text-[0.8rem] font-bold text-red">{p.price}</div>
                   <span className="text-[0.7rem] font-semibold text-warm-600 group-hover:text-red transition-colors">Start →</span>
                 </div>
