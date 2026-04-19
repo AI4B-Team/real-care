@@ -44,8 +44,11 @@ const Footer = () => (
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-12 mb-14">
         <div>
-          <div className="font-display text-2xl font-black text-white tracking-wide mb-2.5">
-            Real<span className="text-red">Care</span>
+          <div className="bg-red w-[110px] p-[6px] mb-4">
+            <div className="border-[2px] border-white py-1 px-[14px] flex flex-col items-center">
+              <span className="font-body text-[1.65rem] font-black text-white tracking-[0.05em] leading-none">REAL</span>
+              <span className="font-body text-[0.42rem] font-bold tracking-[0.3em] text-white uppercase mt-[2px]">CARE</span>
+            </div>
           </div>
           <p className="text-[0.78rem] text-white/70 leading-[1.65] max-w-[240px] mb-6">
             Healthcare redefined for real life. Licensed providers. Clear pricing. Shipped to your door.
