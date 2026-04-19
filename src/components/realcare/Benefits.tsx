@@ -16,8 +16,8 @@ const Benefits = () => (
     <div className="max-w-[1280px] mx-auto">
       <SectionHeader
         label="Why Real Care"
-        title={<>Look Better. Feel Better. <em className="not-italic italic text-red">Perform Better.</em><br />Doctor-Led Personalized Care.</>}
-        sub="100% online. Delivered to your door. Skip the waiting room, the insurance battle, and the pharmacy line — real treatment from real doctors."
+        title={<>Look Better. Feel Better. <em className="not-italic italic text-red">Perform Better.</em><br />Doctor-Led Personalized Care.<br />100% Online. Delivered To Your Door.</>}
+        sub="Skip the waiting room, the insurance battle, and the pharmacy line. Real treatment from real doctors."
         className="fade-up mb-12"
       />
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 fade-up delay-1">
