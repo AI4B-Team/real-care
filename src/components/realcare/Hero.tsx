@@ -20,7 +20,7 @@ const Hero = () => (
           <br />
           <span className="text-red">Fuller Hair</span> & More.
         </h1>
-        <p className="text-[0.93rem] text-warm-600 leading-[1.75] max-w-none mb-7 whitespace-nowrap">
+        <p className="text-[0.93rem] text-warm-600 leading-[1.75] max-w-[640px] mb-7">
           Doctor-prescribed treatment for the things that matter most — no waiting room, no insurance battles, no runaround. For him and for her.
         </p>
         <div className="flex gap-3 flex-wrap items-center">
