@@ -49,12 +49,20 @@ const HowItWorks = () => (
       <div className="grid lg:grid-cols-3 gap-6 mt-14 fade-up delay-1">
         {steps.map((s, i) => (
           <div key={s.n} className="bg-card rounded-2xl border border-warm-100 overflow-hidden flex flex-col">
-            <div className="flex items-center gap-3 px-6 pt-5 pb-3">
-              <div className="w-9 h-9 rounded-full bg-warm-800 text-primary-foreground font-display text-[0.95rem] font-bold flex items-center justify-center">
-                {parseInt(s.n)}
+            <div className="flex items-center justify-between gap-3 px-6 pt-5 pb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-warm-800 text-primary-foreground font-display text-[0.95rem] font-bold flex items-center justify-center">
+                  {parseInt(s.n)}
+                </div>
+                <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-warm-400">
+                  Step {parseInt(s.n)} of 3
+                </div>
               </div>
-              <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-warm-400">
-                Step {parseInt(s.n)} of 3
+              <div className="inline-flex items-center gap-1.5 text-[0.65rem] font-semibold text-red bg-red/[0.08] border border-red/20 rounded-full px-2.5 py-1 whitespace-nowrap">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                {s.badge}
               </div>
             </div>
             <div className="relative aspect-[4/3] bg-warm-100 overflow-hidden mx-4 rounded-xl">
@@ -91,12 +99,6 @@ const HowItWorks = () => (
             <div className="p-6 pt-5">
               <div className="font-display text-xl font-bold text-warm-800 mb-2.5">{s.title}</div>
               <p className="text-[0.81rem] text-warm-600 leading-[1.75]">{s.desc}</p>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-[0.7rem] font-semibold text-red bg-red/[0.08] border border-red/20 rounded-full px-3 py-1.5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                {s.badge}
-              </div>
             </div>
           </div>
         ))}
