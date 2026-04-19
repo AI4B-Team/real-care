@@ -75,7 +75,7 @@ const Doctors = () => {
 
         <div
           ref={scrollerRef}
-          className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 md:-mx-12 md:px-12 fade-up delay-1 mb-12 scrollbar-hide"
+          className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 mb-12 scrollbar-hide"
           style={{ scrollbarWidth: "none" }}
         >
           {doctors.map((d) => (
