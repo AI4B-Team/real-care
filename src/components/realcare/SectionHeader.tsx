@@ -6,9 +6,10 @@ interface Props {
   sub?: string;
   align?: "left" | "center";
   className?: string;
+  subClassName?: string;
 }
 
-const SectionHeader = ({ label, title, sub, align = "center", className = "" }: Props) => {
+const SectionHeader = ({ label, title, sub, align = "center", className = "", subClassName = "" }: Props) => {
   const isCenter = align === "center";
   return (
     <div className={`${isCenter ? "text-center" : ""} ${className}`}>
@@ -19,7 +20,7 @@ const SectionHeader = ({ label, title, sub, align = "center", className = "" }: 
         {title}
       </h2>
       {sub && (
-        <p className={`text-[0.88rem] text-warm-600 leading-[1.75] mt-3 ${isCenter ? "max-w-[460px] mx-auto" : "max-w-[460px]"}`}>
+        <p className={`text-[0.88rem] text-warm-600 leading-[1.75] mt-3 ${subClassName || (isCenter ? "max-w-[460px] mx-auto" : "max-w-[460px]")}`}>
           {sub}
         </p>
       )}
