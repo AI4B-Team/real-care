@@ -46,7 +46,7 @@ const Doctors = () => {
   };
 
   return (
-    <section id="doctors" className="bg-warm-50 px-5 md:px-12 pt-16 pb-24">
+    <section id="doctors" className="bg-warm-50 px-5 md:px-12 pt-4 pb-24">
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-12">
           <SectionHeader
