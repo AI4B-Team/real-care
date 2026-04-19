@@ -23,7 +23,7 @@ const doctors = [
 const stats = [
   { n: "300+", l: "Licensed U.S. Providers" },
   { n: "All 50", l: "States Covered" },
-  { n: "< 24 hr", l: "Avg. Response Time" },
+  { n: "24/7", l: "Care Availability" },
   { n: "100%", l: "Board-Certified" },
 ];
 
