@@ -14,6 +14,7 @@ import Footer from "@/components/realcare/Footer";
 
 import featMen from "@/assets/feat-men.jpg";
 import featWomen from "@/assets/feat-women.jpg";
+import goalMenopause from "@/assets/goal-menopause.jpg";
 import pWeightM from "@/assets/p-weight-m.jpg";
 import pTrt from "@/assets/p-trt.jpg";
 import pHairM from "@/assets/p-hair-m.jpg";
@@ -43,7 +44,7 @@ const menProducts = [
 ];
 
 const womenProducts = [
-  { img: pWeightW, name: "GLP-1 Weight Loss", desc: "Semaglutide & tirzepatide for women. Money-back guarantee. Doctor-guided throughout.", price: "From $179/mo", pill: "Most Popular" },
+  { img: goalMenopause, name: "Menopause Relief (HRT)", desc: "Bioidentical hormone therapy for hot flashes, night sweats, brain fog, and mood — prescribed online.", price: "From $89/mo", pill: "Most Requested" },
   { img: pHairW, name: "Fuller, Thicker Hair", desc: "Prescription minoxidil blends and serums to stop shedding and restore volume and density.", price: "From $39/mo", pill: "Top Rated" },
   { img: pSkinW, name: "Prescription Skincare", desc: "Custom formulas for acne, anti-aging, dark spots, and texture — prescription strength.", price: "From $35/mo" },
   { img: pMentalW, name: "Mental Health", desc: "Anxiety, depression, burnout, and sleep — treated with empathy by licensed providers.", price: "From $49/mo" },
@@ -90,12 +91,12 @@ const Index = () => {
         ctaText="See All Women's Treatments →"
         featured={{
           img: featWomen,
-          pill: "Most Requested By Women",
-          title: <>Menopause Relief.<br />Finally.</>,
-          desc: "Hot flashes, night sweats, brain fog, mood swings, low libido — real symptoms that deserve real treatment. Bioidentical hormone therapy (HRT) prescribed online by licensed doctors.",
-          tags: ["Hot Flashes & Night Sweats", "Brain Fog & Mood", "Low Libido", "Perimenopause", "Bioidentical HRT"],
-          price: <>From <strong className="text-warm-800 text-base">$89/mo</strong> — includes doctor consultation</>,
-          cta: "Get Menopause Care →",
+          pill: "#1 For Women",
+          title: <>Lose Weight.<br />Keep It Off.</>,
+          desc: "GLP-1 weight loss for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a money-back guarantee.",
+          tags: ["Semaglutide (Generic Ozempic®)", "Tirzepatide (Generic Mounjaro®)", "Doctor-Guided Plan", "Money-Back Guarantee"],
+          price: <>From <strong className="text-warm-800 text-base">$179/mo</strong> — includes doctor consultation</>,
+          cta: "Start Weight Loss →",
         }}
         products={womenProducts}
       />
