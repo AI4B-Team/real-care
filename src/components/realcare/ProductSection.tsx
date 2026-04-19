@@ -95,7 +95,10 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                 <div className="font-display text-[1.07rem] font-bold text-warm-800 mb-1">{p.name}</div>
                 <div className="text-[0.72rem] text-warm-400 leading-[1.5] mb-3">{p.desc}</div>
                 <ul className="flex flex-wrap gap-x-2 gap-y-1 mb-3">
-                  {["1:1 Physician Guidance", "24/7 Support", "Money-Back Guarantee", "HSA/FSA Accepted", "Free Discreet Shipping"].map((b) => (
+                  {(isGLP1
+                    ? ["1:1 Physician Guidance", "24/7 Support", "Money-Back Guarantee", "HSA/FSA Accepted", "Free Discreet Shipping"]
+                    : ["1:1 Physician Guidance", "24/7 Support", "HSA/FSA Accepted", "Free Discreet Shipping"]
+                  ).map((b) => (
                     <li key={b} className="inline-flex items-center gap-1 text-[0.62rem] font-medium text-warm-600">
                       <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="text-red flex-shrink-0">
                         <polyline points="20 6 9 17 4 12" />
@@ -106,7 +109,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                 </ul>
                 <div className="mt-auto pt-3 border-t border-warm-100">
                   <div className="text-[0.8rem] font-bold text-red leading-tight">{p.price} <span className="text-warm-800 font-semibold">— Everything Included</span></div>
-                  <div className="text-[0.66rem] text-warm-600 mt-1 leading-snug">Doctor visit · Medication · Shipping · 24/7 Support</div>
+                  <div className="text-[0.66rem] text-warm-600 mt-1 leading-snug">Doctor Consult · Medication · Shipping · 24/7 Support</div>
                   <div className="text-[0.62rem] text-warm-400 mt-1">No Membership Fee. Cancel Anytime</div>
                   <div className="flex items-center justify-end mt-2">
                     <span className="text-[0.7rem] font-semibold text-warm-600 group-hover:text-red transition-colors">Start →</span>
