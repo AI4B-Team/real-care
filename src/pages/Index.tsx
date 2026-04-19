@@ -14,6 +14,7 @@ import Footer from "@/components/realcare/Footer";
 
 import featMen from "@/assets/feat-men.jpg";
 import featWomen from "@/assets/feat-women.jpg";
+import featWomenWeight from "@/assets/feat-women-weight.jpg";
 import goalMenopause from "@/assets/goal-menopause.jpg";
 import pWeightM from "@/assets/p-weight-m.jpg";
 import pTrt from "@/assets/p-trt.jpg";
@@ -90,7 +91,7 @@ const Index = () => {
         sub="Menopause relief, GLP-1 weight loss, fuller hair, clearer skin — personalized care for every stage of life."
         ctaText="See All Women's Treatments →"
         featured={{
-          img: featWomen,
+          img: featWomenWeight,
           pill: "#1 For Women",
           title: <>Lose Weight.<br />Keep It Off.</>,
           desc: "GLP-1 weight loss for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a money-back guarantee.",
