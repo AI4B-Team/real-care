@@ -8,7 +8,7 @@ const Couples = () => (
         Better Together.<br />
         <span className="text-red">Save More. Get Treated Together.</span>
       </h2>
-      <p className="text-[0.95rem] text-warm-600 max-w-[520px] mx-auto mb-7 leading-[1.7]">
+      <p className="text-[0.95rem] text-warm-600 max-w-[760px] mx-auto mb-7 leading-[1.7]">
         The only telehealth brand built for couples. Two people, one plan, real results — with shared coaching, shared shipping, and one simple payment.
       </p>
       <div className="font-display text-[1.7rem] font-bold text-warm-800 mb-2 leading-tight">
