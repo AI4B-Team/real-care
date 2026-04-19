@@ -51,12 +51,16 @@ const HealthCheck = () => {
   const [who, setWho] = useState<Who | "">("");
   const [goal, setGoal] = useState<Goal | "">("");
 
-  const restart = () => { setStep(1); setWho(""); setGoal(""); };
+  const scrollToSection = () => {
+    document.getElementById("health-check")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const goToStep = (s: 1 | 2 | 3) => { setStep(s); scrollToSection(); };
+  const restart = () => { setStep(1); setWho(""); setGoal(""); scrollToSection(); };
 
   const cards = who && goal ? recommendations[goal][who] : [];
 
   return (
-    <section id="health-check" className="scroll-mt-2 bg-warm-50 px-5 md:px-12 pt-14 pb-24 border-y border-warm-100">
+    <section id="health-check" className="scroll-mt-20 bg-warm-50 px-5 md:px-12 pt-14 pb-24 border-y border-warm-100">
       <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
         <div className="fade-up">
           <SectionHeader
@@ -116,7 +120,7 @@ const HealthCheck = () => {
               <div className="flex items-center justify-end mt-auto pt-5 border-t border-warm-100">
                 <button
                   disabled={!who}
-                  onClick={() => setStep(2)}
+                  onClick={() => goToStep(2)}
                   className="bg-red hover:bg-red-dark disabled:opacity-40 disabled:cursor-not-allowed text-primary-foreground text-[0.78rem] font-semibold px-6 py-2.5 rounded-[7px] transition-colors"
                 >
                   Next →
@@ -148,10 +152,10 @@ const HealthCheck = () => {
                 ))}
               </div>
               <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">
-                <button onClick={() => setStep(1)} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Back</button>
+                <button onClick={() => goToStep(1)} className="text-[0.77rem] text-warm-400 hover:text-warm-800 transition-colors">← Back</button>
                 <button
                   disabled={!goal}
-                  onClick={() => setStep(3)}
+                  onClick={() => goToStep(3)}
                   className="bg-red hover:bg-red-dark disabled:opacity-40 disabled:cursor-not-allowed text-primary-foreground text-[0.78rem] font-semibold px-6 py-2.5 rounded-[7px] transition-colors"
                 >
                   See My Matches →
