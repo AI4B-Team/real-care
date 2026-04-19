@@ -49,9 +49,9 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
         </div>
 
         {/* Featured */}
-        <div className="bg-warm-50 rounded-[18px] overflow-hidden grid lg:grid-cols-2 mb-5 min-h-[280px] border border-warm-100 fade-up delay-1">
-          <div className="relative overflow-hidden min-h-[240px]">
-            <img src={featured.img} alt="" className="w-full h-full object-cover object-top" />
+        <div className="bg-warm-50 rounded-[18px] overflow-hidden grid lg:grid-cols-2 mb-5 border border-warm-100 fade-up delay-1">
+          <div className="relative overflow-hidden h-[260px] lg:h-[360px]">
+            <img src={featured.img} alt="" className="w-full h-full object-cover object-center" />
           </div>
           <div className="p-8 flex flex-col justify-center bg-warm-50">
             <span className="inline-block bg-red text-primary-foreground text-[0.57rem] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded mb-3 w-fit">
