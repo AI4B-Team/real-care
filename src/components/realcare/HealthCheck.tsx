@@ -113,7 +113,7 @@ const HealthCheck = () => {
                   </button>
                 ))}
               </div>
-              <div className="flex items-center justify-end mt-7 pt-5 border-t border-warm-100">
+              <div className="flex items-center justify-end mt-auto pt-5 border-t border-warm-100">
                 <button
                   disabled={!who}
                   onClick={() => setStep(2)}
