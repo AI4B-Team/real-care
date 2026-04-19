@@ -50,7 +50,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
 
         {/* Featured */}
         <div className="bg-warm-50 rounded-[18px] overflow-hidden grid lg:grid-cols-2 mb-5 border border-warm-100 fade-up delay-1">
-          <div className="relative overflow-hidden h-[240px] lg:h-full lg:min-h-[460px]">
+          <div className="relative overflow-hidden h-[240px] lg:h-full">
             <img src={featured.img} alt="" className="w-full h-full object-cover object-center" />
           </div>
           <div className="p-8 flex flex-col justify-center bg-warm-50">
