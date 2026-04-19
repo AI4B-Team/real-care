@@ -51,7 +51,11 @@ const HealthCheck = () => {
   const [who, setWho] = useState<Who | "">("");
   const [goal, setGoal] = useState<Goal | "">("");
 
-  const restart = () => { setStep(1); setWho(""); setGoal(""); };
+  const scrollToSection = () => {
+    document.getElementById("health-check")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const goToStep = (s: 1 | 2 | 3) => { setStep(s); scrollToSection(); };
+  const restart = () => { setStep(1); setWho(""); setGoal(""); scrollToSection(); };
 
   const cards = who && goal ? recommendations[goal][who] : [];
 
