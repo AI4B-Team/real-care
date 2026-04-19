@@ -9,7 +9,7 @@ const reviews = [
 ];
 
 const Reviews = () => (
-  <section id="results" className="bg-background px-5 md:px-12 py-24">
+  <section id="results" className="bg-background px-5 md:px-12 pt-14 pb-24">
     <div className="max-w-[1280px] mx-auto">
       <div className="flex items-end justify-between mb-10 flex-wrap gap-6 fade-up">
         <div>

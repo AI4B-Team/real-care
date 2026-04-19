@@ -5,7 +5,7 @@ const sections = [
 ];
 
 const Footer = () => (
-  <footer className="bg-warm-dark px-5 md:px-12 pt-20 pb-10">
+  <footer className="bg-warm-dark px-5 md:px-12 pt-14 pb-10">
     <div className="max-w-[1280px] mx-auto">
       <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-12 mb-14">
         <div>

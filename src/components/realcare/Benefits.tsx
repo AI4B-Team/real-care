@@ -12,7 +12,7 @@ const items = [
 ];
 
 const Benefits = () => (
-  <section className="bg-background px-5 md:px-12 pt-32 pb-24">
+  <section className="bg-background px-5 md:px-12 pt-16 pb-24">
     <div className="max-w-[1280px] mx-auto">
       <SectionHeader
         label="Why Real Care"

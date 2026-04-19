@@ -1,5 +1,5 @@
 const Couples = () => (
-  <div className="bg-warm-50 px-5 md:px-12 py-24 text-center border-t border-warm-100">
+  <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-24 text-center border-t border-warm-100">
     <div className="max-w-[680px] mx-auto">
       <span className="inline-block bg-red text-primary-foreground text-[0.6rem] font-bold tracking-[0.14em] uppercase px-3.5 py-1.5 rounded mb-6">
         Exclusive — Real Care Couples Plan

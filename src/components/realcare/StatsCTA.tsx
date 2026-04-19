@@ -6,7 +6,7 @@ const stats = [
 ];
 
 const StatsCTA = () => (
-  <div className="bg-red px-5 md:px-12 py-20 text-center">
+  <div className="bg-red px-5 md:px-12 pt-14 pb-20 text-center">
     <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-primary-foreground/50 mb-3.5">The Numbers</div>
     <h2 className="font-display font-black text-primary-foreground mb-3.5 leading-[1.1] text-[clamp(2rem,4.5vw,3.5rem)]">
       Results You Can<br />Actually Measure
