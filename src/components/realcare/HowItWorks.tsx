@@ -33,7 +33,7 @@ const HowItWorks = () => (
         <div>
           <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3.5">Simple Process</div>
           <h2 className="font-display font-black leading-[1.1] text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)]">
-            Care Without The Complexity
+            Your Treatment In 3 Simple Steps
           </h2>
           <p className="text-[0.88rem] text-warm-600 leading-[1.75] mt-3">
             Most patients go from first question to first delivery in under 48 hours.
