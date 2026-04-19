@@ -10,7 +10,7 @@ const goals = [
   { img: goalSex, name: "Better Sex", sub: "ED treatment from $2/dose", href: "#men" },
   { img: goalHair, name: "Fuller Hair", sub: "Regrowth from $39/mo", href: "#women" },
   { img: goalSkin, name: "Improve Skin", sub: "Prescription skincare from $35/mo", href: "#women" },
-  { img: goalMenopause, name: "Menopause Relief", sub: "HRT & hormones from $89/mo", href: "#women" },
+  { img: goalMenopause, name: "Sleep Better", sub: "HRT & hormone support from $89/mo", href: "#women" },
   { img: goalEnergy, name: "Boost Performance", sub: "Testosterone & peptides from $99/mo", href: "#men" },
 ];
 
