@@ -17,11 +17,10 @@ const goals = [
 const Goals = () => (
   <div className="max-w-[1280px] mx-auto -mt-[5.5rem] px-5 md:px-12 relative z-10 fade-up delay-2">
     <div className="bg-card rounded-[20px] shadow-card overflow-hidden border border-warm-100">
-      <div className="px-8 pt-5 pb-2 flex items-center justify-between">
+      <div className="px-8 pt-5 pb-2">
         <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red">
           Prescription Treatments For Your Health Goals
         </div>
-        <div className="text-[0.7rem] text-warm-400">6 categories</div>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3">
         {goals.map((g, i) => (
