@@ -11,7 +11,7 @@ const goals = [
   { img: goalHair, name: "Fuller Hair", sub: "Regrowth from $39/mo", href: "#women" },
   { img: goalSkin, name: "Improve Skin", sub: "Prescription skincare from $35/mo", href: "#women" },
   { img: goalMenopause, name: "Menopause Relief", sub: "HRT & hormones from $89/mo", href: "#women" },
-  { img: goalEnergy, name: "More Energy", sub: "Testosterone & peptides from $99/mo", href: "#men" },
+  { img: goalEnergy, name: "Boost Performance", sub: "Testosterone & peptides from $99/mo", href: "#men" },
 ];
 
 const Goals = () => (
