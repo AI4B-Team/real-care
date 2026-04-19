@@ -1,8 +1,8 @@
+import Logo from "./Logo";
+
 const Nav = () => (
   <nav className="bg-background border-b border-warm-100 flex items-center justify-between px-5 md:px-12 h-16 sticky top-0 z-50 shadow-[0_1px_0_hsl(var(--warm-100))]">
-    <a href="#" className="font-display text-2xl font-black tracking-wide text-warm-800 no-underline">
-      Real<span className="text-red">Care</span>
-    </a>
+    <Logo href="#" />
     <div className="hidden md:flex items-center gap-1">
       <a href="#men" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Men</a>
       <a href="#women" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Women</a>
