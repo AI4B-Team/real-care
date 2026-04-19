@@ -10,6 +10,7 @@ import HowItWorks from "@/components/realcare/HowItWorks";
 import Reviews from "@/components/realcare/Reviews";
 import StatsCTA from "@/components/realcare/StatsCTA";
 import Couples from "@/components/realcare/Couples";
+import Doctors from "@/components/realcare/Doctors";
 import Footer from "@/components/realcare/Footer";
 
 import featMen from "@/assets/feat-men.jpg";
@@ -102,6 +103,7 @@ const Index = () => {
         products={womenProducts}
       />
       <HowItWorks />
+      <Doctors />
       <Reviews />
       <StatsCTA />
       <Couples />
