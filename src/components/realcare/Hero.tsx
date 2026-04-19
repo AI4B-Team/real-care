@@ -1,4 +1,5 @@
 import heroImg from "@/assets/hero.jpg";
+import doctorImg from "@/assets/hero-doctor.jpg";
 
 const Check = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
@@ -40,8 +41,13 @@ const Hero = () => (
           ))}
         </div>
       </div>
-      <div className="relative rounded-[18px] overflow-hidden aspect-[5/4] max-h-[48vh] bg-warm-100 fade-up delay-1">
-        <img src={heroImg} alt="Real Care patient — 100% online healthcare" className="w-full h-full object-cover object-top" />
+      <div className="relative aspect-[5/4] max-h-[48vh] fade-up delay-1">
+        <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-warm-100">
+          <img src={heroImg} alt="Real Care patient — 100% online healthcare" className="w-full h-full object-cover object-center" />
+        </div>
+        <div className="absolute -top-3 -right-2 md:top-3 md:-right-4 w-[34%] aspect-square rounded-2xl overflow-hidden border-4 border-background shadow-soft bg-warm-100">
+          <img src={doctorImg} alt="Licensed Real Care provider" className="w-full h-full object-cover object-center" />
+        </div>
         <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-md rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-soft">
           <div className="font-display text-xl font-black text-red leading-none">4.8★</div>
           <div className="text-[0.65rem] text-warm-600 leading-snug">From 11,400+<br />Verified Reviews</div>
