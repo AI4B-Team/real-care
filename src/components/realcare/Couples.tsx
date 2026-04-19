@@ -9,13 +9,13 @@ const Couples = () => (
         <span className="text-red whitespace-nowrap">Save More. Get Treated Together.</span>
       </h2>
       <p className="text-[0.95rem] text-warm-600 max-w-[760px] mx-auto mb-7 leading-[1.7]">
-        The only telehealth brand built for couples. Two people, one plan, real results — with shared coaching, shared shipping, and one simple payment.
+        The only telehealth brand built for couples. Each person gets their own personalized treatment plan — and when you both enroll, you each save 15% every month.
       </p>
       <div className="font-display text-[1.7rem] font-bold text-warm-800 mb-2 leading-tight">
-        Two Treatments. One Price.
+        Two Treatments. One Discount.
       </div>
       <div className="text-[1rem] text-warm-600 mb-8">
-        Starting at <span className="text-red font-bold">$279/mo</span> — for both of you
+        <span className="text-red font-bold">Save 15%</span> When You Both Enroll Together
       </div>
       <a href="#health-check" className="inline-block bg-red hover:bg-red-dark text-primary-foreground text-[0.9rem] font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-sm">
         Get Treated Together →
@@ -26,19 +26,21 @@ const Couples = () => (
             icon: "♂",
             name: "For Him",
             featured: false,
-            items: ["Weight loss support", "Performance & energy", "Testosterone optimization"],
+            items: ["GLP-1 Weight Loss", "ED & Performance", "TRT & Hair Loss"],
+            note: "Each treatment priced individually",
           },
           {
             icon: "♥",
             name: "Shared Benefits",
             featured: true,
-            items: ["One dashboard", "Free shipping", "Shared coaching", "One simple payment"],
+            items: ["Shared Care Dashboard", "Free Shipping", "One Simple Payment", "15% Off Every Month"],
           },
           {
             icon: "♀",
             name: "For Her",
             featured: false,
-            items: ["Weight loss support", "Hormone & skin care", "Hair & wellness"],
+            items: ["GLP-1 Weight Loss", "Hormone & Skin Care", "Hair & Wellness"],
+            note: "Each treatment priced individually",
           },
         ].map((c) => (
           <div
@@ -63,6 +65,11 @@ const Couples = () => (
                 </li>
               ))}
             </ul>
+            {c.note && (
+              <div className="text-[0.68rem] text-warm-400 mt-3 pt-3 border-t border-warm-100 italic">
+                {c.note}
+              </div>
+            )}
           </div>
         ))}
       </div>
