@@ -127,7 +127,12 @@ const Pricing = () => {
               {/* Items */}
               <div>
                 {plan.items.map((item, i) => (
-                  <div key={item.name} className={`flex items-center justify-between gap-4 px-7 py-4 ${i < plan.items.length - 1 ? "border-b border-warm-100" : ""} hover:bg-warm-50 transition-colors`}>
+                  <button
+                    type="button"
+                    onClick={() => handleBuy(item)}
+                    key={item.name}
+                    className={`w-full text-left flex items-center justify-between gap-4 px-7 py-4 ${i < plan.items.length - 1 ? "border-b border-warm-100" : ""} hover:bg-warm-50 transition-colors`}
+                  >
                     <div className="flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-[0.92rem] font-semibold text-warm-800">{item.name}</span>
@@ -141,9 +146,9 @@ const Pricing = () => {
                     </div>
                     <div className="text-right flex-shrink-0">
                       <div className="text-[0.92rem] font-bold text-red">{item.price}</div>
-                      <div className="text-[0.62rem] text-warm-400">all-inclusive</div>
+                      <div className="text-[0.62rem] text-warm-400">Get started →</div>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
               {/* Footer */}
@@ -221,7 +226,9 @@ const Pricing = () => {
         Prices shown are starting prices and may vary based on treatment plan, dosage, and location. Compounded medications are not FDA-approved as finished products. Payment does not guarantee prescribing of medication — all prescribing decisions are at the sole discretion of your licensed provider. Money-back guarantee applies to GLP-1 weight loss program only, subject to program terms. Individuals in advertising may be models or actors.
       </p>
     </div>
+    <CheckoutDialog />
   </PageLayout>
-);
+  );
+};
 
 export default Pricing;
