@@ -28,6 +28,7 @@ import HealthCheck from "./pages/HealthCheck.tsx";
 import Login from "./pages/Login.tsx";
 import PatientPortal from "./pages/PatientPortal.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
 import CheckoutReturn from "./pages/CheckoutReturn.tsx";
 import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/checkout/return" element={<CheckoutReturn />} />
 
