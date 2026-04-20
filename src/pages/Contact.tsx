@@ -13,12 +13,16 @@ const Contact = () => {
     setSending(true);
     setError(null);
     try {
-      const res = await fetch("/api/contact-form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "contact", ...formData }),
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { error: fnError } = await supabase.functions.invoke("contact-form", {
+        body: {
+          name: `${formData.firstName} ${formData.lastName}`.trim() || "Anonymous",
+          email: formData.email,
+          subject: formData.topic,
+          message: formData.message,
+        },
       });
-      if (!res.ok) throw new Error("Failed to send");
+      if (fnError) throw fnError;
       setSent(true);
     } catch {
       setError("Something went wrong. Please email us directly at support@realcare.com");

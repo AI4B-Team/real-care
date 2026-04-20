@@ -242,15 +242,16 @@ const PatientPortal = () => {
                     ))
                   }
                   <div className="pt-2"><button onClick={async () => {
-                      const { data: { session } } = await supabase.auth.getSession();
-                      if (!session) return;
-                      const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/stripe-portal`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
-                        body: JSON.stringify({ returnUrl: window.location.href }),
+                      const clientToken = import.meta.env.VITE_PAYMENTS_CLIENT_TOKEN;
+                      const environment = clientToken?.startsWith("pk_test_") ? "sandbox" : "live";
+                      const { data, error } = await supabase.functions.invoke("create-portal-session", {
+                        body: { returnUrl: window.location.href, environment },
                       });
-                      const { url } = await res.json();
-                      if (url) window.location.href = url;
+                      if (error || !data?.url) {
+                        alert(error?.message || "Could not open billing portal. You may not have an active subscription yet.");
+                        return;
+                      }
+                      window.open(data.url, "_blank");
                     }} className="bg-warm-800 hover:bg-black text-white font-semibold px-5 py-2.5 rounded-lg text-[0.82rem] transition-colors">Manage Billing →</button><p className="text-[0.7rem] text-warm-400 mt-2">To cancel, email <a href="mailto:support@realcare.com" className="text-red underline">support@realcare.com</a> at least 72 hours before billing.</p></div>
                 </div>
               </div>
