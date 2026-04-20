@@ -1,1 +1,13 @@
 project_id = "vkdlheveupytqjqrchuz"
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.get-stripe-price]
+verify_jwt = false
+
+[functions.payments-webhook]
+verify_jwt = false
+
+[functions.contact-form]
+verify_jwt = false
