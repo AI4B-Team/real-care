@@ -48,7 +48,7 @@ const PatientPortal = () => {
   const handleRefillSubmit = async () => {
     if (!patient || !subscriptions[0]) return;
     try {
-      await submitRefillCheckin({ patient_id: patient.id, subscription_id: subscriptions[0].id, weight_change_lbs: refillData.weightChange ? parseFloat(refillData.weightChange) : undefined, satisfaction: parseInt(refillData.satisfaction), side_effects: refillData.sideEffects, notes: refillData.notes, month_number: 1, continue_treatment: true });
+      await submitRefillCheckin({ patient_id: patient.id, weight_lbs: refillData.weightChange ? parseFloat(refillData.weightChange) : undefined, side_effects: refillData.sideEffects, notes: refillData.notes });
       setRefillSubmitted(true);
     } catch (e) { console.error(e); }
   };

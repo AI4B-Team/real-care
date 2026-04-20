@@ -59,7 +59,7 @@ export const usePatient = (): UsePatientReturn => {
         lastName: patientData.last_name,
         phone: patientData.phone,
         state: patientData.state,
-        status: patientData.status,
+        status: patientData.status as Patient["status"],
         stripeCustomerId: patientData.stripe_customer_id,
         openloopPatientId: patientData.openloop_patient_id,
         couplesDiscountActive: patientData.couples_discount_active,
