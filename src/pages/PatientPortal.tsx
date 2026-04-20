@@ -117,6 +117,23 @@ const PatientPortal = () => {
             {tab === "overview" && (
               <div className="space-y-5">
                 <h2 className="font-display font-bold text-warm-800 text-xl">Your Care Summary</h2>
+                {pendingCases.length > 0 && (
+                  <div className="bg-red/[0.06] border border-red/30 rounded-2xl p-5">
+                    <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-2">Action Required</div>
+                    <h3 className="font-display font-bold text-warm-800 text-lg mb-3">Complete your medical intake</h3>
+                    <div className="space-y-2">
+                      {pendingCases.map((c) => (
+                        <a key={c.id} href={`/intake/${c.treatment_category}`} className="flex items-center justify-between bg-card border border-warm-100 rounded-xl px-4 py-3 hover:border-red transition-colors">
+                          <div>
+                            <div className="text-[0.88rem] font-semibold text-warm-800">{PRETTY_CAT[c.treatment_category] || c.treatment_category}</div>
+                            <div className="text-[0.72rem] text-warm-500">Provider needs your health history before prescribing</div>
+                          </div>
+                          <span className="text-red font-bold text-[0.82rem] flex items-center gap-1">Start <ChevronRight size={14} /></span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div>
                   <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-warm-400 mb-3">Active Plans</div>
                   {subscriptions.length === 0 ? (
