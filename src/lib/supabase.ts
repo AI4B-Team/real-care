@@ -103,33 +103,52 @@ export const getPatientByEmail = async (email: string) => {
   return data;
 };
 
-// Messages stub — the messages table is not in this schema yet.
-// Returns empty so the patient portal renders without crashing.
+// ─── Messages ─────────────────────────────────────────────────────────────────
 export interface PatientMessage {
   id: string;
-  sender: string;
-  sender_name?: string;
+  patient_id: string;
+  sender: "patient" | "provider" | "staff" | "system";
+  sender_name?: string | null;
   content: string;
   created_at: string;
 }
 
-export const getMessages = async (_patientId: string): Promise<PatientMessage[]> => {
-  return [];
+export const getMessages = async (patientId: string): Promise<PatientMessage[]> => {
+  const { data, error } = await supabase
+    .from("messages")
+    .select("id,patient_id,sender,sender_name,content,created_at")
+    .eq("patient_id", patientId)
+    .order("created_at", { ascending: true });
+  if (error) throw error;
+  return (data || []) as PatientMessage[];
 };
 
 export const sendMessage = async (
-  _patientId: string,
-  _content: string,
+  patientId: string,
+  content: string,
 ): Promise<PatientMessage | null> => {
-  console.warn("[Messages] Not yet implemented — add a messages table + edge function to enable.");
-  return null;
+  const { data, error } = await supabase
+    .from("messages")
+    .insert({ patient_id: patientId, sender: "patient", content })
+    .select("id,patient_id,sender,sender_name,content,created_at")
+    .single();
+  if (error) throw error;
+  return data as PatientMessage;
 };
 
 export const subscribeToMessages = (
-  _patientId: string,
-  _callback: (msg: unknown) => void,
+  patientId: string,
+  callback: (msg: PatientMessage) => void,
 ) => {
-  return { unsubscribe: () => {} };
+  const channel = supabase
+    .channel(`messages:${patientId}`)
+    .on(
+      "postgres_changes",
+      { event: "INSERT", schema: "public", table: "messages", filter: `patient_id=eq.${patientId}` },
+      (payload) => callback(payload.new as PatientMessage),
+    )
+    .subscribe();
+  return { unsubscribe: () => { supabase.removeChannel(channel); } };
 };
 
 // ─── Cases ────────────────────────────────────────────────────────────────────
