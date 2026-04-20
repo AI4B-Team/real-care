@@ -64,10 +64,16 @@ const included = [
 const Pricing = () => {
   const { openCheckout, CheckoutDialog } = useStripeCheckout();
   const { user, patient } = usePatient();
+  const { hasAddress, loading: addrLoading } = usePatientAddress(patient?.id);
+  const [addressPrompt, setAddressPrompt] = useState<PlanItem | null>(null);
 
   const handleBuy = (item: PlanItem) => {
     if (!user) {
       window.location.href = `/login?redirect=/pricing`;
+      return;
+    }
+    if (patient && !addrLoading && !hasAddress) {
+      setAddressPrompt(item);
       return;
     }
     openCheckout({
