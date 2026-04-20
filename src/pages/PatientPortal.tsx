@@ -8,6 +8,8 @@ import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 type Tab = "overview" | "messages" | "orders" | "refill" | "prescriptions" | "billing" | "settings";
 interface Message { id: string; sender: string; sender_name?: string; content: string; created_at: string; }
 interface Order { id: string; status: string; pharmacy_id: string; amount_cents: number; created_at: string; tracking_number?: string; estimated_delivery?: string; }
+interface PendingCase { id: string; treatment_category: string; status: string; consent_signed: boolean; }
+const PRETTY_CAT: Record<string, string> = { weight_loss: "Weight Loss", ed_treatment: "ED Treatment", testosterone: "Testosterone", hair_loss: "Hair Loss", menopause: "Menopause / HRT", mental_health: "Mental Health", skincare: "Skincare", peptides: "Peptides" };
 
 const statusColor = (status: string) => {
   const map: Record<string, string> = { paid: "text-warm-600 bg-warm-50", shipped: "text-blue-600 bg-blue-50", delivered: "text-green-600 bg-green-50", processing: "text-yellow-600 bg-yellow-50", failed: "text-red bg-red/[0.08]", pending: "text-warm-400 bg-warm-50" };
