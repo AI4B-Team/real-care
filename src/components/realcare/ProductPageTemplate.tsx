@@ -17,7 +17,7 @@ interface Medication {
 }
 
 interface ProductPageProps {
-  title: string;
+  title?: string;
   label: string;
   pill?: string;
   headline: ReactNode;

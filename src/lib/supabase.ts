@@ -77,15 +77,59 @@ export const getPatient = async (patientId: string) => {
   return data;
 };
 
-export const updatePatient = async (patientId: string, updates: Record<string, unknown>) => {
+export const updatePatient = async (
+  patientId: string,
+  updates: Partial<Record<string, string | number | boolean | null>>,
+) => {
   const { data, error } = await supabase
     .from("patients")
-    .update(updates)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .update(updates as any)
     .eq("id", patientId)
     .select()
     .single();
   if (error) throw error;
   return data;
+};
+
+// Lookup helper used by usePatient hook
+export const getPatientByEmail = async (email: string) => {
+  const { data, error } = await supabase
+    .from("patients")
+    .select("*")
+    .eq("email", email)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
+};
+
+// Messages stub — the messages table is not in this schema yet.
+// Returns empty so the patient portal renders without crashing.
+export interface PatientMessage {
+  id: string;
+  sender: string;
+  sender_name?: string;
+  content: string;
+  created_at: string;
+}
+
+export const getMessages = async (_patientId: string): Promise<PatientMessage[]> => {
+  return [];
+};
+
+export const sendMessage = async (
+  _patientId: string,
+  _content: string,
+): Promise<PatientMessage | null> => {
+  console.warn("[Messages] Not yet implemented — add a messages table + edge function to enable.");
+  return null;
+};
+
+export const subscribeToMessages = (
+  _patientId: string,
+  _callback: (msg: unknown) => void,
+) => {
+  return { unsubscribe: () => {} };
 };
 
 // ─── Cases ────────────────────────────────────────────────────────────────────
