@@ -284,20 +284,7 @@ const PatientPortal = () => {
               </div>
             )}
 
-            {tab === "settings" && (
-              <div><h2 className="font-display font-bold text-warm-800 text-xl mb-4">Account Settings</h2>
-                <div className="bg-card border border-warm-100 rounded-2xl p-6 space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div><label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">First Name</label><input type="text" defaultValue={patient.firstName} className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.85rem] focus:outline-none focus:border-red transition-colors" /></div>
-                    <div><label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">Email</label><input type="email" defaultValue={patient.email} disabled className="w-full border border-warm-100 bg-warm-50 rounded-lg px-4 py-2.5 text-[0.85rem] text-warm-400" /></div>
-                  </div>
-                  <button className="bg-red hover:bg-red-dark text-primary-foreground font-bold px-6 py-2.5 rounded-lg text-[0.85rem] transition-colors">Save Changes</button>
-                </div>
-                <div className="mt-4 bg-warm-50 border border-warm-100 rounded-2xl p-5">
-                  <h3 className="font-semibold text-warm-800 mb-3 flex items-center gap-2"><AlertCircle size={16} className="text-red" /> Danger Zone</h3>
-                  <button onClick={logout} className="text-[0.82rem] font-semibold text-warm-600 hover:text-red transition-colors flex items-center gap-1.5"><LogOut size={14} /> Log Out</button>
-                </div>
-              </div>
+            {tab === "settings" && <SettingsPanel patientId={patient.id} email={patient.email} onLogout={logout} />}
             )}
           </main>
         </div>
