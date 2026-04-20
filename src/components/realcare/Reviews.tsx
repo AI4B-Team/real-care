@@ -2,10 +2,14 @@ import avatar1 from "@/assets/avatar-1.jpg";
 import avatar2 from "@/assets/avatar-2.jpg";
 import avatar3 from "@/assets/avatar-3.jpg";
 
+// ⚠️ COMPLIANCE NOTE: Replace these with real verified patient testimonials
+// before launch. FTC requires testimonials to reflect real patient experiences.
+// Remove or clearly label as "Illustrative Example" until you have real reviews.
+// Collect real reviews via: post-delivery email (Klaviyo flow), Trustpilot invite.
 const reviews = [
-  { tag: "Lost 34 Lbs In 4 Months", quote: "Losing weight without a crazy diet, without cardio — it just felt like magic. I was a snacker, but not anymore. I feel completely different.", name: "Terri M.", meta: "Weight Loss · GLP-1 Program", img: avatar1 },
-  { tag: "Performance Completely Transformed", quote: "The ED treatment changed my relationship. Fast, discreet, and it actually works. I wish I'd found Real Care years ago. No exaggeration.", name: "Greg T.", meta: "Men's Health · ED Treatment", img: avatar2 },
-  { tag: "Menopause Symptoms Gone In 6 Weeks", quote: "Hot flashes, brain fog, zero sleep — I was miserable. The hormone therapy changed everything. I finally feel like myself again.", name: "Linda K.", meta: "Women's Health · Menopause HRT", img: avatar3 },
+  { tag: "GLP-1 Weight Loss", quote: "Real patient testimonial coming soon. We'll add verified reviews from our first patients here.", name: "Patient Name", meta: "Weight Loss · GLP-1 Program", img: avatar1, placeholder: true },
+  { tag: "Men's Health", quote: "Real patient testimonial coming soon. We'll add verified reviews from our first patients here.", name: "Patient Name", meta: "Men's Health · ED Treatment", img: avatar2, placeholder: true },
+  { tag: "Women's Health", quote: "Real patient testimonial coming soon. We'll add verified reviews from our first patients here.", name: "Patient Name", meta: "Women's Health · Menopause HRT", img: avatar3, placeholder: true },
 ];
 
 const Reviews = () => (
@@ -20,7 +24,7 @@ const Reviews = () => (
         </div>
         <div className="bg-card border border-warm-100 rounded-full px-4 py-2 flex items-center gap-2 text-[0.73rem] text-warm-600">
           <div className="text-red tracking-widest text-sm">★★★★★</div>
-          <div>4.8 / 5 · 11,400+ Verified Reviews</div>
+          <div>Verified Patient Reviews</div>
         </div>
       </div>
       <div className="grid lg:grid-cols-3 gap-5 fade-up delay-1">
