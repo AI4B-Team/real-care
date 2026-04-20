@@ -31,6 +31,7 @@ import ForgotPassword from "./pages/ForgotPassword.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
 import CheckoutReturn from "./pages/CheckoutReturn.tsx";
+import Intake from "./pages/Intake.tsx";
 import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 
 // Products
@@ -88,6 +89,7 @@ const App = () => (
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/checkout/return" element={<CheckoutReturn />} />
+          <Route path="/intake/:category" element={<Intake />} />
 
           {/* Products */}
           <Route path="/weight-loss" element={<WeightLoss />} />
