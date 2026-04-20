@@ -285,7 +285,6 @@ const PatientPortal = () => {
             )}
 
             {tab === "settings" && <SettingsPanel patientId={patient.id} email={patient.email} onLogout={logout} />}
-            )}
           </main>
         </div>
       </div>
@@ -294,3 +293,100 @@ const PatientPortal = () => {
 };
 
 export default PatientPortal;
+
+interface SettingsPanelProps { patientId: string; email: string; onLogout: () => void; }
+const US_STATES = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
+
+const SettingsPanel = ({ patientId, email, onLogout }: SettingsPanelProps) => {
+  const [form, setForm] = useState({ first_name: "", last_name: "", phone: "", date_of_birth: "", address_line1: "", address_line2: "", address_city: "", address_state: "", address_zip: "" });
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [savedAt, setSavedAt] = useState<number | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    supabase.from("patients").select("first_name,last_name,phone,date_of_birth,address_line1,address_line2,address_city,address_state,address_zip").eq("id", patientId).single().then(({ data, error: e }) => {
+      if (e) console.error(e);
+      if (data) setForm({
+        first_name: data.first_name || "", last_name: data.last_name || "", phone: data.phone || "", date_of_birth: data.date_of_birth || "",
+        address_line1: data.address_line1 || "", address_line2: data.address_line2 || "", address_city: data.address_city || "", address_state: data.address_state || "", address_zip: data.address_zip || "",
+      });
+      setLoading(false);
+    });
+  }, [patientId]);
+
+  const update = (k: keyof typeof form, v: string) => setForm((f) => ({ ...f, [k]: v }));
+
+  const save = async () => {
+    setSaving(true); setError(null);
+    const { error: e } = await supabase.from("patients").update(form).eq("id", patientId);
+    setSaving(false);
+    if (e) { setError(e.message); return; }
+    setSavedAt(Date.now());
+  };
+
+  const addressComplete = form.address_line1 && form.address_city && form.address_state && form.address_zip;
+
+  return (
+    <div>
+      <h2 className="font-display font-bold text-warm-800 text-xl mb-4">Account Settings</h2>
+
+      <div className="bg-card border border-warm-100 rounded-2xl p-6 space-y-5">
+        <div>
+          <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-warm-400 mb-3">Profile</div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Field label="First Name" value={form.first_name} onChange={(v) => update("first_name", v)} disabled={loading} />
+            <Field label="Last Name" value={form.last_name} onChange={(v) => update("last_name", v)} disabled={loading} />
+            <Field label="Phone" type="tel" value={form.phone} onChange={(v) => update("phone", v)} disabled={loading} />
+            <Field label="Date of Birth" type="date" value={form.date_of_birth} onChange={(v) => update("date_of_birth", v)} disabled={loading} />
+            <div className="sm:col-span-2">
+              <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">Email</label>
+              <input type="email" value={email} disabled className="w-full border border-warm-100 bg-warm-50 rounded-lg px-4 py-2.5 text-[0.85rem] text-warm-400" />
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-warm-100 pt-5">
+          <div className="flex items-center justify-between mb-3">
+            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-warm-400">Shipping Address</div>
+            {!addressComplete && !loading && <span className="text-[0.68rem] font-bold text-red bg-red/[0.08] px-2.5 py-1 rounded-full">Required for shipments</span>}
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="sm:col-span-2"><Field label="Street Address" value={form.address_line1} onChange={(v) => update("address_line1", v)} disabled={loading} placeholder="123 Main St" /></div>
+            <div className="sm:col-span-2"><Field label="Apartment / Suite" value={form.address_line2} onChange={(v) => update("address_line2", v)} disabled={loading} placeholder="Optional" /></div>
+            <Field label="City" value={form.address_city} onChange={(v) => update("address_city", v)} disabled={loading} />
+            <div>
+              <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">State</label>
+              <select value={form.address_state} onChange={(e) => update("address_state", e.target.value)} disabled={loading} className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.85rem] focus:outline-none focus:border-red transition-colors bg-white">
+                <option value="">Select…</option>
+                {US_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+            <Field label="ZIP Code" value={form.address_zip} onChange={(v) => update("address_zip", v)} disabled={loading} />
+          </div>
+        </div>
+
+        {error && <div className="bg-red/[0.08] text-red text-[0.82rem] rounded-lg p-3">{error}</div>}
+
+        <div className="flex items-center gap-3">
+          <button onClick={save} disabled={saving || loading} className="bg-red hover:bg-red-dark disabled:opacity-50 text-primary-foreground font-bold px-6 py-2.5 rounded-lg text-[0.85rem] transition-colors flex items-center gap-2">
+            {saving ? <><Loader2 size={14} className="animate-spin" /> Saving…</> : "Save Changes"}
+          </button>
+          {savedAt && Date.now() - savedAt < 4000 && <span className="text-[0.78rem] text-green-600 flex items-center gap-1"><CheckCircle size={14} /> Saved</span>}
+        </div>
+      </div>
+
+      <div className="mt-4 bg-warm-50 border border-warm-100 rounded-2xl p-5">
+        <h3 className="font-semibold text-warm-800 mb-3 flex items-center gap-2"><AlertCircle size={16} className="text-red" /> Danger Zone</h3>
+        <button onClick={onLogout} className="text-[0.82rem] font-semibold text-warm-600 hover:text-red transition-colors flex items-center gap-1.5"><LogOut size={14} /> Log Out</button>
+      </div>
+    </div>
+  );
+};
+
+const Field = ({ label, value, onChange, disabled, type = "text", placeholder }: { label: string; value: string; onChange: (v: string) => void; disabled?: boolean; type?: string; placeholder?: string }) => (
+  <div>
+    <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">{label}</label>
+    <input type={type} value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} placeholder={placeholder} className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.85rem] focus:outline-none focus:border-red transition-colors disabled:bg-warm-50 disabled:text-warm-400" />
+  </div>
+);
