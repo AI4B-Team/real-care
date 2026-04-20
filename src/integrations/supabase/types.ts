@@ -396,6 +396,7 @@ export type Database = {
       subscriptions: {
         Row: {
           amount_cents: number
+          cancel_at_period_end: boolean
           cancellation_reason: string | null
           cancelled_at: string | null
           couples_discount: boolean
@@ -403,17 +404,22 @@ export type Database = {
           current_period_end: string | null
           current_period_start: string | null
           discount_percent: number
+          environment: string
           id: string
           patient_id: string
+          product_id: string | null
           product_name: string
           status: string
+          stripe_customer_id: string | null
           stripe_price_id: string
           stripe_subscription_id: string
           treatment_category: string
           updated_at: string
+          user_id: string | null
         }
         Insert: {
           amount_cents: number
+          cancel_at_period_end?: boolean
           cancellation_reason?: string | null
           cancelled_at?: string | null
           couples_discount?: boolean
@@ -421,17 +427,22 @@ export type Database = {
           current_period_end?: string | null
           current_period_start?: string | null
           discount_percent?: number
+          environment?: string
           id?: string
           patient_id: string
+          product_id?: string | null
           product_name: string
           status?: string
+          stripe_customer_id?: string | null
           stripe_price_id: string
           stripe_subscription_id: string
           treatment_category: string
           updated_at?: string
+          user_id?: string | null
         }
         Update: {
           amount_cents?: number
+          cancel_at_period_end?: boolean
           cancellation_reason?: string | null
           cancelled_at?: string | null
           couples_discount?: boolean
@@ -439,14 +450,18 @@ export type Database = {
           current_period_end?: string | null
           current_period_start?: string | null
           discount_percent?: number
+          environment?: string
           id?: string
           patient_id?: string
+          product_id?: string | null
           product_name?: string
           status?: string
+          stripe_customer_id?: string | null
           stripe_price_id?: string
           stripe_subscription_id?: string
           treatment_category?: string
           updated_at?: string
+          user_id?: string | null
         }
         Relationships: [
           {

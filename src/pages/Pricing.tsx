@@ -1,6 +1,8 @@
 import PageLayout from "@/components/realcare/PageLayout";
 import { ChevronRight, Check, ShieldCheck, Clock, Truck, HeartHandshake } from "lucide-react";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import { useStripeCheckout } from "@/hooks/useStripeCheckout";
+import { usePatient } from "@/hooks/usePatient";
 
 const Check2 = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -8,35 +10,44 @@ const Check2 = () => (
   </svg>
 );
 
-const plans = [
+interface PlanItem {
+  name: string;
+  sub: string;
+  price: string;
+  popular?: boolean;
+  priceId: string;
+  treatmentCategory: string;
+}
+
+const plans: { gender: string; color: string; items: PlanItem[] }[] = [
   {
     gender: "Men",
     color: "warm-800",
     items: [
-      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", price: "$179/mo", popular: true },
-      { name: "Low Testosterone (TRT)", sub: "Lab testing + personalized TRT", price: "$99/mo" },
-      { name: "Better Sex (ED)", sub: "Sildenafil, Tadalafil, Chewables", price: "From $2/dose" },
-      { name: "Hair Loss & Regrowth", sub: "Finasteride + minoxidil", price: "$39/mo" },
-      { name: "Peptides & Longevity", sub: "BPC-157, Sermorelin, CJC-1295", price: "$129/mo" },
-      { name: "Mental Health", sub: "Anxiety, depression, sleep", price: "$49/mo" },
-      { name: "Sleep Better", sub: "Personalized sleep support", price: "$39/mo" },
-      { name: "Comprehensive Lab Testing", sub: "40+ biomarkers, one-time", price: "$149" },
-      { name: "Supplements & Nutrition", sub: "Doctor-formulated stacks", price: "$49/mo" },
+      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", price: "$179/mo", popular: true, priceId: "weight_loss_glp1_monthly", treatmentCategory: "weight_loss" },
+      { name: "Low Testosterone (TRT)", sub: "Lab testing + personalized TRT", price: "$99/mo", priceId: "trt_monthly", treatmentCategory: "trt" },
+      { name: "Better Sex (ED)", sub: "Sildenafil, Tadalafil, Chewables", price: "$39/mo", priceId: "ed_treatment_monthly", treatmentCategory: "ed" },
+      { name: "Hair Loss & Regrowth", sub: "Finasteride + minoxidil", price: "$39/mo", priceId: "hair_mens_monthly", treatmentCategory: "hair" },
+      { name: "Peptides & Longevity", sub: "BPC-157, Sermorelin, CJC-1295", price: "$129/mo", priceId: "peptides_monthly", treatmentCategory: "peptides" },
+      { name: "Mental Health", sub: "Anxiety, depression, sleep", price: "$49/mo", priceId: "mental_health_monthly", treatmentCategory: "mental_health" },
+      { name: "Sleep Better", sub: "Personalized sleep support", price: "$39/mo", priceId: "sleep_monthly", treatmentCategory: "sleep" },
+      { name: "Comprehensive Lab Testing", sub: "40+ biomarkers, one-time", price: "$149", priceId: "lab_testing_one_time", treatmentCategory: "lab_testing" },
+      { name: "Supplements & Nutrition", sub: "Doctor-formulated stacks", price: "$49/mo", priceId: "supplements_monthly", treatmentCategory: "supplements" },
     ],
   },
   {
     gender: "Women",
     color: "warm-800",
     items: [
-      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", price: "$179/mo", popular: true },
-      { name: "Balance Hormones (HRT)", sub: "Bioidentical hormone therapy", price: "$89/mo" },
-      { name: "Prescription Skincare", sub: "Custom acne, anti-aging formulas", price: "$35/mo" },
-      { name: "Fuller, Thicker Hair", sub: "Prescription minoxidil blends", price: "$39/mo" },
-      { name: "Sexual Health & Libido", sub: "Low libido, vaginal dryness", price: "$49/mo" },
-      { name: "Mental Health", sub: "Anxiety, burnout, low mood", price: "$49/mo" },
-      { name: "Sleep Better", sub: "Personalized sleep support", price: "$39/mo" },
-      { name: "Birth Control", sub: "Pill, patch, ring — shipped free", price: "$20/mo" },
-      { name: "Women's Supplements", sub: "Collagen, hormones, GLP-1 companion", price: "$45/mo" },
+      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", price: "$179/mo", popular: true, priceId: "weight_loss_glp1_monthly", treatmentCategory: "weight_loss" },
+      { name: "Balance Hormones (HRT)", sub: "Bioidentical hormone therapy", price: "$89/mo", priceId: "menopause_hrt_monthly", treatmentCategory: "menopause" },
+      { name: "Prescription Skincare", sub: "Custom acne, anti-aging formulas", price: "$35/mo", priceId: "skincare_monthly", treatmentCategory: "skincare" },
+      { name: "Fuller, Thicker Hair", sub: "Prescription minoxidil blends", price: "$39/mo", priceId: "hair_womens_monthly", treatmentCategory: "hair" },
+      { name: "Sexual Health & Libido", sub: "Low libido, vaginal dryness", price: "$49/mo", priceId: "sexual_health_womens_monthly", treatmentCategory: "sexual_health" },
+      { name: "Mental Health", sub: "Anxiety, burnout, low mood", price: "$49/mo", priceId: "mental_health_monthly", treatmentCategory: "mental_health" },
+      { name: "Sleep Better", sub: "Personalized sleep support", price: "$39/mo", priceId: "sleep_monthly", treatmentCategory: "sleep" },
+      { name: "Birth Control", sub: "Pill, patch, ring — shipped free", price: "$20/mo", priceId: "birth_control_monthly", treatmentCategory: "birth_control" },
+      { name: "Women's Supplements", sub: "Collagen, hormones, GLP-1 companion", price: "$45/mo", priceId: "supplements_monthly", treatmentCategory: "supplements" },
     ],
   },
 ];
@@ -50,7 +61,25 @@ const included = [
   { icon: <Check2 />, label: "Cancel Anytime" },
 ];
 
-const Pricing = () => (
+const Pricing = () => {
+  const { openCheckout, CheckoutDialog } = useStripeCheckout();
+  const { user, patient } = usePatient();
+
+  const handleBuy = (item: PlanItem) => {
+    if (!user) {
+      window.location.href = `/login?redirect=/pricing`;
+      return;
+    }
+    openCheckout({
+      priceId: item.priceId,
+      treatmentCategory: item.treatmentCategory,
+      productName: item.name,
+      customerEmail: user.email || patient?.email,
+      userId: user.id,
+    });
+  };
+
+  return (
   <PageLayout title="Pricing">
     {/* Hero */}
     <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-16">
@@ -98,7 +127,12 @@ const Pricing = () => (
               {/* Items */}
               <div>
                 {plan.items.map((item, i) => (
-                  <div key={item.name} className={`flex items-center justify-between gap-4 px-7 py-4 ${i < plan.items.length - 1 ? "border-b border-warm-100" : ""} hover:bg-warm-50 transition-colors`}>
+                  <button
+                    type="button"
+                    onClick={() => handleBuy(item)}
+                    key={item.name}
+                    className={`w-full text-left flex items-center justify-between gap-4 px-7 py-4 ${i < plan.items.length - 1 ? "border-b border-warm-100" : ""} hover:bg-warm-50 transition-colors`}
+                  >
                     <div className="flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-[0.92rem] font-semibold text-warm-800">{item.name}</span>
@@ -112,9 +146,9 @@ const Pricing = () => (
                     </div>
                     <div className="text-right flex-shrink-0">
                       <div className="text-[0.92rem] font-bold text-red">{item.price}</div>
-                      <div className="text-[0.62rem] text-warm-400">all-inclusive</div>
+                      <div className="text-[0.62rem] text-warm-400">Get started →</div>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
               {/* Footer */}
@@ -192,7 +226,9 @@ const Pricing = () => (
         Prices shown are starting prices and may vary based on treatment plan, dosage, and location. Compounded medications are not FDA-approved as finished products. Payment does not guarantee prescribing of medication — all prescribing decisions are at the sole discretion of your licensed provider. Money-back guarantee applies to GLP-1 weight loss program only, subject to program terms. Individuals in advertising may be models or actors.
       </p>
     </div>
+    <CheckoutDialog />
   </PageLayout>
-);
+  );
+};
 
 export default Pricing;
