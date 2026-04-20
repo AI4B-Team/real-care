@@ -22,12 +22,20 @@ const PatientPortal = () => {
   const [tab, setTab] = useState<Tab>("overview");
   const [messages, setMessages] = useState<Message[]>([]);
   const [orders, setOrders] = useState<Order[]>([]);
+  const [pendingCases, setPendingCases] = useState<PendingCase[]>([]);
   const [newMessage, setNewMessage] = useState("");
   const [sendingMsg, setSendingMsg] = useState(false);
   const [refillSubmitted, setRefillSubmitted] = useState(false);
   const [refillData, setRefillData] = useState({ weightChange: "", satisfaction: "5", sideEffects: "", notes: "" });
 
   useEffect(() => { if (!loading && !patient) window.location.href = "/login"; }, [loading, patient]);
+
+  useEffect(() => {
+    if (!patient) return;
+    supabase.from("cases").select("id,treatment_category,status,consent_signed").eq("patient_id", patient.id).in("status", ["pending_intake", "pending"]).then(({ data }) => {
+      if (data) setPendingCases(data as PendingCase[]);
+    });
+  }, [patient]);
 
   useEffect(() => {
     if (!patient || tab !== "messages") return;
