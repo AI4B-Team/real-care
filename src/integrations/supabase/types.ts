@@ -103,6 +103,47 @@ export type Database = {
         }
         Relationships: []
       }
+      messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          patient_id: string
+          read_by_patient: boolean
+          read_by_staff: boolean
+          sender: string
+          sender_name: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          patient_id: string
+          read_by_patient?: boolean
+          read_by_staff?: boolean
+          sender: string
+          sender_name?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          patient_id?: string
+          read_by_patient?: boolean
+          read_by_staff?: boolean
+          sender?: string
+          sender_name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       orders: {
         Row: {
           amount_cents: number
