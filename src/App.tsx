@@ -29,6 +29,8 @@ import Login from "./pages/Login.tsx";
 import PatientPortal from "./pages/PatientPortal.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 import CheckoutSuccess from "./pages/CheckoutSuccess.tsx";
+import CheckoutReturn from "./pages/CheckoutReturn.tsx";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 
 // Products
 import WeightLoss from "./pages/WeightLoss.tsx";
@@ -57,6 +59,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PaymentTestModeBanner />
         <Routes>
           {/* Home */}
           <Route path="/" element={<Index />} />
@@ -82,6 +85,7 @@ const App = () => (
           <Route path="/patient-portal" element={<PatientPortal />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
+          <Route path="/checkout/return" element={<CheckoutReturn />} />
 
           {/* Products */}
           <Route path="/weight-loss" element={<WeightLoss />} />
