@@ -1,8 +1,11 @@
+import { useState } from "react";
 import PageLayout from "@/components/realcare/PageLayout";
-import { ChevronRight, Check, ShieldCheck, Clock, Truck, HeartHandshake } from "lucide-react";
+import { ChevronRight, Check, ShieldCheck, Clock, Truck, HeartHandshake, MapPin } from "lucide-react";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import { useStripeCheckout } from "@/hooks/useStripeCheckout";
 import { usePatient } from "@/hooks/usePatient";
+import { usePatientAddress } from "@/hooks/usePatientAddress";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const Check2 = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -233,6 +236,20 @@ const Pricing = () => {
       </p>
     </div>
     <CheckoutDialog />
+    <Dialog open={!!addressPrompt} onOpenChange={(open) => !open && setAddressPrompt(null)}>
+      <DialogContent className="max-w-md">
+        <DialogHeader>
+          <DialogTitle className="flex items-center gap-2"><MapPin size={18} className="text-red" /> Add a shipping address</DialogTitle>
+          <DialogDescription>
+            We need a shipping address before we can fulfill your prescription. Add yours in your account settings — it only takes a minute.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="flex gap-2 mt-2">
+          <a href="/patient-portal" className="flex-1 bg-red hover:bg-red-dark text-primary-foreground font-bold px-5 py-2.5 rounded-lg text-[0.85rem] text-center transition-colors">Add address →</a>
+          <button onClick={() => setAddressPrompt(null)} className="px-5 py-2.5 rounded-lg text-[0.85rem] border border-warm-200 text-warm-600 hover:border-warm-400 transition-colors">Cancel</button>
+        </div>
+      </DialogContent>
+    </Dialog>
   </PageLayout>
   );
 };
