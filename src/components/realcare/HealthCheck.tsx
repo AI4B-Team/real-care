@@ -176,7 +176,7 @@ const HealthCheck = () => {
                   </div>
                 ))}
               </div>
-              <a href="#men" className="block w-full text-center bg-red hover:bg-red-dark text-primary-foreground text-[0.77rem] font-semibold px-5 py-2.5 rounded-[7px] transition-colors">
+              <a href="/men" className="block w-full text-center bg-red hover:bg-red-dark text-primary-foreground text-[0.77rem] font-semibold px-5 py-2.5 rounded-[7px] transition-colors">
                 View All Treatments →
               </a>
               <div className="flex items-center justify-between mt-auto pt-5 border-t border-warm-100">

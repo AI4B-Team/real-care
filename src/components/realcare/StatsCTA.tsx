@@ -1,8 +1,8 @@
 const stats = [
-  { n: "89%", l: "See Results In 30 Days" },
-  { n: "500K+", l: "Active Patients" },
-  { n: "4.8★", l: "Patient Rating" },
   { n: "50", l: "States Licensed" },
+  { n: "24/7", l: "Provider Access" },
+  { n: "$0", l: "Membership Fee — Ever" },
+  { n: "100%", l: "Online — No Office Visit" },
 ];
 
 const StatsCTA = () => (
@@ -12,9 +12,9 @@ const StatsCTA = () => (
       Results You Can<br />Actually Measure
     </h2>
     <p className="text-[0.9rem] text-primary-foreground/70 max-w-[460px] mx-auto mb-8 leading-[1.7]">
-      Real Care patients report real, trackable results — monitored through our Care Score system that updates with your progress every month.
+      Doctor-prescribed care, delivered to your door. No waiting rooms, no insurance, no membership fees — ever.
     </p>
-    <a href="#health-check" className="inline-block bg-background text-red text-[0.85rem] font-bold px-8 py-3.5 rounded-lg hover:bg-warm-50 transition-colors">
+    <a href="/health-check" className="inline-block bg-background text-red text-[0.85rem] font-bold px-8 py-3.5 rounded-lg hover:bg-warm-50 transition-colors">
       See What I Qualify For →
     </a>
     <div className="mt-4 text-[0.75rem] text-primary-foreground/70 font-medium">

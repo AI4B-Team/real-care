@@ -17,7 +17,7 @@ const Couples = () => (
       <div className="text-[1rem] text-warm-600 mb-8">
         <span className="text-red font-bold">Save 15%</span> When You Both Enroll Together
       </div>
-      <a href="#health-check" className="inline-block bg-red hover:bg-red-dark text-primary-foreground text-[0.9rem] font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-sm">
+      <a href="/health-check" className="inline-block bg-red hover:bg-red-dark text-primary-foreground text-[0.9rem] font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-sm">
         Get Treated Together →
       </a>
       <div className="grid sm:grid-cols-3 gap-4 mt-12 max-w-[820px] mx-auto">

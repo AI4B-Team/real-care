@@ -1,5 +1,26 @@
 import SectionHeader from "./SectionHeader";
 
+const PRODUCT_ROUTES: Record<string, string> = {
+  "GLP-1 Weight Loss": "/weight-loss",
+  "Low Testosterone (TRT)": "/testosterone",
+  "Hair Loss & Regrowth": "/hair-loss",
+  "Peptides & Longevity": "/peptides",
+  "Sleep Better": "/mental-health",
+  "Mental Health": "/mental-health",
+  "Comprehensive Lab Testing": "/lab-testing",
+  "Supplements & Nutrition": "/weight-loss",
+  "Prescription Skincare": "/skincare",
+  "Fuller, Thicker Hair": "/hair-loss",
+  "Reduce Stress": "/mental-health",
+  "Sexual Health & Libido": "/women",
+  "Women's Supplements": "/women",
+  "Birth Control": "/women",
+  "Balance Hormones": "/menopause",
+};
+
+const getRoute = (name: string, id: string) =>
+  PRODUCT_ROUTES[name] || (id === "men" ? "/men" : "/women");
+
 export interface Product {
   img: string;
   name: string;
@@ -43,7 +64,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
               ✓ No Membership Or Hidden Fees — Everything You Need Is Included
             </div>
           </div>
-          <a href="#" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.8rem] font-semibold px-5 py-2.5 rounded-md transition-colors">
+          <a href={id === "men" ? "/men" : "/women"} className="bg-red hover:bg-red-dark text-primary-foreground text-[0.8rem] font-semibold px-5 py-2.5 rounded-md transition-colors">
             {ctaText}
           </a>
         </div>
@@ -65,7 +86,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
               ))}
             </div>
             <div className="text-[0.82rem] font-medium text-warm-600 mb-4">{featured.price}</div>
-            <a href="#" className="inline-block bg-red hover:bg-red-dark text-primary-foreground text-[0.77rem] font-semibold px-6 py-3 rounded-[7px] transition-colors w-fit">
+            <a href={id === "men" ? "/ed-treatment" : "/weight-loss"} className="inline-block bg-red hover:bg-red-dark text-primary-foreground text-[0.77rem] font-semibold px-6 py-3 rounded-[7px] transition-colors w-fit">
               {featured.cta}
             </a>
           </div>
@@ -76,7 +97,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
           {products.map((p, i) => {
             const isGLP1 = /GLP-1|Weight Loss/i.test(p.name);
             return (
-            <a href="#" key={p.name} className={`bg-card border border-warm-100 rounded-[14px] overflow-hidden hover:shadow-hover hover:-translate-y-0.5 transition-all group flex flex-col fade-up delay-${(i % 4) + 1}`}>
+            <a href={getRoute(p.name, id)} key={p.name} className={`bg-card border border-warm-100 rounded-[14px] overflow-hidden hover:shadow-hover hover:-translate-y-0.5 transition-all group flex flex-col fade-up delay-${(i % 4) + 1}`}>
               <div className="relative aspect-[4/3] overflow-hidden bg-warm-50">
                 <img src={p.img} alt={p.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                 {p.pill && (

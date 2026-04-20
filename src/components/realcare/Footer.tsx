@@ -2,9 +2,43 @@ import qrReal from "@/assets/qr-real.png";
 import phoneDoctor from "@/assets/app-phone-doctor.png";
 
 const sections = [
-  { title: "Treatment", links: ["Weight Loss", "Better Sex (ED)", "Testosterone (TRT)", "Fuller Hair", "Skincare", "Menopause & HRT", "Mental Health", "Peptides & Longevity", "Lab Testing"] },
-  { title: "Company", links: ["Our Doctors", "Care Coaching", "How It Works", "Real Health Blog", "Refer A Friend", "Couples Care", "Affiliates"] },
-  { title: "Support", links: ["Contact Us", "Patient Portal", "Pricing & Plans", "FAQ", "Shipping Info", "Refund Policy"] },
+  {
+    title: "Treatment",
+    links: [
+      { label: "Weight Loss", href: "/weight-loss" },
+      { label: "Better Sex (ED)", href: "/ed-treatment" },
+      { label: "Testosterone (TRT)", href: "/testosterone" },
+      { label: "Fuller Hair", href: "/hair-loss" },
+      { label: "Skincare", href: "/skincare" },
+      { label: "Menopause & HRT", href: "/menopause" },
+      { label: "Mental Health", href: "/mental-health" },
+      { label: "Peptides & Longevity", href: "/peptides" },
+      { label: "Lab Testing", href: "/lab-testing" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "Our Doctors", href: "/our-doctors" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Real Health Blog", href: "/blog" },
+      { label: "Couples Care", href: "/couples" },
+      { label: "Affiliates", href: "/affiliates" },
+      { label: "About Us", href: "/about" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { label: "Contact Us", href: "/contact" },
+      { label: "Patient Portal", href: "/patient-portal" },
+      { label: "Pricing & Plans", href: "/pricing" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "Refund Policy", href: "/refund-policy" },
+      { label: "Telehealth Consent", href: "/telehealth-consent" },
+      { label: "Log In", href: "/login" },
+    ],
+  },
 ];
 
 const Footer = () => (
@@ -37,8 +71,8 @@ const Footer = () => (
             Track your treatment, message your provider, and reorder in seconds. Available on iOS and Android.
           </p>
           <div className="flex gap-2.5 flex-wrap">
-            <a href="#" className="bg-white text-black text-[0.78rem] font-semibold px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors">Download for iOS</a>
-            <a href="#" className="border border-white/30 text-white text-[0.78rem] font-semibold px-5 py-2.5 rounded-lg hover:border-white transition-colors">Download for Android</a>
+            <a href="https://realcare.com/app" className="bg-white text-black text-[0.78rem] font-semibold px-5 py-2.5 rounded-lg hover:bg-white/90 transition-colors">Download for iOS</a>
+            <a href="https://realcare.com/app" className="border border-white/30 text-white text-[0.78rem] font-semibold px-5 py-2.5 rounded-lg hover:border-white transition-colors">Download for Android</a>
           </div>
         </div>
         <div className="relative flex items-center gap-5 lg:justify-end z-20 lg:-ml-10">
@@ -64,7 +98,7 @@ const Footer = () => (
           </p>
           <div className="flex gap-2">
             {["Instagram", "TikTok", "YouTube"].map((s) => (
-              <a key={s} href="#" className="text-[0.62rem] font-semibold tracking-wider border border-white/30 text-white/80 px-3 py-1.5 rounded hover:border-red hover:text-red transition-colors">
+              <a key={s} href={s === "Instagram" ? "https://instagram.com/realcarehealth" : s === "TikTok" ? "https://tiktok.com/@realcarehealth" : "https://youtube.com/@realcarehealth"} target="_blank" rel="noopener noreferrer" className="text-[0.62rem] font-semibold tracking-wider border border-white/30 text-white/80 px-3 py-1.5 rounded hover:border-red hover:text-red transition-colors">
                 {s}
               </a>
             ))}
@@ -75,7 +109,7 @@ const Footer = () => (
             <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-white/60 mb-4">{s.title}</div>
             <div className="flex flex-col gap-2.5">
               {s.links.map((l) => (
-                <a key={l} href="#" className="text-[0.79rem] text-white/80 hover:text-white transition-colors">{l}</a>
+                <a key={l.label} href={l.href} className="text-[0.79rem] text-white/80 hover:text-white transition-colors">{l.label}</a>
               ))}
             </div>
           </div>
@@ -84,8 +118,14 @@ const Footer = () => (
       <div className="border-t border-white/15 pt-8 flex justify-between items-center flex-wrap gap-4">
         <div className="text-[0.69rem] text-white/60">© 2026 Real Care Inc. All Rights Reserved. REALCARE.COM</div>
         <div className="flex gap-6">
-          {["Terms", "Privacy", "Medical Consent", "HIPAA"].map((l) => (
-            <a key={l} href="#" className="text-[0.69rem] text-white/60 hover:text-white transition-colors">{l}</a>
+          {[
+            { label: "Terms", href: "/terms" },
+            { label: "Privacy", href: "/privacy" },
+            { label: "Medical Consent", href: "/medical-consent" },
+            { label: "HIPAA", href: "/hipaa" },
+            { label: "Telehealth Consent", href: "/telehealth-consent" },
+          ].map((l) => (
+            <a key={l.label} href={l.href} className="text-[0.69rem] text-white/60 hover:text-white transition-colors">{l.label}</a>
           ))}
         </div>
       </div>

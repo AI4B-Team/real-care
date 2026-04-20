@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main pages -->
+  <url><loc>https://realcare.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://realcare.com/men</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://realcare.com/women</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Product pages -->
+  <url><loc>https://realcare.com/weight-loss</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://realcare.com/ed-treatment</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://realcare.com/testosterone</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://realcare.com/hair-loss</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/skincare</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/mental-health</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/menopause</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://realcare.com/peptides</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://realcare.com/lab-testing</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Info pages -->
+  <url><loc>https://realcare.com/pricing</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://realcare.com/how-it-works</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/our-doctors</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/couples</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://realcare.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://realcare.com/blog</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/affiliates</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://realcare.com/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://realcare.com/health-check</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
+
+  <!-- Blog posts -->
+  <url><loc>https://realcare.com/blog/semaglutide-vs-tirzepatide</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://realcare.com/blog/low-testosterone-signs</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://realcare.com/blog/perimenopause-vs-menopause</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://realcare.com/blog/glp1-side-effects</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://realcare.com/blog/ed-in-young-men</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://realcare.com/blog/tretinoin-vs-retinol</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://realcare.com/blog/real-care-vs-hims-vs-ro</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://realcare.com/blog/compounded-semaglutide</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://realcare.com/blog/female-hair-loss-hormones</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Legal pages -->
+  <url><loc>https://realcare.com/terms</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://realcare.com/privacy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://realcare.com/hipaa</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://realcare.com/medical-consent</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://realcare.com/refund-policy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://realcare.com/telehealth-consent</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+</urlset>

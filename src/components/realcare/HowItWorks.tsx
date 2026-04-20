@@ -42,7 +42,7 @@ const HowItWorks = () => (
             Most patients go from first question to first delivery in under 48 hours.
           </p>
         </div>
-        <a href="#health-check" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.85rem] font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5">
+        <a href="/health-check" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.85rem] font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5">
           Take Your Health Check →
         </a>
       </div>

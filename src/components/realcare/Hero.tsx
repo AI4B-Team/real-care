@@ -26,15 +26,15 @@ const Hero = () => (
           Doctor-prescribed treatment for the things that matter most — no waiting room, no insurance battles, no runaround. For him and for her.
         </p>
         <div className="flex gap-2.5 flex-wrap items-center">
-          <a href="#health-check" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.8rem] font-semibold px-6 py-2.5 rounded-lg transition-all hover:-translate-y-0.5">
+          <a href="/health-check" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.8rem] font-semibold px-6 py-2.5 rounded-lg transition-all hover:-translate-y-0.5">
             Take Your Health Check →
           </a>
-          <a href="#how" className="border-[1.5px] border-warm-200 hover:border-warm-600 text-warm-800 text-[0.8rem] font-medium px-5 py-2.5 rounded-lg transition-colors">
+          <a href="/how-it-works" className="border-[1.5px] border-warm-200 hover:border-warm-600 text-warm-800 text-[0.8rem] font-medium px-5 py-2.5 rounded-lg transition-colors">
             How It Works
           </a>
         </div>
         <div className="flex gap-4 flex-wrap mt-3.5">
-          {["No Membership Fees", "1:1 Physician Guidance", "24/7 Support", "Free Discreet Shipping"].map((t) => (
+          {["No Membership Fees", "1:1 Physician Guidance", "Money-Back Guarantee", "Free Discreet Shipping"].map((t) => (
             <div key={t} className="flex items-center gap-1.5 text-[0.7rem] text-warm-600">
               <span className="text-red"><Check /></span>{t}
             </div>
@@ -49,8 +49,8 @@ const Hero = () => (
           <img src={doctorImg} alt="Licensed Real Care provider" className="w-full h-full object-cover object-center" />
         </div>
         <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-md rounded-xl px-3.5 py-2.5 flex items-center gap-2.5 shadow-soft">
-          <div className="font-display text-xl font-black text-red leading-none">4.8★</div>
-          <div className="text-[0.65rem] text-warm-600 leading-snug">From 11,400+<br />Verified Reviews</div>
+          <div className="font-display text-xl font-black text-red leading-none">$0</div>
+          <div className="text-[0.65rem] text-warm-600 leading-snug">Membership Fee<br />Guaranteed. Ever.</div>
         </div>
       </div>
     </div>
