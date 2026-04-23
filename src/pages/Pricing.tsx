@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PageLayout from "@/components/realcare/PageLayout";
 import { ChevronRight, ShieldCheck, Truck, Clock, Check } from "lucide-react";
 
@@ -39,11 +38,65 @@ const womenRows: PricingRow[] = [
   { name: "Lab Testing", sub: "40+ biomarkers, one-time panel", monthly: 149, fromPrice: 149, href: "/lab-testing" },
 ];
 
+const PricingColumn = ({ title, rows }: { title: string; rows: PricingRow[] }) => (
+  <div className="bg-card border border-warm-100 rounded-2xl overflow-hidden shadow-soft">
+    <div className="bg-warm-800 px-6 py-3 text-[0.65rem] font-bold tracking-[0.12em] uppercase text-primary-foreground flex justify-between items-center">
+      <div>{title}</div>
+      <div className="text-primary-foreground/50">Starting From</div>
+    </div>
+
+    {rows.map((row, i) => {
+      const isOneTime = row.monthly === 149;
+      const displayPrice = row.fromPrice;
+      return (
+        <a
+          key={row.name}
+          href="/health-check"
+          className={`flex items-center justify-between gap-4 px-6 py-4 hover:bg-warm-50 group transition-colors ${
+            i < rows.length - 1 ? "border-b border-warm-100" : ""
+          }`}
+        >
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[0.9rem] font-semibold text-warm-800 group-hover:text-red transition-colors">
+                {row.name}
+              </span>
+              {row.popular && (
+                <span className="bg-red text-primary-foreground text-[0.52rem] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
+                  Most Popular
+                </span>
+              )}
+              {row.guarantee && (
+                <span className="border border-warm-200 text-warm-700 bg-warm-50 text-[0.52rem] font-bold uppercase px-2 py-0.5 rounded-full">
+                  Money-Back
+                </span>
+              )}
+            </div>
+            <div className="text-[0.72rem] text-warm-400 mt-0.5">{row.sub}</div>
+          </div>
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="text-right">
+              {isOneTime ? (
+                <div className="text-[0.95rem] font-bold text-red">
+                  $149 <span className="text-[0.65rem] font-normal text-warm-400">one-time</span>
+                </div>
+              ) : (
+                <div className="text-[0.95rem] font-bold text-red">
+                  From ${displayPrice}
+                  <span className="text-[0.65rem] font-normal text-warm-400">/mo</span>
+                </div>
+              )}
+              <div className="text-[0.62rem] text-warm-400">All-inclusive</div>
+            </div>
+            <ChevronRight size={14} className="text-warm-300 group-hover:text-red transition-colors flex-shrink-0" />
+          </div>
+        </a>
+      );
+    })}
+  </div>
+);
+
 const Pricing = () => {
-  const [activeGender, setActiveGender] = useState<"men" | "women">("men");
-
-  const rows = activeGender === "men" ? menRows : womenRows;
-
   return (
     <PageLayout title="Pricing — One Price, Everything Included">
       {/* Hero */}
@@ -82,79 +135,10 @@ const Pricing = () => {
       </div>
 
       <div className="bg-background px-5 md:px-12 pt-12 pb-24">
-        <div className="max-w-[900px] mx-auto">
-          {/* Gender toggle */}
-          <div className="flex justify-center mb-8 fade-up">
-            <div className="inline-flex bg-warm-50 border border-warm-100 rounded-xl p-1 gap-1">
-              {(["men", "women"] as const).map((g) => (
-                <button
-                  key={g}
-                  type="button"
-                  onClick={() => setActiveGender(g)}
-                  className={`px-7 py-2 rounded-lg text-[0.85rem] font-semibold transition-all ${
-                    activeGender === g ? "bg-red text-primary-foreground shadow-sm" : "text-warm-600 hover:text-warm-800"
-                  }`}
-                >
-                  {g === "men" ? "Men's Treatments" : "Women's Treatments"}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-card border border-warm-100 rounded-2xl overflow-hidden shadow-soft fade-up">
-            <div className="bg-warm-800 px-6 py-3 text-[0.65rem] font-bold tracking-[0.12em] uppercase text-primary-foreground/50 flex justify-between">
-              <div>Treatment</div>
-              <div>Starting From</div>
-            </div>
-
-            {rows.map((row, i) => {
-              const isOneTime = row.monthly === 149;
-              const displayPrice = row.fromPrice;
-              return (
-                <a
-                  key={row.name}
-                  href="/health-check"
-                  className={`flex items-center justify-between gap-4 px-6 py-4 hover:bg-warm-50 group transition-colors ${
-                    i < rows.length - 1 ? "border-b border-warm-100" : ""
-                  }`}
-                >
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-[0.9rem] font-semibold text-warm-800 group-hover:text-red transition-colors">
-                        {row.name}
-                      </span>
-                      {row.popular && (
-                        <span className="bg-red text-primary-foreground text-[0.52rem] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded-full">
-                          Most Popular
-                        </span>
-                      )}
-                      {row.guarantee && (
-                        <span className="border border-warm-200 text-warm-700 bg-warm-50 text-[0.52rem] font-bold uppercase px-2 py-0.5 rounded-full">
-                          Money-Back Guarantee
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-[0.72rem] text-warm-400 mt-0.5">{row.sub}</div>
-                  </div>
-                  <div className="flex items-center gap-3 flex-shrink-0">
-                    <div className="text-right">
-                      {isOneTime ? (
-                        <div className="text-[0.95rem] font-bold text-red">
-                          $149 <span className="text-[0.65rem] font-normal text-warm-400">one-time</span>
-                        </div>
-                      ) : (
-                        <div className="text-[0.95rem] font-bold text-red">
-                          From ${displayPrice}
-                          <span className="text-[0.65rem] font-normal text-warm-400">/mo</span>
-                        </div>
-                      )}
-                      <div className="text-[0.62rem] text-warm-400">All-inclusive</div>
-                    </div>
-                    <ChevronRight size={14} className="text-warm-300 group-hover:text-red transition-colors flex-shrink-0" />
-                  </div>
-                </a>
-              );
-            })}
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 fade-up">
+            <PricingColumn title="Men's Health" rows={menRows} />
+            <PricingColumn title="Women's Health" rows={womenRows} />
           </div>
 
           {/* What's included callout */}
