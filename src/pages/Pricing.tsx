@@ -13,10 +13,21 @@ const Check2 = () => (
   </svg>
 );
 
+type BillingCycle = "monthly" | "quarterly" | "semiannual" | "annual";
+
+const cycles: { id: BillingCycle; label: string; sub: string; multiplier: number; months: number; saveLabel?: string }[] = [
+  { id: "monthly", label: "Monthly", sub: "Pay as you go", multiplier: 1, months: 1 },
+  { id: "quarterly", label: "3 Months", sub: "Save 5%", multiplier: 0.95, months: 3, saveLabel: "Save 5%" },
+  { id: "semiannual", label: "6 Months", sub: "Save 10%", multiplier: 0.9, months: 6, saveLabel: "Save 10%" },
+  { id: "annual", label: "Annual", sub: "Save 15%", multiplier: 0.85, months: 12, saveLabel: "Best value" },
+];
+
 interface PlanItem {
   name: string;
   sub: string;
-  price: string;
+  basePrice: number;
+  oneTime?: boolean;
+  firstMonth?: number;
   popular?: boolean;
   priceId: string;
   treatmentCategory: string;
@@ -27,33 +38,44 @@ const plans: { gender: string; color: string; items: PlanItem[] }[] = [
     gender: "Men",
     color: "warm-800",
     items: [
-      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", price: "$179/mo", popular: true, priceId: "weight_loss_glp1_monthly", treatmentCategory: "weight_loss" },
-      { name: "Low Testosterone (TRT)", sub: "Lab testing + personalized TRT", price: "$99/mo", priceId: "trt_monthly", treatmentCategory: "trt" },
-      { name: "Better Sex (ED)", sub: "Sildenafil, Tadalafil, Chewables", price: "$39/mo", priceId: "ed_treatment_monthly", treatmentCategory: "ed" },
-      { name: "Hair Loss & Regrowth", sub: "Finasteride + minoxidil", price: "$39/mo", priceId: "hair_mens_monthly", treatmentCategory: "hair" },
-      { name: "Peptides & Longevity", sub: "BPC-157, Sermorelin, CJC-1295", price: "$129/mo", priceId: "peptides_monthly", treatmentCategory: "peptides" },
-      { name: "Mental Health", sub: "Anxiety, depression, sleep", price: "$49/mo", priceId: "mental_health_monthly", treatmentCategory: "mental_health" },
-      { name: "Sleep Better", sub: "Personalized sleep support", price: "$39/mo", priceId: "sleep_monthly", treatmentCategory: "sleep" },
-      { name: "Comprehensive Lab Testing", sub: "40+ biomarkers, one-time", price: "$149", priceId: "lab_testing_one_time", treatmentCategory: "lab_testing" },
-      { name: "Supplements & Nutrition", sub: "Doctor-formulated stacks", price: "$49/mo", priceId: "supplements_monthly", treatmentCategory: "supplements" },
+      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", basePrice: 299, firstMonth: 179, popular: true, priceId: "weight_loss_glp1_monthly", treatmentCategory: "weight_loss" },
+      { name: "Low Testosterone (TRT)", sub: "Lab testing + personalized TRT", basePrice: 99, priceId: "trt_monthly", treatmentCategory: "trt" },
+      { name: "Better Sex (ED)", sub: "Sildenafil, Tadalafil, Chewables", basePrice: 39, priceId: "ed_treatment_monthly", treatmentCategory: "ed" },
+      { name: "Hair Loss & Regrowth", sub: "Finasteride + minoxidil", basePrice: 39, priceId: "hair_mens_monthly", treatmentCategory: "hair" },
+      { name: "Peptides & Longevity", sub: "BPC-157, Sermorelin, CJC-1295", basePrice: 129, priceId: "peptides_monthly", treatmentCategory: "peptides" },
+      { name: "Mental Health", sub: "Anxiety, depression, sleep", basePrice: 49, priceId: "mental_health_monthly", treatmentCategory: "mental_health" },
+      { name: "Sleep Better", sub: "Personalized sleep support", basePrice: 39, priceId: "sleep_monthly", treatmentCategory: "sleep" },
+      { name: "Comprehensive Lab Testing", sub: "40+ biomarkers, one-time", basePrice: 149, oneTime: true, priceId: "lab_testing_one_time", treatmentCategory: "lab_testing" },
+      { name: "Supplements & Nutrition", sub: "Doctor-formulated stacks", basePrice: 49, priceId: "supplements_monthly", treatmentCategory: "supplements" },
     ],
   },
   {
     gender: "Women",
     color: "warm-800",
     items: [
-      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", price: "$179/mo", popular: true, priceId: "weight_loss_glp1_monthly", treatmentCategory: "weight_loss" },
-      { name: "Balance Hormones (HRT)", sub: "Bioidentical hormone therapy", price: "$89/mo", priceId: "menopause_hrt_monthly", treatmentCategory: "menopause" },
-      { name: "Prescription Skincare", sub: "Custom acne, anti-aging formulas", price: "$35/mo", priceId: "skincare_monthly", treatmentCategory: "skincare" },
-      { name: "Fuller, Thicker Hair", sub: "Prescription minoxidil blends", price: "$39/mo", priceId: "hair_womens_monthly", treatmentCategory: "hair" },
-      { name: "Sexual Health & Libido", sub: "Low libido, vaginal dryness", price: "$49/mo", priceId: "sexual_health_womens_monthly", treatmentCategory: "sexual_health" },
-      { name: "Mental Health", sub: "Anxiety, burnout, low mood", price: "$49/mo", priceId: "mental_health_monthly", treatmentCategory: "mental_health" },
-      { name: "Sleep Better", sub: "Personalized sleep support", price: "$39/mo", priceId: "sleep_monthly", treatmentCategory: "sleep" },
-      { name: "Birth Control", sub: "Pill, patch, ring — shipped free", price: "$20/mo", priceId: "birth_control_monthly", treatmentCategory: "birth_control" },
-      { name: "Women's Supplements", sub: "Collagen, hormones, GLP-1 companion", price: "$45/mo", priceId: "supplements_monthly", treatmentCategory: "supplements" },
+      { name: "GLP-1 Weight Loss", sub: "Semaglutide & tirzepatide", basePrice: 299, firstMonth: 179, popular: true, priceId: "weight_loss_glp1_monthly", treatmentCategory: "weight_loss" },
+      { name: "Balance Hormones (HRT)", sub: "Bioidentical hormone therapy", basePrice: 89, priceId: "menopause_hrt_monthly", treatmentCategory: "menopause" },
+      { name: "Prescription Skincare", sub: "Custom acne, anti-aging formulas", basePrice: 35, priceId: "skincare_monthly", treatmentCategory: "skincare" },
+      { name: "Fuller, Thicker Hair", sub: "Prescription minoxidil blends", basePrice: 39, priceId: "hair_womens_monthly", treatmentCategory: "hair" },
+      { name: "Sexual Health & Libido", sub: "Low libido, vaginal dryness", basePrice: 49, priceId: "sexual_health_womens_monthly", treatmentCategory: "sexual_health" },
+      { name: "Mental Health", sub: "Anxiety, burnout, low mood", basePrice: 49, priceId: "mental_health_monthly", treatmentCategory: "mental_health" },
+      { name: "Sleep Better", sub: "Personalized sleep support", basePrice: 39, priceId: "sleep_monthly", treatmentCategory: "sleep" },
+      { name: "Birth Control", sub: "Pill, patch, ring — shipped free", basePrice: 20, priceId: "birth_control_monthly", treatmentCategory: "birth_control" },
+      { name: "Women's Supplements", sub: "Collagen, hormones, GLP-1 companion", basePrice: 45, priceId: "supplements_monthly", treatmentCategory: "supplements" },
     ],
   },
 ];
+
+function formatPrice(item: PlanItem, cycle: typeof cycles[number]): { primary: string; secondary?: string } {
+  if (item.oneTime) return { primary: `$${item.basePrice}`, secondary: "One-time" };
+  const monthly = Math.round(item.basePrice * cycle.multiplier);
+  if (cycle.id === "monthly") {
+    if (item.firstMonth) return { primary: `$${item.firstMonth} first mo`, secondary: `then $${item.basePrice}/mo` };
+    return { primary: `$${item.basePrice}/mo` };
+  }
+  const total = monthly * cycle.months;
+  return { primary: `$${monthly}/mo`, secondary: `$${total.toLocaleString()} billed every ${cycle.months} mo` };
+}
 
 const included = [
   { icon: <ShieldCheck size={20} />, label: "Doctor Consult Included" },
