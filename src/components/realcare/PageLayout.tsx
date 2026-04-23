@@ -8,9 +8,10 @@ interface Props {
   title?: string;
   description?: string;
   noIndex?: boolean;
+  minimalFooter?: boolean;
 }
 
-const PageLayout = ({ children, title, description, noIndex }: Props) => {
+const PageLayout = ({ children, title, description, noIndex, minimalFooter }: Props) => {
   useEffect(() => {
     if (title) document.title = `${title} | Real Care`;
     if (description) {
