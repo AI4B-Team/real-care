@@ -1,5 +1,5 @@
 import PageLayout from "@/components/realcare/PageLayout";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, CheckCircle2 } from "lucide-react";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 
 const Check = () => (
@@ -42,8 +42,13 @@ const WeightLoss = () => (
     <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-16">
       <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-10 items-center fade-up">
         <div>
-          <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full mb-4">
-            GLP-1 Weight Loss · Most Popular
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
+              GLP-1 Weight Loss · Most Popular
+            </div>
+            <div className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
+              <CheckCircle2 size={12} /> HSA/FSA Eligible
+            </div>
           </div>
           <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(2rem,4vw,3.2rem)] mb-4">
             Lose Weight.<br />

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import PageLayout from "./PageLayout";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, CheckCircle2 } from "lucide-react";
 
 const Check = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -60,6 +60,9 @@ const ProductPageTemplate = ({
               <Check /> {pill}
             </div>
           )}
+          <div className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
+            <CheckCircle2 size={12} /> HSA/FSA Eligible
+          </div>
         </div>
         <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(2rem,4vw,3.2rem)] mb-4 max-w-[680px]">
           {headline}
