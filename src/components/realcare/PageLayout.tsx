@@ -39,7 +39,7 @@ const PageLayout = ({ children, title, description, noIndex, minimalFooter }: Pr
       <Announce />
       <Nav />
       <main>{children}</main>
-      <Footer />
+      <Footer minimal={minimalFooter} />
     </div>
   );
 };
