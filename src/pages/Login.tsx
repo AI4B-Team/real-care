@@ -71,7 +71,7 @@ const Login = () => {
   const Active = slides[slide].icon;
 
   return (
-    <PageLayout title="Log In">
+    <PageLayout title="Log In" minimalFooter>
       <div className="bg-warm-50 min-h-[80vh] grid lg:grid-cols-2">
         {/* LEFT PANEL — Benefits slideshow */}
         <aside className="hidden lg:flex relative overflow-hidden bg-gradient-to-br from-red to-red-dark text-primary-foreground">
