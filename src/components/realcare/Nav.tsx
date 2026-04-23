@@ -1,16 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
-import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
-interface Language { code: string; label: string; flag: string; }
-const languages: Language[] = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
-  { code: "zh", label: "中文", flag: "🇨🇳" },
-];
 
 interface NavItem { title: string; href: string; desc?: string; badge?: string; }
 interface NavGroup { label: string; items: NavItem[]; }
@@ -70,18 +61,12 @@ const navGroups: NavGroup[] = [
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const [activeGroup, setActiveGroup] = useState<string | null>("Men");
-  const [langOpen, setLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState<Language>(languages[0]);
   const menuRef = useRef<HTMLDivElement>(null);
-  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setOpen(false);
-      }
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setLangOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -92,36 +77,7 @@ const Nav = () => {
 
   return (
     <nav className="bg-background border-b border-warm-100 flex items-center justify-between px-5 md:px-12 h-16 sticky top-0 z-50 shadow-[0_1px_0_hsl(var(--warm-100))]">
-      <div className="flex items-center gap-2">
-        <Logo href="/" />
-        <div className="relative" ref={langRef}>
-          <button
-            onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center gap-1.5 px-2.5 py-2 rounded-md hover:bg-warm-50 text-warm-700 transition-colors"
-            aria-label="Change language"
-          >
-            <span className="text-base leading-none">{currentLang.flag}</span>
-            <span className="hidden sm:inline text-[0.78rem] font-medium uppercase">{currentLang.code}</span>
-            <ChevronDown size={12} className="text-warm-400" />
-          </button>
-          {langOpen && (
-            <div className="absolute top-full left-0 mt-1 w-44 bg-card border border-warm-100 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.10)] overflow-hidden z-50 py-1">
-              {languages.map((l) => (
-                <button
-                  key={l.code}
-                  onClick={() => { setCurrentLang(l); setLangOpen(false); }}
-                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-[0.82rem] text-left transition-colors ${
-                    currentLang.code === l.code ? "bg-warm-50 text-red font-semibold" : "text-warm-700 hover:bg-warm-50"
-                  }`}
-                >
-                  <span className="text-base leading-none">{l.flag}</span>
-                  <span>{l.label}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+      <Logo href="/" />
 
       <div className="hidden lg:flex items-center gap-1">
         <a href="/#men" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Men</a>
