@@ -128,6 +128,9 @@ const Footer = ({ minimal = false }: { minimal?: boolean }) => (
             { label: "Medical Consent", href: "/medical-consent" },
             { label: "HIPAA", href: "/hipaa" },
             { label: "Telehealth Consent", href: "/telehealth-consent" },
+            { label: "Accessibility", href: "/accessibility" },
+            { label: "Cookies", href: "/cookies" },
+            { label: "Consumer Health Data", href: "/consumer-health-data-privacy" },
           ].map((l) => (
             <a key={l.label} href={l.href} className="text-[0.69rem] text-white/60 hover:text-white transition-colors">{l.label}</a>
           ))}

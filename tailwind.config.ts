@@ -55,6 +55,10 @@ export default {
           dark: "hsl(var(--red-dark))",
           light: "hsl(var(--red-light))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
         warm: {
           50: "hsl(var(--warm-50))",
           100: "hsl(var(--warm-100))",

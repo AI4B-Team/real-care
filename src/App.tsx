@@ -52,6 +52,12 @@ import Hipaa from "./pages/Hipaa.tsx";
 import MedicalConsent from "./pages/MedicalConsent.tsx";
 import RefundPolicy from "./pages/RefundPolicy.tsx";
 import TelehealthConsent from "./pages/TelehealthConsent.tsx";
+import Accessibility from "./pages/Accessibility.tsx";
+import Cookies from "./pages/Cookies.tsx";
+import ConsumerHealthDataPrivacy from "./pages/ConsumerHealthDataPrivacy.tsx";
+
+// Tools
+import Glp1Quiz from "./pages/Glp1Quiz.tsx";
 
 const queryClient = new QueryClient();
 
@@ -109,6 +115,12 @@ const App = () => (
           <Route path="/medical-consent" element={<MedicalConsent />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/telehealth-consent" element={<TelehealthConsent />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/consumer-health-data-privacy" element={<ConsumerHealthDataPrivacy />} />
+
+          {/* Tools */}
+          <Route path="/glp1-quiz" element={<Glp1Quiz />} />
 
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
