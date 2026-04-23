@@ -8,19 +8,6 @@ interface NavGroup { label: string; items: NavItem[]; }
 
 const navGroups: NavGroup[] = [
   {
-    label: "Men",
-    items: [
-      { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $179/mo", badge: "Popular" },
-      { title: "Better Sex", href: "/ed-treatment", desc: "ED from $2/dose", badge: "#1" },
-      { title: "Testosterone", href: "/testosterone", desc: "TRT from $99/mo" },
-      { title: "Hair Loss", href: "/hair-loss", desc: "From $39/mo" },
-      { title: "Peptides", href: "/peptides", desc: "From $129/mo", badge: "New" },
-      { title: "Mental Health", href: "/mental-health", desc: "From $49/mo" },
-      { title: "Lab Testing", href: "/lab-testing", desc: "From $149" },
-      { title: "All Men's", href: "/men", desc: "See everything" },
-    ],
-  },
-  {
     label: "Women",
     items: [
       { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $179/mo", badge: "Popular" },
@@ -31,6 +18,19 @@ const navGroups: NavGroup[] = [
       { title: "Birth Control", href: "/women", desc: "From $20/mo" },
       { title: "Lab Testing", href: "/lab-testing", desc: "From $149" },
       { title: "All Women's", href: "/women", desc: "See everything" },
+    ],
+  },
+  {
+    label: "Men",
+    items: [
+      { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $179/mo", badge: "Popular" },
+      { title: "Better Sex", href: "/ed-treatment", desc: "ED from $2/dose", badge: "#1" },
+      { title: "Testosterone", href: "/testosterone", desc: "TRT from $99/mo" },
+      { title: "Hair Loss", href: "/hair-loss", desc: "From $39/mo" },
+      { title: "Peptides", href: "/peptides", desc: "From $129/mo", badge: "New" },
+      { title: "Mental Health", href: "/mental-health", desc: "From $49/mo" },
+      { title: "Lab Testing", href: "/lab-testing", desc: "From $149" },
+      { title: "All Men's", href: "/men", desc: "See everything" },
     ],
   },
   {
@@ -60,7 +60,7 @@ const navGroups: NavGroup[] = [
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
-  const [activeGroup, setActiveGroup] = useState<string | null>("Men");
+  const [activeGroup, setActiveGroup] = useState<string | null>("Women");
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -80,8 +80,8 @@ const Nav = () => {
       <Logo href="/" />
 
       <div className="hidden lg:flex items-center gap-1">
-        <a href="/#men" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Men</a>
         <a href="/#women" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Women</a>
+        <a href="/#men" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Men</a>
         <div className="w-px h-[18px] bg-warm-200 mx-1" />
         <a href="/health-check" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">Health Check</a>
         <a href="/how-it-works" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">How It Works</a>

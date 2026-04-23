@@ -73,26 +73,8 @@ const Index = () => {
       <HealthCheck />
       <Benefits />
       <ProductSection
-        id="men"
-        bg="white"
-        label="Men"
-        title={<>Built For Men<br />Who Expect More</>}
-        sub="Doctor-prescribed care for performance, weight loss, hair, and longevity — all discreet, all online."
-        ctaText="See All Men's Treatments →"
-        featured={{
-          img: featMen,
-          pill: "#1 For Men",
-          title: <>Better Sex.<br />Every Time.</>,
-          desc: "FDA-approved ED treatment prescribed online and shipped to your door in 24 hours. Works in 15 minutes. Lasts up to 36 hours. Plain packaging — always guaranteed.",
-          tags: ["Generic Viagra (Sildenafil)", "Generic Cialis (Tadalafil)", "Fast-Acting Chewables", "Premature Ejaculation"],
-          price: <>From <strong className="text-warm-800 text-base">$2/dose</strong> — discreet packaging guaranteed</>,
-          cta: "Get ED Treatment →",
-        }}
-        products={menProducts}
-      />
-      <ProductSection
         id="women"
-        bg="warm"
+        bg="white"
         label="Women"
         title={<>Whole-Body Care<br />Built Around Her</>}
         sub="Menopause relief, GLP-1 weight loss, fuller hair, clearer skin — personalized care for every stage of life."
@@ -107,6 +89,24 @@ const Index = () => {
           cta: "Start Weight Loss →",
         }}
         products={womenProducts}
+      />
+      <ProductSection
+        id="men"
+        bg="warm"
+        label="Men"
+        title={<>Built For Men<br />Who Expect More</>}
+        sub="Doctor-prescribed care for performance, weight loss, hair, and longevity — all discreet, all online."
+        ctaText="See All Men's Treatments →"
+        featured={{
+          img: featMen,
+          pill: "#1 For Men",
+          title: <>Better Sex.<br />Every Time.</>,
+          desc: "FDA-approved ED treatment prescribed online and shipped to your door in 24 hours. Works in 15 minutes. Lasts up to 36 hours. Plain packaging — always guaranteed.",
+          tags: ["Generic Viagra (Sildenafil)", "Generic Cialis (Tadalafil)", "Fast-Acting Chewables", "Premature Ejaculation"],
+          price: <>From <strong className="text-warm-800 text-base">$2/dose</strong> — discreet packaging guaranteed</>,
+          cta: "Get ED Treatment →",
+        }}
+        products={menProducts}
       />
       <Doctors />
       <Reviews />
