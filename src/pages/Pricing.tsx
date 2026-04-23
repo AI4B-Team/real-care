@@ -137,8 +137,8 @@ const Pricing = () => {
       <div className="bg-background px-5 md:px-12 pt-12 pb-24">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid md:grid-cols-2 gap-6 fade-up">
-            <PricingColumn title="Men's Health" rows={menRows} />
             <PricingColumn title="Women's Health" rows={womenRows} />
+            <PricingColumn title="Men's Health" rows={menRows} />
           </div>
 
           {/* What's included callout */}
