@@ -91,6 +91,8 @@ const Pricing = () => {
   const { user, patient } = usePatient();
   const { hasAddress, loading: addrLoading } = usePatientAddress(patient?.id);
   const [addressPrompt, setAddressPrompt] = useState<PlanItem | null>(null);
+  const [cycleId, setCycleId] = useState<BillingCycle>("monthly");
+  const cycle = cycles.find((c) => c.id === cycleId)!;
 
   const handleBuy = (item: PlanItem) => {
     if (!user) {
@@ -145,6 +147,36 @@ const Pricing = () => {
     {/* Pricing tables */}
     <div className="bg-background px-5 md:px-12 pt-14 pb-24">
       <div className="max-w-[1280px] mx-auto">
+        {/* Billing cycle toggle */}
+        <div className="flex flex-col items-center mb-10 fade-up">
+          <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-warm-400 mb-3">Choose your billing cycle</div>
+          <div className="inline-flex flex-wrap justify-center gap-1 p-1 bg-warm-100 rounded-xl">
+            {cycles.map((c) => {
+              const active = c.id === cycleId;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  onClick={() => setCycleId(c.id)}
+                  className={`relative px-4 md:px-5 py-2.5 rounded-lg text-[0.8rem] font-semibold transition-colors ${active ? "bg-card text-warm-800 shadow-soft" : "text-warm-600 hover:text-warm-800"}`}
+                >
+                  {c.label}
+                  {c.saveLabel && (
+                    <span className={`ml-2 text-[0.55rem] font-bold tracking-[0.08em] uppercase px-1.5 py-0.5 rounded ${active ? "bg-red text-primary-foreground" : "bg-red/10 text-red"}`}>
+                      {c.saveLabel}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+          <div className="text-[0.72rem] text-warm-400 mt-3">
+            {cycle.id === "monthly"
+              ? "Cancel anytime. No long-term commitment."
+              : `Prepay ${cycle.months} months upfront — ${cycle.saveLabel?.toLowerCase()} vs monthly. Cancel before next renewal.`}
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-8 fade-up">
           {plans.map((plan) => (
             <div key={plan.gender} className="bg-card border border-warm-100 rounded-2xl overflow-hidden shadow-soft">
@@ -176,8 +208,16 @@ const Pricing = () => {
                       <div className="text-[0.72rem] text-warm-400 mt-0.5">{item.sub}</div>
                     </div>
                     <div className="text-right flex-shrink-0">
-                      <div className="text-[0.92rem] font-bold text-red">{item.price}</div>
-                      <div className="text-[0.62rem] text-warm-400">Get started →</div>
+                      {(() => {
+                        const p = formatPrice(item, cycle);
+                        return (
+                          <>
+                            <div className="text-[0.92rem] font-bold text-red leading-tight">{p.primary}</div>
+                            {p.secondary && <div className="text-[0.62rem] text-warm-600 mt-0.5">{p.secondary}</div>}
+                            <div className="text-[0.62rem] text-warm-400 mt-0.5">Get started →</div>
+                          </>
+                        );
+                      })()}
                     </div>
                   </button>
                 ))}
