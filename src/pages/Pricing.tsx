@@ -101,50 +101,6 @@ const Pricing = () => {
             </div>
           </div>
 
-          {/* Plan duration selector */}
-          <div className="mb-8 fade-up">
-            <div className="text-center text-[0.72rem] font-bold tracking-[0.12em] uppercase text-warm-400 mb-3">
-              Choose Your Plan — Longer Plans Save More
-            </div>
-            <div className="grid grid-cols-4 gap-2">
-              {tiers.map((tier) => (
-                <button
-                  key={tier}
-                  type="button"
-                  onClick={() => setActiveTier(tier)}
-                  className={`relative border-2 rounded-xl py-3 px-2 text-center transition-all ${
-                    activeTier === tier ? "border-red bg-red/[0.05]" : "border-warm-100 hover:border-warm-300"
-                  }`}
-                >
-                  {tier === "annual" && (
-                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-red text-primary-foreground text-[0.52rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full whitespace-nowrap">
-                      Most Popular
-                    </div>
-                  )}
-                  <div className={`font-display font-bold text-sm ${activeTier === tier ? "text-red" : "text-warm-800"}`}>
-                    {TIER_LABELS[tier]}
-                  </div>
-                  {TIER_SAVE[tier] && (
-                    <div className={`text-[0.62rem] font-semibold mt-0.5 ${activeTier === tier ? "text-red" : "text-warm-500"}`}>
-                      {TIER_SAVE[tier]}
-                    </div>
-                  )}
-                </button>
-              ))}
-            </div>
-
-            {activeTier === "annual" && (
-              <div className="mt-4 bg-warm-800 rounded-xl px-5 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
-                <div className="text-[0.8rem] text-primary-foreground/70">
-                  <span className="text-primary-foreground font-semibold">Annual plan checkout:</span> GLP-1 patients pay{" "}
-                  <span className="text-red font-bold">${SEMA_AOV.annual.toLocaleString()} upfront</span> — shipped monthly
-                </div>
-                <div className="text-[0.72rem] text-primary-foreground/40 whitespace-nowrap">Billed as one payment · Ships monthly</div>
-              </div>
-            )}
-          </div>
-
-          {/* Pricing table */}
           <div className="bg-card border border-warm-100 rounded-2xl overflow-hidden shadow-soft fade-up">
             <div className="bg-warm-800 px-6 py-3 text-[0.65rem] font-bold tracking-[0.12em] uppercase text-primary-foreground/50 flex justify-between">
               <div>Treatment</div>
