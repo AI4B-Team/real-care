@@ -13,7 +13,8 @@ const meds = [
     name: "Compounded Semaglutide",
     aka: "Same active ingredient as Ozempic® & Wegovy®",
     format: "Weekly injection",
-    price: "From $179/mo",
+    price: "$179 first month",
+    sub: "$299/mo ongoing · Save $720/yr vs Hims & Ro",
     popular: true,
     bullets: ["Reduces appetite and cravings", "Once-weekly injection", "Gradual dose escalation", "Includes B12 for energy support"],
   },
@@ -21,14 +22,16 @@ const meds = [
     name: "Compounded Tirzepatide",
     aka: "Same active ingredient as Mounjaro® & Zepbound®",
     format: "Weekly injection",
-    price: "From $349/mo",
+    price: "$249 first month",
+    sub: "$399/mo ongoing · Best results in trials",
     bullets: ["Dual GLP-1 / GIP receptor action", "May produce greater weight loss", "Once-weekly injection", "Higher average results in clinical trials"],
   },
   {
     name: "Oral Semaglutide (Tablets)",
     aka: "GLP-1 without injections",
     format: "Daily tablet",
-    price: "From $249/mo",
+    price: "$199 first month",
+    sub: "$249/mo ongoing · No needles",
     bullets: ["No needles required", "Daily sublingual tablet", "Same active ingredient as injectable", "Ideal for needle-phobic patients"],
   },
 ];
@@ -142,7 +145,8 @@ const WeightLoss = () => (
                 </div>
                 <div className="border-t border-warm-100 pt-4 mb-4">
                   <div className="text-red font-bold text-lg">{med.price}</div>
-                  <div className="text-[0.68rem] text-warm-400">Doctor consult · Medication · Shipping · Support</div>
+                  <div className="text-[0.7rem] text-warm-600 font-medium mt-0.5">{med.sub}</div>
+                  <div className="text-[0.68rem] text-warm-400 mt-1.5">Doctor consult · Medication · Shipping · Support</div>
                   <div className="text-[0.68rem] text-warm-400 mt-0.5">No membership fee. Cancel anytime.</div>
                 </div>
                 <a href="/health-check" className="w-full bg-red hover:bg-red-dark text-primary-foreground font-bold py-2.5 rounded-lg text-[0.85rem] flex items-center justify-center gap-1 transition-colors">
