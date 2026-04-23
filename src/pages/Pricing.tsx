@@ -193,43 +193,6 @@ const Pricing = () => {
             </a>
           </div>
 
-          {/* Why longer plans */}
-          <div className="mt-12 fade-up">
-            <div className="text-center mb-7">
-              <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-2">Choose Your Commitment</div>
-              <h2 className="font-display font-black text-warm-800 text-2xl">Longer Plans, Lower Price</h2>
-              <p className="text-[0.85rem] text-warm-600 mt-2">
-                The longer your plan, the lower your monthly rate. Take the health check to see your personalized pricing.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-3 gap-5">
-              {[
-                { tier: "Monthly", badge: null, desc: "Month-to-month. Maximum flexibility. Cancel anytime.", highlight: false },
-                { tier: "6 Months", badge: "Save 20%", desc: "Prepay 6 months upfront. Lock in a lower monthly rate.", highlight: false },
-                { tier: "Annual Plan", badge: "Best Value — Save 40%", desc: "Lowest per-month price. Includes money-back guarantee on GLP-1.", highlight: true },
-              ].map((c) => (
-                <div
-                  key={c.tier}
-                  className={`rounded-2xl p-6 border-2 ${c.highlight ? "border-red bg-red/[0.03]" : "border-warm-100 bg-card"}`}
-                >
-                  {c.badge && (
-                    <div className={`text-[0.58rem] font-bold tracking-[0.12em] uppercase mb-2 ${c.highlight ? "text-red" : "text-warm-600"}`}>
-                      {c.badge}
-                    </div>
-                  )}
-                  <div className="font-display font-bold text-warm-800 text-xl mb-2">{c.tier}</div>
-                  <p className="text-[0.8rem] text-warm-500 leading-[1.65] mb-3">{c.desc}</p>
-                  <a href="/health-check" className="text-red text-[0.8rem] font-semibold hover:text-red-dark transition-colors">
-                    See my price →
-                  </a>
-                </div>
-              ))}
-            </div>
-            <p className="text-[0.72rem] text-warm-400 text-center mt-4">
-              Exact pricing shown after your free health assessment. First month starts at $179 for GLP-1 weight loss — all-inclusive.*
-            </p>
-          </div>
-
           {/* FAQ */}
           <div className="mt-12 fade-up">
             <h3 className="font-display text-2xl font-black text-warm-800 text-center mb-7">Pricing Questions</h3>
