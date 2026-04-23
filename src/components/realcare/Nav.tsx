@@ -1,16 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
-import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
-interface Language { code: string; label: string; flag: string; }
-const languages: Language[] = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
-  { code: "zh", label: "中文", flag: "🇨🇳" },
-];
 
 interface NavItem { title: string; href: string; desc?: string; badge?: string; }
 interface NavGroup { label: string; items: NavItem[]; }
