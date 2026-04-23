@@ -92,7 +92,36 @@ const Nav = () => {
 
   return (
     <nav className="bg-background border-b border-warm-100 flex items-center justify-between px-5 md:px-12 h-16 sticky top-0 z-50 shadow-[0_1px_0_hsl(var(--warm-100))]">
-      <Logo href="/" />
+      <div className="flex items-center gap-2">
+        <Logo href="/" />
+        <div className="relative" ref={langRef}>
+          <button
+            onClick={() => setLangOpen(!langOpen)}
+            className="flex items-center gap-1.5 px-2.5 py-2 rounded-md hover:bg-warm-50 text-warm-700 transition-colors"
+            aria-label="Change language"
+          >
+            <span className="text-base leading-none">{currentLang.flag}</span>
+            <span className="hidden sm:inline text-[0.78rem] font-medium uppercase">{currentLang.code}</span>
+            <ChevronDown size={12} className="text-warm-400" />
+          </button>
+          {langOpen && (
+            <div className="absolute top-full left-0 mt-1 w-44 bg-card border border-warm-100 rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.10)] overflow-hidden z-50 py-1">
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => { setCurrentLang(l); setLangOpen(false); }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-[0.82rem] text-left transition-colors ${
+                    currentLang.code === l.code ? "bg-warm-50 text-red font-semibold" : "text-warm-700 hover:bg-warm-50"
+                  }`}
+                >
+                  <span className="text-base leading-none">{l.flag}</span>
+                  <span>{l.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
 
       <div className="hidden lg:flex items-center gap-1">
         <a href="/#men" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Men</a>
