@@ -70,12 +70,18 @@ const navGroups: NavGroup[] = [
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const [activeGroup, setActiveGroup] = useState<string | null>("Men");
+  const [langOpen, setLangOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState<Language>(languages[0]);
   const menuRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setOpen(false);
+      }
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
