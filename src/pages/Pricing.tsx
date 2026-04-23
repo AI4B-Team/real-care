@@ -108,7 +108,7 @@ const Pricing = () => {
             <span className="text-red">Everything Included.</span>
           </h1>
           <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-[520px] mx-auto mb-5">
-            Doctor consult, medication, and free shipping — all in one price. No membership fees. No hidden charges. Save up to 40% when you commit to a longer plan.
+            Doctor consult, medication, and free discreet shipping — all in one monthly price. No membership fees. No hidden charges. No surprises.
           </p>
           <div className="inline-block bg-card border border-warm-100 rounded-xl px-5 py-3 text-[0.8rem] text-warm-600 shadow-soft">
             Unlike <span className="font-semibold text-warm-800">Hims ($149/mo fee)</span> and <span className="font-semibold text-warm-800">Ro ($145/mo fee)</span> — Real Care charges <span className="text-red font-bold">$0 membership fee. Ever.</span>
