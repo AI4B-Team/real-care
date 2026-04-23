@@ -39,33 +39,10 @@ const womenRows: PricingRow[] = [
   { name: "Lab Testing", sub: "40+ biomarkers, one-time panel", monthly: 149, fromPrice: 149, href: "/lab-testing" },
 ];
 
-const TIER_LABELS: Record<PlanTier, string> = {
-  monthly: "Monthly",
-  "3month": "3 Months",
-  "6month": "6 Months",
-  annual: "12 Months",
-};
-
-const TIER_SAVE: Record<PlanTier, string | null> = {
-  monthly: null,
-  "3month": "Save 10%",
-  "6month": "Save 20%",
-  annual: "Best Value — Save 40%",
-};
-
-const SEMA_AOV: Record<PlanTier, number> = {
-  monthly: 299,
-  "3month": Math.round(299 * 3 * 0.9),
-  "6month": Math.round(299 * 6 * 0.8),
-  annual: Math.round(299 * 12 * 0.6),
-};
-
 const Pricing = () => {
-  const [activeTier, setActiveTier] = useState<PlanTier>("annual");
   const [activeGender, setActiveGender] = useState<"men" | "women">("men");
 
   const rows = activeGender === "men" ? menRows : womenRows;
-  const tiers: PlanTier[] = ["monthly", "3month", "6month", "annual"];
 
   return (
     <PageLayout title="Pricing — One Price, Everything Included">
