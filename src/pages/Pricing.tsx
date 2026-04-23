@@ -127,7 +127,7 @@ const Pricing = () => {
         </p>
         {/* Competitor callout */}
         <div className="inline-block bg-white border border-warm-100 rounded-xl px-5 py-3 text-[0.8rem] text-warm-600 shadow-soft">
-          Unlike <span className="font-semibold text-warm-800">Hims ($149/mo membership)</span> and <span className="font-semibold text-warm-800">Ro ($145/mo membership)</span> — Real Care charges <span className="text-red font-bold">$0 membership fee. Ever.</span>
+          Unlike <span className="font-semibold text-warm-800">Hims ($149/mo Membership)</span> And <span className="font-semibold text-warm-800">Ro ($145/mo Membership)</span> — Real Care Charges <span className="text-red font-bold">$0 Membership Fee. Ever.</span>
         </div>
       </div>
     </div>
@@ -172,8 +172,8 @@ const Pricing = () => {
           </div>
           <div className="text-[0.72rem] text-warm-400 mt-3">
             {cycle.id === "monthly"
-              ? "Cancel anytime. No long-term commitment."
-              : `Prepay ${cycle.months} months upfront — ${cycle.saveLabel?.toLowerCase()} vs monthly. Cancel before next renewal.`}
+              ? "Cancel Anytime. No Long-Term Commitment."
+              : `Prepay ${cycle.months} Months Upfront — ${cycle.saveLabel} vs Monthly. Cancel Before Next Renewal.`}
           </div>
         </div>
 
