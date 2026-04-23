@@ -46,7 +46,7 @@ const WeightLoss = () => (
             <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
               GLP-1 Weight Loss · Most Popular
             </div>
-            <div className="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
+            <div className="inline-flex items-center gap-1.5 bg-success text-success-foreground text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
               <CheckCircle2 size={12} /> HSA/FSA Eligible
             </div>
           </div>
