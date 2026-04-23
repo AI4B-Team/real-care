@@ -40,22 +40,6 @@ const Hero = () => (
             </div>
           ))}
         </div>
-        <div className="mt-5 bg-card border border-warm-100 rounded-xl p-4 max-w-[560px]">
-          <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-warm-400 mb-2.5">
-            What is your primary goal?
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {["Lose Weight", "Better Sex", "More Energy", "All of the Above"].map((g) => (
-              <a
-                key={g}
-                href="/health-check"
-                className="bg-red hover:bg-red-dark text-primary-foreground text-[0.75rem] font-semibold px-4 py-2 rounded-full transition-colors"
-              >
-                {g}
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
       <div className="relative aspect-[5/4] max-h-[48vh] fade-up delay-1">
         <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-warm-100">
