@@ -41,9 +41,10 @@ const sections = [
   },
 ];
 
-const Footer = () => (
-  <footer className="bg-black text-white px-5 md:px-12 pt-14 pb-10">
+const Footer = ({ minimal = false }: { minimal?: boolean }) => (
+  <footer className={`bg-black text-white px-5 md:px-12 ${minimal ? "py-8" : "pt-14 pb-10"}`}>
     <div className="max-w-[1280px] mx-auto">
+      {!minimal && (
       <div className="relative grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-center bg-white/[0.04] border border-white/10 rounded-2xl p-6 md:p-8 mb-12 overflow-hidden">
         <img
           src={phoneDoctor}
