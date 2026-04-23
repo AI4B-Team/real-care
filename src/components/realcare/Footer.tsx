@@ -86,6 +86,8 @@ const Footer = ({ minimal = false }: { minimal?: boolean }) => (
           </div>
         </div>
       </div>
+      )}
+      {!minimal && (
       <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-12 mb-14">
         <div>
           <div className="bg-red w-[110px] p-[6px] mb-4">
@@ -116,7 +118,8 @@ const Footer = ({ minimal = false }: { minimal?: boolean }) => (
           </div>
         ))}
       </div>
-      <div className="border-t border-white/15 pt-8 flex justify-between items-center flex-wrap gap-4">
+      )}
+      <div className={`flex justify-between items-center flex-wrap gap-4 ${minimal ? "" : "border-t border-white/15 pt-8"}`}>
         <div className="text-[0.69rem] text-white/60">© 2026 Real Care Inc. All Rights Reserved. REALCARE.COM</div>
         <div className="flex gap-6">
           {[
@@ -130,9 +133,11 @@ const Footer = ({ minimal = false }: { minimal?: boolean }) => (
           ))}
         </div>
       </div>
+      {!minimal && (
       <p className="text-[0.62rem] text-white/50 leading-[1.7] mt-8 pt-6 border-t border-white/15">
         *Medical treatment provided by Real Care Affiliated P.C.s and our network of licensed providers through OpenLoop Health. Prescriptions issued only after consultation with an independent licensed provider. Compounded medications dispensed by state-licensed pharmacies and are not FDA-approved. Results vary. Money-back guarantee subject to program terms. HSA/FSA eligibility varies. Individuals in advertising may be models or actors.
       </p>
+      )}
     </div>
   </footer>
 );
