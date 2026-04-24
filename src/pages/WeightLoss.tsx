@@ -139,28 +139,46 @@ const WeightLoss = () => (
               tagStyle: "bg-red text-primary-foreground",
               title: "Weekly Injectable",
               desc: "Once-weekly pen injection. The most studied and effective format, with the strongest clinical results for weight loss.",
+              img: formatInjection,
+              alt: "Weekly GLP-1 injection pen",
             },
             {
               tag: "Needle-Free",
               tagStyle: "bg-warm-100 text-warm-600",
               title: "Daily Sublingual Drops",
               desc: "A few drops under the tongue each day. No needles, fast absorption, and easy to travel with.",
+              img: formatDrops,
+              alt: "Sublingual GLP-1 drops in a dropper bottle",
             },
             {
               tag: "Pill Form",
               tagStyle: "bg-warm-100 text-warm-600",
               title: "Daily Oral Tablet",
               desc: "A simple once-daily tablet. Familiar, discreet, and ideal if you prefer to skip injections entirely.",
+              img: formatTablet,
+              alt: "Daily oral GLP-1 tablets",
             },
           ].map((f) => (
-            <div key={f.title} className="bg-card border border-warm-100 rounded-2xl p-7 flex flex-col">
-              <div className={`inline-block self-start text-[0.62rem] font-bold tracking-[0.1em] uppercase px-2.5 py-1 rounded mb-4 ${f.tagStyle}`}>
-                {f.tag}
+            <div key={f.title} className="bg-card border border-warm-100 rounded-2xl overflow-hidden flex flex-col">
+              <div className="aspect-[4/3] bg-warm-50 overflow-hidden">
+                <img
+                  src={f.img}
+                  alt={f.alt}
+                  loading="lazy"
+                  width={768}
+                  height={576}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="font-display font-bold text-warm-800 text-lg mb-2">{f.title}</h3>
-              <p className="text-[0.83rem] text-warm-600 leading-[1.75] mb-5">{f.desc}</p>
-              <div className="mt-auto pt-4 border-t border-warm-100">
-                <p className="text-[0.75rem] text-warm-400 italic">Your provider recommends the best format for you.</p>
+              <div className="p-7 flex flex-col flex-1">
+                <div className={`inline-block self-start text-[0.62rem] font-bold tracking-[0.1em] uppercase px-2.5 py-1 rounded mb-4 ${f.tagStyle}`}>
+                  {f.tag}
+                </div>
+                <h3 className="font-display font-bold text-warm-800 text-lg mb-2">{f.title}</h3>
+                <p className="text-[0.83rem] text-warm-600 leading-[1.75] mb-5">{f.desc}</p>
+                <div className="mt-auto pt-4 border-t border-warm-100">
+                  <p className="text-[0.75rem] text-warm-400 italic">Your provider recommends the best format for you.</p>
+                </div>
               </div>
             </div>
           ))}
