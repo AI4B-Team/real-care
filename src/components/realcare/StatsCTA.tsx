@@ -18,7 +18,7 @@ const StatsCTA = () => (
       See What I Qualify For →
     </a>
     <div className="mt-4 text-[0.75rem] text-primary-foreground/70 font-medium">
-      ✓ No membership or hidden fees — everything you need is included
+      ✓ No Membership Or Hidden Fees — Everything You Need Is Included
     </div>
     <p className="mt-6 text-[0.85rem] text-primary-foreground/85 max-w-[640px] mx-auto leading-[1.7]">
       One price. No membership fee. No surprises. Unlike <strong className="font-semibold">Hims ($149/mo membership)</strong> and <strong className="font-semibold">Ro ($145/mo membership)</strong>, Real Care includes everything in one simple price.
