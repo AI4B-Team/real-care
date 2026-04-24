@@ -8,7 +8,7 @@ const LabTesting = () => (
     pill="40+ Biomarkers"
     headline={<>Know Your Numbers.<br /><span className="text-red">Own Your Health.</span></>}
     sub="Comprehensive lab testing ordered by a licensed physician — 40+ biomarkers including testosterone, thyroid, metabolic panel, and more. Doctor-reviewed action plan included."
-    trustBullets={["From $149 — One Time", "40+ Biomarkers", "Doctor-Reviewed Results", "No Membership Fee", "No Office Visit"]}
+    trustBullets={["From $99 — One Time", "40+ Biomarkers", "Doctor-Reviewed Results", "No Membership Fee", "No Office Visit"]}
     howTitle="How Lab Testing Works"
     howItems={[
       { title: "Order Online", desc: "Your licensed provider orders your lab panel based on your health goals and concerns — no office visit required." },

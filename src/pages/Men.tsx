@@ -16,7 +16,7 @@ const treatments = [
   { name: "Peptides & Longevity", sub: "From $129/mo", href: "/peptides", badge: "New", desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, and peak performance." },
   { name: "Mental Health", sub: "From $49/mo", href: "/mental-health", desc: "Anxiety, depression, and sleep — online prescriptions from licensed psychiatric providers." },
   { name: "Comprehensive Lab Testing", sub: "From $149", href: "/lab-testing", desc: "40+ biomarkers. Doctor-reviewed results and personalized action plan included." },
-  { name: "Supplements & Nutrition", sub: "From $49/mo", href: "/#men", desc: "Doctor-formulated stacks and GLP-1 aligned meal plans shipped monthly." },
+  { name: "Supplements & Nutrition", sub: "From $49/mo", href: "/health-check", desc: "Doctor-formulated stacks and GLP-1 aligned meal plans shipped monthly." },
 ];
 
 const Men = () => (

@@ -13,10 +13,10 @@ const treatments = [
   { name: "Menopause & HRT", sub: "From $89/mo", href: "/menopause", badge: "Specialist Care", desc: "Bioidentical hormone therapy for hot flashes, brain fog, sleep, and mood." },
   { name: "Prescription Skincare", sub: "From $35/mo", href: "/skincare", desc: "Custom prescription formulas for acne, anti-aging, dark spots, and texture." },
   { name: "Hair Regrowth", sub: "From $39/mo", href: "/hair-loss", desc: "Prescription minoxidil blends to stop shedding and restore volume and density." },
-  { name: "Sexual Health & Libido", sub: "From $49/mo", href: "/#women", desc: "Low libido treatment, vaginal dryness, and sexual wellness — private and effective." },
+  { name: "Sexual Health & Libido", sub: "From $49/mo", href: "/health-check", desc: "Low libido treatment, vaginal dryness, and sexual wellness — private and effective." },
   { name: "Mental Health", sub: "From $49/mo", href: "/mental-health", desc: "Anxiety, burnout, and low mood — gentle, effective treatment from licensed providers." },
-  { name: "Birth Control", sub: "From $20/mo", href: "/#women", desc: "Pill, patch, and ring — prescribed online, shipped free. No in-person visit required." },
-  { name: "Women's Supplements", sub: "From $45/mo", href: "/#women", desc: "Collagen, hormone support, GLP-1 companion vitamins — doctor-formulated for women." },
+  { name: "Birth Control", sub: "From $20/mo", href: "/health-check", desc: "Pill, patch, and ring — prescribed online, shipped free. No in-person visit required." },
+  { name: "Women's Supplements", sub: "From $45/mo", href: "/health-check", desc: "Collagen, hormone support, GLP-1 companion vitamins — doctor-formulated for women." },
   { name: "Lab Testing", sub: "From $149", href: "/lab-testing", desc: "Hormones, thyroid, metabolic panel — comprehensive labs with a doctor-reviewed action plan." },
 ];
 
