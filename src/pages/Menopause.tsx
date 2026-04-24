@@ -8,7 +8,7 @@ const Menopause = () => (
     pill="Bioidentical HRT"
     headline={<>Feel Like<br /><span className="text-red">Yourself Again.</span></>}
     sub="Bioidentical hormone therapy for menopause and perimenopause — prescribed online by OB-GYN specialists. Hot flashes, brain fog, sleep, mood — all addressed."
-    trustBullets={["From $89/mo", "OB-GYN Specialists", "Bioidentical Hormones", "No Membership Fee", "Free Discreet Shipping"]}
+    trustBullets={["From $79/mo", "OB-GYN Specialists", "Bioidentical Hormones", "No Membership Fee", "Free Discreet Shipping"]}
     howTitle="How Hormone Therapy Works"
     howItems={[
       { title: "Identify Your Symptoms", desc: "Tell us about hot flashes, brain fog, sleep disruption, mood changes, vaginal dryness, and other perimenopause or menopause symptoms." },
