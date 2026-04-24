@@ -125,7 +125,7 @@ const WeightLoss = () => {
           <div className="text-center mb-10">
             <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">The Science</div>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.5rem)]">
-              Why GLP-1 Works When<br />Diets Don't
+              Why GLP-1 Works<br />When Diets Don't
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
