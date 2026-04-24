@@ -1,6 +1,9 @@
 import PageLayout from "@/components/realcare/PageLayout";
 import { ChevronRight, CheckCircle2 } from "lucide-react";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import formatInjection from "@/assets/format-injection.jpg";
+import formatDrops from "@/assets/format-drops.jpg";
+import formatTablet from "@/assets/format-tablet.jpg";
 
 const Check = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
