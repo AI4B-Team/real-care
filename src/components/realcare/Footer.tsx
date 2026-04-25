@@ -79,6 +79,7 @@ const Footer = () => (
           {[
             { label: "Health Check", href: "/health-check" },
             { label: "Pricing", href: "/pricing" },
+            { label: "FAQ", href: "/faq" },
             { label: "Affiliates", href: "/affiliates" },
             { label: "Contact", href: "/contact" },
             { label: "Patient Portal", href: "/patient-portal" },
