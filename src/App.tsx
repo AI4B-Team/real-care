@@ -58,6 +58,7 @@ import ConsumerHealthDataPrivacy from "./pages/ConsumerHealthDataPrivacy.tsx";
 
 // Tools
 import Glp1Quiz from "./pages/Glp1Quiz.tsx";
+import SupportFAQ from "./pages/SupportFAQ.tsx";
 
 const queryClient = new QueryClient();
 
@@ -121,6 +122,8 @@ const App = () => (
 
           {/* Tools */}
           <Route path="/glp1-quiz" element={<Glp1Quiz />} />
+          <Route path="/support" element={<SupportFAQ />} />
+          <Route path="/faq" element={<SupportFAQ />} />
 
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
