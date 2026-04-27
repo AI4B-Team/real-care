@@ -4,6 +4,7 @@ import { ChevronRight, ChevronLeft, Loader2 } from "lucide-react";
 import { submitHealthAssessment } from "@/lib/intake";
 import type { TreatmentCategory } from "@/lib/api/pharmacy";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type Gender = "male" | "female" | "both" | null;
 
