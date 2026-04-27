@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageLayout from "@/components/realcare/PageLayout";
 import { Mail, MessageCircle, Clock, Loader2, CheckCircle } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", topic: "General Question", message: "" });
