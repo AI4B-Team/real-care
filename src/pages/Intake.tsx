@@ -5,6 +5,7 @@ import PageLayout from "@/components/realcare/PageLayout";
 import { usePatient } from "@/hooks/usePatient";
 import { supabase } from "@/integrations/supabase/client";
 import { getIntakeSet, type IntakeField } from "@/lib/intakeQuestions";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const PRETTY: Record<string, string> = {
   weight_loss: "Weight Loss",
