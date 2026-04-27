@@ -226,9 +226,9 @@ const HealthCheck = () => {
                 <p className="text-[0.82rem] text-warm-600 mb-7">We'll personalize your treatment options based on your answer.</p>
                 <div className="grid grid-cols-3 gap-3">
                   {([
-                    { id: "male" as Gender, label: "Him", sub: "Men's treatments" },
-                    { id: "female" as Gender, label: "Her", sub: "Women's treatments" },
-                    { id: "both" as Gender, label: "Both of Us", sub: "Couples plan" },
+                    { id: "male" as Gender, label: "Him", sub: "Men's Treatments" },
+                    { id: "female" as Gender, label: "Her", sub: "Women's Treatments" },
+                    { id: "both" as Gender, label: "Both of Us", sub: "Couples Plan" },
                   ]).map((opt) => (
                     <button
                       key={String(opt.id)}
