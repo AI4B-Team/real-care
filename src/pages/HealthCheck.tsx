@@ -295,7 +295,7 @@ const HealthCheck = () => {
                           <div className="text-[0.72rem] font-bold text-warm-600 uppercase tracking-wide">Your BMI</div>
                           <div className={`text-2xl font-bold ${parseFloat(bmi) >= 27 ? "text-green-700" : "text-amber-700"}`}>{bmi}</div>
                         </div>
-                        <div className={`text-[0.72rem] text-right max-w-[180px] leading-[1.4] ${parseFloat(bmi) >= 27 ? "text-green-700" : "text-amber-700"}`}>
+                        <div className={`text-[0.72rem] text-right whitespace-nowrap leading-[1.4] ${parseFloat(bmi) >= 27 ? "text-green-700" : "text-amber-700"}`}>
                           {parseFloat(bmi) >= 30 ? "✓ Likely eligible for GLP-1" : parseFloat(bmi) >= 27 ? "✓ May qualify with a health condition" : "A provider will review your full profile"}
                         </div>
                       </div>
