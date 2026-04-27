@@ -4,6 +4,7 @@ import { usePatient } from "@/hooks/usePatient";
 import { supabase, getMessages, sendMessage, submitRefillCheckin } from "@/lib/supabase";
 import { MessageCircle, Package, RefreshCw, FileText, CreditCard, Settings, LogOut, Send, Loader2, CheckCircle, AlertCircle, ChevronRight, Clock } from "lucide-react";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type Tab = "overview" | "messages" | "orders" | "refill" | "prescriptions" | "billing" | "settings";
 interface Message { id: string; sender: string; sender_name?: string; content: string; created_at: string; }
