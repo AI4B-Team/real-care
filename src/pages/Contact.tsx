@@ -132,16 +132,16 @@ const Contact = () => {
             </div>
             <div>
               <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">Topic</label>
-              <select value={formData.topic} onChange={(e) => setFormData({...formData, topic: e.target.value})} className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.85rem] text-warm-600 focus:outline-none focus:border-red transition-colors bg-white">
-                <option>General Question</option>
-                <option>Billing / Refund</option>
-                <option>Cancellation Request</option>
-                <option>Medical Question</option>
-                <option>Shipping / Delivery</option>
-                <option>Technical Support</option>
-                <option>Partnership / Affiliate</option>
-                <option>Media / Press</option>
-              </select>
+              <Select value={formData.topic} onValueChange={(v) => setFormData({...formData, topic: v})}>
+                <SelectTrigger className="w-full border border-warm-200 rounded-lg px-4 py-2.5 h-auto text-[0.85rem] text-warm-600 bg-white transition-colors">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent position="popper" side="bottom" sideOffset={6} avoidCollisions={false} className="bg-white">
+                  {["General Question","Billing / Refund","Cancellation Request","Medical Question","Shipping / Delivery","Technical Support","Partnership / Affiliate","Media / Press"].map((o) => (
+                    <SelectItem key={o} value={o}>{o}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div>
               <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">Message</label>
