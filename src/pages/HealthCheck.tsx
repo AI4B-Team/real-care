@@ -4,6 +4,7 @@ import { ChevronRight, ChevronLeft, Loader2 } from "lucide-react";
 import { submitHealthAssessment } from "@/lib/intake";
 import type { TreatmentCategory } from "@/lib/api/pharmacy";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type Gender = "male" | "female" | "both" | null;
 
@@ -499,16 +500,16 @@ const HealthCheck = () => {
                 <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Your Location</div>
                 <h2 className="font-display font-black text-warm-800 text-2xl mb-2">Which state are you in?</h2>
                 <p className="text-[0.82rem] text-warm-600 mb-7">Your provider must be licensed in your state. We serve all 50 states.</p>
-                <select
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                  className="w-full border-2 border-warm-100 focus:border-red rounded-xl px-4 py-3.5 text-[0.95rem] text-warm-800 focus:outline-none bg-white transition-colors"
-                >
-                  <option value="">Select your state</option>
-                  {states.map((s) => (
-                    <option key={s} value={s}>{s}</option>
-                  ))}
-                </select>
+                <Select value={state} onValueChange={setState}>
+                  <SelectTrigger className="w-full border-2 border-warm-100 focus:border-red rounded-xl px-4 py-3.5 h-auto text-[0.95rem] text-warm-800 bg-white transition-colors">
+                    <SelectValue placeholder="Select your state" />
+                  </SelectTrigger>
+                  <SelectContent position="popper" side="bottom" sideOffset={6} avoidCollisions={false} className="bg-white">
+                    {states.map((s) => (
+                      <SelectItem key={s} value={s}>{s}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             )}
 

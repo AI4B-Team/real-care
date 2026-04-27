@@ -4,6 +4,7 @@ import { usePatient } from "@/hooks/usePatient";
 import { supabase, getMessages, sendMessage, submitRefillCheckin } from "@/lib/supabase";
 import { MessageCircle, Package, RefreshCw, FileText, CreditCard, Settings, LogOut, Send, Loader2, CheckCircle, AlertCircle, ChevronRight, Clock } from "lucide-react";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 type Tab = "overview" | "messages" | "orders" | "refill" | "prescriptions" | "billing" | "settings";
 interface Message { id: string; sender: string; sender_name?: string; content: string; created_at: string; }
@@ -357,10 +358,14 @@ const SettingsPanel = ({ patientId, email, onLogout }: SettingsPanelProps) => {
             <Field label="City" value={form.address_city} onChange={(v) => update("address_city", v)} disabled={loading} />
             <div>
               <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">State</label>
-              <select value={form.address_state} onChange={(e) => update("address_state", e.target.value)} disabled={loading} className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.85rem] focus:outline-none focus:border-red transition-colors bg-white">
-                <option value="">Select…</option>
-                {US_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
-              </select>
+              <Select value={form.address_state} onValueChange={(v) => update("address_state", v)} disabled={loading}>
+                <SelectTrigger className="w-full border border-warm-200 rounded-lg px-4 py-2.5 h-auto text-[0.85rem] bg-white transition-colors">
+                  <SelectValue placeholder="Select…" />
+                </SelectTrigger>
+                <SelectContent position="popper" side="bottom" sideOffset={6} avoidCollisions={false} className="bg-white">
+                  {US_STATES.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                </SelectContent>
+              </Select>
             </div>
             <Field label="ZIP Code" value={form.address_zip} onChange={(v) => update("address_zip", v)} disabled={loading} />
           </div>

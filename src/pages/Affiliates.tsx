@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageLayout from "@/components/realcare/PageLayout";
 import { DollarSign, Users, BarChart3, Shield, Loader2, CheckCircle } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Check = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -186,16 +187,16 @@ const Affiliates = () => {
           </div>
           <div>
             <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">Primary Traffic Source</label>
-            <select className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.85rem] text-warm-600 focus:outline-none focus:border-red bg-white transition-colors">
-              <option>Select one</option>
-              <option>Paid Social (Meta/TikTok)</option>
-              <option>Google / Search Ads</option>
-              <option>SEO / Content / Blog</option>
-              <option>Email Marketing</option>
-              <option>YouTube / Video</option>
-              <option>Influencer / Organic Social</option>
-              <option>Other</option>
-            </select>
+            <Select value={form.trafficSource} onValueChange={(v) => setForm({...form, trafficSource: v})}>
+              <SelectTrigger className="w-full border border-warm-200 rounded-lg px-4 py-2.5 h-auto text-[0.85rem] text-warm-600 bg-white transition-colors">
+                <SelectValue placeholder="Select one" />
+              </SelectTrigger>
+              <SelectContent position="popper" side="bottom" sideOffset={6} avoidCollisions={false} className="bg-white">
+                {["Paid Social (Meta/TikTok)","Google / Search Ads","SEO / Content / Blog","Email Marketing","YouTube / Video","Influencer / Organic Social","Other"].map((o) => (
+                  <SelectItem key={o} value={o}>{o}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
           <div>
             <label className="block text-[0.78rem] font-semibold text-warm-700 mb-1.5">Tell Us About Your Audience</label>
