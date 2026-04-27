@@ -277,10 +277,14 @@ const FieldRow = ({ field, value, onChange }: { field: IntakeField; value: strin
     return (
       <div>
         {labelEl}
-        <select value={value} onChange={(e) => onChange(e.target.value)} className="w-full border border-warm-200 rounded-lg px-4 py-2.5 text-[0.88rem] focus:outline-none focus:border-red transition-colors bg-white">
-          <option value="">Select…</option>
-          {field.options?.map((o) => <option key={o} value={o}>{o}</option>)}
-        </select>
+        <Select value={value} onValueChange={onChange}>
+          <SelectTrigger className="w-full border border-warm-200 rounded-lg px-4 py-2.5 h-auto text-[0.88rem] bg-white transition-colors">
+            <SelectValue placeholder="Select…" />
+          </SelectTrigger>
+          <SelectContent position="popper" side="bottom" sideOffset={6} avoidCollisions={false} className="bg-white">
+            {field.options?.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}
+          </SelectContent>
+        </Select>
         {helpEl}
       </div>
     );
