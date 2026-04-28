@@ -1,5 +1,5 @@
 import PageLayout from "@/components/realcare/PageLayout";
-import LegalPage, { H2, H3, P, UL, LI } from "@/components/realcare/LegalPage";
+import LegalPage, { H2, P, UL, LI } from "@/components/realcare/LegalPage";
 
 const Terms = () => (
   <PageLayout title="Terms & Conditions">
