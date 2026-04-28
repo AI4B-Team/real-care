@@ -37,7 +37,7 @@ const RefundPolicy = () => (
         <LI>You must have followed your provider's prescribed dosage and treatment plan as directed</LI>
         <LI>You must have completed all required monthly check-in forms</LI>
         <LI>If you have not experienced measurable weight loss after meeting these requirements, contact us at guarantee@realcare.com with your documentation</LI>
-        <LI>Approved refunds are issued minus a 25% provider consultation fee</LI>
+        <LI><strong>IMPORTANT: Approved refunds are issued minus a 25% provider consultation fee</strong> — if you paid $179 for your first month, your maximum refund under the guarantee is $134.25. This fee covers the cost of your provider consultations during the program.</LI>
         <LI>The guarantee applies only to GLP-1 weight loss products and not to other treatments</LI>
       </UL>
       <P>The money-back guarantee is available to first-time Real Care weight loss patients only, one time per household.</P>
