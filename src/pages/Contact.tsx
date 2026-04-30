@@ -42,7 +42,7 @@ const Contact = () => {
           Get In Touch
         </h1>
         <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-[480px] mx-auto">
-          Our care team is available 24/7 to answer your questions. Real humans, real answers — no chatbot runaround.
+          Our care team is available 24/7 to answer your questions.
         </p>
       </div>
     </div>
