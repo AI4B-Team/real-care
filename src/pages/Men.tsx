@@ -13,10 +13,10 @@ const treatments = [
   { name: "Better Sex (ED)", sub: "From $2/dose", href: "/ed-treatment", badge: "#1 For Men", desc: "Fast-acting ED treatment. Works in 15 minutes, lasts up to 36 hours. Plain packaging." },
   { name: "Testosterone (TRT)", sub: "From $99/mo", href: "/testosterone", desc: "Lab testing + personalized TRT. More energy, stronger drive, better mood." },
   { name: "Hair Loss & Regrowth", sub: "From $39/mo", href: "/hair-loss", desc: "Finasteride + minoxidil — clinically proven to stop shedding and regrow hair." },
-  { name: "Peptides & Longevity", sub: "From $129/mo", href: "/peptides", badge: "New", desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, and peak performance." },
+  { name: "Peptides & Longevity", sub: "From $129/mo", href: "/peptides", badge: "Coming Soon", comingSoon: true, desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, and peak performance." },
   { name: "Mental Health", sub: "From $49/mo", href: "/mental-health", desc: "Anxiety, depression, and sleep — online prescriptions from licensed psychiatric providers." },
   { name: "Comprehensive Lab Testing", sub: "From $149", href: "/lab-testing", desc: "40+ biomarkers. Doctor-reviewed results and personalized action plan included." },
-  { name: "Supplements & Nutrition", sub: "From $49/mo", href: "/health-check", desc: "Doctor-formulated stacks and GLP-1 aligned meal plans shipped monthly." },
+  { name: "Supplements & Nutrition", sub: "From $49/mo", href: "/health-check", badge: "Coming Soon", comingSoon: true, desc: "Doctor-formulated stacks and GLP-1 aligned meal plans shipped monthly." },
 ];
 
 const Men = () => (
@@ -62,19 +62,30 @@ const Men = () => (
           <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">Everything You Need. One Place.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {treatments.map((t) => (
-            <a key={t.name} href={t.href} className="bg-card border border-warm-100 rounded-2xl p-6 hover:border-red hover:shadow-soft transition-all group block">
-              {t.badge && (
-                <span className="inline-block bg-red text-primary-foreground text-[0.58rem] font-bold tracking-[0.1em] uppercase px-2.5 py-0.5 rounded-full mb-3">{t.badge}</span>
-              )}
-              <h3 className="font-display font-bold text-warm-800 text-lg mb-1 group-hover:text-red transition-colors">{t.name}</h3>
-              <div className="text-red font-semibold text-[0.82rem] mb-2">{t.sub}</div>
-              <p className="text-[0.78rem] text-warm-600 leading-[1.65] mb-4">{t.desc}</p>
-              <div className="flex items-center gap-1 text-[0.78rem] font-semibold text-warm-800 group-hover:text-red transition-colors">
-                Learn More <ChevronRight size={14} />
-              </div>
-            </a>
-          ))}
+          {treatments.map((t) => {
+            const isComingSoon = (t as any).comingSoon;
+            const cardClass = `bg-card border border-warm-100 rounded-2xl p-6 transition-all block ${isComingSoon ? "opacity-90 cursor-default" : "hover:border-red hover:shadow-soft group"}`;
+            const inner = (
+              <>
+                {t.badge && (
+                  <span className={`inline-block text-[0.58rem] font-bold tracking-[0.1em] uppercase px-2.5 py-0.5 rounded-full mb-3 ${isComingSoon ? "bg-warm-100 text-warm-600" : "bg-red text-primary-foreground"}`}>{t.badge}</span>
+                )}
+                <h3 className={`font-display font-bold text-warm-800 text-lg mb-1 ${isComingSoon ? "" : "group-hover:text-red"} transition-colors`}>{t.name}</h3>
+                <div className="text-red font-semibold text-[0.82rem] mb-2">{t.sub}</div>
+                <p className="text-[0.78rem] text-warm-600 leading-[1.65] mb-4">{t.desc}</p>
+                {!isComingSoon && (
+                  <div className="flex items-center gap-1 text-[0.78rem] font-semibold text-warm-800 group-hover:text-red transition-colors">
+                    Learn More <ChevronRight size={14} />
+                  </div>
+                )}
+              </>
+            );
+            return isComingSoon ? (
+              <div key={t.name} className={cardClass}>{inner}</div>
+            ) : (
+              <a key={t.name} href={t.href} className={cardClass}>{inner}</a>
+            );
+          })}
         </div>
 
         {/* Includes callout */}
