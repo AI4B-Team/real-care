@@ -36,7 +36,7 @@ const WeightLoss = () => {
             </a>
           </div>
           <div className="flex flex-wrap gap-4">
-            {["From $179/mo ($6/day) — All-Inclusive", "Money-Back Guarantee", "No Membership Fee", "Free Discreet Shipping", "HSA/FSA Accepted"].map((t) => (
+            {["From $179/mo ($6/day) — All-Inclusive", "Same Price at Every Dose — No Increases as You Escalate", "Money-Back Guarantee", "No Membership Fee", "Free Discreet Shipping", "HSA/FSA Accepted"].map((t) => (
               <div key={t} className="flex items-center gap-1.5 text-[0.72rem] text-warm-600">
                 <span className="text-red"><Check /></span>{t}
               </div>
