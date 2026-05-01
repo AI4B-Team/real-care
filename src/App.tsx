@@ -60,6 +60,7 @@ import ConsumerHealthDataPrivacy from "./pages/ConsumerHealthDataPrivacy.tsx";
 import Glp1Quiz from "./pages/Glp1Quiz.tsx";
 import SupportFAQ from "./pages/SupportFAQ.tsx";
 import BMICalculator from "./pages/BMICalculator.tsx";
+import Calculators from "./pages/Calculators.tsx";
 
 const queryClient = new QueryClient();
 
@@ -125,6 +126,7 @@ const App = () => (
           <Route path="/glp1-quiz" element={<Glp1Quiz />} />
           <Route path="/support" element={<SupportFAQ />} />
           <Route path="/faq" element={<SupportFAQ />} />
+          <Route path="/calculators" element={<Calculators />} />
           <Route path="/calculators/bmi" element={<BMICalculator />} />
           <Route path="/bmi-calculator" element={<BMICalculator />} />
 
