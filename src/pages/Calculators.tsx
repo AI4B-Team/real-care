@@ -115,7 +115,8 @@ const Calculators = () => {
             Take Your Free Health Check
           </h2>
           <p className="text-[0.88rem] text-white/70 leading-[1.75] mb-6">
-            A full medical assessment takes 5 minutes. A board-certified provider reviews your intake within 24–48 hours.
+            A full medical assessment takes 5 minutes.<br />
+            A board-certified provider reviews your intake within 24–48 hours.
           </p>
           <a
             href="/health-check"
