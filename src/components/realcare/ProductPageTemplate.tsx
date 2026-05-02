@@ -359,6 +359,37 @@ const ProductPageTemplate = ({
               </div>
             </div>
 
+            {/* Inline FAQ accordion in right panel */}
+            <div className="mt-6 space-y-2">
+              {faqs.slice(0, 5).map((f, i) => {
+                const key = 1000 + i;
+                const isOpen = openFaq === key;
+                return (
+                  <div key={f.q} className="bg-card border border-warm-100 rounded-xl overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? null : key)}
+                      className="w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left"
+                    >
+                      <span className="font-display font-bold text-warm-800 text-[0.9rem]">{f.q}</span>
+                      <ChevronDown
+                        size={18}
+                        className={`flex-shrink-0 text-warm-700 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-4 pb-4 text-[0.82rem] text-warm-600 leading-[1.7]">{f.a}</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-4 text-center">
+              <a href="#safety" className="text-[0.85rem] text-warm-800 underline underline-offset-4 font-semibold hover:text-warm-900">
+                Important Safety Information
+              </a>
+            </div>
+
             <p className="text-[0.78rem] text-warm-600 leading-[1.7] mt-6">{sub}</p>
           </div>
         </div>
