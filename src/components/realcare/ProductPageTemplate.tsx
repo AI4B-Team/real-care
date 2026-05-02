@@ -362,14 +362,17 @@ const ProductPageTemplate = ({
 
               {tab === "benefits" ? (
                 <div className="space-y-3">
-                  {trustBullets.map((t) => (
-                    <div key={t} className="flex items-start gap-3 text-[0.85rem] text-warm-700 leading-[1.55]">
-                      <span className="text-emerald-600 flex-shrink-0 mt-0.5">
-                        <CheckCircle2 size={16} />
-                      </span>
-                      {t}
-                    </div>
-                  ))}
+                  {trustBullets.map((t) => {
+                    const Icon = bulletIcon(t);
+                    return (
+                      <div key={t} className="flex items-start gap-3 text-[0.85rem] text-warm-700 leading-[1.55]">
+                        <span className="text-emerald-600 flex-shrink-0 mt-0.5">
+                          <Icon size={16} />
+                        </span>
+                        {t}
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
                 <p className="text-[0.85rem] text-warm-700 leading-[1.75]">{computedDescription}</p>
