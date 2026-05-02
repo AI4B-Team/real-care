@@ -11,6 +11,24 @@ const WeightLoss = () => {
       pill="Doctor-Led Plans"
       productImage={productImage}
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
+      heroBg="bg-[#C8E6C9]"
+      tagline="A personalized weight-loss plan built around you."
+      savingsLabel="Save $80 On Your First Order"
+      plans={[
+        {
+          group: "Compounded Semaglutide",
+          options: [
+            { label: "3-Month Plan", price: "$129", priceSuffix: "first month", afterPrice: "$209/mo after", badge: "Best Value" },
+            { label: "Monthly Plan", price: "$149", priceSuffix: "first month", afterPrice: "$229/mo after" },
+          ],
+        },
+        {
+          group: "Compounded Tirzepatide",
+          options: [
+            { label: "Monthly Plan", price: "$249", priceSuffix: "first month", afterPrice: "$329/mo after" },
+          ],
+        },
+      ]}
       headline={
         <>
           Lose Weight.
