@@ -145,8 +145,8 @@ const ProductPageTemplate = ({
       {/* Hero — Eden-style: big image left, buy card right */}
       <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-10 md:py-14">
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start fade-up">
-          {/* Image panel */}
-          <div className="relative">
+          {/* Image panel — sticky on desktop so it stays in view while right column scrolls */}
+          <div className="relative lg:sticky lg:top-24 lg:self-start">
             <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
               {productImage && (
                 <img
@@ -236,6 +236,11 @@ const ProductPageTemplate = ({
               </a>
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount auto-applied at checkout
+              </div>
+              <div className="mt-4 pt-4 border-t border-warm-100 flex items-center justify-center gap-3 text-[0.68rem] text-warm-500">
+                <span>Buy now, pay later with</span>
+                <span className="px-2 py-0.5 rounded bg-[#FFA8C5] text-black font-bold text-[0.65rem]">Klarna</span>
+                <span className="px-2 py-0.5 rounded bg-[#B2FCE4] text-black font-bold text-[0.65rem]">Afterpay</span>
               </div>
             </div>
 
