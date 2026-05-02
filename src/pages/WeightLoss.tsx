@@ -46,7 +46,7 @@ const WeightLoss = () => {
           <span className="text-red">Keep It Off.</span>
         </>
       }
-      sub="Doctor-led GLP-1 plans containing the same active ingredients used in leading prescription weight-loss medications — at a fraction of the brand-name cost. No waiting rooms, no insurance required, delivered to your door."
+      sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
         "From $179/Mo — All-Inclusive",
         "Same Price At Every Dose",
