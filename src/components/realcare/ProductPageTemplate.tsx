@@ -271,6 +271,17 @@ const ProductPageTemplate = ({
               {headline}
             </h1>
 
+            {tagline && (
+              <p className="text-[0.92rem] text-warm-600 leading-[1.5] mb-3">{tagline}</p>
+            )}
+
+            {savingsLabel && (
+              <div className="flex items-center justify-center gap-2 bg-emerald-400 text-emerald-950 text-[0.85rem] font-bold rounded-2xl py-2.5 px-4 mb-3 shadow-sm">
+                <ShieldCheck size={16} className="text-emerald-800" />
+                {savingsLabel}
+              </div>
+            )}
+
             {/* Trustpilot */}
             <a
               href="https://www.trustpilot.com"
@@ -292,17 +303,6 @@ const ProductPageTemplate = ({
                 Trustpilot
               </span>
             </a>
-
-            {tagline && (
-              <p className="text-[0.92rem] text-warm-600 leading-[1.5] mb-3">{tagline}</p>
-            )}
-
-            {savingsLabel && (
-              <div className="flex items-center justify-center gap-2 bg-emerald-400 text-emerald-950 text-[0.85rem] font-bold rounded-2xl py-2.5 px-4 mb-3 shadow-sm">
-                <ShieldCheck size={16} className="text-emerald-800" />
-                {savingsLabel}
-              </div>
-            )}
 
             {/* Plan selector card */}
             <div className="bg-card border border-warm-100 rounded-2xl p-5 md:p-6 shadow-soft">
