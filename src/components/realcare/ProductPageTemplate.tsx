@@ -2,6 +2,9 @@ import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
 import klarnaLogo from "@/assets/klarna-logo.png";
 import afterpayLogo from "@/assets/afterpay-logo.png";
+import step1Img from "@/assets/step-1-phone-form.jpg";
+import step2Img from "@/assets/step-2-package.jpg";
+import step3Img from "@/assets/step-3-support.jpg";
 import PageLayout from "./PageLayout";
 import {
   ChevronRight,
@@ -437,17 +440,20 @@ const ProductPageTemplate = ({
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { step: "1", title: "Submit Your Application And Meet With A Doctor", desc: "Complete a quick form and meet with a licensed medical provider 100% online. They'll determine if a personalized treatment plan is right for you." },
-              { step: "2", title: "Get Your Medication Delivered At Home", desc: "If eligible, your custom prescription will be shipped directly to your door, fast and free." },
-              { step: "3", title: "Receive 24/7 Support And Ongoing Care", desc: "We'll be with you every step of the way, with regular check-ins and on-demand medical support to keep you on track." },
+              { step: "1", title: "Submit Your Application And Meet With A Doctor", desc: "Complete a quick form and meet with a licensed medical provider 100% online. They'll determine if a personalized treatment plan is right for you.", img: step1Img, alt: "Hands holding a phone with the Real Care intake form" },
+              { step: "2", title: "Get Your Medication Delivered At Home", desc: "If eligible, your custom prescription will be shipped directly to your door, fast and free.", img: step2Img, alt: "Discreet shipping package" },
+              { step: "3", title: "Receive 24/7 Support And Ongoing Care", desc: "We'll be with you every step of the way, with regular check-ins and on-demand medical support to keep you on track.", img: step3Img, alt: "Patient receiving a message from her provider" },
             ].map((s) => (
-              <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-3xl p-7">
+              <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-3xl p-7 flex flex-col">
                 <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-5">
                   {s.title}
                 </h3>
                 <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-warm-500 mb-1">Step</div>
                 <div className="font-display font-black text-warm-800 text-[2.2rem] leading-none mb-4">{s.step}</div>
-                <p className="text-[0.85rem] text-warm-600 leading-[1.75]">{s.desc}</p>
+                <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.desc}</p>
+                <div className="mt-auto rounded-2xl overflow-hidden bg-warm-100/50 aspect-[4/3]">
+                  <img src={s.img} alt={s.alt} loading="lazy" width={768} height={768} className="w-full h-full object-cover" />
+                </div>
               </div>
             ))}
           </div>
