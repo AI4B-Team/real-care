@@ -9,6 +9,9 @@ const EdTreatment = () => (
     pill="Works In 15 Minutes"
     productImage={productImage}
     productImageAlt="Generic ED tablets in blister pack"
+    heroBg="bg-[#BFD9E8]"
+    tagline="Better sex, prescribed online and shipped discreetly."
+    savingsLabel="Discreet Shipping On Every Order"
     headline={<>Better Sex.<br /><span className="text-red">Every Time.</span></>}
     sub="Doctor-prescribed ED treatment ordered online and shipped to your door in plain packaging. Works in as little as 15 minutes — and may last up to 36 hours, if appropriate for you."
     trustBullets={["From $2 / Dose", "Works In 15–30 Min", "Lasts Up To 36 Hours", "No Membership Fee", "Free Discreet Shipping"]}

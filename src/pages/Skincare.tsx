@@ -9,6 +9,9 @@ const Skincare = () => (
     pill="Prescription Strength"
     productImage={productImage}
     productImageAlt="Custom prescription skincare serum dropper bottle"
+    heroBg="bg-[#F5D0D5]"
+    tagline="Custom prescription skincare formulas, delivered monthly."
+    savingsLabel="Free Shipping On Every Order"
     headline={<>Clearer Skin.<br /><span className="text-red">Prescription Strength.</span></>}
     sub="Custom prescription skincare formulas prescribed online by licensed dermatology providers. Stronger than anything over the counter — delivered monthly if appropriate for you."
     trustBullets={["From $35 / Mo", "Custom Formulas", "Board-Certified Providers", "No Membership Fee", "Free Discreet Shipping"]}
