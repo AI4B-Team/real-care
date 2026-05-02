@@ -9,6 +9,9 @@ const Peptides = () => (
     pill="Performance & Recovery"
     productImage={productImage}
     productImageAlt="Compounded peptide therapy injection vial"
+    heroBg="bg-[#D6C9E8]"
+    tagline="Doctor-prescribed peptide therapy for performance and recovery."
+    savingsLabel="Compounded In The U.S.A."
     headline={<>Perform Better.<br /><span className="text-red">Recover Faster.</span></>}
     sub="Doctor-prescribed peptide therapy for muscle recovery, fat loss, anti-aging, and peak performance. Cutting-edge longevity care — accessible online if appropriate for you."
     trustBullets={["From $129 / Mo", "Board-Certified Providers", "U.S. State-Licensed Pharmacies", "No Membership Fee", "Free Discreet Shipping"]}

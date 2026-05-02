@@ -9,6 +9,9 @@ const MentalHealth = () => (
     pill="Private & Confidential"
     productImage={productImage}
     productImageAlt="Mental health prescription medication bottle"
+    heroBg="bg-[#C9D4E8]"
+    tagline="Online psychiatry and prescription mental-health care."
+    savingsLabel="No Insurance Required"
     headline={<>Feel Like<br /><span className="text-red">Yourself Again.</span></>}
     sub="Online mental health prescriptions for anxiety, depression, and sleep — from licensed psychiatric providers. Private, judgment-free, delivered monthly if appropriate for you."
     trustBullets={["From $49 / Mo", "Licensed Psychiatric Providers", "Private & Confidential", "No Membership Fee", "Free Discreet Shipping"]}

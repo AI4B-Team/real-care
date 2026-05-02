@@ -9,6 +9,9 @@ const Menopause = () => (
     pill="Bioidentical HRT"
     productImage={productImage}
     productImageAlt="Bioidentical hormone therapy capsules for menopause"
+    heroBg="bg-[#F5C8B8]"
+    tagline="Personalized hormone therapy for perimenopause and menopause."
+    savingsLabel="Free Discreet Shipping"
     headline={<>Feel Like<br /><span className="text-red">Yourself Again.</span></>}
     sub="Doctor-led bioidentical hormone therapy for menopause and perimenopause — prescribed online by licensed OB-GYN providers. Hot flashes, brain fog, sleep, mood — all addressed if appropriate."
     trustBullets={["From $79 / Mo", "Licensed OB-GYN Providers", "Bioidentical Hormones", "No Membership Fee", "Free Discreet Shipping"]}

@@ -9,6 +9,9 @@ const Testosterone = () => (
     pill="Lab Testing Included"
     productImage={productImage}
     productImageAlt="Testosterone vial and syringe for hormone therapy"
+    heroBg="bg-[#E5D5BD]"
+    tagline="Lab testing, provider consult, and medication — one flat price."
+    savingsLabel="Lab Testing Included"
     headline={<>More Energy.<br /><span className="text-red">Stronger Drive.</span></>}
     sub="Doctor-led testosterone replacement therapy prescribed online. Lab testing, provider consultation, and monthly medication — all included in one flat price."
     trustBullets={["From $99 / Mo — All-Inclusive", "Lab Testing Included", "Board-Certified Providers", "No Membership Fee", "Free Discreet Shipping"]}

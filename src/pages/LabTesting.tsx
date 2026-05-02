@@ -9,6 +9,9 @@ const LabTesting = () => (
     pill="40+ Biomarkers"
     productImage={productImage}
     productImageAlt="At-home lab test collection kit"
+    heroBg="bg-[#F0E5BD]"
+    tagline="40+ biomarkers reviewed by a licensed provider."
+    savingsLabel="No Office Visit Required"
     headline={<>Know Your Numbers.<br /><span className="text-red">Own Your Health.</span></>}
     sub="Comprehensive lab testing ordered by a licensed provider — 40+ biomarkers including testosterone, thyroid, metabolic panel, and more. Provider-reviewed action plan included."
     trustBullets={["From $99 — One Time", "40+ Biomarkers", "Provider-Reviewed Results", "No Membership Fee", "No Office Visit"]}

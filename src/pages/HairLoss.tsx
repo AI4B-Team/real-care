@@ -9,6 +9,9 @@ const HairLoss = () => (
     pill="Clinically Studied"
     productImage={productImage}
     productImageAlt="Prescription hair regrowth serum dropper bottle"
+    heroBg="bg-[#E8C4A0]"
+    tagline="Doctor-led prescription hair-loss care for men and women."
+    savingsLabel="Free Shipping On Every Order"
     headline={<>Fuller Hair.<br /><span className="text-red">Starting In 90 Days.</span></>}
     sub="Doctor-led prescription hair-loss care for men and women. Clinically studied ingredients designed to help slow shedding and may support regrowth — delivered monthly if appropriate."
     trustBullets={["From $39 / Mo", "Men & Women", "Clinically Studied Ingredients", "No Membership Fee", "Free Discreet Shipping"]}

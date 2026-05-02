@@ -30,6 +30,19 @@ interface Medication {
   bullets: string[];
 }
 
+interface PlanOption {
+  label: string;        // e.g. "3-Month Plan"
+  price: string;        // e.g. "$129"
+  priceSuffix?: string; // e.g. "first month"
+  afterPrice?: string;  // e.g. "$209/mo after"
+  badge?: string;       // e.g. "Best Value"
+}
+
+interface PlanGroup {
+  group: string;        // e.g. "Compounded Semaglutide"
+  options: PlanOption[];
+}
+
 interface FAQ {
   q: string;
   a: string;
@@ -50,9 +63,17 @@ interface ProductPageProps {
   disclaimer?: string;
   pageTitle: string;
 
-  /** New optional fields (defaulted so all product pages get the rich layout). */
+  /** Eden-style hero options. */
   productImage?: string;
   productImageAlt?: string;
+  /** Tailwind class for the product image panel background, e.g. "bg-[#D7EEE4]". */
+  heroBg?: string;
+  /** Short tagline shown under the headline in the buy card. */
+  tagline?: string;
+  /** Yellow savings banner text, e.g. "Save $80 on your first order". */
+  savingsLabel?: string;
+  /** Grouped plan selector. Falls back to `medications` if omitted. */
+  plans?: PlanGroup[];
   faqs?: FAQ[];
 }
 
@@ -98,16 +119,53 @@ const ProductPageTemplate = ({
   pageTitle,
   productImage,
   productImageAlt,
+  heroBg = "bg-[#D7EEE4]",
+  tagline,
+  savingsLabel,
+  plans,
   faqs = DEFAULT_FAQS,
 }: ProductPageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
+  const planGroups: PlanGroup[] =
+    plans ??
+    medications.map((m) => ({
+      group: m.name,
+      options: [
+        {
+          label: m.desc,
+          price: m.price.replace(/^From\s+/i, ""),
+          badge: m.popular ? "Best Value" : undefined,
+        },
+      ],
+    }));
+
   return (
     <PageLayout title={pageTitle}>
-      {/* Hero */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-16">
-        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-10 items-center fade-up">
-          <div>
+      {/* Hero — Eden-style: big image left, buy card right */}
+      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-10 md:py-14">
+        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start fade-up">
+          {/* Image panel */}
+          <div className="relative">
+            <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
+              {productImage && (
+                <img
+                  src={productImage}
+                  alt={productImageAlt || "Product"}
+                  loading="eager"
+                  width={1024}
+                  height={1280}
+                  className="w-full h-full object-cover"
+                />
+              )}
+            </div>
+            <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-emerald-700 text-[0.7rem] font-semibold px-3 py-1.5 rounded-full shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> In Stock
+            </div>
+          </div>
+
+          {/* Buy card */}
+          <div className="lg:pt-2">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {label}
@@ -117,65 +175,88 @@ const ProductPageTemplate = ({
                   <Check /> {pill}
                 </div>
               )}
-              <div className="inline-flex items-center gap-1.5 bg-success text-success-foreground text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
-                <CreditCard size={11} /> HSA / FSA Eligible
-              </div>
-              <div className="inline-flex items-center gap-1.5 bg-emerald-100 text-emerald-700 text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded">
-                <CircleDot size={11} /> In Stock
-              </div>
             </div>
-            <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(2rem,4vw,3.2rem)] mb-4 max-w-[600px]">
+
+            <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(2.2rem,4.4vw,3.4rem)] mb-3">
               {headline}
             </h1>
-            <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-[520px] mb-6">{sub}</p>
-            <div className="flex gap-3 flex-wrap mb-6">
+            {tagline && (
+              <p className="text-[1rem] text-warm-600 leading-[1.55] mb-6">{tagline}</p>
+            )}
+
+            {savingsLabel && (
+              <div className="flex items-center justify-center gap-2 bg-amber-100 text-warm-800 text-[0.85rem] font-semibold rounded-2xl py-3 px-4 mb-4">
+                <ShieldCheck size={16} className="text-amber-600" />
+                {savingsLabel}
+              </div>
+            )}
+
+            <div className="bg-card border border-warm-100 rounded-2xl p-5 md:p-6 shadow-soft">
+              {planGroups.map((g, gi) => (
+                <div key={g.group} className={gi > 0 ? "mt-5 pt-5 border-t border-warm-100" : ""}>
+                  <div className="text-center font-display font-bold text-warm-800 text-[0.95rem] mb-3">
+                    {g.group}
+                  </div>
+                  <div className="space-y-2">
+                    {g.options.map((opt) => (
+                      <div
+                        key={opt.label + opt.price}
+                        className="relative flex items-center justify-between gap-3 bg-warm-50 border border-warm-100 rounded-xl px-4 py-3"
+                      >
+                        {opt.badge && (
+                          <span className="absolute -top-2 right-3 bg-emerald-500 text-white text-[0.6rem] font-bold tracking-wide uppercase px-2 py-0.5 rounded-full">
+                            {opt.badge}
+                          </span>
+                        )}
+                        <div className="text-[0.85rem] font-semibold text-warm-800">{opt.label}</div>
+                        <div className="text-right">
+                          <div className="leading-tight">
+                            <span className="text-warm-800 font-bold text-[1.1rem]">{opt.price}</span>
+                            {opt.priceSuffix && (
+                              <span className="text-emerald-700 text-[0.72rem] font-semibold ml-1">
+                                {opt.priceSuffix}
+                              </span>
+                            )}
+                          </div>
+                          {opt.afterPrice && (
+                            <div className="text-[0.68rem] text-warm-500">{opt.afterPrice}</div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
               <a
-                href="#treatments"
-                className="bg-red hover:bg-red-dark text-primary-foreground font-bold px-7 py-3 rounded-lg text-[0.88rem] transition-colors flex items-center gap-2"
+                href="/health-check"
+                className="mt-5 w-full bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3.5 rounded-xl text-[0.95rem] transition-colors flex items-center justify-center gap-2"
               >
                 See If I Qualify <ChevronRight size={16} />
               </a>
-              <a
-                href="/how-it-works"
-                className="border border-warm-200 hover:border-warm-600 text-warm-800 font-medium px-6 py-3 rounded-lg text-[0.88rem] transition-colors"
-              >
-                How It Works
-              </a>
+              <div className="text-center text-[0.7rem] text-warm-500 mt-2">
+                Discount auto-applied at checkout
+              </div>
             </div>
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
+
+            <div className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3">
               {trustBullets.map((t) => (
-                <div key={t} className="flex items-center gap-1.5 text-[0.72rem] text-warm-600">
-                  <span className="text-red">
-                    <Check />
+                <div key={t} className="flex items-center gap-2 text-[0.8rem] text-warm-700">
+                  <span className="text-emerald-600 flex-shrink-0">
+                    <CheckCircle2 size={14} />
                   </span>
                   {t}
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-2 mt-6 text-[0.72rem] text-warm-500">
+
+            <p className="text-[0.78rem] text-warm-600 leading-[1.7] mt-6">{sub}</p>
+
+            <div className="flex items-center gap-2 mt-4 text-[0.72rem] text-warm-500">
               <MapPin size={12} className="text-red" />
               Compounded In The U.S.A. By State-Licensed Pharmacies
             </div>
           </div>
-
-          {/* Product Image */}
-          {productImage && (
-            <div className="relative">
-              <div className="aspect-square rounded-3xl bg-[#D7EEE4] overflow-hidden">
-                <img
-                  src={productImage}
-                  alt={productImageAlt || "Product"}
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-emerald-700 text-[0.62rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full shadow-sm">
-                <CircleDot size={11} /> In Stock
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
