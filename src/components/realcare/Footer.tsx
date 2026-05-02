@@ -23,11 +23,15 @@ const companyLinks = [
 const legalLinks = [
   { label: "Terms", href: "/terms" },
   { label: "Privacy", href: "/privacy" },
+  { label: "Notice of Privacy Practices (HIPAA)", href: "/hipaa" },
+  { label: "SMS Privacy", href: "/sms-privacy" },
   { label: "Medical Consent", href: "/medical-consent" },
-  { label: "HIPAA", href: "/hipaa" },
   { label: "Telehealth", href: "/telehealth-consent" },
+  { label: "Shipping Policy", href: "/shipping-policy" },
+  { label: "My Health My Data", href: "/my-health-my-data" },
   { label: "Accessibility", href: "/accessibility" },
   { label: "Refund Policy", href: "/refund-policy" },
+  { label: "Important Safety Info", href: "/safety-info" },
 ];
 
 // Real brand logos (official simple-icons SVG paths)
