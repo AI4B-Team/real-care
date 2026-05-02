@@ -1,5 +1,6 @@
 import qrReal from "@/assets/qr-real.png";
 import phoneDoctor from "@/assets/app-phone-doctor.png";
+import compoundedUsa from "@/assets/compounded-usa-white.png";
 
 const Footer = () => (
   <footer className="bg-black text-white px-5 md:px-12 pt-14 pb-10">
@@ -49,6 +50,11 @@ const Footer = () => (
             </a>
           ))}
         </div>
+      </div>
+
+      {/* Compounded in the USA badge */}
+      <div className="border-t border-white/15 pt-8 pb-6 flex justify-center">
+        <img src={compoundedUsa} alt="Compounded in the U.S.A." className="h-24 w-auto opacity-90" />
       </div>
 
       {/* Legal bar */}
