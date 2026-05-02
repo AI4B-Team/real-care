@@ -126,28 +126,31 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Treatments */}
-          <div className="lg:col-span-3">
-            <h4 className="text-[0.7rem] font-semibold tracking-[0.2em] text-white/45 uppercase mb-5">Treatments</h4>
-            <ul className="space-y-3">
-              {productLinks.map((l) => (
-                <li key={l.label}>
-                  <a href={l.href} className="text-[0.86rem] text-white/85 hover:text-white transition-colors">{l.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Links - right aligned */}
+          <div className="lg:col-span-7 lg:col-start-6 grid grid-cols-2 gap-8 lg:justify-items-end">
+            {/* Treatments */}
+            <div>
+              <h4 className="text-[0.7rem] font-semibold tracking-[0.2em] text-white/45 uppercase mb-5">Treatments</h4>
+              <ul className="space-y-3">
+                {productLinks.map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="text-[0.86rem] text-white/85 hover:text-white transition-colors">{l.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Company */}
-          <div className="lg:col-span-4">
-            <h4 className="text-[0.7rem] font-semibold tracking-[0.2em] text-white/45 uppercase mb-5">Company</h4>
-            <ul className="space-y-3">
-              {companyLinks.map((l) => (
-                <li key={l.label}>
-                  <a href={l.href} className="text-[0.86rem] text-white/85 hover:text-white transition-colors">{l.label}</a>
-                </li>
-              ))}
-            </ul>
+            {/* Company */}
+            <div>
+              <h4 className="text-[0.7rem] font-semibold tracking-[0.2em] text-white/45 uppercase mb-5">Company</h4>
+              <ul className="space-y-3">
+                {companyLinks.map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="text-[0.86rem] text-white/85 hover:text-white transition-colors">{l.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
