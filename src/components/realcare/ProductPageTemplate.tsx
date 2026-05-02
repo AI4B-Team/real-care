@@ -286,15 +286,8 @@ const ProductPageTemplate = ({
 
               <div className="mt-5 flex items-center justify-center flex-wrap gap-2 text-[0.78rem] text-warm-700">
                 <span>Buy now, pay later with</span>
-                <span className="inline-flex items-center justify-center px-3 py-1 rounded bg-[#FFA8C5] text-black font-bold tracking-tight text-[0.9rem] leading-none" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                  Klarna.
-                </span>
-                <span className="inline-flex items-center justify-center px-3 py-1 rounded bg-[#B2FCE4] text-black font-bold tracking-tight text-[0.9rem] leading-none lowercase" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-                  afterpay
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="ml-0.5">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </span>
+                <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-6 w-auto" />
+                <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-6 w-auto" />
               </div>
 
               <a
