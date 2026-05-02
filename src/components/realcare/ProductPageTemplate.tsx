@@ -464,13 +464,12 @@ const ProductPageTemplate = ({
               { step: "3", title: "Receive 24/7 Support And Ongoing Care", desc: "We'll be with you every step of the way, with regular check-ins and on-demand medical support to keep you on track.", img: step3Img, alt: "Patient receiving a message from her provider" },
             ].map((s) => (
               <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-3xl p-7 flex flex-col">
-                <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-5">
+                <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-warm-500 mb-3">Step {s.step}</div>
+                <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-4">
                   {s.title}
                 </h3>
-                <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-warm-500 mb-1">Step</div>
-                <div className="font-display font-black text-warm-800 text-[2.2rem] leading-none mb-4">{s.step}</div>
                 <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.desc}</p>
-                <div className="mt-auto rounded-2xl overflow-hidden bg-warm-100/50 aspect-[4/3]">
+                <div className="mt-auto rounded-2xl overflow-hidden bg-white aspect-[4/3]">
                   <img src={s.img} alt={s.alt} loading="lazy" width={768} height={768} className="w-full h-full object-cover" />
                 </div>
               </div>
