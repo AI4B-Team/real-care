@@ -74,7 +74,7 @@ const WeightLoss = () => {
         {
           name: "Compounded Semaglutide",
           desc: "Once-Weekly Injection · Includes B12 For Energy Support",
-          price: "From $179/Mo",
+          price: "From $129/Mo",
           popular: true,
           bullets: [
             "May Reduce Appetite And Cravings",
