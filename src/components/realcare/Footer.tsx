@@ -157,13 +157,16 @@ const Footer = () => {
         {/* Disclaimer block */}
         <div className="pt-8 space-y-4 text-[0.72rem] text-white/55 leading-[1.7]">
           <p>
-            <span className="text-white/75 font-medium">Prescription Process:</span> Online evaluations with independent licensed medical professionals determine prescription appropriateness. Physicians may prescribe FDA-approved or compounded medications based on patient needs and clinical necessity. The FDA does not review compounded medications for safety or effectiveness.
+            <span className="text-white/75 font-medium">Care Model:</span> Clinical care is delivered by Real Care Affiliated P.C.s and a network of independent, board-certified providers via OpenLoop Health. Treatment is only prescribed after a licensed provider reviews your intake and confirms it's clinically appropriate for you. Not every patient qualifies.
           </p>
           <p>
-            <span className="text-white/75 font-medium">Medication Access:</span> If eligible after provider consultation, prescriptions can be filled at network pharmacies unless you specify otherwise. Product packaging may differ from images shown. Compounded medications are dispensed by state-licensed pharmacies and are not FDA-approved. Results vary.
+            <span className="text-white/75 font-medium">Medications & Pharmacy:</span> When approved, prescriptions are filled by partner state-licensed pharmacies and shipped directly to your door. Some treatments may include compounded formulations, which are not reviewed or approved by the FDA for safety or effectiveness. Product appearance and packaging may vary. Individual results vary and are not guaranteed.
           </p>
           <p>
-            <span className="text-white/75 font-medium">Pricing:</span> Our "Same Price at Every Dose" policy ensures consistent pricing regardless of dosage adjustments throughout your program (excluding new member discounts or specific plans). Terms apply. <span className="text-white/75 font-medium">Accessibility:</span> Real Care is committed to equal web access for persons with disabilities. For accessibility feedback, contact <a href="mailto:care@realcare.com" className="underline hover:text-white">care@realcare.com</a>.
+            <span className="text-white/75 font-medium">Pricing & Guarantee:</span> Our "Same Price at Every Dose" promise keeps your monthly cost flat as your provider adjusts your dosage (introductory offers and limited-time plans excluded). Money-back guarantees, if any, are subject to the terms of your specific program. HSA/FSA acceptance varies by plan. People shown in marketing may be models or paid actors.
+          </p>
+          <p>
+            <span className="text-white/75 font-medium">Accessibility:</span> Real Care is committed to equal web access for people with disabilities. To share accessibility feedback, email <a href="mailto:care@realcare.com" className="underline hover:text-white">care@realcare.com</a>.
           </p>
         </div>
 
