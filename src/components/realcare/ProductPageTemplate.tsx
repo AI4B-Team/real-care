@@ -124,6 +124,7 @@ const ProductPageTemplate = ({
   pageTitle,
   productImage,
   productImageAlt,
+  galleryImages,
   heroBg = "bg-[#D7EEE4]",
   tagline,
   savingsLabel,
@@ -135,6 +136,8 @@ const ProductPageTemplate = ({
 }: ProductPageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [tab, setTab] = useState<"benefits" | "description">("benefits");
+  const allImages = [productImage, ...(galleryImages || [])].filter(Boolean) as string[];
+  const [activeImage, setActiveImage] = useState(productImage || "");
 
   const planGroups: PlanGroup[] =
     plans ??
