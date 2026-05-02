@@ -78,6 +78,7 @@ interface ProductPageProps {
 
   productImage?: string;
   productImageAlt?: string;
+  galleryImages?: string[];
   heroBg?: string;
   tagline?: string;
   savingsLabel?: string;
