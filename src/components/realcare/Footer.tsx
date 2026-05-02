@@ -11,11 +11,14 @@ const Footer = () => (
 
         {/* Logo + tagline + social */}
         <div>
-          <div className="bg-red w-[110px] p-[6px] mb-4">
-            <div className="border-[2px] border-white py-1 px-[14px] flex flex-col items-center">
-              <span className="font-body text-[1.65rem] font-black text-white tracking-[0.05em] leading-none">REAL</span>
-              <span className="font-body text-[0.42rem] font-bold tracking-[0.3em] text-white uppercase mt-[2px]">CARE</span>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="bg-red w-[110px] p-[6px]">
+              <div className="border-[2px] border-white py-1 px-[14px] flex flex-col items-center">
+                <span className="font-body text-[1.65rem] font-black text-white tracking-[0.05em] leading-none">REAL</span>
+                <span className="font-body text-[0.42rem] font-bold tracking-[0.3em] text-white uppercase mt-[2px]">CARE</span>
+              </div>
             </div>
+            <img src={compoundedUsa} alt="Compounded in the U.S.A." className="h-[60px] w-auto" />
           </div>
           <p className="text-[0.78rem] text-white/70 leading-[1.65] max-w-[240px] mb-5">
             Healthcare redefined for real life. Licensed providers. Clear pricing. Shipped to your door.
@@ -50,11 +53,6 @@ const Footer = () => (
             </a>
           ))}
         </div>
-      </div>
-
-      {/* Compounded in the USA badge */}
-      <div className="border-t border-white/15 pt-8 pb-6 flex justify-center">
-        <img src={compoundedUsa} alt="Compounded in the U.S.A." className="h-24 w-auto opacity-90" />
       </div>
 
       {/* Legal bar */}
