@@ -360,7 +360,7 @@ const ProductPageTemplate = ({
                       onClick={() => setOpenFaq(isOpen ? null : key)}
                       className="w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left"
                     >
-                      <span className="font-display font-bold text-warm-800 text-[0.9rem]">{f.q}</span>
+                      <span className="font-sans font-semibold text-warm-800 text-[0.95rem]">{f.q}</span>
                       <ChevronDown
                         size={18}
                         className={`flex-shrink-0 text-warm-700 transition-transform ${isOpen ? "rotate-180" : ""}`}
