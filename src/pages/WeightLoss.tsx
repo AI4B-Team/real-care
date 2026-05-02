@@ -49,7 +49,7 @@ const WeightLoss = () => {
       }
       sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
-        "From $129/Mo — All-Inclusive",
+        "From $179/Mo — All-Inclusive",
         "Same Price At Every Dose",
         "Money-Back Guarantee",
         "No Membership Fee",
