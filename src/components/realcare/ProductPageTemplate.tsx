@@ -1,19 +1,20 @@
 import { ReactNode, useState } from "react";
+import { Link } from "react-router-dom";
 import PageLayout from "./PageLayout";
 import {
   ChevronRight,
   ChevronDown,
   CheckCircle2,
   ShieldCheck,
-  CreditCard,
-  CircleDot,
   MapPin,
   Stethoscope,
   Truck,
   Clock,
   HeartHandshake,
-  ClipboardList,
-  Package,
+  Star,
+  BadgeCheck,
+  Sparkles,
+  Shield,
 } from "lucide-react";
 
 const Check = () => (
@@ -31,21 +32,33 @@ interface Medication {
 }
 
 interface PlanOption {
-  label: string;        // e.g. "3-Month Plan"
-  price: string;        // e.g. "$129"
-  priceSuffix?: string; // e.g. "first month"
-  afterPrice?: string;  // e.g. "$209/mo after"
-  badge?: string;       // e.g. "Best Value"
+  label: string;
+  price: string;
+  priceSuffix?: string;
+  afterPrice?: string;
+  badge?: string;
 }
 
 interface PlanGroup {
-  group: string;        // e.g. "Compounded Semaglutide"
+  group: string;
   options: PlanOption[];
 }
 
 interface FAQ {
   q: string;
   a: string;
+}
+
+interface Review {
+  name: string;
+  text: string;
+}
+
+interface RelatedProduct {
+  name: string;
+  image: string;
+  bg: string;
+  href: string;
 }
 
 interface ProductPageProps {
@@ -63,45 +76,36 @@ interface ProductPageProps {
   disclaimer?: string;
   pageTitle: string;
 
-  /** Eden-style hero options. */
   productImage?: string;
   productImageAlt?: string;
-  /** Tailwind class for the product image panel background, e.g. "bg-[#D7EEE4]". */
   heroBg?: string;
-  /** Short tagline shown under the headline in the buy card. */
   tagline?: string;
-  /** Yellow savings banner text, e.g. "Save $80 on your first order". */
   savingsLabel?: string;
-  /** Grouped plan selector. Falls back to `medications` if omitted. */
   plans?: PlanGroup[];
   faqs?: FAQ[];
+  /** Optional long-form description shown in the Description tab. */
+  description?: string;
+  /** Customer reviews ("More from our members"). */
+  reviews?: Review[];
+  /** Related products ("You may also be interested in"). */
+  relatedProducts?: RelatedProduct[];
 }
 
 const DEFAULT_FAQS: FAQ[] = [
-  {
-    q: "What's Included In My Real Care Plan?",
-    a: "Your plan includes an online medical assessment, ongoing access to a U.S.-licensed provider, your prescribed medication if appropriate for your health profile, free discreet shipping, and unlimited messaging support — all for one flat monthly price.",
-  },
-  {
-    q: "How Soon Will I See Results?",
-    a: "Timelines vary by treatment and individual response. Most patients begin to notice changes within the first 30–90 days of consistent use. Your provider will set realistic expectations based on your specific plan and check in regularly.",
-  },
-  {
-    q: "Do I Need Insurance?",
-    a: "No. Real Care is cash-pay only — no insurance is required. We accept HSA and FSA cards, which can effectively reduce your cost by up to 30–40% depending on your tax bracket.",
-  },
-  {
-    q: "Can I Cancel Anytime?",
-    a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal.",
-  },
-  {
-    q: "Who Prescribes My Medication?",
-    a: "All prescriptions are written by independent, board-certified U.S.-licensed providers in our network — only after they review your intake and confirm the treatment is clinically appropriate for you.",
-  },
-  {
-    q: "Is It Discreet?",
-    a: "Yes. Every order ships in plain, unbranded packaging. Your medical information is protected under HIPAA and never shared with third parties.",
-  },
+  { q: "What's Included In My Real Care Plan?", a: "Your plan includes an online medical assessment, ongoing access to a U.S.-licensed provider, your prescribed medication if appropriate for your health profile, free discreet shipping, and unlimited messaging support — all for one flat monthly price." },
+  { q: "How Soon Will I See Results?", a: "Timelines vary by treatment and individual response. Most patients begin to notice changes within the first 30–90 days of consistent use. Your provider will set realistic expectations based on your specific plan and check in regularly." },
+  { q: "Do I Need Insurance?", a: "No. Real Care is cash-pay only — no insurance is required. We accept HSA and FSA cards, which can effectively reduce your cost by up to 30–40% depending on your tax bracket." },
+  { q: "Can I Cancel Anytime?", a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal." },
+  { q: "Who Prescribes My Medication?", a: "All prescriptions are written by independent, board-certified U.S.-licensed providers in our network — only after they review your intake and confirm the treatment is clinically appropriate for you." },
+  { q: "Is It Discreet?", a: "Yes. Every order ships in plain, unbranded packaging. Your medical information is protected under HIPAA and never shared with third parties." },
+];
+
+const DEFAULT_REVIEWS: Review[] = [
+  { name: "Corey B.", text: "Real Care made it incredibly easy. My provider was responsive, the medication arrived fast, and I finally feel like myself again." },
+  { name: "Lorraine K.", text: "I'm in my 40s and have never felt better. Sleeping through the night, more energy, and my labs are trending the right way." },
+  { name: "Allan K.", text: "I've tried other telehealth companies — Real Care is on a different level. Clear pricing and they actually follow up with me." },
+  { name: "Alfredo D.", text: "They acted quickly and got everything settled fast. The team works hard and goes out of their way to help." },
+  { name: "Deborah M.", text: "Great communication and my order arrived the next day. Highly recommend Real Care to anyone on the fence." },
 ];
 
 const ProductPageTemplate = ({
@@ -124,8 +128,12 @@ const ProductPageTemplate = ({
   savingsLabel,
   plans,
   faqs = DEFAULT_FAQS,
+  description,
+  reviews = DEFAULT_REVIEWS,
+  relatedProducts,
 }: ProductPageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [tab, setTab] = useState<"benefits" | "description">("benefits");
 
   const planGroups: PlanGroup[] =
     plans ??
@@ -140,12 +148,16 @@ const ProductPageTemplate = ({
       ],
     }));
 
+  const computedDescription =
+    description ||
+    `Discover how this treatment may support your goals as part of a healthy lifestyle. Personalized care guided by Real Care's licensed medical providers — with the right format, the right dose, and ongoing support every step of the way.`;
+
   return (
     <PageLayout title={pageTitle}>
-      {/* Hero — Eden-style: big image left, buy card right */}
+      {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
       <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-10 md:py-14">
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start fade-up">
-          {/* Image panel — sticky on desktop so it stays in view while right column scrolls */}
+          {/* Image panel — sticky on desktop */}
           <div className="relative lg:sticky lg:top-24 lg:self-start">
             <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
               {productImage && (
@@ -164,7 +176,7 @@ const ProductPageTemplate = ({
             </div>
           </div>
 
-          {/* Buy card */}
+          {/* Buy card column */}
           <div className="lg:pt-2">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
@@ -191,6 +203,7 @@ const ProductPageTemplate = ({
               </div>
             )}
 
+            {/* Plan selector card */}
             <div className="bg-card border border-warm-100 rounded-2xl p-5 md:p-6 shadow-soft">
               {planGroups.map((g, gi) => (
                 <div key={g.group} className={gi > 0 ? "mt-5 pt-5 border-t border-warm-100" : ""}>
@@ -244,29 +257,92 @@ const ProductPageTemplate = ({
               </div>
             </div>
 
-            <div className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3">
-              {trustBullets.map((t) => (
-                <div key={t} className="flex items-center gap-2 text-[0.8rem] text-warm-700">
-                  <span className="text-emerald-600 flex-shrink-0">
-                    <CheckCircle2 size={14} />
-                  </span>
-                  {t}
+            {/* Tabs: Benefits / Description */}
+            <div className="mt-6 bg-card border border-warm-100 rounded-2xl p-5 md:p-6">
+              <div className="flex bg-warm-50 rounded-full p-1 mb-5 max-w-[320px] mx-auto">
+                <button
+                  onClick={() => setTab("benefits")}
+                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-full transition-colors ${
+                    tab === "benefits" ? "bg-white text-warm-800 shadow-sm" : "text-warm-500"
+                  }`}
+                >
+                  Benefits
+                </button>
+                <button
+                  onClick={() => setTab("description")}
+                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-full transition-colors ${
+                    tab === "description" ? "bg-white text-warm-800 shadow-sm" : "text-warm-500"
+                  }`}
+                >
+                  Description
+                </button>
+              </div>
+
+              {tab === "benefits" ? (
+                <div className="space-y-3">
+                  {trustBullets.map((t) => (
+                    <div key={t} className="flex items-start gap-3 text-[0.85rem] text-warm-700 leading-[1.55]">
+                      <span className="text-emerald-600 flex-shrink-0 mt-0.5">
+                        <CheckCircle2 size={16} />
+                      </span>
+                      {t}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              ) : (
+                <p className="text-[0.85rem] text-warm-700 leading-[1.75]">{computedDescription}</p>
+              )}
+
+              <div className="mt-5 pt-5 border-t border-warm-100 flex flex-wrap items-center justify-between gap-3 text-[0.72rem] text-warm-600">
+                <div className="flex items-center gap-1.5">
+                  <MapPin size={12} className="text-red" /> Compounded In The U.S.A.
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <BadgeCheck size={12} className="text-emerald-600" /> FSA & HSA Eligible
+                </div>
+              </div>
             </div>
 
             <p className="text-[0.78rem] text-warm-600 leading-[1.7] mt-6">{sub}</p>
+          </div>
+        </div>
+      </div>
 
-            <div className="flex items-center gap-2 mt-4 text-[0.72rem] text-warm-500">
-              <MapPin size={12} className="text-red" />
-              Compounded In The U.S.A. By State-Licensed Pharmacies
-            </div>
+      {/* 3-Step Process — Eden-style large cards */}
+      <div className="bg-background px-5 md:px-12 py-16 border-b border-warm-100">
+        <div className="max-w-[1180px] mx-auto fade-up">
+          <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center max-w-[760px] mx-auto leading-tight">
+            Hit Your Health Goals Safely & Affordably In 3 Simple Steps
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3 mt-6 mb-12">
+            <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
+              See If You Qualify
+            </a>
+            <a href="/health-check" className="bg-background border border-warm-200 hover:border-warm-800 text-warm-800 font-bold px-6 py-3 rounded-full text-[0.85rem]">
+              See If You're Eligible
+            </a>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { step: "1", title: "Submit Your Application And Meet With A Doctor", desc: "Complete a quick form and meet with a licensed medical provider 100% online. They'll determine if a personalized treatment plan is right for you." },
+              { step: "2", title: "Get Your Medication Delivered At Home", desc: "If eligible, your custom prescription will be shipped directly to your door, fast and free." },
+              { step: "3", title: "Receive 24/7 Support And Ongoing Care", desc: "We'll be with you every step of the way, with regular check-ins and on-demand medical support to keep you on track." },
+            ].map((s) => (
+              <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-3xl p-7">
+                <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-5">
+                  {s.title}
+                </h3>
+                <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-warm-500 mb-1">Step</div>
+                <div className="font-display font-black text-warm-800 text-[2.2rem] leading-none mb-4">{s.step}</div>
+                <p className="text-[0.85rem] text-warm-600 leading-[1.75]">{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* How It Works (treatment-specific) */}
-      <div className="bg-background px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
+      <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
           <div className="text-center mb-10">
             <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">How It Works</div>
@@ -284,9 +360,7 @@ const ProductPageTemplate = ({
             {howItems.map((item) => (
               <div key={item.title} className="bg-card border border-warm-100 rounded-2xl p-6">
                 <div className="w-8 h-8 rounded-full bg-red/[0.1] flex items-center justify-center mb-4">
-                  <span className="text-red">
-                    <Check />
-                  </span>
+                  <span className="text-red"><Check /></span>
                 </div>
                 <h3 className="font-display font-bold text-warm-800 text-base mb-2">{item.title}</h3>
                 <p className="text-[0.82rem] text-warm-600 leading-[1.75]">{item.desc}</p>
@@ -297,7 +371,7 @@ const ProductPageTemplate = ({
       </div>
 
       {/* Treatments */}
-      <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-16" id="treatments">
+      <div className="bg-background px-5 md:px-12 pt-14 pb-16" id="treatments">
         <div className="max-w-[1280px] mx-auto fade-up">
           <div className="text-center mb-10">
             <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Treatment Options</div>
@@ -333,9 +407,7 @@ const ProductPageTemplate = ({
                   <div className="space-y-2 mb-6">
                     {med.bullets.map((b) => (
                       <div key={b} className="flex items-start gap-2 text-[0.81rem] text-warm-600 leading-[1.55]">
-                        <span className="text-red flex-shrink-0 mt-0.5">
-                          <Check />
-                        </span>
+                        <span className="text-red flex-shrink-0 mt-0.5"><Check /></span>
                         {b}
                       </div>
                     ))}
@@ -358,47 +430,156 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* 3-Step Process */}
-      <div className="bg-background px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
+      {/* Reviews — More from our members */}
+      <div className="bg-warm-50 px-5 md:px-12 py-16 border-y border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
-          <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">The Process</div>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">
-              From Consult To Doorstep
-            </h2>
+          <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center">
+            More From Our Members
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3 mt-6 mb-10">
+            <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
+              See If You Qualify
+            </a>
+            <a href="/health-check" className="bg-background border border-warm-200 hover:border-warm-800 text-warm-800 font-bold px-6 py-3 rounded-full text-[0.85rem]">
+              See If You're Eligible
+            </a>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              {
-                step: "01",
-                icon: <ClipboardList size={20} />,
-                title: "Consult",
-                desc: "Complete a 5-minute online health assessment. A licensed provider reviews your intake within 24–48 hours.",
-              },
-              {
-                step: "02",
-                icon: <Package size={20} />,
-                title: "Receive",
-                desc: "If prescribed, your medication ships free in discreet packaging within 2 business days. Most orders arrive in 7–10 days.",
-              },
-              {
-                step: "03",
-                icon: <HeartHandshake size={20} />,
-                title: "Support",
-                desc: "Message your provider anytime. Adjust your plan as you progress, with the same flat price at every dose.",
-              },
-            ].map((s) => (
-              <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-2xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-[0.7rem] font-bold tracking-[0.1em] text-red">{s.step}</div>
-                  <div className="w-8 h-8 rounded-full bg-red/[0.1] text-red flex items-center justify-center">
-                    {s.icon}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {reviews.slice(0, 5).map((r) => (
+              <div key={r.name} className="bg-card border border-warm-100 rounded-2xl p-6 flex flex-col">
+                <div className="flex gap-0.5 text-amber-400 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
+                  ))}
+                </div>
+                <p className="text-[0.85rem] text-warm-700 leading-[1.65] flex-1">{r.text}</p>
+                <div className="mt-5 pt-4 border-t border-warm-100">
+                  <div className="font-display font-bold text-warm-800 text-[0.9rem]">{r.name}</div>
+                  <div className="inline-flex items-center gap-1 mt-1 text-[0.68rem] text-warm-500">
+                    <BadgeCheck size={12} className="text-emerald-600" /> Verified Customer
                   </div>
                 </div>
-                <h3 className="font-display font-bold text-warm-800 text-base mb-2">{s.title}</h3>
-                <p className="text-[0.82rem] text-warm-600 leading-[1.75]">{s.desc}</p>
               </div>
             ))}
+          </div>
+          <p className="text-center text-[0.7rem] text-warm-500 mt-8">
+            Individual results may vary. Testimonials reflect personal experiences and do not guarantee outcomes.
+          </p>
+        </div>
+      </div>
+
+      {/* Mini product banner + disclaimer block */}
+      <div className="bg-background px-5 md:px-12 py-16 border-b border-warm-100">
+        <div className="max-w-[1080px] mx-auto fade-up bg-card border border-warm-100 rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.6vw,2.1rem)] mb-2">{pageTitle}</h3>
+            {planGroups[0]?.options[0] && (
+              <div className="flex items-baseline gap-2 mb-5">
+                <span className="font-display font-black text-warm-800 text-[1.8rem]">
+                  {planGroups[0].options[0].price}
+                </span>
+                <span className="text-warm-500 text-[0.85rem]">
+                  {planGroups[0].options[0].priceSuffix || "first month*"}
+                </span>
+              </div>
+            )}
+            <div className="space-y-3 mb-6">
+              {[
+                { icon: <Sparkles size={14} />, text: "No Hidden Fees" },
+                { icon: <ShieldCheck size={14} />, text: "Personalized Plans" },
+                { icon: <HeartHandshake size={14} />, text: "On-Demand Medical Support" },
+                { icon: <Truck size={14} />, text: "Free Expedited Shipping" },
+              ].map((b) => (
+                <div key={b.text} className="flex items-center gap-2 text-[0.82rem] text-warm-700">
+                  <span className="text-red">{b.icon}</span> {b.text}
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
+                Get Started
+              </a>
+              <a href="/health-check" className="bg-background border border-warm-200 hover:border-warm-800 text-warm-800 font-bold px-6 py-3 rounded-full text-[0.85rem]">
+                See If You're Eligible
+              </a>
+            </div>
+            <p className="text-[0.7rem] text-warm-500 mt-4">
+              *Price shown applies to longest-term plan paid upfront or with buy now, pay later programs. Actual price will depend on product and plan prescribed.
+            </p>
+          </div>
+          {productImage && (
+            <div className={`aspect-square rounded-2xl ${heroBg} overflow-hidden`}>
+              <img src={productImage} alt={productImageAlt || pageTitle} className="w-full h-full object-cover" />
+            </div>
+          )}
+        </div>
+
+        {/* Disclaimer */}
+        <div className="max-w-[1080px] mx-auto mt-10">
+          <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
+          <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
+            {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
+          </p>
+        </div>
+      </div>
+
+      {/* You may also be interested in */}
+      {relatedProducts && relatedProducts.length > 0 && (
+        <div className="bg-warm-50 px-5 md:px-12 py-16 border-b border-warm-100">
+          <div className="max-w-[1280px] mx-auto fade-up">
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center mb-10">
+              You May Also Be Interested In
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+              {relatedProducts.map((p) => (
+                <div key={p.name} className="group">
+                  <div className={`aspect-square rounded-2xl ${p.bg} overflow-hidden mb-4 relative`}>
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 p-3 flex flex-col gap-2 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Link to={p.href} className="bg-warm-800 hover:bg-warm-900 text-white text-center font-bold py-2 rounded-full text-[0.78rem]">
+                        Get Started
+                      </Link>
+                      <Link to={p.href} className="bg-background text-warm-800 text-center font-bold py-2 rounded-full text-[0.78rem]">
+                        Learn More
+                      </Link>
+                    </div>
+                  </div>
+                  <h4 className="font-display font-bold text-warm-800 text-[0.95rem] text-center">{p.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FAQ */}
+      <div className="bg-background px-5 md:px-12 py-14 border-b border-warm-100">
+        <div className="max-w-[820px] mx-auto fade-up">
+          <div className="text-center mb-10">
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">
+              Learn More About {pageTitle}
+            </h2>
+          </div>
+          <div className="space-y-3">
+            {faqs.map((f, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div key={f.q} className="bg-warm-50 border border-warm-100 rounded-2xl overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
+                  >
+                    <span className="font-display font-bold text-warm-800 text-[0.95rem]">{f.q}</span>
+                    <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-warm-800 text-white" : "bg-warm-800 text-white"}`}>
+                      {isOpen ? "×" : "+"}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 text-[0.85rem] text-warm-600 leading-[1.75]">{f.a}</div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -415,7 +596,7 @@ const ProductPageTemplate = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { icon: <Stethoscope size={18} />, text: "U.S.-Licensed Medical Providers" },
-              { icon: <ShieldCheck size={18} />, text: "HIPAA-Compliant And Discreet" },
+              { icon: <Shield size={18} />, text: "HIPAA-Compliant And Discreet" },
               { icon: <Truck size={18} />, text: "Free Shipping In Plain Packaging" },
               { icon: <Clock size={18} />, text: "24/7 Provider Messaging Support" },
             ].map((t) => (
@@ -427,40 +608,6 @@ const ProductPageTemplate = ({
                 {t.text}
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ */}
-      <div className="bg-background px-5 md:px-12 py-14 border-b border-warm-100">
-        <div className="max-w-[820px] mx-auto fade-up">
-          <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Questions</div>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <div className="space-y-3">
-            {faqs.map((f, i) => {
-              const isOpen = openFaq === i;
-              return (
-                <div key={f.q} className="bg-warm-50 border border-warm-100 rounded-2xl overflow-hidden">
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
-                  >
-                    <span className="font-display font-bold text-warm-800 text-[0.95rem]">{f.q}</span>
-                    <ChevronDown
-                      size={18}
-                      className={`text-warm-600 flex-shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-[0.85rem] text-warm-600 leading-[1.75]">{f.a}</div>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>
@@ -491,13 +638,6 @@ const ProductPageTemplate = ({
           </div>
         </div>
       </div>
-
-      {/* Disclaimer */}
-      {disclaimer && (
-        <div className="bg-warm-50 border-t border-warm-100 px-5 md:px-12 py-8">
-          <p className="max-w-[900px] mx-auto text-[0.7rem] text-warm-400 leading-[1.7] text-center">{disclaimer}</p>
-        </div>
-      )}
     </PageLayout>
   );
 };
