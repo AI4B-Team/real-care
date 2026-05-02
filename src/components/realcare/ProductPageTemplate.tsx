@@ -164,9 +164,9 @@ const ProductPageTemplate = ({
           {/* Image panel — sticky on desktop */}
           <div className="relative lg:sticky lg:top-24 lg:self-start">
             <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
-              {productImage && (
+              {activeImage && (
                 <img
-                  src={productImage}
+                  src={activeImage}
                   alt={productImageAlt || "Product"}
                   loading="eager"
                   width={1024}
@@ -178,6 +178,22 @@ const ProductPageTemplate = ({
             <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-emerald-700 text-[0.7rem] font-semibold px-3 py-1.5 rounded-full shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> In Stock
             </div>
+            {allImages.length > 1 && (
+              <div className="mt-4 flex gap-3 flex-wrap">
+                {allImages.map((img) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveImage(img)}
+                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors ${heroBg} ${
+                      activeImage === img ? "border-warm-800" : "border-warm-100 hover:border-warm-300"
+                    }`}
+                    aria-label="View product image"
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Buy card column */}
