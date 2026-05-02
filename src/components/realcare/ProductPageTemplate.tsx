@@ -325,9 +325,6 @@ const ProductPageTemplate = ({
             <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
               See If You Qualify
             </a>
-            <a href="/health-check" className="bg-background border border-warm-200 hover:border-warm-800 text-warm-800 font-bold px-6 py-3 rounded-full text-[0.85rem]">
-              See If You're Eligible
-            </a>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
@@ -447,9 +444,6 @@ const ProductPageTemplate = ({
             <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
               See If You Qualify
             </a>
-            <a href="/health-check" className="bg-background border border-warm-200 hover:border-warm-800 text-warm-800 font-bold px-6 py-3 rounded-full text-[0.85rem]">
-              See If You're Eligible
-            </a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {reviews.slice(0, 5).map((r) => (
@@ -505,9 +499,6 @@ const ProductPageTemplate = ({
             <div className="flex flex-wrap gap-3">
               <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
                 Get Started
-              </a>
-              <a href="/health-check" className="bg-background border border-warm-200 hover:border-warm-800 text-warm-800 font-bold px-6 py-3 rounded-full text-[0.85rem]">
-                See If You're Eligible
               </a>
             </div>
             <p className="text-[0.7rem] text-warm-500 mt-4">
