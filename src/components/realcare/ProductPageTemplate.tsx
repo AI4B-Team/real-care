@@ -250,10 +250,17 @@ const ProductPageTemplate = ({
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount auto-applied at checkout
               </div>
-              <div className="mt-4 pt-4 border-t border-warm-100 flex items-center justify-center gap-3 text-[0.68rem] text-warm-500">
+              <div className="mt-4 pt-4 border-t border-warm-100 flex items-center justify-center flex-wrap gap-3 text-[0.78rem] text-warm-700">
                 <span>Buy now, pay later with</span>
-                <span className="px-2 py-0.5 rounded bg-[#FFA8C5] text-black font-bold text-[0.65rem]">Klarna</span>
-                <span className="px-2 py-0.5 rounded bg-[#B2FCE4] text-black font-bold text-[0.65rem]">Afterpay</span>
+                <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#FFA8C5] text-black font-extrabold tracking-tight text-[0.85rem] leading-none">
+                  Klarna.
+                </span>
+                <span className="inline-flex items-center justify-center gap-0.5 px-4 py-1.5 rounded-full bg-[#B2FCE4] text-black font-extrabold tracking-tight text-[0.85rem] leading-none lowercase">
+                  afterpay
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </span>
               </div>
             </div>
 
