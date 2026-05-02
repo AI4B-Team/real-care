@@ -21,6 +21,7 @@ const WeightLoss = () => {
       pill="Doctor-Led Plans"
       productImage={productImage}
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
+      galleryImages={[trtImg, peptideImg, labsImg]}
       heroBg="bg-[#C8E6C9]"
       tagline="Personalized weight management plans, built around you and guided by licensed providers."
       savingsLabel="Save $50 On Your First Order"
