@@ -161,11 +161,11 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
-        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start lg:items-stretch lg:h-full fade-up text-[0.92em]">
+      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-4 md:py-5 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
+        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 items-start lg:items-stretch lg:h-full fade-up text-[0.85em]">
           {/* Image panel — fixed in place while the right panel scrolls on desktop */}
-          <div className="relative lg:self-start lg:mt-8">
-            <div className={`aspect-square lg:aspect-[5/5] rounded-3xl ${heroBg} overflow-hidden max-h-[60vh] mx-auto w-full`}>
+          <div className="relative lg:self-start lg:mt-2">
+            <div className={`aspect-square lg:aspect-auto lg:h-[calc(100vh-6rem)] rounded-3xl ${heroBg} overflow-hidden max-h-[calc(100vh-6rem)] mx-auto w-full`}>
               {activeImage && (
                 <img
                   src={activeImage}
@@ -199,8 +199,8 @@ const ProductPageTemplate = ({
           </div>
 
           {/* Buy card column */}
-          <div className="lg:h-full lg:overflow-y-auto lg:pt-2 lg:pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex flex-wrap items-center gap-2 mb-4">
+          <div className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex flex-wrap items-center gap-2 mb-3">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {label}
               </div>
@@ -211,7 +211,7 @@ const ProductPageTemplate = ({
               )}
             </div>
 
-            <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(2.2rem,4.4vw,3.4rem)] mb-3">
+            <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(1.8rem,3.4vw,2.6rem)] mb-2">
               {headline}
             </h1>
 
@@ -220,7 +220,7 @@ const ProductPageTemplate = ({
               href="https://www.trustpilot.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mb-5 text-[0.82rem] text-warm-700 hover:text-warm-800"
+              className="inline-flex items-center gap-2 mb-3 text-[0.78rem] text-warm-700 hover:text-warm-800"
             >
               <span className="font-semibold">Excellent</span>
               <span className="inline-flex gap-0.5">
@@ -238,11 +238,11 @@ const ProductPageTemplate = ({
             </a>
 
             {tagline && (
-              <p className="text-[1rem] text-warm-600 leading-[1.55] mb-6">{tagline}</p>
+              <p className="text-[0.92rem] text-warm-600 leading-[1.5] mb-3">{tagline}</p>
             )}
 
             {savingsLabel && (
-              <div className="flex items-center justify-center gap-2 bg-emerald-400 text-emerald-950 text-[0.9rem] font-bold rounded-2xl py-3 px-4 mb-4 shadow-sm">
+              <div className="flex items-center justify-center gap-2 bg-emerald-400 text-emerald-950 text-[0.85rem] font-bold rounded-2xl py-2.5 px-4 mb-3 shadow-sm">
                 <ShieldCheck size={16} className="text-emerald-800" />
                 {savingsLabel}
               </div>
