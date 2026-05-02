@@ -51,7 +51,7 @@ const WeightLoss = () => {
       trustBullets={[
         "From $179/Mo — All-Inclusive",
         "Same Price At Every Dose",
-        "Money-Back Guarantee",
+        "On-Demand Medical Support",
         "No Membership Fee",
         "Free Discreet Shipping",
         "HSA / FSA Accepted",
