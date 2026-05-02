@@ -181,6 +181,21 @@ const ProductPageTemplate = ({
   const [tab, setTab] = useState<"benefits" | "description">("benefits");
   const allImages = [productImage, ...(galleryImages || [])].filter(Boolean) as string[];
   const [activeImage, setActiveImage] = useState(productImage || "");
+  const rightPanelRef = useRef<HTMLDivElement | null>(null);
+
+  const handleHeroWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const panel = rightPanelRef.current;
+    if (!panel) return;
+    if (window.innerWidth < 1024) return; // only on lg+
+    const max = panel.scrollHeight - panel.clientHeight;
+    if (max <= 0) return;
+    const atTop = panel.scrollTop <= 0;
+    const atBottom = panel.scrollTop >= max - 1;
+    // Allow page to scroll past the hero only when the panel is fully scrolled
+    if ((e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop)) return;
+    e.preventDefault();
+    panel.scrollTop += e.deltaY;
+  };
 
   const planGroups: PlanGroup[] =
     plans ??
