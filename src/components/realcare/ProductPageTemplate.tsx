@@ -235,7 +235,7 @@ const ProductPageTemplate = ({
           </div>
 
           {/* Buy card column */}
-          <div className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 lg:pb-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {label}
