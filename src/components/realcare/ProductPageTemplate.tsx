@@ -217,7 +217,7 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 pt-10 md:pt-14 pb-4 md:pb-5 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
+      <div onWheel={handleHeroWheel} className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 pt-10 md:pt-14 pb-4 md:pb-5 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 items-start lg:items-stretch lg:h-full fade-up text-[0.85em]">
           {/* Image panel — fixed in place while the right panel scrolls on desktop */}
           <div className="relative lg:self-start lg:mt-2">
