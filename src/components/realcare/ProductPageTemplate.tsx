@@ -181,12 +181,12 @@ const ProductPageTemplate = ({
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> In Stock
             </div>
             {allImages.length > 1 && (
-              <div className="mt-4 flex gap-3 flex-wrap">
+              <div className="mt-3 flex gap-2 flex-wrap justify-center">
                 {allImages.map((img) => (
                   <button
                     key={img}
                     onClick={() => setActiveImage(img)}
-                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors ${heroBg} ${
+                    className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${heroBg} ${
                       activeImage === img ? "border-warm-800" : "border-warm-100 hover:border-warm-300"
                     }`}
                     aria-label="View product image"
