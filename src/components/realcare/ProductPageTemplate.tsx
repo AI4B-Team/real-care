@@ -145,8 +145,8 @@ const ProductPageTemplate = ({
       {/* Hero — Eden-style: big image left, buy card right */}
       <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-10 md:py-14">
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start fade-up">
-          {/* Image panel */}
-          <div className="relative">
+          {/* Image panel — sticky on desktop so it stays in view while right column scrolls */}
+          <div className="relative lg:sticky lg:top-24 lg:self-start">
             <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
               {productImage && (
                 <img
