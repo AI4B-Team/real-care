@@ -306,11 +306,6 @@ const ProductPageTemplate = ({
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount auto-applied at checkout
               </div>
-              <div className="mt-3 text-center">
-                <a href="#safety" className="text-[0.8rem] text-warm-700 underline underline-offset-4 hover:text-warm-900">
-                  Important Safety Information
-                </a>
-              </div>
             </div>
 
             {/* Tabs: Benefits / Description */}
