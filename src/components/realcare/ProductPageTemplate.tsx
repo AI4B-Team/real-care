@@ -22,6 +22,7 @@ import {
   Shield,
   DollarSign,
   Tag,
+  Repeat,
   RotateCcw,
   XCircle,
   Pill,
