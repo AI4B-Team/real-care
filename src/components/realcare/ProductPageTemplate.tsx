@@ -596,7 +596,7 @@ const ProductPageTemplate = ({
         <div className="max-w-[1080px] mx-auto fade-up">
           <div className="text-center mb-10">
             <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Why Real Care</div>
-            <h2 className="font-display font-black text-white text-[clamp(1.8rem,3vw,2.4rem)] max-w-[640px] mx-auto">
+            <h2 className="font-display font-black text-white text-[clamp(1.4rem,2.6vw,2.2rem)] whitespace-nowrap">
               Real Doctors. Real Pricing. Real Support.
             </h2>
           </div>
