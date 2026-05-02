@@ -637,7 +637,7 @@ const ProductPageTemplate = ({
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                     className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
                   >
-                    <span className="font-display font-bold text-warm-800 text-[0.95rem]">{f.q}</span>
+                    <span className="font-sans font-semibold text-warm-800 text-[1rem]">{f.q}</span>
                     <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-warm-800 text-white" : "bg-warm-800 text-white"}`}>
                       {isOpen ? "×" : "+"}
                     </span>
