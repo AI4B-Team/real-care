@@ -2,6 +2,9 @@ import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
 import klarnaLogo from "@/assets/klarna-logo.png";
 import afterpayLogo from "@/assets/afterpay-logo.png";
+import step1Img from "@/assets/step-1-phone-form.jpg";
+import step2Img from "@/assets/step-2-package.jpg";
+import step3Img from "@/assets/step-3-support.jpg";
 import PageLayout from "./PageLayout";
 import {
   ChevronRight,
