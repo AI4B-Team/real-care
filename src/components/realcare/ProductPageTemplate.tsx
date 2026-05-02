@@ -161,11 +161,11 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-10 md:py-14">
-        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start fade-up">
+      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8">
+        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start fade-up text-[0.92em]">
           {/* Image panel — sticky on desktop */}
-          <div className="relative lg:sticky lg:top-24 lg:self-start">
-            <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
+          <div className="relative lg:sticky lg:top-20 lg:self-start">
+            <div className={`aspect-square lg:aspect-[5/5] rounded-3xl ${heroBg} overflow-hidden max-h-[60vh] mx-auto w-full`}>
               {activeImage && (
                 <img
                   src={activeImage}
