@@ -167,13 +167,31 @@ const Footer = () => {
             <span className="text-white/75 font-medium">Care Model:</span> Clinical care is delivered by Real Care Affiliated P.C.s and a network of independent, board-certified providers via OpenLoop Health. Treatment is only prescribed after a licensed provider reviews your intake and confirms it's clinically appropriate for you. Not every patient qualifies.
           </p>
           <p>
-            <span className="text-white/75 font-medium">Medications & Pharmacy:</span> When approved, prescriptions are filled by partner state-licensed pharmacies and shipped directly to your door. Some treatments may include compounded formulations, which are not reviewed or approved by the FDA for safety or effectiveness. Product appearance and packaging may vary. Individual results vary and are not guaranteed.
+            <span className="text-white/75 font-medium">Medications & Pharmacy:</span> When approved, prescriptions are filled by partner state-licensed pharmacies and shipped directly to your door. Some treatments may include compounded formulations, which are not reviewed or approved by the FDA for safety, effectiveness, or quality. Physicians may prescribe compounded medications as needed to meet individual patient requirements. Product appearance and packaging may vary.
+          </p>
+          <p>
+            <span className="text-white/75 font-medium">Not Medical Advice:</span> The information on this website is provided for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment. It should not be used as a substitute for advice from a qualified healthcare professional. Always consult a licensed healthcare provider before starting any new medication, supplement, or weight loss program.
+          </p>
+          <p>
+            <span className="text-white/75 font-medium">Stopping Treatment:</span> Clinical evidence indicates that stopping GLP-1 treatment may result in weight regain. Long-term use in combination with diet, exercise, and lifestyle modification is generally recommended to maintain results. Discuss your long-term treatment strategy with your licensed medical provider.
+          </p>
+          <p>
+            <span className="text-white/75 font-medium">Testimonials & Results:</span> Customer testimonials and before-and-after images featured on this site are provided by real Real Care members and reflect their individual experiences. Results have not been independently verified. Individual results will vary based on health history, lifestyle, medication adherence, and biological response to treatment.
+          </p>
+          <p>
+            <span className="text-white/75 font-medium">Trademarks:</span> Ozempic®, Wegovy®, Zepbound®, Mounjaro®, and Rybelsus® are registered trademarks of Novo Nordisk A/S and Eli Lilly and Company, respectively. Real Care Inc. is not affiliated with, endorsed by, or sponsored by Novo Nordisk, Eli Lilly, or any manufacturer of branded medications. Brand-name medications are dispensed through licensed pharmacies by prescription only and are not manufactured or sold by Real Care.
           </p>
           <p>
             <span className="text-white/75 font-medium">Pricing & Guarantee:</span> Our "Same Price at Every Dose" promise keeps your monthly cost flat as your provider adjusts your dosage (introductory offers and limited-time plans excluded). Money-back guarantees, if any, are subject to the terms of your specific program. HSA/FSA acceptance varies by plan. People shown in marketing may be models or paid actors.
           </p>
           <p>
-            <span className="text-white/75 font-medium">Accessibility:</span> Real Care is committed to equal web access for people with disabilities. To share accessibility feedback, email <a href="mailto:care@realcare.com" className="underline hover:text-white">care@realcare.com</a>.
+            <span className="text-white/75 font-medium">Data & Advertising:</span> By using our services, you agree to our <a href="/privacy" className="underline hover:text-white">Privacy Policy</a>. Real Care may use de-identified or aggregated information to improve our services and for advertising purposes in compliance with applicable law. We do not share individually identifiable health information with advertisers. To opt out, contact <a href="mailto:privacy@realcare.com" className="underline hover:text-white">privacy@realcare.com</a>.
+          </p>
+          <p>
+            <span className="text-white/75 font-medium">Accessibility:</span> Real Care Inc. is committed to equal digital access for all users. For accessibility feedback, email <a href="mailto:accessibility@realcare.com" className="underline hover:text-white">accessibility@realcare.com</a>.
+          </p>
+          <p className="text-white/45">
+            Real Care Inc. • Jacksonville, FL • <a href="mailto:support@realcare.com" className="underline hover:text-white/70">support@realcare.com</a>
           </p>
         </div>
 
