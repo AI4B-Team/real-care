@@ -30,6 +30,19 @@ interface Medication {
   bullets: string[];
 }
 
+interface PlanOption {
+  label: string;        // e.g. "3-Month Plan"
+  price: string;        // e.g. "$129"
+  priceSuffix?: string; // e.g. "first month"
+  afterPrice?: string;  // e.g. "$209/mo after"
+  badge?: string;       // e.g. "Best Value"
+}
+
+interface PlanGroup {
+  group: string;        // e.g. "Compounded Semaglutide"
+  options: PlanOption[];
+}
+
 interface FAQ {
   q: string;
   a: string;
@@ -50,9 +63,17 @@ interface ProductPageProps {
   disclaimer?: string;
   pageTitle: string;
 
-  /** New optional fields (defaulted so all product pages get the rich layout). */
+  /** Eden-style hero options. */
   productImage?: string;
   productImageAlt?: string;
+  /** Tailwind class for the product image panel background, e.g. "bg-[#D7EEE4]". */
+  heroBg?: string;
+  /** Short tagline shown under the headline in the buy card. */
+  tagline?: string;
+  /** Yellow savings banner text, e.g. "Save $80 on your first order". */
+  savingsLabel?: string;
+  /** Grouped plan selector. Falls back to `medications` if omitted. */
+  plans?: PlanGroup[];
   faqs?: FAQ[];
 }
 
