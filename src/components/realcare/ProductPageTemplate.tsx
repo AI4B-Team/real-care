@@ -161,11 +161,11 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-10 md:py-14">
-        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start fade-up">
+      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8">
+        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start fade-up text-[0.92em]">
           {/* Image panel — sticky on desktop */}
-          <div className="relative lg:sticky lg:top-24 lg:self-start">
-            <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
+          <div className="relative lg:sticky lg:top-20 lg:self-start">
+            <div className={`aspect-square lg:aspect-[5/5] rounded-3xl ${heroBg} overflow-hidden max-h-[60vh] mx-auto w-full`}>
               {activeImage && (
                 <img
                   src={activeImage}
@@ -181,12 +181,12 @@ const ProductPageTemplate = ({
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> In Stock
             </div>
             {allImages.length > 1 && (
-              <div className="mt-4 flex gap-3 flex-wrap">
+              <div className="mt-3 flex gap-2 flex-wrap justify-center">
                 {allImages.map((img) => (
                   <button
                     key={img}
                     onClick={() => setActiveImage(img)}
-                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors ${heroBg} ${
+                    className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${heroBg} ${
                       activeImage === img ? "border-warm-800" : "border-warm-100 hover:border-warm-300"
                     }`}
                     aria-label="View product image"
