@@ -29,14 +29,14 @@ const WeightLoss = () => {
         {
           group: "Compounded Semaglutide",
           options: [
-            { label: "3+ Month Plan", price: "$149", priceSuffix: "/mo", afterPrice: "Paid upfront", badge: "Best Value" },
-            { label: "Monthly Plan", price: "$129", priceSuffix: "first month", afterPrice: "$179/mo after" },
+            { label: "3+ Month Plan", price: "$149", priceSuffix: "/Mo", afterPrice: "Paid Upfront", badge: "Best Value" },
+            { label: "Monthly Plan", price: "$129", priceSuffix: "First Month", afterPrice: "$179/Mo After" },
           ],
         },
         {
           group: "Compounded Tirzepatide",
           options: [
-            { label: "Monthly Plan", price: "$249", priceSuffix: "first month", afterPrice: "$299/mo after" },
+            { label: "Monthly Plan", price: "$249", priceSuffix: "First Month", afterPrice: "$299/Mo After" },
           ],
         },
       ]}
