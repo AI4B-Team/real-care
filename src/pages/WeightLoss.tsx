@@ -22,14 +22,14 @@ const WeightLoss = () => {
       productImage={productImage}
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
       heroBg="bg-[#C8E6C9]"
-      tagline="A personalized weight-loss plan built around you."
+      tagline="Personalized weight management plans, built around you and guided by licensed providers."
       savingsLabel="Save $50 On Your First Order"
       plans={[
         {
           group: "Compounded Semaglutide",
           options: [
-            { label: "3-Month Plan", price: "$179", priceSuffix: "first month", afterPrice: "$229/mo after", badge: "Best Value" },
-            { label: "Monthly Plan", price: "$199", priceSuffix: "first month", afterPrice: "$249/mo after" },
+            { label: "3+ Month Plan", price: "$149", priceSuffix: "/mo", afterPrice: "Paid upfront", badge: "Best Value" },
+            { label: "Monthly Plan", price: "$129", priceSuffix: "first month", afterPrice: "$179/mo after" },
           ],
         },
         {
