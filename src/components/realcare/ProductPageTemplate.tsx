@@ -161,11 +161,11 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
-        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start lg:items-stretch lg:h-full fade-up text-[0.92em]">
+      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-4 md:py-5 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
+        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 items-start lg:items-stretch lg:h-full fade-up text-[0.85em]">
           {/* Image panel — fixed in place while the right panel scrolls on desktop */}
-          <div className="relative lg:self-start lg:mt-8">
-            <div className={`aspect-square lg:aspect-[5/5] rounded-3xl ${heroBg} overflow-hidden max-h-[60vh] mx-auto w-full`}>
+          <div className="relative lg:self-start lg:mt-2">
+            <div className={`aspect-square lg:aspect-auto lg:h-[calc(100vh-6rem)] rounded-3xl ${heroBg} overflow-hidden max-h-[calc(100vh-6rem)] mx-auto w-full`}>
               {activeImage && (
                 <img
                   src={activeImage}
