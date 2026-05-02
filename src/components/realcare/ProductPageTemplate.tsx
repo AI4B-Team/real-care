@@ -17,7 +17,43 @@ import {
   BadgeCheck,
   Sparkles,
   Shield,
+  DollarSign,
+  Tag,
+  RotateCcw,
+  XCircle,
+  Pill,
+  Beaker,
+  FlaskConical,
+  Users,
+  Lock,
+  Activity,
+  Droplet,
+  Zap,
+  Timer,
+  ClipboardList,
+  type LucideIcon,
 } from "lucide-react";
+
+const bulletIcon = (text: string): LucideIcon => {
+  const t = text.toLowerCase();
+  if (/\$|price|cost|\/\s*mo|\/mo|per month|one[\s-]?time/.test(t)) return DollarSign;
+  if (/same price|every dose|flat/.test(t)) return Tag;
+  if (/money[\s-]?back|guarantee|refund/.test(t)) return RotateCcw;
+  if (/no membership|no fee|no office|no commitment/.test(t)) return XCircle;
+  if (/shipping|delivery|discreet/.test(t)) return Truck;
+  if (/hsa|fsa|eligible|accepted/.test(t)) return BadgeCheck;
+  if (/lab|biomarker|test/.test(t)) return FlaskConical;
+  if (/board[\s-]?certified|licensed|provider|doctor|psychiatric|ob[\s-]?gyn/.test(t)) return Stethoscope;
+  if (/private|confidential|hipaa|secure/.test(t)) return Lock;
+  if (/men\s*&\s*women|men and women|all genders/.test(t)) return Users;
+  if (/clinical|studied|ingredients|formula|custom/.test(t)) return Beaker;
+  if (/pharmacy|pharmacies|compounded/.test(t)) return Pill;
+  if (/works in|min|fast|quick/.test(t)) return Zap;
+  if (/lasts|hours|duration/.test(t)) return Timer;
+  if (/bioidentical|hormone/.test(t)) return Droplet;
+  if (/results|review|provider[\s-]?reviewed/.test(t)) return ClipboardList;
+  return CheckCircle2;
+};
 
 const Check = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
