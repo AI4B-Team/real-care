@@ -1,14 +1,17 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
+import productImage from "@/assets/product-labs.jpg";
 
 const LabTesting = () => (
   <ProductPageTemplate
     pageTitle="Comprehensive Lab Testing"
     label="Men & Women · Lab Testing"
     pill="40+ Biomarkers"
+    productImage={productImage}
+    productImageAlt="At-home lab test collection kit"
     headline={<>Know Your Numbers.<br /><span className="text-red">Own Your Health.</span></>}
-    sub="Comprehensive lab testing ordered by a licensed physician — 40+ biomarkers including testosterone, thyroid, metabolic panel, and more. Doctor-reviewed action plan included."
-    trustBullets={["From $99 — One Time", "40+ Biomarkers", "Doctor-Reviewed Results", "No Membership Fee", "No Office Visit"]}
+    sub="Comprehensive lab testing ordered by a licensed provider — 40+ biomarkers including testosterone, thyroid, metabolic panel, and more. Provider-reviewed action plan included."
+    trustBullets={["From $99 — One Time", "40+ Biomarkers", "Provider-Reviewed Results", "No Membership Fee", "No Office Visit"]}
     howTitle="How Lab Testing Works"
     howItems={[
       { title: "Order Online", desc: "Your licensed provider orders your lab panel based on your health goals and concerns — no office visit required." },
@@ -19,26 +22,26 @@ const LabTesting = () => (
     medications={[
       {
         name: "Men's Comprehensive Panel",
-        desc: "Hormones, metabolic, heart health",
+        desc: "Hormones, Metabolic, Heart Health",
         price: "$149",
         popular: true,
-        bullets: ["Total & free testosterone", "Estradiol, SHBG, LH, FSH", "Complete metabolic panel", "Lipid panel, thyroid, CBC"],
+        bullets: ["Total & Free Testosterone", "Estradiol, SHBG, LH, FSH", "Complete Metabolic Panel", "Lipid Panel, Thyroid, CBC"],
       },
       {
         name: "Women's Comprehensive Panel",
-        desc: "Hormones, thyroid, metabolic",
+        desc: "Hormones, Thyroid, Metabolic",
         price: "$149",
-        bullets: ["Estrogen, progesterone, FSH", "Testosterone (free & total)", "Thyroid panel (TSH, T3, T4)", "Complete metabolic + CBC"],
+        bullets: ["Estrogen, Progesterone, FSH", "Total & Free Testosterone", "Thyroid Panel (TSH, T3, T4)", "Complete Metabolic + CBC"],
       },
       {
         name: "GLP-1 Readiness Panel",
-        desc: "Pre-treatment safety screening",
+        desc: "Pre-Treatment Safety Screening",
         price: "$99",
-        bullets: ["HbA1c and fasting glucose", "Kidney and liver function", "Lipid panel", "Required for some GLP-1 prescriptions"],
+        bullets: ["HbA1c & Fasting Glucose", "Kidney & Liver Function", "Lipid Panel", "Required For Some GLP-1 Prescriptions"],
       },
     ]}
     ctaHeadline="Know What's Actually Going On Inside"
-    ctaSub="Lab testing ordered within 24 hours of your assessment. Results reviewed by your provider with a clear action plan."
+    ctaSub="Lab testing is ordered within 24–48 hours of your assessment. Results are reviewed by your licensed provider with a clear action plan."
     disclaimer="Lab testing is not a substitute for a comprehensive medical examination. Results are reviewed by a licensed provider for context but do not constitute a complete medical diagnosis. Lab locations and availability vary. Quest Diagnostics and LabCorp are independent companies not affiliated with Real Care."
   />
 );
