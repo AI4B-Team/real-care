@@ -201,7 +201,7 @@ const ProductPageTemplate = ({
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 items-start lg:items-stretch lg:h-full fade-up text-[0.85em]">
           {/* Image panel — fixed in place while the right panel scrolls on desktop */}
           <div className="relative lg:self-start lg:mt-2">
-            <div className={`aspect-square lg:aspect-auto lg:h-[calc(100vh-12rem)] rounded-3xl ${heroBg} overflow-hidden max-h-[calc(100vh-12rem)] mx-auto w-full`}>
+            <div className={`aspect-square lg:aspect-auto lg:h-[calc(100vh-18rem)] rounded-3xl ${heroBg} overflow-hidden max-h-[calc(100vh-18rem)] mx-auto w-full`}>
               {activeImage && (
                 <img
                   src={activeImage}
