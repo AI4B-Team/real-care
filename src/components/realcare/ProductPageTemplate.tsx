@@ -164,7 +164,7 @@ const ProductPageTemplate = ({
       <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8">
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start fade-up text-[0.92em]">
           {/* Image panel — sticky on desktop */}
-          <div className="relative lg:sticky lg:top-20 lg:self-start lg:mt-16">
+          <div className="relative lg:mt-16">
             <div className={`aspect-square lg:aspect-[5/5] rounded-3xl ${heroBg} overflow-hidden max-h-[60vh] mx-auto w-full`}>
               {activeImage && (
                 <img
