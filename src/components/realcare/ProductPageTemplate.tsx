@@ -161,10 +161,10 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8">
-        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start fade-up text-[0.92em]">
-          {/* Image panel — sticky on desktop */}
-          <div className="relative lg:sticky lg:top-8 lg:self-start lg:mt-8">
+      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 py-6 md:py-8 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
+        <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-6 lg:gap-10 items-start lg:items-stretch lg:h-full fade-up text-[0.92em]">
+          {/* Image panel — fixed in place while the right panel scrolls on desktop */}
+          <div className="relative lg:self-start lg:mt-8">
             <div className={`aspect-square lg:aspect-[5/5] rounded-3xl ${heroBg} overflow-hidden max-h-[60vh] mx-auto w-full`}>
               {activeImage && (
                 <img
@@ -199,7 +199,7 @@ const ProductPageTemplate = ({
           </div>
 
           {/* Buy card column */}
-          <div className="lg:pt-2">
+          <div className="lg:h-full lg:overflow-y-auto lg:pt-2 lg:pr-2">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {label}
