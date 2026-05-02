@@ -78,6 +78,7 @@ interface ProductPageProps {
 
   productImage?: string;
   productImageAlt?: string;
+  galleryImages?: string[];
   heroBg?: string;
   tagline?: string;
   savingsLabel?: string;
@@ -123,6 +124,7 @@ const ProductPageTemplate = ({
   pageTitle,
   productImage,
   productImageAlt,
+  galleryImages,
   heroBg = "bg-[#D7EEE4]",
   tagline,
   savingsLabel,
@@ -134,6 +136,8 @@ const ProductPageTemplate = ({
 }: ProductPageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [tab, setTab] = useState<"benefits" | "description">("benefits");
+  const allImages = [productImage, ...(galleryImages || [])].filter(Boolean) as string[];
+  const [activeImage, setActiveImage] = useState(productImage || "");
 
   const planGroups: PlanGroup[] =
     plans ??
@@ -160,9 +164,9 @@ const ProductPageTemplate = ({
           {/* Image panel — sticky on desktop */}
           <div className="relative lg:sticky lg:top-24 lg:self-start">
             <div className={`aspect-square lg:aspect-[4/5] rounded-3xl ${heroBg} overflow-hidden`}>
-              {productImage && (
+              {activeImage && (
                 <img
-                  src={productImage}
+                  src={activeImage}
                   alt={productImageAlt || "Product"}
                   loading="eager"
                   width={1024}
@@ -174,6 +178,22 @@ const ProductPageTemplate = ({
             <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white text-emerald-700 text-[0.7rem] font-semibold px-3 py-1.5 rounded-full shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> In Stock
             </div>
+            {allImages.length > 1 && (
+              <div className="mt-4 flex gap-3 flex-wrap">
+                {allImages.map((img) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveImage(img)}
+                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors ${heroBg} ${
+                      activeImage === img ? "border-warm-800" : "border-warm-100 hover:border-warm-300"
+                    }`}
+                    aria-label="View product image"
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Buy card column */}
@@ -192,6 +212,29 @@ const ProductPageTemplate = ({
             <h1 className="font-display font-black leading-[1.05] text-warm-800 text-[clamp(2.2rem,4.4vw,3.4rem)] mb-3">
               {headline}
             </h1>
+
+            {/* Trustpilot */}
+            <a
+              href="https://www.trustpilot.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mb-5 text-[0.82rem] text-warm-700 hover:text-warm-800"
+            >
+              <span className="font-semibold">Excellent</span>
+              <span className="inline-flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <span key={i} className="w-4 h-4 bg-[#00B67A] inline-flex items-center justify-center">
+                    <Star size={10} fill="white" strokeWidth={0} className="text-white" />
+                  </span>
+                ))}
+              </span>
+              <span className="underline">5,019 reviews on</span>
+              <span className="inline-flex items-center gap-1 font-semibold">
+                <Star size={14} fill="#00B67A" strokeWidth={0} />
+                Trustpilot
+              </span>
+            </a>
+
             {tagline && (
               <p className="text-[1rem] text-warm-600 leading-[1.55] mb-6">{tagline}</p>
             )}
@@ -241,35 +284,41 @@ const ProductPageTemplate = ({
                 </div>
               ))}
 
+              <div className="mt-5 flex items-center justify-center flex-wrap gap-2 text-[0.78rem] text-warm-700">
+                <span>Buy now, pay later with</span>
+                <span className="inline-flex items-center justify-center px-3 py-1 rounded bg-[#FFA8C5] text-black font-bold tracking-tight text-[0.9rem] leading-none" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+                  Klarna.
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-1 rounded bg-[#B2FCE4] text-black font-bold tracking-tight text-[0.9rem] leading-none lowercase" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+                  afterpay
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="ml-0.5">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </span>
+              </div>
+
               <a
                 href="/health-check"
-                className="mt-5 w-full bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3.5 rounded-xl text-[0.95rem] transition-colors flex items-center justify-center gap-2"
+                className="mt-4 w-full bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3.5 rounded-xl text-[0.95rem] transition-colors flex items-center justify-center gap-2"
               >
                 See If I Qualify <ChevronRight size={16} />
               </a>
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount auto-applied at checkout
               </div>
-              <div className="mt-4 pt-4 border-t border-warm-100 flex items-center justify-center flex-wrap gap-3 text-[0.78rem] text-warm-700">
-                <span>Buy now, pay later with</span>
-                <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#FFA8C5] text-black font-extrabold tracking-tight text-[0.85rem] leading-none">
-                  Klarna.
-                </span>
-                <span className="inline-flex items-center justify-center gap-0.5 px-4 py-1.5 rounded-full bg-[#B2FCE4] text-black font-extrabold tracking-tight text-[0.85rem] leading-none lowercase">
-                  afterpay
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </span>
+              <div className="mt-3 text-center">
+                <a href="#safety" className="text-[0.8rem] text-warm-700 underline underline-offset-4 hover:text-warm-900">
+                  Important Safety Information
+                </a>
               </div>
             </div>
 
             {/* Tabs: Benefits / Description */}
             <div className="mt-6 bg-card border border-warm-100 rounded-2xl p-5 md:p-6">
-              <div className="flex bg-warm-50 rounded-full p-1 mb-5 max-w-[320px] mx-auto">
+              <div className="flex bg-warm-50 rounded-lg p-1 mb-5 max-w-[320px] mx-auto">
                 <button
                   onClick={() => setTab("benefits")}
-                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-full transition-colors ${
+                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-md transition-colors ${
                     tab === "benefits" ? "bg-white text-warm-800 shadow-sm" : "text-warm-500"
                   }`}
                 >
@@ -277,7 +326,7 @@ const ProductPageTemplate = ({
                 </button>
                 <button
                   onClick={() => setTab("description")}
-                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-full transition-colors ${
+                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-md transition-colors ${
                     tab === "description" ? "bg-white text-warm-800 shadow-sm" : "text-warm-500"
                   }`}
                 >

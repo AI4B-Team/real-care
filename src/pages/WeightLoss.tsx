@@ -21,15 +21,16 @@ const WeightLoss = () => {
       pill="Doctor-Led Plans"
       productImage={productImage}
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
+      galleryImages={[trtImg, peptideImg, labsImg]}
       heroBg="bg-[#C8E6C9]"
-      tagline="A personalized weight-loss plan built around you."
+      tagline="Personalized weight management plans, built around you and guided by licensed providers."
       savingsLabel="Save $50 On Your First Order"
       plans={[
         {
           group: "Compounded Semaglutide",
           options: [
-            { label: "3-Month Plan", price: "$179", priceSuffix: "first month", afterPrice: "$229/mo after", badge: "Best Value" },
-            { label: "Monthly Plan", price: "$199", priceSuffix: "first month", afterPrice: "$249/mo after" },
+            { label: "3+ Month Plan", price: "$149", priceSuffix: "/mo", afterPrice: "Paid upfront", badge: "Best Value" },
+            { label: "Monthly Plan", price: "$129", priceSuffix: "first month", afterPrice: "$179/mo after" },
           ],
         },
         {
@@ -46,9 +47,9 @@ const WeightLoss = () => {
           <span className="text-red">Keep It Off.</span>
         </>
       }
-      sub="Doctor-led GLP-1 plans containing the same active ingredients used in leading prescription weight-loss medications — at a fraction of the brand-name cost. No waiting rooms, no insurance required, delivered to your door."
+      sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
-        "From $179/Mo — All-Inclusive",
+        "From $129/Mo — All-Inclusive",
         "Same Price At Every Dose",
         "Money-Back Guarantee",
         "No Membership Fee",
@@ -74,7 +75,7 @@ const WeightLoss = () => {
         {
           name: "Compounded Semaglutide",
           desc: "Once-Weekly Injection · Includes B12 For Energy Support",
-          price: "From $179/Mo",
+          price: "From $129/Mo",
           popular: true,
           bullets: [
             "May Reduce Appetite And Cravings",
