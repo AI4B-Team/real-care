@@ -22,6 +22,7 @@ import {
   Shield,
   DollarSign,
   Tag,
+  Repeat,
   RotateCcw,
   XCircle,
   Pill,
@@ -40,7 +41,8 @@ import {
 const bulletIcon = (text: string): LucideIcon => {
   const t = text.toLowerCase();
   if (/\$|price|cost|\/\s*mo|\/mo|per month|one[\s-]?time/.test(t)) return DollarSign;
-  if (/same price|every dose|flat/.test(t)) return Tag;
+  if (/same price|every dose|flat/.test(t)) return Repeat;
+  if (/on[\s-]?demand|24\/7|support|messaging|provider support/.test(t)) return HeartHandshake;
   if (/money[\s-]?back|guarantee|refund/.test(t)) return RotateCcw;
   if (/no membership|no fee|no office|no commitment/.test(t)) return XCircle;
   if (/shipping|delivery|discreet/.test(t)) return Truck;
