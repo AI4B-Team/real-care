@@ -324,8 +324,8 @@ const ProductPageTemplate = ({
 
               <div className="mt-5 flex items-center justify-center flex-wrap gap-2 text-[0.78rem] text-warm-700">
                 <span>Buy Now, Pay Later With</span>
-                <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-7 md:h-8 w-auto" />
-                <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-7 md:h-8 w-auto" />
+                <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-6 md:h-7 w-auto" />
+                <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-6 md:h-7 w-auto" />
               </div>
 
               <a
