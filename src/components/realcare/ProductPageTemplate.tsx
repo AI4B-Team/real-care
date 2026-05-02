@@ -284,35 +284,41 @@ const ProductPageTemplate = ({
                 </div>
               ))}
 
+              <div className="mt-5 flex items-center justify-center flex-wrap gap-2 text-[0.78rem] text-warm-700">
+                <span>Buy now, pay later with</span>
+                <span className="inline-flex items-center justify-center px-3 py-1 rounded bg-[#FFA8C5] text-black font-bold tracking-tight text-[0.9rem] leading-none" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+                  Klarna.
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-1 rounded bg-[#B2FCE4] text-black font-bold tracking-tight text-[0.9rem] leading-none lowercase" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+                  afterpay
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="ml-0.5">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </span>
+              </div>
+
               <a
                 href="/health-check"
-                className="mt-5 w-full bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3.5 rounded-xl text-[0.95rem] transition-colors flex items-center justify-center gap-2"
+                className="mt-4 w-full bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3.5 rounded-xl text-[0.95rem] transition-colors flex items-center justify-center gap-2"
               >
                 See If I Qualify <ChevronRight size={16} />
               </a>
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount auto-applied at checkout
               </div>
-              <div className="mt-4 pt-4 border-t border-warm-100 flex items-center justify-center flex-wrap gap-3 text-[0.78rem] text-warm-700">
-                <span>Buy now, pay later with</span>
-                <span className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#FFA8C5] text-black font-extrabold tracking-tight text-[0.85rem] leading-none">
-                  Klarna.
-                </span>
-                <span className="inline-flex items-center justify-center gap-0.5 px-4 py-1.5 rounded-full bg-[#B2FCE4] text-black font-extrabold tracking-tight text-[0.85rem] leading-none lowercase">
-                  afterpay
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </span>
+              <div className="mt-3 text-center">
+                <a href="#safety" className="text-[0.8rem] text-warm-700 underline underline-offset-4 hover:text-warm-900">
+                  Important Safety Information
+                </a>
               </div>
             </div>
 
             {/* Tabs: Benefits / Description */}
             <div className="mt-6 bg-card border border-warm-100 rounded-2xl p-5 md:p-6">
-              <div className="flex bg-warm-50 rounded-full p-1 mb-5 max-w-[320px] mx-auto">
+              <div className="flex bg-warm-50 rounded-lg p-1 mb-5 max-w-[320px] mx-auto">
                 <button
                   onClick={() => setTab("benefits")}
-                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-full transition-colors ${
+                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-md transition-colors ${
                     tab === "benefits" ? "bg-white text-warm-800 shadow-sm" : "text-warm-500"
                   }`}
                 >
@@ -320,7 +326,7 @@ const ProductPageTemplate = ({
                 </button>
                 <button
                   onClick={() => setTab("description")}
-                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-full transition-colors ${
+                  className={`flex-1 text-[0.8rem] font-semibold py-2 rounded-md transition-colors ${
                     tab === "description" ? "bg-white text-warm-800 shadow-sm" : "text-warm-500"
                   }`}
                 >
