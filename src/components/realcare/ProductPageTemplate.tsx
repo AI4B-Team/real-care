@@ -240,8 +240,8 @@ const ProductPageTemplate = ({
             )}
 
             {savingsLabel && (
-              <div className="flex items-center justify-center gap-2 bg-amber-100 text-warm-800 text-[0.85rem] font-semibold rounded-2xl py-3 px-4 mb-4">
-                <ShieldCheck size={16} className="text-amber-600" />
+              <div className="flex items-center justify-center gap-2 bg-yellow-300 text-warm-900 text-[0.9rem] font-bold rounded-2xl py-3 px-4 mb-4 shadow-sm">
+                <ShieldCheck size={16} className="text-amber-700" />
                 {savingsLabel}
               </div>
             )}
