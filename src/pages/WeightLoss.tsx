@@ -1,12 +1,22 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-glp1.jpg";
+import edImg from "@/assets/product-ed.jpg";
+import trtImg from "@/assets/product-trt.jpg";
+import peptideImg from "@/assets/product-peptides.jpg";
+import labsImg from "@/assets/product-labs.jpg";
 
 const WeightLoss = () => {
   useSEO(SEO_CONFIGS.weightLoss);
   return (
     <ProductPageTemplate
       pageTitle="GLP-1 Weight Loss"
+      relatedProducts={[
+        { name: "Testosterone Therapy", image: trtImg, bg: "bg-[#E5D5BD]", href: "/testosterone" },
+        { name: "ED Treatment", image: edImg, bg: "bg-[#BFD9E8]", href: "/ed-treatment" },
+        { name: "Peptides & Longevity", image: peptideImg, bg: "bg-[#D6C9E8]", href: "/peptides" },
+        { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+      ]}
       label="GLP-1 Weight Loss · Most Popular"
       pill="Doctor-Led Plans"
       productImage={productImage}
