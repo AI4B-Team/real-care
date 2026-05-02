@@ -48,7 +48,7 @@ const WeightLoss = () => {
         "From $179/Mo — All-Inclusive",
         "Same Price At Every Dose",
         "On-Demand Medical Support",
-        "No Membership Fee",
+        "No Membership Fee. No Hidden Fees",
         "Free Discreet Shipping",
         "HSA / FSA Accepted",
       ]}
