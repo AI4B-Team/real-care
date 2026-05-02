@@ -207,7 +207,7 @@ const ProductPageTemplate = ({
             <div className="bg-card border border-warm-100 rounded-2xl p-5 md:p-6 shadow-soft">
               {planGroups.map((g, gi) => (
                 <div key={g.group} className={gi > 0 ? "mt-5 pt-5 border-t border-warm-100" : ""}>
-                  <div className="text-center font-display font-bold text-warm-800 text-[0.95rem] mb-3">
+                  <div className="text-center font-sans font-semibold tracking-[0.02em] text-warm-700 text-[0.8rem] uppercase mb-3">
                     {g.group}
                   </div>
                   <div className="space-y-2">
