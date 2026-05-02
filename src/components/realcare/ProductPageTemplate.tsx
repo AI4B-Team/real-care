@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import klarnaLogo from "@/assets/klarna-logo.png";
 import afterpayLogo from "@/assets/afterpay-logo.png";
@@ -181,6 +181,21 @@ const ProductPageTemplate = ({
   const [tab, setTab] = useState<"benefits" | "description">("benefits");
   const allImages = [productImage, ...(galleryImages || [])].filter(Boolean) as string[];
   const [activeImage, setActiveImage] = useState(productImage || "");
+  const rightPanelRef = useRef<HTMLDivElement | null>(null);
+
+  const handleHeroWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const panel = rightPanelRef.current;
+    if (!panel) return;
+    if (window.innerWidth < 1024) return; // only on lg+
+    const max = panel.scrollHeight - panel.clientHeight;
+    if (max <= 0) return;
+    const atTop = panel.scrollTop <= 0;
+    const atBottom = panel.scrollTop >= max - 1;
+    // Allow page to scroll past the hero only when the panel is fully scrolled
+    if ((e.deltaY > 0 && atBottom) || (e.deltaY < 0 && atTop)) return;
+    e.preventDefault();
+    panel.scrollTop += e.deltaY;
+  };
 
   const planGroups: PlanGroup[] =
     plans ??
@@ -202,7 +217,7 @@ const ProductPageTemplate = ({
   return (
     <PageLayout title={pageTitle}>
       {/* Hero — Eden-style: big sticky image left, scrollable buy card right */}
-      <div className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 pt-10 md:pt-14 pb-4 md:pb-5 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
+      <div onWheel={handleHeroWheel} className="bg-warm-50 border-b border-warm-100 px-5 md:px-12 pt-10 md:pt-14 pb-4 md:pb-5 lg:h-[calc(100vh-4rem)] lg:overflow-hidden">
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 items-start lg:items-stretch lg:h-full fade-up text-[0.85em]">
           {/* Image panel — fixed in place while the right panel scrolls on desktop */}
           <div className="relative lg:self-start lg:mt-2">
@@ -240,7 +255,7 @@ const ProductPageTemplate = ({
           </div>
 
           {/* Buy card column */}
-          <div className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 lg:pb-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div ref={rightPanelRef} className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 lg:pb-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {label}
