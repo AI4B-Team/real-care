@@ -304,7 +304,7 @@ const ProductPageTemplate = ({
                 See If I Qualify <ChevronRight size={16} />
               </a>
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
-                Discount auto-applied at checkout
+                Discount Auto-Applied At Checkout
               </div>
             </div>
 
