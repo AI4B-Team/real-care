@@ -201,7 +201,7 @@ const ProductPageTemplate = ({
         <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 items-start lg:items-stretch lg:h-full fade-up text-[0.85em]">
           {/* Image panel — fixed in place while the right panel scrolls on desktop */}
           <div className="relative lg:self-start lg:mt-2">
-            <div className={`aspect-square lg:aspect-auto lg:h-[calc(100vh-6rem)] rounded-3xl ${heroBg} overflow-hidden max-h-[calc(100vh-6rem)] mx-auto w-full`}>
+            <div className={`aspect-square lg:aspect-auto lg:h-[calc(100vh-12rem)] rounded-3xl ${heroBg} overflow-hidden max-h-[calc(100vh-12rem)] mx-auto w-full`}>
               {activeImage && (
                 <img
                   src={activeImage}
@@ -235,7 +235,7 @@ const ProductPageTemplate = ({
           </div>
 
           {/* Buy card column */}
-          <div className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div className="lg:h-full lg:overflow-y-auto lg:pt-1 lg:pr-2 lg:pb-12 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <div className="inline-flex items-center gap-2 bg-red/[0.08] text-red text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {label}
