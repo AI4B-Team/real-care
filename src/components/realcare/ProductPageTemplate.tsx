@@ -283,26 +283,28 @@ const ProductPageTemplate = ({
             )}
 
             {/* Trustpilot */}
-            <a
-              href="https://www.trustpilot.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mb-3 text-[0.78rem] text-warm-700 hover:text-warm-800"
-            >
-              <span className="font-semibold">Excellent</span>
-              <span className="inline-flex gap-0.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="w-4 h-4 bg-[#00B67A] inline-flex items-center justify-center">
-                    <Star size={10} fill="white" strokeWidth={0} className="text-white" />
-                  </span>
-                ))}
-              </span>
-              <span className="underline">5,019 reviews on</span>
-              <span className="inline-flex items-center gap-1 font-semibold">
-                <Star size={14} fill="#00B67A" strokeWidth={0} />
-                Trustpilot
-              </span>
-            </a>
+            <div className="flex justify-center mb-3">
+              <a
+                href="https://www.trustpilot.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[0.78rem] text-warm-700 hover:text-warm-800"
+              >
+                <span className="font-semibold">Excellent</span>
+                <span className="inline-flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="w-4 h-4 bg-[#00B67A] inline-flex items-center justify-center">
+                      <Star size={10} fill="white" strokeWidth={0} className="text-white" />
+                    </span>
+                  ))}
+                </span>
+                <span className="underline">5,019 reviews on</span>
+                <span className="inline-flex items-center gap-1 font-semibold">
+                  <Star size={14} fill="#00B67A" strokeWidth={0} />
+                  Trustpilot
+                </span>
+              </a>
+            </div>
 
             {/* Plan selector card */}
             <div className="bg-card border border-warm-100 rounded-2xl p-5 md:p-6 shadow-soft">
