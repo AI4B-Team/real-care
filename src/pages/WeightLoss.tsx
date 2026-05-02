@@ -41,11 +41,7 @@ const WeightLoss = () => {
         },
       ]}
       headline={
-        <>
-          Lose Weight.
-          <br />
-          <span className="text-red">Keep It Off.</span>
-        </>
+        <span className="whitespace-nowrap">Lose Weight. Keep It Off.</span>
       }
       sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
