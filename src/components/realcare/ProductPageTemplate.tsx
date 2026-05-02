@@ -237,6 +237,11 @@ const ProductPageTemplate = ({
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount auto-applied at checkout
               </div>
+              <div className="mt-4 pt-4 border-t border-warm-100 flex items-center justify-center gap-3 text-[0.68rem] text-warm-500">
+                <span>Buy now, pay later with</span>
+                <span className="px-2 py-0.5 rounded bg-[#FFA8C5] text-black font-bold text-[0.65rem]">Klarna</span>
+                <span className="px-2 py-0.5 rounded bg-[#B2FCE4] text-black font-bold text-[0.65rem]">Afterpay</span>
+              </div>
             </div>
 
             <div className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3">
