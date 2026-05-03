@@ -82,12 +82,6 @@ const Footer = () => {
                   <span className="font-body text-[0.42rem] font-bold tracking-[0.3em] text-white uppercase mt-[2px]">CARE</span>
                 </div>
               </div>
-              <img
-                src={compoundedUsa}
-                alt="Compounded in the U.S.A."
-                loading="lazy"
-                className="h-[56px] w-auto"
-              />
             </div>
 
             <h3 className="text-[1rem] font-semibold text-white mb-3">Sign up for health tips & offers.</h3>
