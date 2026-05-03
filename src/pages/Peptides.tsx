@@ -58,7 +58,7 @@ const Peptides = () => (
       },
     ]}
     ctaHeadline="Peak Performance Starts Here"
-    ctaSub="A licensed provider reviews your intake within 24–48 hours. Peptide therapy ships in cold-chain packaging directly to your door."
+    ctaSub="A licensed provider reviews your goals and health history and builds a peptide protocol if clinically appropriate. Shipped in cold-chain packaging directly to your door."
     disclaimer="Peptide therapy is a developing field and many peptides are not FDA-approved for general use. Compounded peptides are prepared by state-licensed pharmacies but are not FDA-approved as finished products. Long-term safety data is limited for many peptides. All prescribing decisions are at the sole discretion of your licensed provider. Individual results vary significantly."
   />
 );
