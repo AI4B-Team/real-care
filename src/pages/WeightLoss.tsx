@@ -1,9 +1,9 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-glp1.jpg";
-import galleryInjection from "@/assets/format-injection.jpg";
-import galleryWomen from "@/assets/feat-women-weight.jpg";
-import galleryGoal from "@/assets/goal-weight.jpg";
+import galleryPenCloseup from "@/assets/product-pen-closeup.jpg";
+import galleryVial from "@/assets/product-vial.jpg";
+import galleryPenBlue from "@/assets/product-pen-blue.jpg";
 import edImg from "@/assets/product-ed.jpg";
 import trtImg from "@/assets/product-trt.jpg";
 import peptideImg from "@/assets/product-peptides.jpg";
@@ -26,7 +26,7 @@ const WeightLoss = () => {
       pill="Doctor-Led Plans"
       productImage={productImage}
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
-      galleryImages={[galleryInjection, galleryWomen, galleryGoal]}
+      galleryImages={[galleryPenCloseup, galleryVial, galleryPenBlue]}
       heroBg="bg-[#C8E6C9]"
       tagline="Personalized weight management plans, built around you and guided by licensed providers."
       savingsLabel="First Shipment $120 Off"
