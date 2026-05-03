@@ -541,7 +541,11 @@ const ProductPageTemplate = ({
           <div className="text-center mb-16">
             <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">How It Works</p>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight">
-              From first question to first delivery <span className="text-red">in under 48 hours.</span>
+              {customSteps ? (
+                "Simple steps to get started."
+              ) : (
+                <>From first question to first delivery <span className="text-red">in under 48 hours.</span></>
+              )}
             </h2>
           </div>
 
@@ -550,7 +554,7 @@ const ProductPageTemplate = ({
             <div className="hidden md:block absolute top-[22px] left-[16.67%] right-[16.67%] h-0 border-t-2 border-dashed border-warm-200 z-0" />
 
             <div className="grid md:grid-cols-3 gap-10 relative z-10">
-              {[
+              {(customSteps ?? [
                 {
                   num: "01",
                   label: "Consult",
@@ -572,7 +576,7 @@ const ProductPageTemplate = ({
                   body: "Dosage adjustments, check-ins, side effect guidance — your provider is available 24/7 through your patient portal. Everything included in your plan price.",
                   stat: "24/7 provider access · Cancel anytime",
                 },
-              ].map((s) => (
+              ]).map((s) => (
                 <div key={s.num} className="flex flex-col items-start md:items-center md:text-center bg-background">
                   <div className="w-11 h-11 rounded-full bg-red text-white font-display font-black text-[1.1rem] flex items-center justify-center mb-5 flex-shrink-0">
                     {parseInt(s.num)}
