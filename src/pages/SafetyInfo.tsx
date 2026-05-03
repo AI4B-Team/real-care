@@ -88,6 +88,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Men's Health":      <User     size={13} />,
   "Women's Health":    <Users    size={13} />,
   "Hair Loss":         <Zap      size={13} />,
+  "Skincare":          <Pill     size={13} />,
   "Mental Health":     <Brain    size={13} />,
   "Peptides":          <FlaskConical size={13} />,
 };
