@@ -64,15 +64,22 @@ const SECTIONS: Section[] = [
   { id: "ed",  label: "Sildenafil / Tadalafil (ED)", badge: "Compounded", category: "Men's Health" },
   { id: "trt", label: "Testosterone (TRT)",           badge: "Compounded", category: "Men's Health" },
   // Women's Health
-  { id: "hrt", label: "Hormone Therapy (HRT)", badge: "Compounded", category: "Women's Health" },
+  { id: "hrt", label: "Hormone Therapy (HRT)",        badge: "Compounded", category: "Women's Health" },
+  { id: "birth-control", label: "Oral Contraceptives", badge: "Rx",        category: "Women's Health" },
   // Hair Loss
   { id: "finasteride", label: "Finasteride",  badge: "Rx", category: "Hair Loss" },
   { id: "minoxidil",   label: "Minoxidil",    badge: "Rx", category: "Hair Loss" },
+  // Skincare
+  { id: "tretinoin",    label: "Tretinoin",                   badge: "Rx",         category: "Skincare" },
+  { id: "skincare-compound", label: "Compounded Skincare Rx", badge: "Compounded", category: "Skincare" },
   // Mental Health
   { id: "naltrexone",  label: "Naltrexone / Bupropion", badge: "Compounded", category: "Mental Health" },
+  { id: "ssri",        label: "SSRIs (Sertraline / Escitalopram)", badge: "Rx", category: "Mental Health" },
   // Peptides
   { id: "sermorelin",  label: "Sermorelin",   badge: "Compounded", category: "Peptides" },
   { id: "bpc157",      label: "BPC-157",      badge: "Compounded", category: "Peptides" },
+  { id: "ipamorelin",  label: "Ipamorelin / CJC-1295", badge: "Compounded", category: "Peptides" },
+  { id: "ghk-cu",      label: "GHK-Cu",       badge: "Compounded", category: "Peptides" },
 ];
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
