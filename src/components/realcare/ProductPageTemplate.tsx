@@ -35,6 +35,8 @@ import {
   Zap,
   Timer,
   ClipboardList,
+  Check as CheckIcon,
+  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 
@@ -446,34 +448,146 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* 3-Step Process — Eden-style large cards */}
-      <div className="bg-background px-5 md:px-12 py-16 border-b border-warm-100">
+      {/* 3-Step Process — editorial layout */}
+      <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
         <div className="max-w-[1180px] mx-auto fade-up">
-          <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center max-w-[760px] mx-auto leading-tight">
-            Hit Your Health Goals Safely & Affordably In 3 Simple Steps
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3 mt-6 mb-12">
-            <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
-              See If You Qualify
-            </a>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <p className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
+              How It Works
+            </p>
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight mb-5">
+              Real Doctors. Real Medication.<br />Real Change.
+            </h2>
+            <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-xl mx-auto">
+              No insurance required. No waiting rooms. A licensed provider reviews your health,
+              writes your prescription, and your medication ships free — direct to your door.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+
+          {/* Steps */}
+          <div className="space-y-2">
             {[
-              { step: "1", title: "Submit Your Application And Meet With A Doctor", desc: "Complete a quick form and meet with a licensed medical provider 100% online. They'll determine if a personalized treatment plan is right for you.", img: step1Img, alt: "Hands holding a phone with the Real Care intake form" },
-              { step: "2", title: "Get Your Medication Delivered At Home", desc: "If eligible, your custom prescription will be shipped directly to your door, fast and free.", img: step2Img, alt: "Discreet shipping package" },
-              { step: "3", title: "Receive 24/7 Support And Ongoing Care", desc: "We'll be with you every step of the way, with regular check-ins and on-demand medical support to keep you on track.", img: step3Img, alt: "Patient receiving a message from her provider" },
-            ].map((s) => (
-              <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-3xl p-7 flex flex-col">
-                <div className="text-[0.95rem] font-bold tracking-[0.18em] uppercase text-warm-500 mb-4">Step {s.step}</div>
-                <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-4">
-                  {s.title}
-                </h3>
-                <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.desc}</p>
-                <div className="mt-auto rounded-2xl overflow-hidden bg-white aspect-[4/3]">
-                  <img src={s.img} alt={s.alt} loading="lazy" width={768} height={768} className="w-full h-full object-cover" />
+              {
+                number: "01",
+                label: "Consult",
+                headline: "Tell us about yourself.\nA real doctor reviews — not an algorithm.",
+                body: "Complete a brief online health questionnaire at your own pace. A licensed medical provider — a real physician authorized in your state — personally reviews your intake and consults with you 100% online. You'll know quickly whether prescription treatment may be an appropriate option for you.",
+                trust: [
+                  "Licensed providers in all 50 states",
+                  "100% online — no waiting rooms, no commutes",
+                  "Free consultation — no commitment required",
+                ],
+                img: step1Img,
+                alt: "Hands holding a phone with the Real Care intake form",
+                imageBg: "#F5EDE0",
+                flip: false,
+              },
+              {
+                number: "02",
+                label: "Prescribed",
+                headline: "If it's right for you,\nit ships directly to your door.",
+                body: "If your provider determines prescription medication is clinically appropriate, your personalized treatment is dispensed from a U.S.-licensed compounding pharmacy and shipped directly to you — fast, free, and discreetly packaged. No pharmacy runs. No awkward conversations at the counter. Often delivered within 48 hours of your prescription being written.",
+                trust: [
+                  "Shipped from U.S.-licensed pharmacies",
+                  "Free expedited delivery on every order",
+                  "FSA & HSA eligible · No hidden fees",
+                ],
+                img: step2Img,
+                alt: "Discreet shipping package",
+                imageBg: "#EDE8E0",
+                flip: true,
+              },
+              {
+                number: "03",
+                label: "Supported",
+                headline: "Your care team doesn't\nclock out when you do.",
+                body: "Real Care isn't a prescription vending machine. Your dedicated medical team is available around the clock — for dosage questions, side effect check-ins, and progress reviews. We adjust your plan as your body responds. The goal is real, lasting results. Not just a monthly shipment that shows up and disappears.",
+                trust: [
+                  "24/7 provider messaging — always available",
+                  "Dosage adjustments & plan changes included",
+                  "Cancel anytime · No membership fees",
+                ],
+                img: step3Img,
+                alt: "Patient receiving a message from her provider",
+                imageBg: "#E8E4DC",
+                flip: false,
+              },
+            ].map((s, i, arr) => (
+              <div key={s.number}>
+                <div
+                  className="grid md:grid-cols-2 gap-8 items-center min-h-[440px]"
+                  style={{ direction: s.flip ? "rtl" : "ltr" }}
+                >
+                  <div
+                    className="rounded-2xl overflow-hidden h-[420px]"
+                    style={{ background: s.imageBg, direction: "ltr" }}
+                  >
+                    <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="py-10 md:px-6 flex flex-col justify-center" style={{ direction: "ltr" }}>
+                    <div
+                      className="font-display font-black leading-none -mb-4 select-none"
+                      style={{ fontSize: "96px", color: "#F5EDE0", letterSpacing: "-4px" }}
+                    >
+                      {s.number}
+                    </div>
+                    <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-red mb-2">
+                      {s.label}
+                    </p>
+                    <h3 className="font-display text-2xl font-bold text-warm-800 leading-snug mb-4 whitespace-pre-line">
+                      {s.headline}
+                    </h3>
+                    <p className="text-[0.88rem] text-warm-600 leading-[1.75] mb-6">{s.body}</p>
+                    <div className="space-y-2.5">
+                      {s.trust.map((t) => (
+                        <div key={t} className="flex items-center gap-3">
+                          <div className="w-5 h-5 rounded-full bg-[#F5EDE0] flex items-center justify-center shrink-0">
+                            <CheckIcon size={10} className="text-red" strokeWidth={3} />
+                          </div>
+                          <span className="text-[0.78rem] font-semibold text-warm-700">{t}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
+                {i < arr.length - 1 && (
+                  <div className="flex items-center justify-center py-6">
+                    <div className="w-px h-10 bg-warm-100" />
+                  </div>
+                )}
               </div>
             ))}
+          </div>
+
+          {/* CTA Bar */}
+          <div className="mt-20 bg-warm-800 rounded-3xl px-8 py-16 text-center">
+            <h3 className="font-display text-3xl md:text-4xl font-black text-white mb-3">
+              Start your free consultation today.
+            </h3>
+            <p className="text-[0.85rem] text-white/60 mb-8 leading-relaxed">
+              $50 off your first order. No insurance required. No commitment.
+            </p>
+            <a
+              href="/health-check"
+              className="inline-flex items-center gap-2.5 bg-red hover:bg-red-dark text-white font-bold text-[0.85rem] px-8 py-4 rounded-full transition-colors"
+            >
+              See If You Qualify
+              <ArrowRight size={16} />
+            </a>
+            <div className="flex items-center justify-center gap-6 mt-7 flex-wrap">
+              {[
+                { icon: <Shield size={13} />, text: "Licensed providers · All 50 states" },
+                { icon: <Truck size={13} />, text: "Free expedited shipping" },
+                { icon: <DollarSign size={13} />, text: "$50 off first order" },
+                { icon: <Clock size={13} />, text: "Cancel anytime" },
+              ].map((it, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-[0.72rem] text-white/50">
+                  <span className="text-white/60">{it.icon}</span>
+                  {it.text}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
