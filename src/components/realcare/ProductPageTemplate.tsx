@@ -746,34 +746,6 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Why Real Care */}
-      <div className="bg-warm-800 px-5 md:px-12 py-16">
-        <div className="max-w-[1080px] mx-auto fade-up">
-          <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Why Real Care</div>
-            <h2 className="font-display font-black text-white text-[clamp(1.4rem,2.6vw,2.2rem)] whitespace-nowrap">
-              Real Doctors. Real Pricing. Real Support.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { icon: <Stethoscope size={18} />, text: "U.S.-Licensed Medical Providers" },
-              { icon: <Shield size={18} />, text: "HIPAA-Compliant And Discreet" },
-              { icon: <Truck size={18} />, text: "Free Shipping In Plain Packaging" },
-              { icon: <Clock size={18} />, text: "24/7 Provider Messaging Support" },
-            ].map((t) => (
-              <div
-                key={t.text}
-                className="flex items-center gap-3 bg-white/[0.04] border border-white/10 rounded-xl px-5 py-4 text-[0.86rem] text-white/85"
-              >
-                <span className="text-red flex-shrink-0">{t.icon}</span>
-                {t.text}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Final CTA */}
       <div className="bg-red px-5 md:px-12 py-14 text-center fade-up">
         <div className="max-w-[560px] mx-auto">
