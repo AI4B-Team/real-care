@@ -242,23 +242,6 @@ export default function SafetyInfoPage() {
   return (
     <PageLayout title="Important Safety Information">
     <div className="min-h-screen bg-white font-sans">
-      {/* Print + Get Started action bar */}
-      <div className="border-b border-gray-100 bg-white">
-        <div className="max-w-7xl mx-auto px-4 h-12 flex items-center justify-end gap-3">
-          <button
-            onClick={() => window.print()}
-            className="hidden sm:flex items-center gap-1.5 text-xs text-gray-500 hover:text-teal-600 border border-gray-200 rounded-full px-3 py-1.5 transition-colors"
-          >
-            <Printer size={12} /> Print This Page
-          </button>
-          <a
-            href="/health-check"
-            className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors"
-          >
-            Get Started
-          </a>
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="flex gap-8 items-start">
