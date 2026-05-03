@@ -60,7 +60,7 @@ const EdTreatment = () => (
       },
     ]}
     ctaHeadline="Better Sex Starts Here"
-    ctaSub="A licensed provider reviews your intake within 24–48 hours. If approved, your medication ships in 2 business days."
+    ctaSub="A licensed provider reviews your intake and, if appropriate, your medication ships in plain packaging within 2 business days."
     disclaimer="Viagra® is a registered trademark of Pfizer Inc. Cialis® is a registered trademark of Eli Lilly and Company. Real Care is not affiliated with these companies. Generic medications contain the same active ingredients but are not manufactured by the brand-name companies. Payment does not guarantee prescribing — all clinical decisions are at the sole discretion of your licensed provider."
   />
 );
