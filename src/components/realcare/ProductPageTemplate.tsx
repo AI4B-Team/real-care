@@ -506,7 +506,8 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Competitor comparison */}
+      {/* Competitor comparison — gated to weight loss */}
+      {showCompetitorComparison && (
       <div className="bg-warm-800 px-5 md:px-12 py-14 border-b border-warm-100">
         <div className="max-w-[800px] mx-auto text-center fade-up">
           <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">Why Real Care</p>
