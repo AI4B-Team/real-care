@@ -820,12 +820,12 @@ const ProductPageTemplate = ({
       <div className="bg-red px-5 md:px-12 py-14 text-center fade-up">
         <div className="max-w-[560px] mx-auto">
           <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-primary-foreground/60 mb-3">
-            Get Started
+            {ctaHeadline.toLowerCase().includes("guarantee") ? "90-Day Results Guarantee" : "Get Started"}
           </div>
           <h2 className="font-display font-black text-primary-foreground text-[clamp(1.8rem,3vw,2.4rem)] mb-4">
             {ctaHeadline}
           </h2>
-          <p className="text-[0.88rem] text-primary-foreground/80 mb-6">{ctaSub}</p>
+          <p className="text-[0.88rem] text-primary-foreground/80 mb-6" dangerouslySetInnerHTML={{ __html: ctaSub }} />
           <a
             href="/health-check"
             className="inline-block bg-background text-red font-bold px-8 py-3.5 rounded-lg hover:bg-warm-50 transition-colors text-[0.9rem]"

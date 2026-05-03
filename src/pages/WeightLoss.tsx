@@ -103,8 +103,8 @@ const WeightLoss = () => {
           ],
         },
       ]}
-      ctaHeadline="Lose Weight Or Your Money Back"
-      ctaSub="A licensed provider reviews your intake within 24–48 hours. Follow your prescribed plan for 5 months with no results and we'll refund you. Terms apply."
+      ctaHeadline="90-Day Results Guarantee — Or Your Medication Costs Back"
+      ctaSub={`Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your licensed provider determines you have not achieved measurable weight loss, we will refund your medication costs in full. Results may vary. Individual response to GLP-1 therapy differs based on health history, adherence, and lifestyle. See full guarantee terms at <a href="/refund-policy" class="underline hover:text-white">realcare.com/refund-policy</a>.`}
       disclaimer="The FDA does not review or approve any compounded medications for safety or effectiveness. Compounded medications contain the same active ingredients as their FDA-approved counterparts but are prepared by state-licensed pharmacies and have not been evaluated by the FDA for safety, efficacy, or quality. Available only if prescribed by a licensed provider after an online consultation. Individual results vary. Ozempic®, Wegovy®, Mounjaro®, and Zepbound® are registered trademarks of their respective owners. Real Care is not affiliated with Novo Nordisk or Eli Lilly. Payment does not guarantee prescribing — all clinical decisions are at the sole discretion of your licensed provider. HSA / FSA eligibility varies by plan administrator."
       faqs={[
         {
@@ -129,7 +129,7 @@ const WeightLoss = () => {
         },
         {
           q: "Can I Cancel Anytime?",
-          a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal — and our 5-month money-back guarantee has you covered if you follow the program and don't see results.",
+          a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal. Our 90-Day Results Guarantee also covers you — follow the program for 90 consecutive days and if you don't achieve measurable weight loss, we refund your medication costs in full. See realcare.com/refund-policy for full terms.",
         },
         {
           q: "Where Are The Compounded Medications Made?",
