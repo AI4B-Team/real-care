@@ -466,7 +466,7 @@ const ProductPageTemplate = ({
           </div>
 
           {/* Steps */}
-          <div className="space-y-2">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 number: "01",
