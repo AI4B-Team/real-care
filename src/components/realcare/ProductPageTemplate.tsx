@@ -650,11 +650,7 @@ const ProductPageTemplate = ({
           <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center">
             More From Our Members
           </h2>
-          <div className="flex flex-wrap justify-center gap-3 mt-6 mb-10">
-            <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
-              See If You Qualify
-            </a>
-          </div>
+          <div className="mb-10" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {reviews.slice(0, 5).map((r) => (
               <div key={r.name} className="bg-card border border-warm-100 rounded-2xl p-6 flex flex-col">
