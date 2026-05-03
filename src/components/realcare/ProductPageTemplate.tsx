@@ -560,35 +560,6 @@ const ProductPageTemplate = ({
             ))}
           </div>
 
-          {/* CTA Bar */}
-          <div className="mt-20 bg-warm-800 rounded-3xl px-8 py-16 text-center">
-            <h3 className="font-display text-3xl md:text-4xl font-black text-white mb-3">
-              Start your free consultation today.
-            </h3>
-            <p className="text-[0.85rem] text-white/60 mb-8 leading-relaxed">
-              $50 off your first order. No insurance required. No commitment.
-            </p>
-            <a
-              href="/health-check"
-              className="inline-flex items-center gap-2.5 bg-red hover:bg-red-dark text-white font-bold text-[0.85rem] px-8 py-4 rounded-full transition-colors"
-            >
-              See If You Qualify
-              <ArrowRight size={16} />
-            </a>
-            <div className="flex items-center justify-center gap-6 mt-7 flex-wrap">
-              {[
-                { icon: <Shield size={13} />, text: "Licensed providers · All 50 states" },
-                { icon: <Truck size={13} />, text: "Free expedited shipping" },
-                { icon: <DollarSign size={13} />, text: "$50 off first order" },
-                { icon: <Clock size={13} />, text: "Cancel anytime" },
-              ].map((it, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-[0.72rem] text-white/50">
-                  <span className="text-white/60">{it.icon}</span>
-                  {it.text}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
