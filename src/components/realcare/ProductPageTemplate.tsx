@@ -5,7 +5,6 @@ import afterpayLogo from "@/assets/afterpay-logo.png";
 import step1Img from "@/assets/step-1-phone-form.jpg";
 import step2Img from "@/assets/realcare-box.png";
 import step3Img from "@/assets/step-3-support.jpg";
-import compoundedSeal from "@/assets/compounded-usa-seal.png";
 import PageLayout from "./PageLayout";
 import {
   ChevronRight,
@@ -404,8 +403,8 @@ const ProductPageTemplate = ({
               )}
 
               <div className="mt-5 pt-5 border-t border-warm-100 flex flex-wrap items-center justify-between gap-3 text-[0.72rem] text-warm-600">
-                <div className="flex items-center gap-2">
-                  <img src={compoundedSeal} alt="Compounded in the U.S.A." className="h-10 w-10 object-contain" />
+                <div className="flex items-center gap-1.5">
+                  <MapPin size={12} className="text-red" /> Compounded In The U.S.A.
                 </div>
                 <div className="flex items-center gap-1.5">
                   <BadgeCheck size={12} className="text-emerald-600" /> FSA & HSA Eligible
