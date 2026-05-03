@@ -58,7 +58,7 @@ const MentalHealth = () => (
       },
     ]}
     ctaHeadline="Private Care For How You Really Feel"
-    ctaSub="A licensed psychiatric provider reviews your intake within 24–48 hours. Everything is private, confidential, and HIPAA-protected."
+    ctaSub="A licensed psychiatric provider reviews your intake. Everything is private, confidential, and HIPAA-protected. If you are in crisis, call or text 988."
     disclaimer="Real Care mental health services are intended for mild to moderate anxiety, depression, and sleep concerns. We do not treat severe psychiatric conditions, psychosis, bipolar disorder requiring mood stabilizers, or active suicidal ideation. If you are in crisis, please call 988 (Suicide & Crisis Lifeline) or go to your nearest emergency room. All prescribing decisions are at the sole discretion of your licensed provider."
   />
 );
