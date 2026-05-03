@@ -117,7 +117,7 @@ const WeightLossCategory = () => {
       {/* Calculator */}
       <section className="bg-white px-5 md:px-12 py-14">
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 items-center">
-          <div className="hidden md:block rounded-3xl overflow-hidden bg-warm-50">
+          <div className="hidden md:block rounded-3xl overflow-hidden bg-white">
             <img
               src={calculatorWoman}
               alt="Happy woman celebrating weight loss results"
