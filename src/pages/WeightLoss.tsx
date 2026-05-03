@@ -48,9 +48,9 @@ const WeightLoss = () => {
       trustBullets={[
         "From $129 First Month — All-Inclusive",
         "Same Price At Every Dose",
-        "On-Demand Medical Support",
+        "UNLIMITED On-Demand Medical Support",
         "No Membership Fee. No Hidden Fees",
-        "Free Discreet Shipping",
+        "FREE Discreet Shipping",
         "HSA / FSA Accepted",
       ]}
       howTitle="The Science Behind GLP-1"
