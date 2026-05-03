@@ -868,9 +868,8 @@ export default function SafetyInfoPage() {
             <div className="sticky top-20 space-y-4">
               <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
                 <p className="text-xs font-bold text-red-700 mb-2 flex items-center gap-1.5">
-                  <Phone size={12} /> Emergency
+                  <Phone size={12} /> Medical Emergency?
                 </p>
-                <p className="text-xs text-red-700 mb-2">Medical emergency?</p>
                 <a href="tel:911" className="block w-full bg-red-600 text-white text-center font-bold text-sm py-2 rounded-lg hover:bg-red-700 transition-colors mb-2">
                   Call 911
                 </a>
