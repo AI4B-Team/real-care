@@ -281,6 +281,16 @@ const carouselCards = [
     filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))",
   },
   {
+    name: "Compounded Semaglutide",
+    sub: "Starting at $179/mo",
+    bg: "bg-[#EFF6EE]",
+    href: "/weight-loss/semaglutide",
+    type: "image" as const,
+    img: productGlp1,
+    alt: "Compounded Semaglutide vial",
+    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15))",
+  },
+  {
     name: "Compounded Tirzepatide",
     sub: "Starting at $279/mo",
     bg: "bg-[#EEF3FB]",
