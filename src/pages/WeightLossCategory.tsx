@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PageLayout from "@/components/realcare/PageLayout";
-import { Shield, ChevronRight } from "lucide-react";
+import { Shield, ChevronRight, ChevronLeft } from "lucide-react";
+import productGlp1 from "@/assets/product-glp1.jpg";
 
 const WeightLossCategory = () => {
   const navigate = useNavigate();
