@@ -184,10 +184,10 @@ const Pricing = () => {
               {[
                 { q: "Is there a membership fee?", a: "Never. Your price covers everything — doctor consult, medication, and free shipping. $0 membership fee, always." },
                 { q: "What happens after the first month?", a: "After your first month, you continue at the plan rate you selected. Take your health assessment to see your personalized plan options and pricing — your ongoing rate depends on the plan length you choose." },
-                { q: "Can I cancel anytime?", a: "Monthly plans cancel anytime, no fees. Multi-month and annual plans are prepaid — you can pause or cancel, but prepaid months are non-refundable except under the weight loss money-back guarantee." },
+                { q: "Can I cancel anytime?", a: "Monthly plans cancel anytime, no fees. Multi-month and annual plans are prepaid — you can pause or cancel, but prepaid months are non-refundable except under the 90-Day Results Guarantee for GLP-1 weight loss." },
                 { q: "Does my price increase as my dose increases?", a: "Your plan price stays locked. We do not charge more as your dose goes up during treatment." },
                 { q: "Do you accept HSA or FSA?", a: "Yes. Prescription medications through Real Care typically qualify. Use your HSA/FSA card at checkout — no reimbursement needed." },
-                { q: "Is there a money-back guarantee?", a: "Yes, on GLP-1 weight loss. Follow your plan for 5 months with no results — we'll refund you. Annual and 6-month plan patients are fully covered." },
+                { q: "Is there a results guarantee?", a: "Yes. Real Care's 90-Day Results Guarantee covers GLP-1 weight loss. Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your licensed provider determines you have not achieved measurable weight loss, we refund your medication costs in full. First-time patients only. See realcare.com/refund-policy for full terms." },
               ].map((faq) => (
                 <div key={faq.q} className="bg-card border border-warm-100 rounded-xl p-5">
                   <div className="font-semibold text-warm-800 text-[0.9rem] mb-2">{faq.q}</div>
