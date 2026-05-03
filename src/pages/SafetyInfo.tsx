@@ -887,7 +887,7 @@ export default function SafetyInfoPage() {
               </div>
               <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4">
                 <p className="text-xs font-bold text-gray-700 mb-2 flex items-center gap-1.5">
-                  <Stethoscope size={12} /> Contact Your Care Team
+                  <Stethoscope size={12} /> Your Care Team
                 </p>
                 <a href="/portal" className="block text-xs text-teal-600 font-semibold hover:underline">Open Patient Portal</a>
                 <p className="text-xs text-gray-500 mt-1">24/7 provider messaging available.</p>
