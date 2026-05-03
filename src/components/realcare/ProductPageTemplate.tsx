@@ -366,7 +366,9 @@ const ProductPageTemplate = ({
                 <div className="flex items-center justify-center flex-wrap gap-2">
                   <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-7 w-auto" />
                   <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-7 w-auto" />
-                  <img src={affirmLogo} alt="Affirm" loading="lazy" className="h-7 w-auto" />
+                  <span className="inline-flex items-center justify-center h-7 px-3 bg-white rounded-md">
+                    <img src={affirmLogo} alt="Affirm" loading="lazy" className="h-4 w-auto" />
+                  </span>
                 </div>
               </div>
 
