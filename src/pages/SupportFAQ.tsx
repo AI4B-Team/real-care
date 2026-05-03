@@ -102,8 +102,8 @@ const faqs = [
         a: "Based on the STEP 1 clinical trial, patients on semaglutide 2.4mg lost an average of 14.9% of body weight over 68 weeks. Results vary significantly based on individual factors including starting weight, diet, activity level, and adherence to treatment. Your provider will help you set realistic goals for your specific situation.",
       },
       {
-        q: "What is your money-back guarantee?",
-        a: "Real Care offers a 5-month money-back guarantee on GLP-1 weight loss plans. If you follow your prescribed treatment plan for 5 months and see no results, we will refund you. Annual and 6-month plan patients are fully covered. Monthly plan patients are not eligible. Full terms at realcare.com/refund-policy.",
+        q: "What is your results guarantee?",
+        a: "Real Care offers a 90-Day Results Guarantee on GLP-1 weight loss plans. Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your licensed provider determines you have not achieved measurable weight loss, we refund your medication costs in full. Available to first-time Real Care weight loss patients only. Full terms at realcare.com/refund-policy.",
       },
       {
         q: "What are the common side effects?",
