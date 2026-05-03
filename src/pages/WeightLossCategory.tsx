@@ -448,12 +448,6 @@ const ProductCarousel = ({ navigate }: { navigate: Nav }) => {
                         </button>
                       </div>
                     </div>
-                    <a
-                      href="/safety-info"
-                      className="text-center text-[0.78rem] text-warm-500 hover:text-red underline mt-3"
-                    >
-                      Important Safety Information
-                    </a>
                   </>
                 )}
               </div>
