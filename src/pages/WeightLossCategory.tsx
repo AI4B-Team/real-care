@@ -212,44 +212,8 @@ const WeightLossCategory = () => {
         </div>
       </section>
 
-      {/* Product cards */}
-      <section className="bg-white px-5 md:px-12 py-14">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.5vw,2rem)] text-center mb-3">
-            Choose Your Treatment
-          </h2>
-          <p className="text-center text-[0.9rem] text-warm-500 mb-10 max-w-[640px] mx-auto">
-            All options require a licensed provider consultation. Medication prescribed only if clinically appropriate.
-          </p>
-          <div className="grid md:grid-cols-3 gap-5">
-            {products.map((p) => (
-              <div key={p.name} className="bg-card rounded-2xl border border-warm-100 p-6 flex flex-col shadow-soft">
-                <span className={`inline-block self-start text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3 ${p.tagBg}`}>
-                  {p.tag}
-                </span>
-                <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-1">{p.name}</h3>
-                <div className="text-red font-black text-[1.3rem]">{p.headline}</div>
-                <div className="text-[0.75rem] text-warm-500 mb-3">{p.sub}</div>
-                <p className="text-[0.83rem] text-warm-600 leading-relaxed mb-4">{p.desc}</p>
-                <ul className="space-y-1.5 mb-6 flex-1">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-[0.78rem] text-warm-700">
-                      <ChevronRight size={13} className="text-red flex-shrink-0 mt-0.5" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => navigate(p.href)}
-                  className="w-full bg-red hover:bg-red-dark text-white font-bold py-3 rounded-xl text-[0.85rem] transition-colors"
-                >
-                  {p.cta}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Product Showcase Carousel */}
+      <ProductCarousel navigate={navigate} />
 
       {/* Comparison Table */}
       <section className="bg-warm-50 px-5 md:px-12 py-14">
