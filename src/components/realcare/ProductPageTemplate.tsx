@@ -35,7 +35,7 @@ import {
   Zap,
   Timer,
   ClipboardList,
-  Check,
+  Check as CheckIcon,
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
