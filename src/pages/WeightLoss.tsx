@@ -25,22 +25,24 @@ const WeightLoss = () => {
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
       heroBg="bg-[#C8E6C9]"
       tagline="Personalized weight management plans, built around you and guided by licensed providers."
-      savingsLabel="Save Up To $1,800 On Your First Year"
+      savingsLabel="First Shipment $120 Off"
       plans={[
         {
           group: "Compounded Semaglutide",
           options: [
-            { label: "12-Month Plan", price: "$149", priceSuffix: "/Mo", afterPrice: "$1,788 First Year — $174/Mo After", badge: "Lowest Rate" },
-            { label: "6-Month Plan", price: "$149", priceSuffix: "/Mo", afterPrice: "$894 First 6 Months — $191/Mo After", badge: "6 Months" },
-            { label: "3-Month Plan", price: "$149", priceSuffix: "/Mo", afterPrice: "$447 First Quarter — $209/Mo After", badge: "Best Value" },
-            { label: "Monthly Plan", price: "$149", priceSuffix: "First Month", afterPrice: "$299/Mo After" },
+            { label: "12-Month Plan", price: "$174", priceSuffix: "/Mo", afterPrice: "$2,088/yr · Save $1,370 vs Monthly", badge: "Best Deal" },
+            { label: "6-Month Plan", price: "$191", priceSuffix: "/Mo", afterPrice: "$1,146/6mo · Save $526 vs Monthly", badge: "6 Months" },
+            { label: "3-Month Plan", price: "$209", priceSuffix: "/Mo", afterPrice: "$627/quarter · Save $149 vs Monthly", badge: "Most Popular" },
+            { label: "Monthly Plan", price: "$179", priceSuffix: "First Month", afterPrice: "$299/Mo After — Save $120 Today" },
           ],
         },
         {
           group: "Compounded Tirzepatide",
           options: [
-            { label: "3-Month Plan", price: "$249", priceSuffix: "/Mo", afterPrice: "$747 First Quarter — $316/Mo After", badge: "Best Value" },
-            { label: "Monthly Plan", price: "$249", priceSuffix: "First Month", afterPrice: "$399/Mo After" },
+            { label: "12-Month Plan", price: "$263", priceSuffix: "/Mo", afterPrice: "$3,156/yr · Save $1,632 vs Monthly", badge: "Best Deal" },
+            { label: "6-Month Plan", price: "$299", priceSuffix: "/Mo", afterPrice: "$1,794/6mo · Save $600 vs Monthly", badge: "6 Months" },
+            { label: "3-Month Plan", price: "$316", priceSuffix: "/Mo", afterPrice: "$948/quarter · Save $249 vs Monthly", badge: "Most Popular" },
+            { label: "Monthly Plan", price: "$279", priceSuffix: "First Month", afterPrice: "$399/Mo After — Save $120 Today" },
           ],
         },
       ]}
@@ -49,7 +51,7 @@ const WeightLoss = () => {
       }
       sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
-        "From $149 Your First Month",
+        "From $179 First Month — All-Inclusive",
         "Same Price At Every Dose",
         "UNLIMITED On-Demand Medical Support",
         "No Membership Fee. No Hidden Fees",
@@ -75,7 +77,7 @@ const WeightLoss = () => {
         {
           name: "Compounded Semaglutide",
           desc: "Once-Weekly Injection · Includes B12 For Energy Support",
-          price: "From $149/Mo Intro",
+          price: "From $179 First Month",
           popular: true,
           bullets: [
             "May Reduce Appetite And Cravings",
@@ -87,7 +89,7 @@ const WeightLoss = () => {
         {
           name: "Compounded Tirzepatide",
           desc: "Once-Weekly Injection · Dual GLP-1 / GIP Action",
-          price: "From $249/Mo Intro",
+          price: "From $279 First Month",
           bullets: [
             "Dual GLP-1 / GIP Receptor Action",
             "May Produce Greater Average Weight Loss",
