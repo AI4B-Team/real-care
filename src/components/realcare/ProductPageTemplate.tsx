@@ -363,13 +363,9 @@ const ProductPageTemplate = ({
                   Buy Now, Pay Later
                 </h3>
                 <div className="flex items-center justify-center flex-wrap gap-2.5">
-                  <span className="inline-flex items-center justify-center h-9 px-4 rounded-lg bg-[#B2FCE4]">
-                    <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-5 w-auto" />
-                  </span>
-                  <span className="inline-flex items-center justify-center h-9 px-4 rounded-lg bg-[#FFA8CD]">
-                    <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-5 w-auto" />
-                  </span>
-                  <span className="inline-flex items-center justify-center h-9 px-4 rounded-lg bg-[#4A4AF4] text-white font-extrabold lowercase tracking-tight text-[1rem] leading-none">
+                  <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-9 w-auto" />
+                  <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-9 w-auto" />
+                  <span className="inline-flex items-center justify-center h-9 px-5 rounded-lg bg-[#4A4AF4] text-white font-extrabold lowercase tracking-tight text-[1.05rem] leading-none">
                     affirm
                   </span>
                 </div>
