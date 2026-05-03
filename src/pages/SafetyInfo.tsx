@@ -984,6 +984,65 @@ export default function SafetyInfoPage() {
 
             <FDAParagraph />
             <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="ipamorelin" title="Ipamorelin / CJC-1295" badge="Compounded" category="Peptides" />
+            <p className="text-xs text-gray-500 italic mb-4">*Ipamorelin and CJC-1295 are compounded prescription growth hormone secretagogues. They are not FDA-approved as finished drug products and are prescribed off-label by licensed providers.</p>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Injection site reactions — redness, swelling, or pain",
+              "Headache",
+              "Flushing or warmth",
+              "Dizziness or lightheadedness",
+              "Fatigue or drowsiness",
+              "Water retention or mild swelling in extremities",
+              "Increased hunger",
+            ]} />
+
+            <SubHead>Warnings</SubHead>
+            <BulletList items={[
+              "Use with caution in patients with diabetes or impaired glucose tolerance — growth hormone secretagogues may affect insulin sensitivity and blood glucose.",
+              "Active malignancy — growth hormone-stimulating agents may theoretically promote tumor growth; consult your oncologist before use.",
+              "Not for use during pregnancy or breastfeeding due to lack of safety data.",
+              "Do not use in patients with active hypothyroidism until adequately treated.",
+              "Discontinue and contact your provider if symptoms of carpal tunnel syndrome, joint pain, or significant fluid retention develop.",
+            ]} />
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Glucocorticoids may attenuate growth hormone response. Insulin and antidiabetic agents may require dose adjustment. Disclose all medications and supplements to your provider.</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="ghk-cu" title="GHK-Cu (Copper Peptide)" badge="Compounded" category="Peptides" />
+            <p className="text-xs text-gray-500 italic mb-4">*GHK-Cu (copper tripeptide-1) is a compounded peptide used topically or by injection for skin repair, wound healing, and anti-aging applications. It is not FDA-approved as a finished drug product. Most evidence is preclinical or from limited human studies. Prescribed off-label by licensed providers.</p>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm">
+              <p className="font-semibold text-amber-800 mb-1 flex items-center gap-2"><AlertCircle size={14} />Limited Clinical Data</p>
+              <p className="text-amber-700">Long-term safety data in humans is limited. Discuss potential benefits and unknowns with your licensed provider before starting therapy.</p>
+            </div>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Skin irritation or redness at application site (topical)",
+              "Injection site reactions — redness, swelling, pain (injectable)",
+              "Mild itching or contact dermatitis",
+              "Headache (rare)",
+            ]} />
+
+            <SubHead>Precautions</SubHead>
+            <BulletList items={[
+              "Do not use during pregnancy or breastfeeding.",
+              "Patients with Wilson's disease or other copper metabolism disorders should not use GHK-Cu.",
+              "Active malignancy — peptides with tissue-repair properties may theoretically influence tumor biology; consult your oncologist.",
+              "Discontinue use and notify your provider if a severe skin reaction or unexpected symptoms develop.",
+              "No established drug interaction data — disclose all medications and topicals to your provider.",
+            ]} />
+
+            <FDAParagraph />
+            <ReturnLink />
 
             {/* ── Final Compliance Note ── */}
             <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-200">
