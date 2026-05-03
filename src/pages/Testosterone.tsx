@@ -52,7 +52,7 @@ const Testosterone = () => (
       },
     ]}
     ctaHeadline="Reclaim Your Energy & Drive"
-    ctaSub="Low T is more common than you think. A licensed provider reviews your intake within 24–48 hours and orders your labs."
+    ctaSub="Low T is more common than you think. Your provider orders labs and determines if TRT is clinically appropriate for you — all online."
     disclaimer="Lab testing requirements vary by state. Testosterone therapy is not appropriate for everyone — contraindications include certain prostate conditions, blood disorders, and fertility goals. All prescribing decisions are at the sole discretion of your licensed provider. Payment does not guarantee prescribing of medication."
   />
 );
