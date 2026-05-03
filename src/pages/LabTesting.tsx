@@ -59,7 +59,7 @@ const LabTesting = () => (
       },
     ]}
     ctaHeadline="Know What's Actually Going On Inside"
-    ctaSub="Lab testing is ordered within 24–48 hours of your assessment. Results are reviewed by your licensed provider with a clear action plan."
+    ctaSub="Order your panel online. Walk in to a nearby lab. Get provider-reviewed results and a clear action plan — no office visit ever needed."
     disclaimer="Lab testing is not a substitute for a comprehensive medical examination. Results are reviewed by a licensed provider for context but do not constitute a complete medical diagnosis. Lab locations and availability vary. Quest Diagnostics and LabCorp are independent companies not affiliated with Real Care."
   />
 );
