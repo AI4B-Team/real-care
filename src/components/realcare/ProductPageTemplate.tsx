@@ -404,6 +404,8 @@ const ProductPageTemplate = ({
                 </button>
               </div>
 
+              <h3 className="font-display text-lg font-bold text-warm-800 text-center mb-5">What's Included</h3>
+
               {tab === "benefits" ? (
                 <div className="space-y-3">
                   {trustBullets.map((t) => {
