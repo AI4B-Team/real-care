@@ -540,62 +540,97 @@ const ProductPageTemplate = ({
       </div>
       )}
       <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
-        <div className="max-w-[1080px] mx-auto fade-up">
+        <div className="max-w-[1180px] mx-auto fade-up">
           <div className="text-center mb-16">
-            <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">How It Works</p>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight">
-              {customSteps ? (
-                "Simple steps to get started."
-              ) : (
-                <>From first question to first delivery <span className="text-red">in under 48 hours.</span></>
-              )}
+            <p className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
+              How It Works
+            </p>
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight mb-5">
+              Real Doctors. Real Medication. Real Change.
             </h2>
+            <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-xl mx-auto">
+              No insurance required. No waiting rooms. A licensed provider reviews your health,
+              writes your prescription, and your medication ships free — direct to your door.
+            </p>
           </div>
 
-          <div className="relative">
-            {/* Connector line — desktop only */}
-            <div className="hidden md:block absolute top-[22px] left-[16.67%] right-[16.67%] h-0 border-t-2 border-dashed border-warm-200 z-0" />
-
-            <div className="grid md:grid-cols-3 gap-10 relative z-10">
-              {(customSteps ?? [
-                {
-                  num: "01",
-                  label: "Consult",
-                  headline: "A real doctor reviews your case — not an algorithm.",
-                  body: "Take a free 5-minute health check. A U.S.-licensed provider personally reviews your intake and determines if prescription treatment is right for you — 100% online.",
-                  stat: "All 50 states · Same-day review",
-                },
-                {
-                  num: "02",
-                  label: "Prescribed",
-                  headline: "If it's right for you, it ships to your door.",
-                  body: "When your provider writes a prescription, your medication ships from a U.S.-licensed compounding pharmacy — free, fast, and in plain packaging.",
-                  stat: "Free shipping · Often 48hr delivery",
-                },
-                {
-                  num: "03",
-                  label: "Supported",
-                  headline: "Your care team doesn't clock out.",
-                  body: "Dosage adjustments, check-ins, side effect guidance — your provider is available 24/7 through your patient portal. Everything included in your plan price.",
-                  stat: "24/7 provider access · Cancel anytime",
-                },
-              ]).map((s) => (
-                <div key={s.num} className="flex flex-col items-start md:items-center md:text-center bg-background">
-                  <div className="w-11 h-11 rounded-full bg-red text-white font-display font-black text-[1.1rem] flex items-center justify-center mb-5 flex-shrink-0">
-                    {parseInt(s.num)}
-                  </div>
-                  <p className="text-[0.62rem] font-bold tracking-[0.2em] uppercase text-red mb-2">{s.label}</p>
-                  <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-3">
-                    {s.headline}
-                  </h3>
-                  <p className="text-[0.83rem] text-warm-600 leading-[1.75] mb-4">{s.body}</p>
-                  <div className="inline-flex items-center gap-1.5 bg-warm-50 border border-warm-100 rounded-full px-3 py-1.5 text-[0.7rem] font-semibold text-warm-700 mt-auto">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red flex-shrink-0" />
-                    {s.stat}
-                  </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                number: "01",
+                label: "Consult",
+                headline: "Tell us about yourself.\nA real doctor reviews — not an algorithm.",
+                body: "Complete a brief online health questionnaire at your own pace. A licensed medical provider — a real physician authorized in your state — personally reviews your intake and consults with you 100% online. You'll know quickly whether prescription treatment may be an appropriate option for you.",
+                trust: [
+                  "Licensed providers in all 50 states",
+                  "100% online — no waiting rooms, no commutes",
+                  "Free consultation — no commitment required",
+                ],
+                img: step1Img,
+                alt: "Hands holding a phone with the Real Care intake form",
+                imageBg: "#F5EDE0",
+              },
+              {
+                number: "02",
+                label: "Prescribed",
+                headline: "If it's right for you,\nit ships directly to your door.",
+                body: "If your provider determines prescription medication is clinically appropriate, your personalized treatment is dispensed from a U.S.-licensed compounding pharmacy and shipped directly to you — fast, free, and discreetly packaged. Often delivered within 48 hours of your prescription being written.",
+                trust: [
+                  "Shipped from U.S.-licensed pharmacies",
+                  "Free expedited delivery on every order",
+                  "FSA & HSA eligible · No hidden fees",
+                ],
+                img: step2Img,
+                alt: "Discreet shipping package",
+                imageBg: "#EDE8E0",
+              },
+              {
+                number: "03",
+                label: "Supported",
+                headline: "Your care team doesn't\nclock out when you do.",
+                body: "Real Care isn't a prescription vending machine. Your dedicated medical team is available around the clock — for dosage questions, side effect check-ins, and progress reviews. We adjust your plan as your body responds.",
+                trust: [
+                  "24/7 provider messaging — always available",
+                  "Dosage adjustments & plan changes included",
+                  "Cancel anytime · No membership fees",
+                ],
+                img: step3Img,
+                alt: "Patient receiving a message from her provider",
+                imageBg: "#E8E4DC",
+              },
+            ].map((s) => (
+              <div key={s.number} className="flex flex-col">
+                <div
+                  className="rounded-2xl overflow-hidden aspect-[4/3] mb-6"
+                  style={{ background: s.imageBg }}
+                >
+                  <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
                 </div>
-              ))}
-            </div>
+                <div
+                  className="font-display font-black leading-none -mb-3 select-none"
+                  style={{ fontSize: "72px", color: "#F5EDE0", letterSpacing: "-3px" }}
+                >
+                  {s.number}
+                </div>
+                <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-red mb-2">
+                  {s.label}
+                </p>
+                <h3 className="font-display text-xl font-bold text-warm-800 leading-snug mb-3 whitespace-pre-line">
+                  {s.headline}
+                </h3>
+                <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.body}</p>
+                <div className="space-y-2.5 mt-auto">
+                  {s.trust.map((t) => (
+                    <div key={t} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#F5EDE0] flex items-center justify-center shrink-0">
+                        <CheckIcon size={10} className="text-red" strokeWidth={3} />
+                      </div>
+                      <span className="text-[0.78rem] font-semibold text-warm-700">{t}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-14">
