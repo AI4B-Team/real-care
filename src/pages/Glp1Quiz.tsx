@@ -124,7 +124,7 @@ const Glp1Quiz = () => {
                 Start My Health Check <ChevronRight size={16} />
               </a>
               <div className="text-[0.7rem] text-warm-400 mt-5">
-                From $179/mo · No membership fee · Money-back guarantee
+                From $179/mo · No membership fee · 90-day results guarantee (terms apply)
               </div>
             </div>
           )}
