@@ -83,8 +83,8 @@ const Index = () => {
           img: featWomenWeight,
           pill: "#1 For Women",
           title: <>Lose Weight.<br />Keep It Off.</>,
-          desc: "Clinically proven weight loss without the guesswork. GLP-1 treatment for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a money-back guarantee.",
-          tags: ["Semaglutide (Generic Ozempic®)", "Tirzepatide (Generic Mounjaro®)", "Doctor-Guided Plan", "Money-Back Guarantee"],
+          desc: "Clinically proven weight loss without the guesswork. GLP-1 treatment for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a 90-day results guarantee (terms apply).",
+          tags: ["Semaglutide (Generic Ozempic®)", "Tirzepatide (Generic Mounjaro®)", "Doctor-Guided Plan", "90-Day Results Guarantee"],
           price: <>From <strong className="text-warm-800 text-base">$179/mo</strong> — includes doctor consultation</>,
           cta: "Start Weight Loss →",
         }}
