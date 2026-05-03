@@ -54,7 +54,7 @@ const Skincare = () => (
       },
     ]}
     ctaHeadline="Your Skin Deserves Prescription Strength"
-    ctaSub="A licensed dermatology provider reviews your intake and photos within 24–48 hours. Your custom formula ships within 5 business days."
+    ctaSub="Submit your skin photos and goals. A licensed dermatology provider builds a prescription formula specific to your skin type and ships it in 5 business days."
     disclaimer="Prescription skincare medications require a valid prescription. Tretinoin and hydroquinone are not suitable for everyone. Pregnant women should not use tretinoin or hydroquinone. Compounded medications are not FDA-approved as finished products. All prescribing decisions are at the sole discretion of your licensed provider."
   />
 );
