@@ -362,6 +362,9 @@ const ProductPageTemplate = ({
                 <span>Buy Now, Pay Later With</span>
                 <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-6 md:h-7 w-auto" />
                 <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-6 md:h-7 w-auto" />
+                <span className="inline-flex items-center h-6 md:h-7 px-2 rounded bg-warm-100 text-warm-800 font-extrabold lowercase tracking-tight text-[0.85rem] leading-none">
+                  affirm
+                </span>
               </div>
 
               <a
