@@ -2,6 +2,7 @@ import { ReactNode, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import klarnaLogo from "@/assets/klarna-logo.png";
 import afterpayLogo from "@/assets/afterpay-logo.png";
+import affirmLogo from "@/assets/affirm-logo.svg";
 import step1Img from "@/assets/step-1-phone-form.jpg";
 import step2Img from "@/assets/realcare-box.png";
 import step3Img from "@/assets/step-3-support.jpg";
@@ -365,9 +366,7 @@ const ProductPageTemplate = ({
                 <div className="flex items-center justify-center flex-wrap gap-2">
                   <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-7 w-auto" />
                   <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-7 w-auto" />
-                  <span className="inline-flex items-center justify-center h-7 px-3.5 rounded-md bg-[#4A4AF4] text-white font-medium lowercase tracking-tight text-[0.85rem] leading-none" style={{ fontFamily: "Inter, system-ui, sans-serif" }}>
-                    affirm
-                  </span>
+                  <img src={affirmLogo} alt="Affirm" loading="lazy" className="h-7 w-auto" />
                 </div>
               </div>
 
