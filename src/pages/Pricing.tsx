@@ -17,8 +17,8 @@ interface PricingRow {
 }
 
 const menRows: PricingRow[] = [
-  { name: "GLP-1 Weight Loss (Sema)", sub: "Compounded semaglutide injection", monthly: 299, fromPrice: 179, popular: true, href: "/weight-loss", guarantee: true },
-  { name: "GLP-1 Weight Loss (Tirz)", sub: "Compounded tirzepatide injection", monthly: 399, fromPrice: 349, href: "/weight-loss" },
+  { name: "GLP-1 Weight Loss (Sema)", sub: "Compounded semaglutide injection", monthly: 299, fromPrice: 149, popular: true, href: "/weight-loss", guarantee: true },
+  { name: "GLP-1 Weight Loss (Tirz)", sub: "Compounded tirzepatide injection", monthly: 399, fromPrice: 249, href: "/weight-loss" },
   { name: "Low Testosterone (TRT)", sub: "Lab test + personalized TRT", monthly: 99, fromPrice: 99, href: "/testosterone" },
   { name: "Better Sex (ED)", sub: "Sildenafil, Tadalafil, Chewables", monthly: 45, fromPrice: 45, href: "/ed-treatment" },
   { name: "Hair Loss & Regrowth", sub: "Finasteride + minoxidil combo", monthly: 39, fromPrice: 39, href: "/hair-loss" },
@@ -28,7 +28,7 @@ const menRows: PricingRow[] = [
 ];
 
 const womenRows: PricingRow[] = [
-  { name: "GLP-1 Weight Loss (Sema)", sub: "Compounded semaglutide injection", monthly: 299, fromPrice: 179, popular: true, href: "/weight-loss", guarantee: true },
+  { name: "GLP-1 Weight Loss (Sema)", sub: "Compounded semaglutide injection", monthly: 299, fromPrice: 149, popular: true, href: "/weight-loss", guarantee: true },
   { name: "Menopause & HRT", sub: "Bioidentical hormone therapy", monthly: 89, fromPrice: 89, href: "/menopause" },
   { name: "Prescription Skincare", sub: "Custom tretinoin formula", monthly: 35, fromPrice: 35, href: "/skincare" },
   { name: "Hair Growth", sub: "Prescription minoxidil blend", monthly: 39, fromPrice: 39, href: "/hair-loss" },
