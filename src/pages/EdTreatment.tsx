@@ -1,10 +1,20 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-ed.jpg";
+import glp1Img from "@/assets/product-glp1.jpg";
+import trtImg from "@/assets/product-trt.jpg";
+import peptideImg from "@/assets/product-peptides.jpg";
+import labsImg from "@/assets/product-labs.jpg";
 
 const EdTreatment = () => (
   <ProductPageTemplate
     pageTitle="ED Treatment — Better Sex"
+    relatedProducts={[
+      { name: "Testosterone Therapy", image: trtImg, bg: "bg-[#E5D5BD]", href: "/testosterone" },
+      { name: "GLP-1 Weight Loss", image: glp1Img, bg: "bg-[#C8E6C9]", href: "/weight-loss" },
+      { name: "Peptides & Longevity", image: peptideImg, bg: "bg-[#D6C9E8]", href: "/peptides" },
+      { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+    ]}
     label="Men's Health · ED Treatment"
     pill="Works In 15 Minutes"
     productImage={productImage}
