@@ -87,8 +87,8 @@ const Nav = () => {
         <a href="/health-check" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">Health Check</a>
         <a href="/how-it-works" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">How It Works</a>
         <a href="/our-doctors" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">Our Doctors</a>
-        <a href="/pricing" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">Pricing</a>
       </div>
+
 
       <div className="flex items-center gap-2" ref={menuRef}>
         <a href="/login" className="hidden sm:inline-block text-[0.8rem] font-medium text-warm-600 px-3.5 py-2">Log In</a>
