@@ -513,49 +513,37 @@ const ProductPageTemplate = ({
                 imageBg: "#E8E4DC",
                 flip: false,
               },
-            ].map((s, i, arr) => (
-              <div key={s.number}>
+            ].map((s) => (
+              <div key={s.number} className="flex flex-col">
                 <div
-                  className="grid md:grid-cols-2 gap-8 items-center min-h-[440px]"
-                  style={{ direction: s.flip ? "rtl" : "ltr" }}
+                  className="rounded-2xl overflow-hidden aspect-[4/3] mb-6"
+                  style={{ background: s.imageBg }}
                 >
-                  <div
-                    className="rounded-2xl overflow-hidden h-[420px]"
-                    style={{ background: s.imageBg, direction: "ltr" }}
-                  >
-                    <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="py-10 md:px-6 flex flex-col justify-center" style={{ direction: "ltr" }}>
-                    <div
-                      className="font-display font-black leading-none -mb-4 select-none"
-                      style={{ fontSize: "96px", color: "#F5EDE0", letterSpacing: "-4px" }}
-                    >
-                      {s.number}
-                    </div>
-                    <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-red mb-2">
-                      {s.label}
-                    </p>
-                    <h3 className="font-display text-2xl font-bold text-warm-800 leading-snug mb-4 whitespace-pre-line">
-                      {s.headline}
-                    </h3>
-                    <p className="text-[0.88rem] text-warm-600 leading-[1.75] mb-6">{s.body}</p>
-                    <div className="space-y-2.5">
-                      {s.trust.map((t) => (
-                        <div key={t} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-[#F5EDE0] flex items-center justify-center shrink-0">
-                            <CheckIcon size={10} className="text-red" strokeWidth={3} />
-                          </div>
-                          <span className="text-[0.78rem] font-semibold text-warm-700">{t}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
                 </div>
-                {i < arr.length - 1 && (
-                  <div className="flex items-center justify-center py-6">
-                    <div className="w-px h-10 bg-warm-100" />
-                  </div>
-                )}
+                <div
+                  className="font-display font-black leading-none -mb-3 select-none"
+                  style={{ fontSize: "72px", color: "#F5EDE0", letterSpacing: "-3px" }}
+                >
+                  {s.number}
+                </div>
+                <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-red mb-2">
+                  {s.label}
+                </p>
+                <h3 className="font-display text-xl font-bold text-warm-800 leading-snug mb-3 whitespace-pre-line">
+                  {s.headline}
+                </h3>
+                <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.body}</p>
+                <div className="space-y-2.5 mt-auto">
+                  {s.trust.map((t) => (
+                    <div key={t} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#F5EDE0] flex items-center justify-center shrink-0">
+                        <CheckIcon size={10} className="text-red" strokeWidth={3} />
+                      </div>
+                      <span className="text-[0.78rem] font-semibold text-warm-700">{t}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
