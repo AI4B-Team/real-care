@@ -675,51 +675,9 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Mini product banner + disclaimer block */}
-      <div className="bg-background px-5 md:px-12 py-16 border-b border-warm-100">
-        <div className="max-w-[1080px] mx-auto fade-up bg-card border border-warm-100 rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.6vw,2.1rem)] mb-2">{pageTitle}</h3>
-            {planGroups[0]?.options[0] && (
-              <div className="flex items-baseline gap-2 mb-5">
-                <span className="font-display font-black text-warm-800 text-[1.8rem]">
-                  {planGroups[0].options[0].price}
-                </span>
-                <span className="text-warm-500 text-[0.85rem]">
-                  {planGroups[0].options[0].priceSuffix || "first month*"}
-                </span>
-              </div>
-            )}
-            <div className="space-y-3 mb-6">
-              {[
-                { icon: <Sparkles size={14} />, text: "No Hidden Fees" },
-                { icon: <ShieldCheck size={14} />, text: "Personalized Plans" },
-                { icon: <HeartHandshake size={14} />, text: "On-Demand Medical Support" },
-                { icon: <Truck size={14} />, text: "Free Expedited Shipping" },
-              ].map((b) => (
-                <div key={b.text} className="flex items-center gap-2 text-[0.82rem] text-warm-700">
-                  <span className="text-red">{b.icon}</span> {b.text}
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
-                Get Started
-              </a>
-            </div>
-            <p className="text-[0.7rem] text-warm-500 mt-4">
-              *Price shown applies to longest-term plan paid upfront or with buy now, pay later programs. Actual price will depend on product and plan prescribed.
-            </p>
-          </div>
-          {productImage && (
-            <div className={`aspect-square rounded-2xl ${heroBg} overflow-hidden`}>
-              <img src={productImage} alt={productImageAlt || pageTitle} className="w-full h-full object-cover" />
-            </div>
-          )}
-        </div>
-
-        {/* Disclaimer */}
-        <div className="max-w-[1080px] mx-auto mt-10">
+      {/* Disclaimer */}
+      <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
+        <div className="max-w-[1080px] mx-auto fade-up">
           <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
           <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
             {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
