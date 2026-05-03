@@ -263,8 +263,7 @@ export default function SafetyInfoPage() {
                   <Shield size={15} className="text-teal-600" />
                   <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">Safety Info</span>
                 </div>
-                <h1 className="text-lg font-bold text-gray-900 leading-tight">Important<br />Safety Information</h1>
-                <p className="text-xs text-gray-400 mt-1.5">Last reviewed: May 2026</p>
+                <p className="text-xs text-gray-400 mt-1.5">Last Reviewed: May 2026</p>
               </div>
 
               {/* Search */}
@@ -272,7 +271,7 @@ export default function SafetyInfoPage() {
                 <Search size={12} className="absolute left-2.5 top-2.5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Filter treatments..."
+                  placeholder="Filter Treatments..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full pl-7 pr-3 py-2 text-xs rounded-lg border border-gray-200 bg-gray-50 focus:outline-none focus:border-teal-400 focus:bg-white transition-colors"
