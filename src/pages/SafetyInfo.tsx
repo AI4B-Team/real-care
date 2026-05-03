@@ -684,7 +684,48 @@ export default function SafetyInfoPage() {
             <ReturnLink />
             <SectionDivider />
 
-            {/* ════ HAIR LOSS ════ */}
+            <SectionHeader id="birth-control" title="Oral Contraceptives" badge="Rx" category="Women's Health" />
+            <p className="text-xs text-gray-500 italic mb-4">Combined oral contraceptives (estrogen + progestin) and progestin-only pills are FDA-approved prescription medications dispensed through licensed pharmacies.</p>
+
+            <BlackBoxWarning>
+              <p><strong>Cigarette Smoking & Serious Cardiovascular Events:</strong> Cigarette smoking increases the risk of serious cardiovascular events from combined oral contraceptive use. This risk increases with age (particularly &gt;35) and with the number of cigarettes smoked. Women who use combined oral contraceptives should be strongly advised not to smoke.</p>
+            </BlackBoxWarning>
+
+            <SubHead>Serious Side Effects — Seek Care Immediately</SubHead>
+            <BulletList items={[
+              "Blood clots (DVT, pulmonary embolism) — leg pain or swelling, chest pain, shortness of breath",
+              "Stroke — sudden numbness, vision changes, severe headache, confusion",
+              "Heart attack — chest pain, arm pain, shortness of breath",
+              "High blood pressure",
+              "Liver problems including benign and malignant liver tumors",
+              "Gallbladder disease",
+              "Severe allergic reactions",
+            ]} />
+
+            <SubHead>Contraindications — Do Not Use If You:</SubHead>
+            <BulletList items={[
+              "Smoke and are over 35 years of age",
+              "Have a history of blood clots, stroke, or heart attack",
+              "Have uncontrolled high blood pressure",
+              "Have known or suspected breast cancer or estrogen-dependent cancer",
+              "Have unexplained vaginal bleeding",
+              "Have severe liver disease or liver tumors",
+              "Have migraine with aura",
+              "Are pregnant or recently postpartum",
+            ]} />
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={["Nausea", "Breast tenderness", "Headache", "Breakthrough bleeding or spotting", "Mood changes", "Decreased libido", "Weight changes", "Acne (improvement or worsening)"]} />
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Certain antibiotics (rifampin), anticonvulsants (phenytoin, carbamazepine, topiramate), antiretrovirals, and St. John's Wort may reduce contraceptive efficacy. Backup contraception may be required. Disclose all medications and supplements to your provider.</p>
+
+            <SubHead>Important Note</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Oral contraceptives do not protect against HIV or other sexually transmitted infections. Use additional barrier protection as appropriate.</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
 
             <SectionHeader id="finasteride" title="Finasteride" badge="Rx" category="Hair Loss" />
             <p className="text-xs text-gray-500 italic mb-4">Finasteride is FDA-approved for the treatment of male-pattern hair loss (androgenetic alopecia) in men only. It is not approved for use in women or children.</p>
