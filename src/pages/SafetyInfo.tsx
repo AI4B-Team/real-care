@@ -6,6 +6,7 @@
 // Compliance: All copy follows Real Care FTC/FDA telehealth guidelines
 
 import { useState, useEffect, useRef } from "react";
+import PageLayout from "@/components/realcare/PageLayout";
 import {
   AlertTriangle,
   Phone,
@@ -231,45 +232,25 @@ export default function SafetyInfoPage() {
   const categories = [...new Set(filtered.map((s) => s.category))];
 
   return (
+    <PageLayout title="Important Safety Information">
     <div className="min-h-screen bg-white font-sans">
-      {/* ── Emergency Banner ───────────────────────────────────────── */}
-      <div className="bg-red-600 text-white py-2 px-4 text-center text-xs font-semibold flex items-center justify-center gap-6 flex-wrap">
-        <span className="flex items-center gap-1.5">
-          <Phone size={12} />
-          Medical Emergency? Call <strong>911</strong> immediately or go to the nearest emergency room.
-        </span>
-        <span className="flex items-center gap-1.5">
-          Report adverse reactions to the FDA:
-          <a href="tel:18003291088" className="underline font-bold">1-800-FDA-1088</a>
-          <span>or</span>
-          <a href="https://www.fda.gov/medwatch" target="_blank" rel="noopener noreferrer" className="underline font-bold flex items-center gap-0.5">
-            fda.gov/medwatch <ExternalLink size={10} />
+      {/* Print + Get Started action bar */}
+      <div className="border-b border-gray-100 bg-white">
+        <div className="max-w-7xl mx-auto px-4 h-12 flex items-center justify-end gap-3">
+          <button
+            onClick={() => window.print()}
+            className="hidden sm:flex items-center gap-1.5 text-xs text-gray-500 hover:text-teal-600 border border-gray-200 rounded-full px-3 py-1.5 transition-colors"
+          >
+            <Printer size={12} /> Print This Page
+          </button>
+          <a
+            href="/health-check"
+            className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors"
+          >
+            Get Started
           </a>
-        </span>
-      </div>
-
-      {/* ── Nav ────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
-          <a href="/" className="font-bold text-lg tracking-tight text-gray-900">
-            real<span className="text-teal-600">care</span>
-          </a>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => window.print()}
-              className="hidden sm:flex items-center gap-1.5 text-xs text-gray-500 hover:text-teal-600 border border-gray-200 rounded-full px-3 py-1.5 transition-colors"
-            >
-              <Printer size={12} /> Print this page
-            </button>
-            <a
-              href="/treatment/glp-1-treatments"
-              className="bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors"
-            >
-              Get Started
-            </a>
-          </div>
         </div>
-      </header>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="flex gap-8 items-start">
@@ -745,7 +726,7 @@ export default function SafetyInfoPage() {
               "Pheochromocytoma (rare adrenal tumor)",
             ]} />
 
-            <SubHead>Use with Caution If You Have:</SubHead>
+            <SubHead>Use With Caution If You Have:</SubHead>
             <BulletList items={[
               "Uncontrolled hypotension",
               "History of heart failure or recent cardiovascular events",
@@ -841,7 +822,7 @@ export default function SafetyInfoPage() {
               <p className="text-amber-700">BPC-157 has not undergone controlled human clinical trials for safety or efficacy in any indication. All available data is from animal studies and limited anecdotal reports. Long-term safety in humans is unknown. Patients should discuss risks and unknowns with their licensed provider before starting.</p>
             </div>
 
-            <SubHead>Reported Side Effects (from limited human data)</SubHead>
+            <SubHead>Reported Side Effects (From Limited Human Data)</SubHead>
             <BulletList items={[
               "Injection site reactions — redness, swelling, pain",
               "Nausea (reported at higher doses)",
@@ -926,5 +907,6 @@ export default function SafetyInfoPage() {
         </div>
       </div>
     </div>
+    </PageLayout>
   );
 }
