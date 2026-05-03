@@ -48,7 +48,7 @@ const About = () => (
             <div className="space-y-3">
               {[
                 "5-minute health check — provider reviews within 24 hours",
-                "GLP-1 weight loss starting at $179/mo — all-inclusive, no hidden fees",
+                "GLP-1 weight loss starting at $179 first month ($299/mo after) — all-inclusive, no hidden fees",
                 "Free discreet shipping from certified U.S. compounding pharmacies",
                 "Zero membership fees — ever. What you see is what you pay.",
               ].map((p) => (

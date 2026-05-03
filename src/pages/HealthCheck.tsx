@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 type Gender = "male" | "female" | "both" | null;
 
 const goals = [
-  { id: "weight_loss", label: "Lose Weight", sub: "GLP-1 from $179/mo" },
+  { id: "weight_loss", label: "Lose Weight", sub: "GLP-1 from $179 first month" },
   { id: "ed", label: "Better Sex", sub: "ED from $2/dose" },
   { id: "trt", label: "Testosterone", sub: "TRT from $99/mo" },
   { id: "hair", label: "Fuller Hair", sub: "From $39/mo" },

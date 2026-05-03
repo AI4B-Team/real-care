@@ -14,11 +14,11 @@ const WeightLossCategory = () => {
   const monthsEst = Math.max(Math.round(weeksEst / 4.3), 0);
 
   const brandedCostYr = 1028 * 12;
-  const realCareCostYr = 149 + 11 * 299;
+  const realCareCostYr = 179 + 11 * 299;
   const savings = brandedCostYr - realCareCostYr;
 
   const trustBadges = [
-    "$149 Your First Month",
+    "$179 Your First Month",
     "Same Price Every Dose",
     "90-Day Results Guarantee",
     "Free Discreet Shipping",
@@ -29,12 +29,12 @@ const WeightLossCategory = () => {
       name: "Compounded Semaglutide",
       tag: "Most Popular",
       tagBg: "bg-emerald-100 text-emerald-800",
-      headline: "From $149/Mo",
-      sub: "intro price · $299/mo after",
+      headline: "From $179/Mo",
+      sub: "first month · $299/mo after",
       desc: "Same active ingredient as Ozempic® and Wegovy® — compounded at a U.S.-licensed pharmacy. Once-weekly injection with B12.",
       bullets: [
         "Once-weekly injection",
-        "From $149 your first month",
+        "From $179 your first month",
         "B12 energy support included",
         "Same price every dose",
       ],
@@ -45,12 +45,12 @@ const WeightLossCategory = () => {
       name: "Compounded Tirzepatide",
       tag: "Fastest Results",
       tagBg: "bg-sky-100 text-sky-800",
-      headline: "From $249/Mo",
-      sub: "intro price · $399/mo after",
+      headline: "From $279/Mo",
+      sub: "first month · $399/mo after",
       desc: "Dual GLP-1/GIP action — same active ingredient as Mounjaro® and Zepbound®. Clinically shown to produce greater average weight loss.",
       bullets: [
         "Dual GLP-1/GIP receptor action",
-        "From $249 your first month",
+        "From $279 your first month",
         "Greater avg weight loss in trials",
         "Once-weekly injection",
       ],
@@ -76,7 +76,7 @@ const WeightLossCategory = () => {
   ];
 
   const compareRows: [string, string, string, string][] = [
-    ["Intro price", "$149/mo", "$249/mo", "$1,028–1,415/mo"],
+    ["Intro price", "$179/mo", "$279/mo", "$1,028–1,415/mo"],
     ["Ongoing monthly", "$299/mo", "$399/mo", "$1,028–1,415/mo"],
     ["12-month rate", "$174/mo", "$263/mo", "Same as standard"],
     ["Avg weekly weight loss", "~0.5–1.5%", "~0.7–2%", "Same as compounded"],
@@ -88,7 +88,7 @@ const WeightLossCategory = () => {
   ];
 
   return (
-    <PageLayout title="GLP-1 Weight Loss" description="Compare Real Care GLP-1 weight loss treatments — semaglutide, tirzepatide, and brand-name options. From $149 your first month.">
+    <PageLayout title="GLP-1 Weight Loss" description="Compare Real Care GLP-1 weight loss treatments — semaglutide, tirzepatide, and brand-name options. From $179 your first month.">
       {/* Hero */}
       <section className="bg-[#C8E6C9] px-5 md:px-12 py-14 md:py-20">
         <div className="max-w-[960px] mx-auto text-center">
@@ -257,7 +257,7 @@ type Nav = ReturnType<typeof useNavigate>;
 const carouselCards = [
   {
     name: "GLP-1",
-    sub: "Starting at $149/mo",
+    sub: "Starting at $179/mo",
     bg: "bg-[#EFF6EE]",
     href: "/weight-loss/semaglutide",
     type: "image" as const,
@@ -267,7 +267,7 @@ const carouselCards = [
   },
   {
     name: "GLP-1 + GIP",
-    sub: "Starting at $249/mo",
+    sub: "Starting at $279/mo",
     bg: "bg-[#EEF3FB]",
     href: "/weight-loss/tirzepatide",
     type: "image" as const,

@@ -10,7 +10,7 @@ const navGroups: NavGroup[] = [
   {
     label: "Women",
     items: [
-      { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $149/mo", badge: "Popular" },
+      { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $179 first month", badge: "Popular" },
       { title: "Menopause", href: "/menopause", desc: "HRT from $89/mo", badge: "Specialist" },
       { title: "Skincare", href: "/skincare", desc: "Rx from $35/mo" },
       { title: "Hair Growth", href: "/hair-loss", desc: "From $39/mo" },
@@ -23,7 +23,7 @@ const navGroups: NavGroup[] = [
   {
     label: "Men",
     items: [
-      { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $149/mo", badge: "Popular" },
+      { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $179 first month", badge: "Popular" },
       { title: "Better Sex", href: "/ed-treatment", desc: "ED from $2/dose", badge: "#1" },
       { title: "Testosterone", href: "/testosterone", desc: "TRT from $99/mo" },
       { title: "Hair Loss", href: "/hair-loss", desc: "From $39/mo" },

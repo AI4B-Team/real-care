@@ -9,7 +9,7 @@ const Check = () => (
 );
 
 const treatments = [
-  { name: "GLP-1 Weight Loss", sub: "From $179/mo", href: "/weight-loss", badge: "Most Popular", desc: "Semaglutide & tirzepatide — doctor-guided weight loss with a 90-day results guarantee (terms apply)." },
+  { name: "GLP-1 Weight Loss", sub: "From $179 first month", href: "/weight-loss", badge: "Most Popular", desc: "Semaglutide & tirzepatide — doctor-guided weight loss with a 90-day results guarantee (terms apply)." },
   { name: "Menopause & HRT", sub: "From $89/mo", href: "/menopause", badge: "Specialist Care", desc: "Bioidentical hormone therapy for hot flashes, brain fog, sleep, and mood." },
   { name: "Prescription Skincare", sub: "From $35/mo", href: "/skincare", desc: "Custom prescription formulas for acne, anti-aging, dark spots, and texture." },
   { name: "Hair Regrowth", sub: "From $39/mo", href: "/hair-loss", desc: "Prescription minoxidil blends to stop shedding and restore volume and density." },

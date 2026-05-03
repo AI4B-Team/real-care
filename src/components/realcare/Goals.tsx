@@ -6,7 +6,7 @@ import goalMenopause from "@/assets/goal-menopause.jpg";
 import goalEnergy from "@/assets/goal-energy.jpg";
 
 const goals = [
-  { img: goalWeight, name: "Lose Weight", sub: "GLP-1 from $179/mo", href: "#men" },
+  { img: goalWeight, name: "Lose Weight", sub: "GLP-1 from $179 first month", href: "#men" },
   { img: goalSex, name: "Better Sex", sub: "ED treatment from $2/dose", href: "#men" },
   { img: goalHair, name: "Fuller Hair", sub: "Regrowth from $39/mo", href: "#women" },
   { img: goalSkin, name: "Improve Skin", sub: "Prescription skincare from $35/mo", href: "#women" },

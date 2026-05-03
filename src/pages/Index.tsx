@@ -38,7 +38,7 @@ import pSuppsW from "@/assets/p-supps-w.jpg";
 import pSleepW from "@/assets/p-sleep-w.jpg";
 
 const menProducts = [
-  { img: pWeightM, name: "GLP-1 Weight Loss", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — fraction of the cost.", price: "From $149/mo", pill: "Most Popular" },
+  { img: pWeightM, name: "GLP-1 Weight Loss", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — fraction of the cost.", price: "From $179 first month", pill: "Most Popular" },
   { img: pTrt, name: "Low Testosterone (TRT)", desc: "Lab testing + personalized TRT. More energy, stronger drive, better mood. Results in weeks.", price: "From $99/mo", pill: "Top Rated" },
   { img: pHairM, name: "Hair Loss & Regrowth", desc: "Finasteride + minoxidil — clinically proven to stop shedding and regrow hair monthly.", price: "From $39/mo" },
   { img: pPept, name: "Peptides & Longevity", desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, anti-aging, and peak performance.", price: "From $129/mo", pill: "New" },
@@ -85,7 +85,7 @@ const Index = () => {
           title: <>Lose Weight.<br />Keep It Off.</>,
           desc: "Clinically proven weight loss without the guesswork. GLP-1 treatment for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a 90-day results guarantee (terms apply).",
           tags: ["Semaglutide (Generic Ozempic®)", "Tirzepatide (Generic Mounjaro®)", "Doctor-Guided Plan", "90-Day Results Guarantee"],
-          price: <>From <strong className="text-warm-800 text-base">$149/mo</strong> — includes doctor consultation</>,
+          price: <>From <strong className="text-warm-800 text-base">$179 first month</strong> — $299/mo after</>,
           cta: "Start Weight Loss →",
         }}
         products={womenProducts}
