@@ -535,8 +535,7 @@ const ProductPageTemplate = ({
           </p>
         </div>
       </div>
-
-      {/* 3-Step Process — horizontal timeline */}
+      )}
       <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
         <div className="max-w-[1080px] mx-auto fade-up">
           <div className="text-center mb-16">
