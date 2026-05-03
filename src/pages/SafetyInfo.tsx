@@ -886,6 +886,47 @@ export default function SafetyInfoPage() {
             <ReturnLink />
             <SectionDivider />
 
+            <SectionHeader id="ssri" title="SSRIs (Sertraline / Escitalopram)" badge="Rx" category="Mental Health" />
+            <p className="text-xs text-gray-500 italic mb-4">Selective serotonin reuptake inhibitors (SSRIs) such as sertraline (Zoloft®) and escitalopram (Lexapro®) are FDA-approved for major depressive disorder, generalized anxiety disorder, and other conditions. Available by prescription only.</p>
+
+            <BlackBoxWarning>
+              <p><strong>Suicidal Thoughts and Behaviors:</strong> Antidepressants increased the risk of suicidal thinking and behavior in children, adolescents, and young adults (up to age 24) in short-term studies. Patients of all ages started on antidepressant therapy should be monitored closely for clinical worsening, suicidality, or unusual changes in behavior, particularly during the first few months of therapy and at dose changes.</p>
+            </BlackBoxWarning>
+
+            <WarningBox>
+              <ul className="space-y-1.5 mt-1">
+                {[
+                  "Serotonin syndrome — agitation, hallucinations, rapid heart rate, fever, muscle stiffness, twitching, loss of coordination, nausea, vomiting, diarrhea (medical emergency)",
+                  "Worsening depression, suicidal ideation, or unusual behavior changes",
+                  "Severe allergic reactions (rash, hives, difficulty breathing, facial swelling)",
+                  "Abnormal bleeding (especially when combined with NSAIDs, aspirin, or anticoagulants)",
+                  "Seizures",
+                  "Mania or hypomania (in patients with bipolar disorder)",
+                  "Hyponatremia (low sodium) — particularly in elderly patients",
+                ].map((item, i) => <li key={i} className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 mt-1.5" />{item}</li>)}
+              </ul>
+            </WarningBox>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={["Nausea", "Headache", "Insomnia or drowsiness", "Sexual dysfunction (decreased libido, delayed orgasm, erectile dysfunction)", "Dry mouth", "Sweating", "Dizziness", "Tremor", "Weight changes", "Fatigue"]} />
+
+            <SubHead>Contraindications</SubHead>
+            <BulletList items={[
+              "Concurrent use of MAOIs or within 14 days of stopping an MAOI",
+              "Concurrent use of pimozide (sertraline)",
+              "Known hypersensitivity to the medication or components",
+            ]} />
+
+            <SubHead>Discontinuation</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Do not stop SSRIs abruptly. Sudden discontinuation can cause withdrawal-like symptoms (dizziness, nausea, headache, irritability, "brain zaps," flu-like symptoms). Always taper under provider supervision.</p>
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Significant interactions with MAOIs (contraindicated), other serotonergic agents (triptans, tramadol, St. John's Wort, linezolid, methylene blue — risk of serotonin syndrome), NSAIDs and anticoagulants (increased bleeding risk), CYP2D6 substrates, and certain antipsychotics. Disclose all medications and supplements to your provider.</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
             {/* ════ PEPTIDES ════ */}
 
             <SectionHeader id="sermorelin" title="Sermorelin" badge="Compounded" category="Peptides" />
