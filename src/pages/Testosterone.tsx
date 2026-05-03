@@ -1,10 +1,24 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-trt.jpg";
+import edImg from "@/assets/product-ed.jpg";
+import glp1Img from "@/assets/product-glp1.jpg";
+import peptideImg from "@/assets/product-peptides.jpg";
+import labsImg from "@/assets/product-labs.jpg";
 
 const Testosterone = () => (
   <ProductPageTemplate
     pageTitle="Testosterone Therapy (TRT)"
+    alertBanner={{
+      type: "warning",
+      text: "Testosterone therapy requires a live video consultation with a licensed provider. Asynchronous (questionnaire-only) consultation is not available for this treatment.",
+    }}
+    relatedProducts={[
+      { name: "ED Treatment", image: edImg, bg: "bg-[#BFD9E8]", href: "/ed-treatment" },
+      { name: "GLP-1 Weight Loss", image: glp1Img, bg: "bg-[#C8E6C9]", href: "/weight-loss" },
+      { name: "Peptides & Longevity", image: peptideImg, bg: "bg-[#D6C9E8]", href: "/peptides" },
+      { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+    ]}
     label="Men's Health · Testosterone"
     pill="Lab Testing Included"
     productImage={productImage}
@@ -38,7 +52,7 @@ const Testosterone = () => (
       },
     ]}
     ctaHeadline="Reclaim Your Energy & Drive"
-    ctaSub="Low T is more common than you think. A licensed provider reviews your intake within 24–48 hours and orders your labs."
+    ctaSub="Low T is more common than you think. Your provider orders labs and determines if TRT is clinically appropriate for you — all online."
     disclaimer="Lab testing requirements vary by state. Testosterone therapy is not appropriate for everyone — contraindications include certain prostate conditions, blood disorders, and fertility goals. All prescribing decisions are at the sole discretion of your licensed provider. Payment does not guarantee prescribing of medication."
   />
 );

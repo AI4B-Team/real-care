@@ -135,6 +135,14 @@ interface ProductPageProps {
   reviews?: Review[];
   /** Related products ("You may also be interested in"). */
   relatedProducts?: RelatedProduct[];
+  /** Show the Hims/Ro competitor comparison section. Weight loss only. */
+  showCompetitorComparison?: boolean;
+  /** Show the 90-Day Results Guarantee section. Weight loss only. */
+  showGuarantee?: boolean;
+  /** Custom steps to override the default 3-step section. */
+  customSteps?: { num: string; label: string; headline: string; body: string; stat: string }[];
+  /** Alert banner shown directly below the hero. */
+  alertBanner?: { type: "warning" | "info"; text: string };
 }
 
 const DEFAULT_FAQS: FAQ[] = [
@@ -178,6 +186,10 @@ const ProductPageTemplate = ({
   description,
   reviews = DEFAULT_REVIEWS,
   relatedProducts,
+  showCompetitorComparison = false,
+  showGuarantee = false,
+  customSteps,
+  alertBanner,
 }: ProductPageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [tab, setTab] = useState<"benefits" | "description">("benefits");
@@ -453,6 +465,18 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
+      {/* Alert banner — TRT video, Mental Health crisis, Peptides investigational, etc. */}
+      {alertBanner && (
+        <div
+          className={`px-5 md:px-12 py-3.5 text-center text-[0.82rem] font-medium leading-[1.6] ${
+            alertBanner.type === "warning"
+              ? "bg-amber-50 border-b border-amber-200 text-amber-800"
+              : "bg-blue-50 border-b border-blue-200 text-blue-800"
+          }`}
+        >
+          {alertBanner.text}
+        </div>
+      )}
       {/* The Science (treatment-specific) — moved above the 3-step section */}
       <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
@@ -482,7 +506,8 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Competitor comparison */}
+      {/* Competitor comparison — gated to weight loss */}
+      {showCompetitorComparison && (
       <div className="bg-warm-800 px-5 md:px-12 py-14 border-b border-warm-100">
         <div className="max-w-[800px] mx-auto text-center fade-up">
           <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">Why Real Care</p>
@@ -510,14 +535,17 @@ const ProductPageTemplate = ({
           </p>
         </div>
       </div>
-
-      {/* 3-Step Process — horizontal timeline */}
+      )}
       <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
         <div className="max-w-[1080px] mx-auto fade-up">
           <div className="text-center mb-16">
             <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">How It Works</p>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight">
-              From first question to first delivery <span className="text-red">in under 48 hours.</span>
+              {customSteps ? (
+                "Simple steps to get started."
+              ) : (
+                <>From first question to first delivery <span className="text-red">in under 48 hours.</span></>
+              )}
             </h2>
           </div>
 
@@ -526,7 +554,7 @@ const ProductPageTemplate = ({
             <div className="hidden md:block absolute top-[22px] left-[16.67%] right-[16.67%] h-0 border-t-2 border-dashed border-warm-200 z-0" />
 
             <div className="grid md:grid-cols-3 gap-10 relative z-10">
-              {[
+              {(customSteps ?? [
                 {
                   num: "01",
                   label: "Consult",
@@ -548,7 +576,7 @@ const ProductPageTemplate = ({
                   body: "Dosage adjustments, check-ins, side effect guidance — your provider is available 24/7 through your patient portal. Everything included in your plan price.",
                   stat: "24/7 provider access · Cancel anytime",
                 },
-              ].map((s) => (
+              ]).map((s) => (
                 <div key={s.num} className="flex flex-col items-start md:items-center md:text-center bg-background">
                   <div className="w-11 h-11 rounded-full bg-red text-white font-display font-black text-[1.1rem] flex items-center justify-center mb-5 flex-shrink-0">
                     {parseInt(s.num)}
@@ -745,6 +773,34 @@ const ProductPageTemplate = ({
           </div>
         </div>
       </div>
+
+      {/* 90-Day Results Guarantee — gated to weight loss */}
+      {showGuarantee && (
+        <div className="bg-warm-50 border-t border-warm-100 px-5 md:px-12 py-16">
+          <div className="max-w-[820px] mx-auto fade-up bg-card border-2 border-red rounded-3xl p-8 md:p-10 text-center">
+            <div className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-3">
+              90-Day Results Guarantee
+            </div>
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.6vw,2.1rem)] leading-tight mb-4">
+              Real results in 90 days — or your medication costs back.
+            </h2>
+            <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-6">
+              Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your provider determines you have not achieved measurable weight loss, we will refund your medication costs in full.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 mb-5">
+              {["Stay on prescribed dose", "Complete monthly check-ins", "Follow lifestyle guidance"].map((t) => (
+                <span key={t} className="inline-flex items-center gap-1.5 bg-warm-50 border border-warm-100 rounded-full px-3 py-1.5 text-[0.72rem] font-semibold text-warm-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red" />
+                  {t}
+                </span>
+              ))}
+            </div>
+            <a href="/refund-policy" className="text-[0.78rem] text-warm-700 underline underline-offset-4 hover:text-warm-900">
+              See full guarantee terms →
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Final CTA */}
       <div className="bg-red px-5 md:px-12 py-14 text-center fade-up">

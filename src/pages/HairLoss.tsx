@@ -1,10 +1,20 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-hair.jpg";
+import glp1Img from "@/assets/product-glp1.jpg";
+import skincareImg from "@/assets/product-skincare.jpg";
+import menopauseImg from "@/assets/product-menopause.jpg";
+import labsImg from "@/assets/product-labs.jpg";
 
 const HairLoss = () => (
   <ProductPageTemplate
     pageTitle="Hair Loss & Regrowth"
+    relatedProducts={[
+      { name: "GLP-1 Weight Loss", image: glp1Img, bg: "bg-[#C8E6C9]", href: "/weight-loss" },
+      { name: "Prescription Skincare", image: skincareImg, bg: "bg-[#F5D0D5]", href: "/skincare" },
+      { name: "Menopause & HRT", image: menopauseImg, bg: "bg-[#F5C8B8]", href: "/menopause" },
+      { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+    ]}
     label="Men & Women · Hair Loss"
     pill="Clinically Studied"
     productImage={productImage}
@@ -12,7 +22,7 @@ const HairLoss = () => (
     heroBg="bg-[#E8C4A0]"
     tagline="Doctor-led prescription hair-loss care for men and women."
     savingsLabel="Free Shipping On Every Order"
-    headline={<>Fuller Hair.<br /><span className="text-red">Starting In 90 Days.</span></>}
+    headline={<>Fuller Hair.<br /><span className="text-red">Fewer Excuses.</span></>}
     sub="Doctor-led prescription hair-loss care for men and women. Clinically studied ingredients designed to help slow shedding and may support regrowth — delivered monthly if appropriate."
     trustBullets={["From $39 / Mo", "Men & Women", "Clinically Studied Ingredients", "No Membership Fee", "Free Discreet Shipping"]}
     howTitle="How Hair Regrowth Works"
@@ -44,7 +54,7 @@ const HairLoss = () => (
       },
     ]}
     ctaHeadline="Stop The Shedding. Start Regrowing."
-    ctaSub="A licensed dermatology provider reviews your intake within 24–48 hours. Many patients report reduced shedding within 30 days."
+    ctaSub="A licensed provider reviews your intake and builds a prescription hair-loss protocol tailored to your pattern, goals, and health history."
     disclaimer="Individual results vary. Hair regrowth requires consistent daily use for a minimum of 3–6 months to evaluate effectiveness. Finasteride is approved for men only. Women who are pregnant or may become pregnant should not use finasteride. Compounded medications are not FDA-approved as finished products. All prescribing decisions are at the sole discretion of your licensed provider."
   />
 );

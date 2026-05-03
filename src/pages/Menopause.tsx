@@ -1,10 +1,24 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-menopause.jpg";
+import glp1Img from "@/assets/product-glp1.jpg";
+import hairImg from "@/assets/product-hair.jpg";
+import skincareImg from "@/assets/product-skincare.jpg";
+import labsImg from "@/assets/product-labs.jpg";
 
 const Menopause = () => (
   <ProductPageTemplate
     pageTitle="Menopause Relief & Hormone Therapy"
+    alertBanner={{
+      type: "info",
+      text: "Hormone therapy is not appropriate for everyone. Contraindications include certain types of breast cancer, history of blood clots, stroke, or active liver disease. Your licensed OB-GYN provider will review your complete health history before prescribing. See Important Safety Information.",
+    }}
+    relatedProducts={[
+      { name: "GLP-1 Weight Loss", image: glp1Img, bg: "bg-[#C8E6C9]", href: "/weight-loss" },
+      { name: "Hair Loss & Regrowth", image: hairImg, bg: "bg-[#E8C4A0]", href: "/hair-loss" },
+      { name: "Prescription Skincare", image: skincareImg, bg: "bg-[#F5D0D5]", href: "/skincare" },
+      { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+    ]}
     label="Women's Health · Menopause & HRT"
     pill="Bioidentical HRT"
     productImage={productImage}
@@ -44,7 +58,7 @@ const Menopause = () => (
       },
     ]}
     ctaHeadline="Menopause Doesn't Have To Feel Like This"
-    ctaSub="A licensed OB-GYN provider reviews your intake within 24–48 hours. Many women report relief within 4–6 weeks of starting HRT."
+    ctaSub="A licensed OB-GYN provider reviews your full health history and symptom profile. If HRT is appropriate for you, your personalized prescription ships free. Results may vary."
     disclaimer="Hormone therapy is not appropriate for everyone. Contraindications include certain types of breast cancer, blood clots, stroke, and liver disease. Compounded bioidentical hormones are not FDA-approved as finished products. All prescribing decisions are at the sole discretion of your licensed provider. Discuss your individual risk factors with your provider."
   />
 );

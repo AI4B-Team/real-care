@@ -10,6 +10,8 @@ const WeightLoss = () => {
   useSEO(SEO_CONFIGS.weightLoss);
   return (
     <ProductPageTemplate
+      showCompetitorComparison
+      showGuarantee
       pageTitle="GLP-1 Weight Loss"
       relatedProducts={[
         { name: "Testosterone Therapy", image: trtImg, bg: "bg-[#E5D5BD]", href: "/testosterone" },

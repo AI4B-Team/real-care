@@ -1,10 +1,24 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-peptides.jpg";
+import trtImg from "@/assets/product-trt.jpg";
+import glp1Img from "@/assets/product-glp1.jpg";
+import labsImg from "@/assets/product-labs.jpg";
+import edImg from "@/assets/product-ed.jpg";
 
 const Peptides = () => (
   <ProductPageTemplate
     pageTitle="Peptides & Longevity"
+    alertBanner={{
+      type: "info",
+      text: "Peptide therapies are investigational. Many peptides have not been evaluated in controlled human clinical trials. Long-term safety data is limited. Discuss risks and unknowns with your licensed provider before starting.",
+    }}
+    relatedProducts={[
+      { name: "Testosterone Therapy", image: trtImg, bg: "bg-[#E5D5BD]", href: "/testosterone" },
+      { name: "GLP-1 Weight Loss", image: glp1Img, bg: "bg-[#C8E6C9]", href: "/weight-loss" },
+      { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+      { name: "ED Treatment", image: edImg, bg: "bg-[#BFD9E8]", href: "/ed-treatment" },
+    ]}
     label="Men & Women · Peptides"
     pill="Performance & Recovery"
     productImage={productImage}
@@ -44,7 +58,7 @@ const Peptides = () => (
       },
     ]}
     ctaHeadline="Peak Performance Starts Here"
-    ctaSub="A licensed provider reviews your intake within 24–48 hours. Peptide therapy ships in cold-chain packaging directly to your door."
+    ctaSub="A licensed provider reviews your goals and health history and builds a peptide protocol if clinically appropriate. Shipped in cold-chain packaging directly to your door."
     disclaimer="Peptide therapy is a developing field and many peptides are not FDA-approved for general use. Compounded peptides are prepared by state-licensed pharmacies but are not FDA-approved as finished products. Long-term safety data is limited for many peptides. All prescribing decisions are at the sole discretion of your licensed provider. Individual results vary significantly."
   />
 );
