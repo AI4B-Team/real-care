@@ -30,17 +30,20 @@ const RefundPolicy = () => (
       <H3>Damaged or Incorrect Orders</H3>
       <P>If your medication arrives damaged, incorrect, or significantly delayed through no fault of your own, contact us at support@realcare.com within 5 business days of delivery. We will replace the affected medication or issue a refund at our discretion.</P>
 
-      <H3>Weight Loss Money-Back Guarantee</H3>
-      <P>Our GLP-1 weight loss program includes a satisfaction guarantee subject to the following terms:</P>
+      <H3>90-Day Results Guarantee</H3>
+      <P>Real Care's GLP-1 weight loss program includes a 90-Day Results Guarantee subject to the following terms:</P>
       <UL>
-        <LI>You must complete a minimum of 5 consecutive months on the program without lapses</LI>
-        <LI>You must have followed your provider's prescribed dosage and treatment plan as directed</LI>
-        <LI>You must have completed all required monthly check-in forms</LI>
-        <LI>If you have not experienced measurable weight loss after meeting these requirements, contact us at guarantee@realcare.com with your documentation</LI>
-        <LI><strong>IMPORTANT: Approved refunds are issued minus a 25% provider consultation fee</strong> — if you paid $179 for your first month, your maximum refund under the guarantee is $134.25. This fee covers the cost of your provider consultations during the program.</LI>
-        <LI>The guarantee applies only to GLP-1 weight loss products and not to other treatments</LI>
+        <LI>You must complete a minimum of 90 consecutive days on the program from your first shipment date without lapses in coverage.</LI>
+        <LI>You must have taken your prescribed medication as directed throughout the 90-day period.</LI>
+        <LI>You must have completed all required monthly provider check-in forms during the program.</LI>
+        <LI>You must have followed the diet and lifestyle recommendations provided by your licensed provider.</LI>
+        <LI>If, after meeting all of the above requirements, your licensed provider determines you have not achieved measurable weight loss, contact us at guarantee@realcare.com with your documentation and a brief account summary from your patient portal.</LI>
+        <LI>Approved refunds are issued for the medication costs paid during your 90-day guarantee period. Consultation services are included in your plan pricing and are not separately charged or deducted from refunds.</LI>
+        <LI>The guarantee applies only to GLP-1 weight loss products and not to any other treatments or services.</LI>
+        <LI>The guarantee is available to first-time Real Care weight loss patients only, one time per household.</LI>
+        <LI>Submitting a guarantee claim does not guarantee approval — all claims are reviewed for adherence to the above conditions.</LI>
       </UL>
-      <P>The money-back guarantee is available to first-time Real Care weight loss patients only, one time per household.</P>
+      <P>Real Care reserves the right to request supporting documentation including prescription fill records, check-in completion records, and weight measurements documented in your patient portal. Claims must be submitted within 30 days of the end of your 90-day guarantee period.</P>
 
       <H2>3. Refund Processing</H2>
       <P>Approved refunds are issued to your original payment method within 5–10 business days. Processing times may vary depending on your bank or card issuer.</P>
