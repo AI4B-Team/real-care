@@ -907,5 +907,6 @@ export default function SafetyInfoPage() {
         </div>
       </div>
     </div>
+    </PageLayout>
   );
 }
