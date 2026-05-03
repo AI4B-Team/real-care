@@ -116,7 +116,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                 <div className="text-[0.72rem] text-warm-400 leading-[1.5] mb-3">{p.desc}</div>
                 <ul className="flex flex-wrap gap-x-2 gap-y-1 mb-3">
                   {(isGLP1
-                    ? ["1:1 Physician Guidance", "24/7 Support", "Money-Back Guarantee", "HSA/FSA Accepted", "Free Discreet Shipping"]
+                    ? ["1:1 Physician Guidance", "24/7 Support", "90-Day Results Guarantee", "HSA/FSA Accepted", "Free Discreet Shipping"]
                     : ["1:1 Physician Guidance", "24/7 Support", "HSA/FSA Accepted", "Free Discreet Shipping"]
                   ).map((b) => (
                     <li key={b} className="inline-flex items-center gap-1 text-[0.62rem] font-medium text-warm-600">
