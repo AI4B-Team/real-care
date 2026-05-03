@@ -119,14 +119,6 @@ const WeightLoss = () => {
           a: "The most commonly reported side effects of GLP-1 medications are mild-to-moderate nausea, fatigue, and digestive changes — usually most noticeable during dose increases. Your provider will guide you through gradual escalation and is available to adjust your plan at any time. Review the full Important Safety Information before starting treatment.",
         },
         {
-          q: "Do I Need Insurance Or A Referral?",
-          a: "No. Real Care is cash-pay only and does not require insurance or a referral. We accept HSA and FSA cards, which can effectively reduce your cost by up to 30–40% depending on your tax bracket.",
-        },
-        {
-          q: "Can I Cancel Anytime?",
-          a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal. Our 90-Day Results Guarantee also covers you — follow the program for 90 consecutive days and if you don't achieve measurable weight loss, we refund your medication costs in full. See realcare.com/refund-policy for full terms.",
-        },
-        {
           q: "Where Are The Compounded Medications Made?",
           a: "All compounded GLP-1 medications dispensed through Real Care are prepared by state-licensed compounding pharmacies based in the United States.",
         },
