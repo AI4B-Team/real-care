@@ -358,13 +358,17 @@ const ProductPageTemplate = ({
                 </div>
               ))}
 
-              <div className="mt-5 flex items-center justify-center flex-wrap gap-2 text-[0.78rem] text-warm-700">
-                <span>Buy Now, Pay Later With</span>
-                <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-6 md:h-7 w-auto" />
-                <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-6 md:h-7 w-auto" />
-                <span className="inline-flex items-center h-6 md:h-7 px-2 rounded bg-warm-100 text-warm-800 font-extrabold lowercase tracking-tight text-[0.85rem] leading-none">
-                  affirm
-                </span>
+              <div className="mt-6 flex flex-col items-center gap-3">
+                <h3 className="font-display font-black text-warm-800 text-[1.25rem] md:text-[1.4rem]">
+                  Buy Now, Pay Later
+                </h3>
+                <div className="flex items-center justify-center flex-wrap gap-2.5">
+                  <img src={afterpayLogo} alt="Afterpay" loading="lazy" className="h-9 w-auto" />
+                  <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-9 w-auto" />
+                  <span className="inline-flex items-center justify-center h-9 px-5 rounded-lg bg-[#4A4AF4] text-white font-extrabold lowercase tracking-tight text-[1.05rem] leading-none">
+                    affirm
+                  </span>
+                </div>
               </div>
 
               <a
