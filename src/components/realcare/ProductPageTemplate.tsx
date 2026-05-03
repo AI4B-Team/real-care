@@ -465,6 +465,18 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
+      {/* Alert banner — TRT video, Mental Health crisis, Peptides investigational, etc. */}
+      {alertBanner && (
+        <div
+          className={`px-5 md:px-12 py-3.5 text-center text-[0.82rem] font-medium leading-[1.6] ${
+            alertBanner.type === "warning"
+              ? "bg-amber-50 border-b border-amber-200 text-amber-800"
+              : "bg-blue-50 border-b border-blue-200 text-blue-800"
+          }`}
+        >
+          {alertBanner.text}
+        </div>
+      )}
       {/* The Science (treatment-specific) — moved above the 3-step section */}
       <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
