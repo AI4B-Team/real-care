@@ -54,7 +54,7 @@ const HairLoss = () => (
       },
     ]}
     ctaHeadline="Stop The Shedding. Start Regrowing."
-    ctaSub="A licensed dermatology provider reviews your intake within 24–48 hours. Many patients report reduced shedding within 30 days."
+    ctaSub="A licensed provider reviews your intake and builds a prescription hair-loss protocol tailored to your pattern, goals, and health history."
     disclaimer="Individual results vary. Hair regrowth requires consistent daily use for a minimum of 3–6 months to evaluate effectiveness. Finasteride is approved for men only. Women who are pregnant or may become pregnant should not use finasteride. Compounded medications are not FDA-approved as finished products. All prescribing decisions are at the sole discretion of your licensed provider."
   />
 );
