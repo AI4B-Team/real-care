@@ -68,7 +68,7 @@ const PricingColumn = ({ title, rows }: { title: string; rows: PricingRow[] }) =
               )}
               {row.guarantee && (
                 <span className="border border-warm-200 text-warm-700 bg-warm-50 text-[0.52rem] font-bold uppercase px-2 py-0.5 rounded-full">
-                  Money-Back
+                  90-Day Guarantee
                 </span>
               )}
             </div>
