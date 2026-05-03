@@ -14,11 +14,11 @@ const WeightLossCategory = () => {
   const monthsEst = Math.max(Math.round(weeksEst / 4.3), 0);
 
   const brandedCostYr = 1028 * 12;
-  const realCareCostYr = 149 + 11 * 299;
+  const realCareCostYr = 179 + 11 * 299;
   const savings = brandedCostYr - realCareCostYr;
 
   const trustBadges = [
-    "$149 Your First Month",
+    "$179 Your First Month",
     "Same Price Every Dose",
     "90-Day Results Guarantee",
     "Free Discreet Shipping",
@@ -88,7 +88,7 @@ const WeightLossCategory = () => {
   ];
 
   return (
-    <PageLayout title="GLP-1 Weight Loss" description="Compare Real Care GLP-1 weight loss treatments — semaglutide, tirzepatide, and brand-name options. From $149 your first month.">
+    <PageLayout title="GLP-1 Weight Loss" description="Compare Real Care GLP-1 weight loss treatments — semaglutide, tirzepatide, and brand-name options. From $179 your first month.">
       {/* Hero */}
       <section className="bg-[#C8E6C9] px-5 md:px-12 py-14 md:py-20">
         <div className="max-w-[960px] mx-auto text-center">
