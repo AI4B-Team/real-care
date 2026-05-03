@@ -6,9 +6,9 @@ type Goal = "weight" | "sex" | "hair" | "energy" | "mental";
 
 const recommendations: Record<Goal, Record<Who, { n: string; p: string }[]>> = {
   weight: {
-    him: [{ n: "GLP-1 Weight Loss", p: "From $179/mo" }, { n: "Testosterone Support", p: "From $99/mo" }],
-    her: [{ n: "GLP-1 Weight Loss", p: "From $179/mo" }, { n: "Hormone Balance", p: "From $89/mo" }],
-    both: [{ n: "GLP-1 Weight Loss", p: "From $179/mo" }, { n: "Couples Weight Plan", p: "From $279/mo (both)" }],
+    him: [{ n: "GLP-1 Weight Loss", p: "From $179 first month" }, { n: "Testosterone Support", p: "From $99/mo" }],
+    her: [{ n: "GLP-1 Weight Loss", p: "From $179 first month" }, { n: "Hormone Balance", p: "From $89/mo" }],
+    both: [{ n: "GLP-1 Weight Loss", p: "From $179 first month" }, { n: "Couples Weight Plan", p: "From $279/mo (both)" }],
   },
   sex: {
     him: [{ n: "ED Treatment", p: "From $2/dose" }, { n: "Testosterone (TRT)", p: "From $99/mo" }],

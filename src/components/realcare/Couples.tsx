@@ -27,7 +27,7 @@ const Couples = () => (
             name: "For Him",
             featured: false,
             items: ["GLP-1 Weight Loss", "ED & Performance", "TRT & Hair Loss"],
-            note: "GLP-1 starts at $179/mo · ED from $45/mo · TRT from $99/mo",
+            note: "GLP-1 starts at $179 first month · ED from $45/mo · TRT from $99/mo",
           },
           {
             icon: "♥",
@@ -40,7 +40,7 @@ const Couples = () => (
             name: "For Her",
             featured: false,
             items: ["GLP-1 Weight Loss", "Hormone & Skin Care", "Hair & Wellness"],
-            note: "GLP-1 starts at $179/mo · HRT from $89/mo · Skincare from $35/mo",
+            note: "GLP-1 starts at $179 first month · HRT from $89/mo · Skincare from $35/mo",
           },
         ].map((c) => (
           <div

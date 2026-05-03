@@ -9,7 +9,7 @@ const Check = () => (
 );
 
 const treatments = [
-  { name: "GLP-1 Weight Loss", sub: "From $179/mo", href: "/weight-loss", badge: "Most Popular", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — at a fraction of the cost." },
+  { name: "GLP-1 Weight Loss", sub: "From $179 first month", href: "/weight-loss", badge: "Most Popular", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — at a fraction of the cost." },
   { name: "Better Sex (ED)", sub: "From $2/dose", href: "/ed-treatment", badge: "#1 For Men", desc: "Fast-acting ED treatment. Works in 15 minutes, lasts up to 36 hours. Plain packaging." },
   { name: "Testosterone (TRT)", sub: "From $99/mo", href: "/testosterone", desc: "Lab testing + personalized TRT. More energy, stronger drive, better mood." },
   { name: "Hair Loss & Regrowth", sub: "From $39/mo", href: "/hair-loss", desc: "Finasteride + minoxidil — clinically proven to stop shedding and regrow hair." },

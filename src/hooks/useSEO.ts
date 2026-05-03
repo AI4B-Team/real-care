@@ -70,7 +70,7 @@ export const SEO_CONFIGS = {
   },
   weightLoss: {
     title: "GLP-1 Weight Loss — Semaglutide & Tirzepatide",
-    description: "Doctor-prescribed compounded semaglutide and tirzepatide from $179/mo. Same active ingredient as Ozempic and Wegovy — at a fraction of the cost. No membership fee.",
+    description: "Doctor-prescribed compounded semaglutide and tirzepatide from $179 first month ($299/mo after). Same active ingredient as Ozempic and Wegovy — at a fraction of the cost. No membership fee.",
     canonical: "https://realcare.com/weight-loss",
   },
   edTreatment: {

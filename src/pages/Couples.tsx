@@ -9,7 +9,7 @@ const Check = () => (
 );
 
 const menTreatments = [
-  { name: "GLP-1 Weight Loss", price: "$179/mo", href: "/weight-loss" },
+  { name: "GLP-1 Weight Loss", price: "$179 first month", href: "/weight-loss" },
   { name: "Better Sex (ED)", price: "From $2/dose", href: "/ed-treatment" },
   { name: "Testosterone (TRT)", price: "$99/mo", href: "/testosterone" },
   { name: "Hair Loss & Regrowth", price: "$39/mo", href: "/hair-loss" },
@@ -18,7 +18,7 @@ const menTreatments = [
 ];
 
 const womenTreatments = [
-  { name: "GLP-1 Weight Loss", price: "$179/mo", href: "/weight-loss" },
+  { name: "GLP-1 Weight Loss", price: "$179 first month", href: "/weight-loss" },
   { name: "Menopause & HRT", price: "$89/mo", href: "/menopause" },
   { name: "Prescription Skincare", price: "$35/mo", href: "/skincare" },
   { name: "Hair Growth", price: "$39/mo", href: "/hair-loss" },
@@ -165,7 +165,7 @@ const Couples = () => (
           <div className="grid md:grid-cols-3 gap-6 items-center">
             <div className="text-center">
               <div className="text-[0.72rem] text-white/50 mb-1">He Gets Weight Loss</div>
-              <div className="font-display font-black text-white text-2xl">$179/mo</div>
+              <div className="font-display font-black text-white text-2xl">$179 first month</div>
               <div className="text-red text-[0.78rem] font-semibold mt-1">→ $152/mo with couples</div>
               <div className="text-white/40 text-[0.65rem]">Saves $27/mo</div>
             </div>
