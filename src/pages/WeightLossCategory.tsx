@@ -363,34 +363,36 @@ const ProductCarousel = ({ navigate }: { navigate: Nav }) => {
             {carouselCards.map((c) => (
               <div
                 key={c.name}
-                onClick={() => navigate(c.href)}
-                className={`flex-shrink-0 w-[280px] snap-start ${c.bg} rounded-2xl p-6 flex flex-col cursor-pointer hover:shadow-lg transition-shadow`}
+                className="flex-shrink-0 w-[320px] snap-start flex flex-col"
               >
-                <div className="flex-1 flex flex-col items-center justify-center mb-4" style={{ minHeight: "220px" }}>
-                  {c.type === "image" ? (
-                    <img
-                      src={c.img}
-                      alt={c.alt}
-                      className="w-auto h-[200px] object-contain"
-                      style={{ filter: c.filter }}
-                    />
-                  ) : (
-                    <>
-                      <svg width="80" height="180" viewBox="0 0 80 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="28" y="5" width="24" height="145" rx="12" fill={c.penColor} opacity="0.9" />
-                        <circle cx="40" cy="5" r="12" fill={c.penDark} />
-                        <rect x="26" y="50" width="28" height="50" rx="2" fill={c.penDark} />
-                        <rect x="33" y="150" width="14" height="20" rx="4" fill="#888" />
-                        <text x="40" y="80" textAnchor="middle" fill="white" fontSize="6.5" fontFamily="sans-serif" fontWeight="bold">{c.label}</text>
-                        <text x="40" y="91" textAnchor="middle" fill="white" fontSize="4.5" fontFamily="sans-serif">{c.sublabel}</text>
-                      </svg>
-                      <p className="text-[0.6rem] text-warm-400 mt-1">{c.caption}</p>
-                    </>
-                  )}
-                </div>
-                <div className="mt-auto">
-                  <h3 className="font-display font-bold text-warm-800 text-[1.05rem] mb-0.5">{c.name}</h3>
-                  <p className="text-[0.82rem] text-warm-500 mb-4">{c.sub}</p>
+                <div
+                  onClick={() => navigate(c.href)}
+                  className="bg-white border border-warm-100 rounded-2xl p-5 flex flex-col cursor-pointer hover:shadow-lg transition-shadow"
+                >
+                  <div className={`${c.bg} rounded-xl flex items-center justify-center mb-5`} style={{ height: "300px" }}>
+                    {c.type === "image" ? (
+                      <img
+                        src={c.img}
+                        alt={c.alt}
+                        className="w-auto h-[260px] object-contain"
+                        style={{ filter: c.filter }}
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center">
+                        <svg width="110" height="240" viewBox="0 0 80 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="28" y="5" width="24" height="145" rx="12" fill={c.penColor} opacity="0.9" />
+                          <circle cx="40" cy="5" r="12" fill={c.penDark} />
+                          <rect x="26" y="50" width="28" height="50" rx="2" fill={c.penDark} />
+                          <rect x="33" y="150" width="14" height="20" rx="4" fill="#888" />
+                          <text x="40" y="80" textAnchor="middle" fill="white" fontSize="6.5" fontFamily="sans-serif" fontWeight="bold">{c.label}</text>
+                          <text x="40" y="91" textAnchor="middle" fill="white" fontSize="4.5" fontFamily="sans-serif">{c.sublabel}</text>
+                        </svg>
+                        <p className="text-[0.65rem] text-warm-400 mt-1">{c.caption}</p>
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-0.5">{c.name}</h3>
+                  <p className="text-[0.85rem] text-warm-500 mb-4">{c.sub}</p>
                   <div className="flex gap-2">
                     <button
                       onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
@@ -399,13 +401,19 @@ const ProductCarousel = ({ navigate }: { navigate: Nav }) => {
                       Get Started
                     </button>
                     <button
-                      onClick={(e) => { e.stopPropagation(); navigate("/safety-info"); }}
+                      onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
                       className="flex-1 border border-warm-300 text-warm-700 font-medium py-2.5 rounded-lg text-[0.8rem] hover:bg-warm-50 transition-colors"
                     >
-                      Important Info
+                      Learn More
                     </button>
                   </div>
                 </div>
+                <a
+                  href="/safety-info"
+                  className="text-center text-[0.78rem] text-warm-500 hover:text-red underline mt-3"
+                >
+                  Important safety information
+                </a>
               </div>
             ))}
           </div>
