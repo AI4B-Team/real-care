@@ -370,8 +370,8 @@ const ProductPageTemplate = ({
                   <span className="inline-flex items-center bg-[#FFA8CD] rounded-lg px-3 h-7">
                     <img src={klarnaLogo} alt="Klarna" loading="lazy" className="h-4 w-auto" />
                   </span>
-                  <span className="inline-flex items-center bg-[#4F46F4] rounded-lg px-3 h-7">
-                    <img src={affirmLogo} alt="Affirm" loading="lazy" className="h-4 w-auto" />
+                  <span className="inline-flex items-center justify-center bg-[#4F46F4] rounded-lg px-3 h-7 overflow-hidden">
+                    <img src={affirmLogo} alt="Affirm" loading="lazy" className="h-6 w-auto" />
                   </span>
                 </div>
               </div>
