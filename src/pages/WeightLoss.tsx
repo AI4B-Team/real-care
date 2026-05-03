@@ -129,7 +129,7 @@ const WeightLoss = () => {
         },
         {
           q: "Can I Cancel Anytime?",
-          a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal — and our 5-month money-back guarantee has you covered if you follow the program and don't see results.",
+          a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal. Our 90-Day Results Guarantee also covers you — follow the program for 90 consecutive days and if you don't achieve measurable weight loss, we refund your medication costs in full. See realcare.com/refund-policy for full terms.",
         },
         {
           q: "Where Are The Compounded Medications Made?",
