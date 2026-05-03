@@ -1,6 +1,9 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-glp1.jpg";
+import galleryInjection from "@/assets/format-injection.jpg";
+import galleryWomen from "@/assets/feat-women-weight.jpg";
+import galleryGoal from "@/assets/goal-weight.jpg";
 import edImg from "@/assets/product-ed.jpg";
 import trtImg from "@/assets/product-trt.jpg";
 import peptideImg from "@/assets/product-peptides.jpg";
