@@ -189,9 +189,8 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Copyright + legal bar */}
-        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-[0.75rem] text-white/55">© 2026 Real Care Inc. All Rights Reserved.</p>
+        {/* Legal links bar */}
+        <div className="border-t border-white/10 mt-8 pt-6">
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {legalLinks.map((l) => (
               <a key={l.label} href={l.href} className="text-[0.72rem] text-white/55 hover:text-white transition-colors">
@@ -199,6 +198,11 @@ const Footer = () => {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* Copyright bar */}
+        <div className="border-t border-white/10 mt-6 pt-6">
+          <p className="text-[0.75rem] text-white/55">© 2026 Real Care Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
