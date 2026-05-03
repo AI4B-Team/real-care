@@ -438,7 +438,7 @@ const ProductPageTemplate = ({
             </div>
 
             <div className="mt-4 text-center">
-              <a href="#safety" className="text-[0.85rem] text-warm-800 underline underline-offset-4 font-semibold hover:text-warm-900">
+              <a href="/safety-info" className="text-[0.85rem] text-warm-800 underline underline-offset-4 font-semibold hover:text-warm-900">
                 Important Safety Information
               </a>
             </div>
