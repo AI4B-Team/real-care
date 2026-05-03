@@ -224,7 +224,7 @@ const Pricing = () => {
       {/* Legal */}
       <div className="bg-warm-50 border-t border-warm-100 px-5 md:px-12 py-5">
         <p className="max-w-[900px] mx-auto text-[0.7rem] text-warm-400 leading-[1.7] text-center">
-          First month pricing applies to new patients on GLP-1 weight loss. Ongoing pricing varies by plan selected at checkout. Pricing may vary by state and dose. Compounded medications are not FDA-approved as finished products. Payment does not guarantee prescribing — all decisions are at your provider's sole discretion. Money-back guarantee applies to GLP-1 weight loss program only. Individuals in advertising may be models or actors. HSA/FSA eligibility varies by plan administrator.
+          First month pricing applies to new patients on GLP-1 weight loss. Ongoing pricing varies by plan selected at checkout. Pricing may vary by state and dose. Compounded medications are not FDA-approved as finished products. Payment does not guarantee prescribing — all decisions are at your provider's sole discretion. 90-Day Results Guarantee applies to GLP-1 weight loss program only; refund covers medication costs paid during the 90-day period; consultation fees are non-refundable; requires adherence to prescribed dosing, monthly check-ins, and recommended lifestyle guidance; available to first-time Real Care weight loss patients only; full terms at realcare.com/refund-policy. Individuals in advertising may be models or actors. HSA/FSA eligibility varies by plan administrator.
         </p>
       </div>
     </PageLayout>
