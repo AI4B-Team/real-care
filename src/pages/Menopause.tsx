@@ -58,7 +58,7 @@ const Menopause = () => (
       },
     ]}
     ctaHeadline="Menopause Doesn't Have To Feel Like This"
-    ctaSub="A licensed OB-GYN provider reviews your intake within 24–48 hours. Many women report relief within 4–6 weeks of starting HRT."
+    ctaSub="A licensed OB-GYN provider reviews your full health history and symptom profile. If HRT is appropriate for you, your personalized prescription ships free. Results may vary."
     disclaimer="Hormone therapy is not appropriate for everyone. Contraindications include certain types of breast cancer, blood clots, stroke, and liver disease. Compounded bioidentical hormones are not FDA-approved as finished products. All prescribing decisions are at the sole discretion of your licensed provider. Discuss your individual risk factors with your provider."
   />
 );
