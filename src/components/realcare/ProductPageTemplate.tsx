@@ -453,114 +453,11 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* 3-Step Process — editorial layout */}
-      <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
-        <div className="max-w-[1180px] mx-auto fade-up">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <p className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
-              How It Works
-            </p>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight mb-5">
-              Real Doctors. Real Medication. Real Change.
-            </h2>
-            <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-xl mx-auto">
-              No insurance required. No waiting rooms. A licensed provider reviews your health,
-              writes your prescription, and your medication ships free — direct to your door.
-            </p>
-          </div>
-
-          {/* Steps */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                number: "01",
-                label: "Consult",
-                headline: "Tell us about yourself.\nA real doctor reviews — not an algorithm.",
-                body: "Complete a brief online health questionnaire at your own pace. A licensed medical provider — a real physician authorized in your state — personally reviews your intake and consults with you 100% online. You'll know quickly whether prescription treatment may be an appropriate option for you.",
-                trust: [
-                  "Licensed providers in all 50 states",
-                  "100% online — no waiting rooms, no commutes",
-                  "Free consultation — no commitment required",
-                ],
-                img: step1Img,
-                alt: "Hands holding a phone with the Real Care intake form",
-                imageBg: "#F5EDE0",
-                flip: false,
-              },
-              {
-                number: "02",
-                label: "Prescribed",
-                headline: "If it's right for you,\nit ships directly to your door.",
-                body: "If your provider determines prescription medication is clinically appropriate, your personalized treatment is dispensed from a U.S.-licensed compounding pharmacy and shipped directly to you — fast, free, and discreetly packaged. No pharmacy runs. No awkward conversations at the counter. Often delivered within 48 hours of your prescription being written.",
-                trust: [
-                  "Shipped from U.S.-licensed pharmacies",
-                  "Free expedited delivery on every order",
-                  "FSA & HSA eligible · No hidden fees",
-                ],
-                img: step2Img,
-                alt: "Discreet shipping package",
-                imageBg: "#EDE8E0",
-                flip: true,
-              },
-              {
-                number: "03",
-                label: "Supported",
-                headline: "Your care team doesn't\nclock out when you do.",
-                body: "Real Care isn't a prescription vending machine. Your dedicated medical team is available around the clock — for dosage questions, side effect check-ins, and progress reviews. We adjust your plan as your body responds. The goal is real, lasting results. Not just a monthly shipment that shows up and disappears.",
-                trust: [
-                  "24/7 provider messaging — always available",
-                  "Dosage adjustments & plan changes included",
-                  "Cancel anytime · No membership fees",
-                ],
-                img: step3Img,
-                alt: "Patient receiving a message from her provider",
-                imageBg: "#E8E4DC",
-                flip: false,
-              },
-            ].map((s) => (
-              <div key={s.number} className="flex flex-col">
-                <div
-                  className="rounded-2xl overflow-hidden aspect-[4/3] mb-6"
-                  style={{ background: s.imageBg }}
-                >
-                  <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
-                </div>
-                <div
-                  className="font-display font-black leading-none -mb-3 select-none"
-                  style={{ fontSize: "72px", color: "#F5EDE0", letterSpacing: "-3px" }}
-                >
-                  {s.number}
-                </div>
-                <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-red mb-2">
-                  {s.label}
-                </p>
-                <h3 className="font-display text-xl font-bold text-warm-800 leading-snug mb-3 whitespace-pre-line">
-                  {s.headline}
-                </h3>
-                <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.body}</p>
-                <div className="space-y-2.5 mt-auto">
-                  {s.trust.map((t) => (
-                    <div key={t} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#F5EDE0] flex items-center justify-center shrink-0">
-                        <CheckIcon size={10} className="text-red" strokeWidth={3} />
-                      </div>
-                      <span className="text-[0.78rem] font-semibold text-warm-700">{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </div>
-
-      {/* How It Works (treatment-specific) */}
+      {/* The Science (treatment-specific) — moved above the 3-step section */}
       <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
           <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Why It Works</div>
+            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">The Science</div>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">{howTitle}</h2>
           </div>
           <div
@@ -581,6 +478,106 @@ const ProductPageTemplate = ({
                 <p className="text-[0.82rem] text-warm-600 leading-[1.75]">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Competitor comparison */}
+      <div className="bg-warm-800 px-5 md:px-12 py-14 border-b border-warm-100">
+        <div className="max-w-[800px] mx-auto text-center fade-up">
+          <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">Why Real Care</p>
+          <h2 className="font-display font-black text-white text-[clamp(1.5rem,2.8vw,2rem)] leading-tight mb-8">
+            Other platforms charge a membership fee just to access the medication.
+          </h2>
+          <div className="grid grid-cols-3 gap-4 text-center">
+            {[
+              { name: "Real Care", fee: "$0", label: "Membership fee — ever", highlight: true },
+              { name: "Hims & Hers", fee: "$149", label: "per month membership", highlight: false },
+              { name: "Ro", fee: "$145", label: "per month membership", highlight: false },
+            ].map((c) => (
+              <div
+                key={c.name}
+                className={`rounded-xl p-5 ${c.highlight ? "bg-red border-2 border-red/30" : "bg-white/[0.05] border border-white/10"}`}
+              >
+                <p className={`text-[0.65rem] font-bold uppercase tracking-widest mb-2 ${c.highlight ? "text-white/80" : "text-white/40"}`}>{c.name}</p>
+                <p className={`font-display font-black text-[2rem] ${c.highlight ? "text-white" : "text-white/50"}`}>{c.fee}</p>
+                <p className={`text-[0.72rem] ${c.highlight ? "text-white/85" : "text-white/40"}`}>{c.label}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-[0.72rem] text-white/40 mt-6">
+            Based on published membership pricing. Medication costs are additional and vary by platform and plan.
+          </p>
+        </div>
+      </div>
+
+      {/* 3-Step Process — horizontal timeline */}
+      <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
+        <div className="max-w-[1080px] mx-auto fade-up">
+          <div className="text-center mb-16">
+            <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">How It Works</p>
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight">
+              From first question to first delivery <span className="text-red">in under 48 hours.</span>
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Connector line — desktop only */}
+            <div className="hidden md:block absolute top-[22px] left-[16.67%] right-[16.67%] h-0 border-t-2 border-dashed border-warm-200 z-0" />
+
+            <div className="grid md:grid-cols-3 gap-10 relative z-10">
+              {[
+                {
+                  num: "01",
+                  label: "Consult",
+                  headline: "A real doctor reviews your case — not an algorithm.",
+                  body: "Take a free 5-minute health check. A U.S.-licensed provider personally reviews your intake and determines if prescription treatment is right for you — 100% online.",
+                  stat: "All 50 states · Same-day review",
+                },
+                {
+                  num: "02",
+                  label: "Prescribed",
+                  headline: "If it's right for you, it ships to your door.",
+                  body: "When your provider writes a prescription, your medication ships from a U.S.-licensed compounding pharmacy — free, fast, and in plain packaging.",
+                  stat: "Free shipping · Often 48hr delivery",
+                },
+                {
+                  num: "03",
+                  label: "Supported",
+                  headline: "Your care team doesn't clock out.",
+                  body: "Dosage adjustments, check-ins, side effect guidance — your provider is available 24/7 through your patient portal. Everything included in your plan price.",
+                  stat: "24/7 provider access · Cancel anytime",
+                },
+              ].map((s) => (
+                <div key={s.num} className="flex flex-col items-start md:items-center md:text-center bg-background">
+                  <div className="w-11 h-11 rounded-full bg-red text-white font-display font-black text-[1.1rem] flex items-center justify-center mb-5 flex-shrink-0">
+                    {parseInt(s.num)}
+                  </div>
+                  <p className="text-[0.62rem] font-bold tracking-[0.2em] uppercase text-red mb-2">{s.label}</p>
+                  <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-3">
+                    {s.headline}
+                  </h3>
+                  <p className="text-[0.83rem] text-warm-600 leading-[1.75] mb-4">{s.body}</p>
+                  <div className="inline-flex items-center gap-1.5 bg-warm-50 border border-warm-100 rounded-full px-3 py-1.5 text-[0.7rem] font-semibold text-warm-700 mt-auto">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red flex-shrink-0" />
+                    {s.stat}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-14">
+            <a
+              href="/health-check"
+              className="inline-flex items-center gap-2 bg-red hover:bg-red-dark text-white font-bold px-8 py-4 rounded-full text-[0.9rem] transition-colors"
+            >
+              Take Your Free Health Check
+              <ArrowRight size={16} />
+            </a>
+            <p className="text-[0.72rem] text-warm-400 mt-3">
+              No insurance · No commitment · Licensed providers in all 50 states
+            </p>
           </div>
         </div>
       </div>
@@ -653,11 +650,7 @@ const ProductPageTemplate = ({
           <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center">
             More From Our Members
           </h2>
-          <div className="flex flex-wrap justify-center gap-3 mt-6 mb-10">
-            <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
-              See If You Qualify
-            </a>
-          </div>
+          <div className="mb-10" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {reviews.slice(0, 5).map((r) => (
               <div key={r.name} className="bg-card border border-warm-100 rounded-2xl p-6 flex flex-col">
@@ -682,51 +675,9 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Mini product banner + disclaimer block */}
-      <div className="bg-background px-5 md:px-12 py-16 border-b border-warm-100">
-        <div className="max-w-[1080px] mx-auto fade-up bg-card border border-warm-100 rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.6vw,2.1rem)] mb-2">{pageTitle}</h3>
-            {planGroups[0]?.options[0] && (
-              <div className="flex items-baseline gap-2 mb-5">
-                <span className="font-display font-black text-warm-800 text-[1.8rem]">
-                  {planGroups[0].options[0].price}
-                </span>
-                <span className="text-warm-500 text-[0.85rem]">
-                  {planGroups[0].options[0].priceSuffix || "first month*"}
-                </span>
-              </div>
-            )}
-            <div className="space-y-3 mb-6">
-              {[
-                { icon: <Sparkles size={14} />, text: "No Hidden Fees" },
-                { icon: <ShieldCheck size={14} />, text: "Personalized Plans" },
-                { icon: <HeartHandshake size={14} />, text: "On-Demand Medical Support" },
-                { icon: <Truck size={14} />, text: "Free Expedited Shipping" },
-              ].map((b) => (
-                <div key={b.text} className="flex items-center gap-2 text-[0.82rem] text-warm-700">
-                  <span className="text-red">{b.icon}</span> {b.text}
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a href="/health-check" className="bg-warm-800 hover:bg-warm-900 text-white font-bold px-6 py-3 rounded-full text-[0.85rem]">
-                Get Started
-              </a>
-            </div>
-            <p className="text-[0.7rem] text-warm-500 mt-4">
-              *Price shown applies to longest-term plan paid upfront or with buy now, pay later programs. Actual price will depend on product and plan prescribed.
-            </p>
-          </div>
-          {productImage && (
-            <div className={`aspect-square rounded-2xl ${heroBg} overflow-hidden`}>
-              <img src={productImage} alt={productImageAlt || pageTitle} className="w-full h-full object-cover" />
-            </div>
-          )}
-        </div>
-
-        {/* Disclaimer */}
-        <div className="max-w-[1080px] mx-auto mt-10">
+      {/* Disclaimer */}
+      <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
+        <div className="max-w-[1080px] mx-auto fade-up">
           <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
           <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
             {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
@@ -791,34 +742,6 @@ const ProductPageTemplate = ({
                 </div>
               );
             })}
-          </div>
-        </div>
-      </div>
-
-      {/* Why Real Care */}
-      <div className="bg-warm-800 px-5 md:px-12 py-16">
-        <div className="max-w-[1080px] mx-auto fade-up">
-          <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Why Real Care</div>
-            <h2 className="font-display font-black text-white text-[clamp(1.4rem,2.6vw,2.2rem)] whitespace-nowrap">
-              Real Doctors. Real Pricing. Real Support.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { icon: <Stethoscope size={18} />, text: "U.S.-Licensed Medical Providers" },
-              { icon: <Shield size={18} />, text: "HIPAA-Compliant And Discreet" },
-              { icon: <Truck size={18} />, text: "Free Shipping In Plain Packaging" },
-              { icon: <Clock size={18} />, text: "24/7 Provider Messaging Support" },
-            ].map((t) => (
-              <div
-                key={t.text}
-                className="flex items-center gap-3 bg-white/[0.04] border border-white/10 rounded-xl px-5 py-4 text-[0.86rem] text-white/85"
-              >
-                <span className="text-red flex-shrink-0">{t.icon}</span>
-                {t.text}
-              </div>
-            ))}
           </div>
         </div>
       </div>

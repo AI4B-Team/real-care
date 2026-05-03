@@ -107,10 +107,6 @@ const WeightLoss = () => {
       disclaimer="The FDA does not review or approve any compounded medications for safety or effectiveness. Compounded medications contain the same active ingredients as their FDA-approved counterparts but are prepared by state-licensed pharmacies and have not been evaluated by the FDA for safety, efficacy, or quality. Available only if prescribed by a licensed provider after an online consultation. Individual results vary. Ozempic®, Wegovy®, Mounjaro®, and Zepbound® are registered trademarks of their respective owners. Real Care is not affiliated with Novo Nordisk or Eli Lilly. Payment does not guarantee prescribing — all clinical decisions are at the sole discretion of your licensed provider. HSA / FSA eligibility varies by plan administrator."
       faqs={[
         {
-          q: "What's Included In My Real Care GLP-1 Plan?",
-          a: "Your flat monthly price includes an online medical assessment, ongoing access to a U.S.-licensed provider, your prescribed compounded GLP-1 medication if appropriate, free discreet shipping, and unlimited messaging support — with the same price at every dose.",
-        },
-        {
           q: "Is Compounded Semaglutide The Same As Ozempic Or Wegovy?",
           a: "Compounded semaglutide contains the same active ingredient (semaglutide) used in Ozempic® and Wegovy®. However, compounded medications are not FDA-approved as finished products and are prepared by state-licensed compounding pharmacies. Brand-name medications are also available if prescribed by your provider.",
         },
@@ -121,14 +117,6 @@ const WeightLoss = () => {
         {
           q: "What Are The Common Side Effects?",
           a: "The most commonly reported side effects of GLP-1 medications are mild-to-moderate nausea, fatigue, and digestive changes — usually most noticeable during dose increases. Your provider will guide you through gradual escalation and is available to adjust your plan at any time. Review the full Important Safety Information before starting treatment.",
-        },
-        {
-          q: "Do I Need Insurance Or A Referral?",
-          a: "No. Real Care is cash-pay only and does not require insurance or a referral. We accept HSA and FSA cards, which can effectively reduce your cost by up to 30–40% depending on your tax bracket.",
-        },
-        {
-          q: "Can I Cancel Anytime?",
-          a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal. Our 90-Day Results Guarantee also covers you — follow the program for 90 consecutive days and if you don't achieve measurable weight loss, we refund your medication costs in full. See realcare.com/refund-policy for full terms.",
         },
         {
           q: "Where Are The Compounded Medications Made?",
