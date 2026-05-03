@@ -135,6 +135,14 @@ interface ProductPageProps {
   reviews?: Review[];
   /** Related products ("You may also be interested in"). */
   relatedProducts?: RelatedProduct[];
+  /** Show the Hims/Ro competitor comparison section. Weight loss only. */
+  showCompetitorComparison?: boolean;
+  /** Show the 90-Day Results Guarantee section. Weight loss only. */
+  showGuarantee?: boolean;
+  /** Custom steps to override the default 3-step section. */
+  customSteps?: { num: string; label: string; headline: string; body: string; stat: string }[];
+  /** Alert banner shown directly below the hero. */
+  alertBanner?: { type: "warning" | "info"; text: string };
 }
 
 const DEFAULT_FAQS: FAQ[] = [
