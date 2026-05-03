@@ -55,6 +55,7 @@ import TelehealthConsent from "./pages/TelehealthConsent.tsx";
 import Accessibility from "./pages/Accessibility.tsx";
 import Cookies from "./pages/Cookies.tsx";
 import ConsumerHealthDataPrivacy from "./pages/ConsumerHealthDataPrivacy.tsx";
+import SafetyInfo from "./pages/SafetyInfo.tsx";
 
 // Tools
 import Glp1Quiz from "./pages/Glp1Quiz.tsx";
@@ -121,6 +122,7 @@ const App = () => (
           <Route path="/accessibility" element={<Accessibility />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/consumer-health-data-privacy" element={<ConsumerHealthDataPrivacy />} />
+          <Route path="/safety-info" element={<SafetyInfo />} />
 
           {/* Tools */}
           <Route path="/glp1-quiz" element={<Glp1Quiz />} />
