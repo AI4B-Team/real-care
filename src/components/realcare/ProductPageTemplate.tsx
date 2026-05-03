@@ -186,6 +186,10 @@ const ProductPageTemplate = ({
   description,
   reviews = DEFAULT_REVIEWS,
   relatedProducts,
+  showCompetitorComparison = false,
+  showGuarantee = false,
+  customSteps,
+  alertBanner,
 }: ProductPageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [tab, setTab] = useState<"benefits" | "description">("benefits");
