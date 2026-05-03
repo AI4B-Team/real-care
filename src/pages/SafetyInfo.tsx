@@ -64,15 +64,22 @@ const SECTIONS: Section[] = [
   { id: "ed",  label: "Sildenafil / Tadalafil (ED)", badge: "Compounded", category: "Men's Health" },
   { id: "trt", label: "Testosterone (TRT)",           badge: "Compounded", category: "Men's Health" },
   // Women's Health
-  { id: "hrt", label: "Hormone Therapy (HRT)", badge: "Compounded", category: "Women's Health" },
+  { id: "hrt", label: "Hormone Therapy (HRT)",        badge: "Compounded", category: "Women's Health" },
+  { id: "birth-control", label: "Oral Contraceptives", badge: "Rx",        category: "Women's Health" },
   // Hair Loss
   { id: "finasteride", label: "Finasteride",  badge: "Rx", category: "Hair Loss" },
   { id: "minoxidil",   label: "Minoxidil",    badge: "Rx", category: "Hair Loss" },
+  // Skincare
+  { id: "tretinoin",    label: "Tretinoin",                   badge: "Rx",         category: "Skincare" },
+  { id: "skincare-compound", label: "Compounded Skincare Rx", badge: "Compounded", category: "Skincare" },
   // Mental Health
   { id: "naltrexone",  label: "Naltrexone / Bupropion", badge: "Compounded", category: "Mental Health" },
+  { id: "ssri",        label: "SSRIs (Sertraline / Escitalopram)", badge: "Rx", category: "Mental Health" },
   // Peptides
   { id: "sermorelin",  label: "Sermorelin",   badge: "Compounded", category: "Peptides" },
   { id: "bpc157",      label: "BPC-157",      badge: "Compounded", category: "Peptides" },
+  { id: "ipamorelin",  label: "Ipamorelin / CJC-1295", badge: "Compounded", category: "Peptides" },
+  { id: "ghk-cu",      label: "GHK-Cu",       badge: "Compounded", category: "Peptides" },
 ];
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
@@ -81,6 +88,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   "Men's Health":      <User     size={13} />,
   "Women's Health":    <Users    size={13} />,
   "Hair Loss":         <Zap      size={13} />,
+  "Skincare":          <Pill     size={13} />,
   "Mental Health":     <Brain    size={13} />,
   "Peptides":          <FlaskConical size={13} />,
 };
@@ -676,7 +684,48 @@ export default function SafetyInfoPage() {
             <ReturnLink />
             <SectionDivider />
 
-            {/* ════ HAIR LOSS ════ */}
+            <SectionHeader id="birth-control" title="Oral Contraceptives" badge="Rx" category="Women's Health" />
+            <p className="text-xs text-gray-500 italic mb-4">Combined oral contraceptives (estrogen + progestin) and progestin-only pills are FDA-approved prescription medications dispensed through licensed pharmacies.</p>
+
+            <BlackBoxWarning>
+              <p><strong>Cigarette Smoking & Serious Cardiovascular Events:</strong> Cigarette smoking increases the risk of serious cardiovascular events from combined oral contraceptive use. This risk increases with age (particularly &gt;35) and with the number of cigarettes smoked. Women who use combined oral contraceptives should be strongly advised not to smoke.</p>
+            </BlackBoxWarning>
+
+            <SubHead>Serious Side Effects — Seek Care Immediately</SubHead>
+            <BulletList items={[
+              "Blood clots (DVT, pulmonary embolism) — leg pain or swelling, chest pain, shortness of breath",
+              "Stroke — sudden numbness, vision changes, severe headache, confusion",
+              "Heart attack — chest pain, arm pain, shortness of breath",
+              "High blood pressure",
+              "Liver problems including benign and malignant liver tumors",
+              "Gallbladder disease",
+              "Severe allergic reactions",
+            ]} />
+
+            <SubHead>Contraindications — Do Not Use If You:</SubHead>
+            <BulletList items={[
+              "Smoke and are over 35 years of age",
+              "Have a history of blood clots, stroke, or heart attack",
+              "Have uncontrolled high blood pressure",
+              "Have known or suspected breast cancer or estrogen-dependent cancer",
+              "Have unexplained vaginal bleeding",
+              "Have severe liver disease or liver tumors",
+              "Have migraine with aura",
+              "Are pregnant or recently postpartum",
+            ]} />
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={["Nausea", "Breast tenderness", "Headache", "Breakthrough bleeding or spotting", "Mood changes", "Decreased libido", "Weight changes", "Acne (improvement or worsening)"]} />
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Certain antibiotics (rifampin), anticonvulsants (phenytoin, carbamazepine, topiramate), antiretrovirals, and St. John's Wort may reduce contraceptive efficacy. Backup contraception may be required. Disclose all medications and supplements to your provider.</p>
+
+            <SubHead>Important Note</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Oral contraceptives do not protect against HIV or other sexually transmitted infections. Use additional barrier protection as appropriate.</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
 
             <SectionHeader id="finasteride" title="Finasteride" badge="Rx" category="Hair Loss" />
             <p className="text-xs text-gray-500 italic mb-4">Finasteride is FDA-approved for the treatment of male-pattern hair loss (androgenetic alopecia) in men only. It is not approved for use in women or children.</p>
@@ -748,6 +797,61 @@ export default function SafetyInfoPage() {
             <ReturnLink />
             <SectionDivider />
 
+            {/* ════ SKINCARE ════ */}
+
+            <SectionHeader id="tretinoin" title="Tretinoin" badge="Rx" category="Skincare" />
+            <p className="text-xs text-gray-500 italic mb-4">Topical tretinoin (a retinoid) is FDA-approved for acne vulgaris and used off-label for photoaging, fine lines, and hyperpigmentation. Available by prescription only.</p>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Skin redness, dryness, peeling, or flaking (especially during first 2–6 weeks)",
+              "Mild burning or stinging upon application",
+              "Increased skin sensitivity",
+              "Temporary worsening of acne ('purge') in the first several weeks",
+              "Increased sensitivity to sun (photosensitivity)",
+            ]} />
+
+            <SubHead>Warnings</SubHead>
+            <BulletList items={[
+              "Do not use if pregnant, planning pregnancy, or breastfeeding — topical retinoids may pose risk to a developing fetus.",
+              "Avoid sun exposure and use broad-spectrum SPF 30+ daily — tretinoin increases UV sensitivity.",
+              "Do not apply to broken, sunburned, or eczematous skin.",
+              "Avoid concurrent use of harsh exfoliants (AHAs/BHAs at high strength), benzoyl peroxide (unless directed), or waxing of treated areas.",
+              "Discontinue and contact your provider if severe irritation, blistering, or allergic reaction occurs.",
+            ]} />
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Concurrent use of medicated soaps, abrasive cleansers, products with high concentrations of alcohol, astringents, spices, or lime, and other topicals containing sulfur, resorcinol, or salicylic acid may increase irritation. Use cautiously with photosensitizing medications (thiazide diuretics, tetracyclines, fluoroquinolones, sulfonamides, phenothiazines).</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="skincare-compound" title="Compounded Skincare Rx" badge="Compounded" category="Skincare" />
+            <p className="text-xs text-gray-500 italic mb-4">*Compounded skincare formulations (e.g., tretinoin + niacinamide + azelaic acid; hydroquinone + tretinoin + hydrocortisone; melasma blends) are prepared by state-licensed compounding pharmacies based on a licensed provider's prescription. Compounded products are not FDA-approved.</p>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Skin irritation, redness, peeling, or dryness",
+              "Stinging or burning upon application",
+              "Increased photosensitivity",
+              "Temporary hyperpigmentation or hypopigmentation (with hydroquinone)",
+              "Contact dermatitis (rare)",
+            ]} />
+
+            <SubHead>Warnings</SubHead>
+            <BulletList items={[
+              "Do not use during pregnancy or breastfeeding.",
+              "Hydroquinone-containing formulas: limit duration of use as directed by your provider; long-term unsupervised use may cause ochronosis (paradoxical darkening of skin).",
+              "Hydrocortisone-containing formulas: limit to short-term use under provider supervision to avoid skin atrophy, telangiectasia, and rebound effects.",
+              "Use broad-spectrum SPF 30+ daily.",
+              "Discontinue if severe irritation or allergic reaction occurs and notify your provider.",
+            ]} />
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
             {/* ════ MENTAL HEALTH ════ */}
 
             <SectionHeader id="naltrexone" title="Naltrexone / Bupropion" badge="Compounded" category="Mental Health" />
@@ -777,6 +881,47 @@ export default function SafetyInfoPage() {
 
             <SubHead>Drug Interactions</SubHead>
             <p className="text-sm text-gray-700 leading-relaxed">Bupropion significantly inhibits CYP2D6 — this affects many commonly used medications including antidepressants, antipsychotics, antiarrhythmics, and beta-blockers. Do not take with MAOIs. Naltrexone blocks opioid receptors — do not use if currently dependent on opioids or opioid-containing medications (will precipitate acute withdrawal). Always disclose all medications, including herbal supplements, to your provider.</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="ssri" title="SSRIs (Sertraline / Escitalopram)" badge="Rx" category="Mental Health" />
+            <p className="text-xs text-gray-500 italic mb-4">Selective serotonin reuptake inhibitors (SSRIs) such as sertraline (Zoloft®) and escitalopram (Lexapro®) are FDA-approved for major depressive disorder, generalized anxiety disorder, and other conditions. Available by prescription only.</p>
+
+            <BlackBoxWarning>
+              <p><strong>Suicidal Thoughts and Behaviors:</strong> Antidepressants increased the risk of suicidal thinking and behavior in children, adolescents, and young adults (up to age 24) in short-term studies. Patients of all ages started on antidepressant therapy should be monitored closely for clinical worsening, suicidality, or unusual changes in behavior, particularly during the first few months of therapy and at dose changes.</p>
+            </BlackBoxWarning>
+
+            <WarningBox>
+              <ul className="space-y-1.5 mt-1">
+                {[
+                  "Serotonin syndrome — agitation, hallucinations, rapid heart rate, fever, muscle stiffness, twitching, loss of coordination, nausea, vomiting, diarrhea (medical emergency)",
+                  "Worsening depression, suicidal ideation, or unusual behavior changes",
+                  "Severe allergic reactions (rash, hives, difficulty breathing, facial swelling)",
+                  "Abnormal bleeding (especially when combined with NSAIDs, aspirin, or anticoagulants)",
+                  "Seizures",
+                  "Mania or hypomania (in patients with bipolar disorder)",
+                  "Hyponatremia (low sodium) — particularly in elderly patients",
+                ].map((item, i) => <li key={i} className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 mt-1.5" />{item}</li>)}
+              </ul>
+            </WarningBox>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={["Nausea", "Headache", "Insomnia or drowsiness", "Sexual dysfunction (decreased libido, delayed orgasm, erectile dysfunction)", "Dry mouth", "Sweating", "Dizziness", "Tremor", "Weight changes", "Fatigue"]} />
+
+            <SubHead>Contraindications</SubHead>
+            <BulletList items={[
+              "Concurrent use of MAOIs or within 14 days of stopping an MAOI",
+              "Concurrent use of pimozide (sertraline)",
+              "Known hypersensitivity to the medication or components",
+            ]} />
+
+            <SubHead>Discontinuation</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Do not stop SSRIs abruptly. Sudden discontinuation can cause withdrawal-like symptoms (dizziness, nausea, headache, irritability, "brain zaps," flu-like symptoms). Always taper under provider supervision.</p>
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Significant interactions with MAOIs (contraindicated), other serotonergic agents (triptans, tramadol, St. John's Wort, linezolid, methylene blue — risk of serotonin syndrome), NSAIDs and anticoagulants (increased bleeding risk), CYP2D6 substrates, and certain antipsychotics. Disclose all medications and supplements to your provider.</p>
 
             <FDAParagraph />
             <ReturnLink />
@@ -835,6 +980,65 @@ export default function SafetyInfoPage() {
               "Individuals with active cancer: peptides with tissue-repair properties may theoretically influence tumor biology — consult your oncologist.",
               "No established drug interaction data available — disclose all medications to your provider.",
               "Discontinue use and notify your provider if any unexpected or worsening symptoms occur.",
+            ]} />
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="ipamorelin" title="Ipamorelin / CJC-1295" badge="Compounded" category="Peptides" />
+            <p className="text-xs text-gray-500 italic mb-4">*Ipamorelin and CJC-1295 are compounded prescription growth hormone secretagogues. They are not FDA-approved as finished drug products and are prescribed off-label by licensed providers.</p>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Injection site reactions — redness, swelling, or pain",
+              "Headache",
+              "Flushing or warmth",
+              "Dizziness or lightheadedness",
+              "Fatigue or drowsiness",
+              "Water retention or mild swelling in extremities",
+              "Increased hunger",
+            ]} />
+
+            <SubHead>Warnings</SubHead>
+            <BulletList items={[
+              "Use with caution in patients with diabetes or impaired glucose tolerance — growth hormone secretagogues may affect insulin sensitivity and blood glucose.",
+              "Active malignancy — growth hormone-stimulating agents may theoretically promote tumor growth; consult your oncologist before use.",
+              "Not for use during pregnancy or breastfeeding due to lack of safety data.",
+              "Do not use in patients with active hypothyroidism until adequately treated.",
+              "Discontinue and contact your provider if symptoms of carpal tunnel syndrome, joint pain, or significant fluid retention develop.",
+            ]} />
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Glucocorticoids may attenuate growth hormone response. Insulin and antidiabetic agents may require dose adjustment. Disclose all medications and supplements to your provider.</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="ghk-cu" title="GHK-Cu (Copper Peptide)" badge="Compounded" category="Peptides" />
+            <p className="text-xs text-gray-500 italic mb-4">*GHK-Cu (copper tripeptide-1) is a compounded peptide used topically or by injection for skin repair, wound healing, and anti-aging applications. It is not FDA-approved as a finished drug product. Most evidence is preclinical or from limited human studies. Prescribed off-label by licensed providers.</p>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5 text-sm">
+              <p className="font-semibold text-amber-800 mb-1 flex items-center gap-2"><AlertCircle size={14} />Limited Clinical Data</p>
+              <p className="text-amber-700">Long-term safety data in humans is limited. Discuss potential benefits and unknowns with your licensed provider before starting therapy.</p>
+            </div>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Skin irritation or redness at application site (topical)",
+              "Injection site reactions — redness, swelling, pain (injectable)",
+              "Mild itching or contact dermatitis",
+              "Headache (rare)",
+            ]} />
+
+            <SubHead>Precautions</SubHead>
+            <BulletList items={[
+              "Do not use during pregnancy or breastfeeding.",
+              "Patients with Wilson's disease or other copper metabolism disorders should not use GHK-Cu.",
+              "Active malignancy — peptides with tissue-repair properties may theoretically influence tumor biology; consult your oncologist.",
+              "Discontinue use and notify your provider if a severe skin reaction or unexpected symptoms develop.",
+              "No established drug interaction data — disclose all medications and topicals to your provider.",
             ]} />
 
             <FDAParagraph />
