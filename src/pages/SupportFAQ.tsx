@@ -78,7 +78,7 @@ const faqs = [
       },
       {
         q: "Can I pause or cancel my subscription?",
-        a: "Monthly plans can be cancelled at any time with no penalty. Multi-month and annual plans are prepaid — you can pause or cancel, but prepaid months are non-refundable except under the weight loss money-back guarantee.",
+        a: "Monthly plans can be cancelled at any time with no penalty. Multi-month and annual plans are prepaid — you can pause or cancel, but prepaid months are non-refundable except under the 90-Day Results Guarantee for GLP-1 weight loss.",
       },
     ],
   },
