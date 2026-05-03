@@ -361,6 +361,11 @@ const ProductPageTemplate = ({
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount Auto-Applied At Checkout
               </div>
+              <p className="text-center text-[0.65rem] text-warm-400 leading-[1.6] mt-3">
+                *First month pricing shown. Ongoing rate depends on plan and medication prescribed.<br />
+                **The FDA does not review or approve compounded medications for safety or effectiveness.{" "}
+                <a href="/safety-info" className="underline hover:text-warm-700">Important Safety Information</a>.
+              </p>
             </div>
 
             {/* Tabs: Benefits / Description */}
@@ -555,7 +560,7 @@ const ProductPageTemplate = ({
       <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
           <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">How It Works</div>
+            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Why It Works</div>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">{howTitle}</h2>
           </div>
           <div

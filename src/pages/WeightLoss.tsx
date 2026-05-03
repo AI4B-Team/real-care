@@ -21,7 +21,6 @@ const WeightLoss = () => {
       pill="Doctor-Led Plans"
       productImage={productImage}
       productImageAlt="Compounded GLP-1 auto-injector pen for weight loss"
-      galleryImages={[trtImg, peptideImg, labsImg]}
       heroBg="bg-[#C8E6C9]"
       tagline="Personalized weight management plans, built around you and guided by licensed providers."
       savingsLabel="Save $50 On Your First Order"
@@ -45,14 +44,14 @@ const WeightLoss = () => {
       }
       sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
-        "From $179/Mo — All-Inclusive",
+        "From $129 First Month — All-Inclusive",
         "Same Price At Every Dose",
         "On-Demand Medical Support",
         "No Membership Fee. No Hidden Fees",
         "Free Discreet Shipping",
         "HSA / FSA Accepted",
       ]}
-      howTitle="Why GLP-1 Works When Diets Don't"
+      howTitle="The Science Behind GLP-1"
       howItems={[
         {
           title: "Reduces Appetite",
