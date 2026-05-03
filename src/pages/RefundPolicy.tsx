@@ -5,7 +5,7 @@ const RefundPolicy = () => (
   <PageLayout title="Refund & Cancellation Policy">
     <LegalPage label="Legal" title="Refund & Cancellation Policy" updated="April 1, 2026">
 
-      <P>At Real Care, we believe in honest, transparent pricing with no hidden fees. This policy explains exactly how cancellations and refunds work — no surprises.</P>
+      <P>At Real Care, we believe in honest, transparent pricing with no hidden fees. This policy explains exactly how cancellations and refunds work — including our 90-Day Results Guarantee for GLP-1 weight loss — with no surprises.</P>
 
       <H2>1. Cancellation</H2>
       <P>You may cancel your Real Care subscription at any time. There are no cancellation fees and no long-term contracts.</P>
