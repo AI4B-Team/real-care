@@ -1,10 +1,20 @@
 import ProductPageTemplate from "@/components/realcare/ProductPageTemplate";
 import { useSEO, SEO_CONFIGS } from "@/hooks/useSEO";
 import productImage from "@/assets/product-hair.jpg";
+import glp1Img from "@/assets/product-glp1.jpg";
+import skincareImg from "@/assets/product-skincare.jpg";
+import menopauseImg from "@/assets/product-menopause.jpg";
+import labsImg from "@/assets/product-labs.jpg";
 
 const HairLoss = () => (
   <ProductPageTemplate
     pageTitle="Hair Loss & Regrowth"
+    relatedProducts={[
+      { name: "GLP-1 Weight Loss", image: glp1Img, bg: "bg-[#C8E6C9]", href: "/weight-loss" },
+      { name: "Prescription Skincare", image: skincareImg, bg: "bg-[#F5D0D5]", href: "/skincare" },
+      { name: "Menopause & HRT", image: menopauseImg, bg: "bg-[#F5C8B8]", href: "/menopause" },
+      { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
+    ]}
     label="Men & Women · Hair Loss"
     pill="Clinically Studied"
     productImage={productImage}
