@@ -36,6 +36,8 @@ import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 
 // Products
 import WeightLoss from "./pages/WeightLoss.tsx";
+import WeightLossCategory from "./pages/WeightLossCategory.tsx";
+import CheckoutFlow from "./pages/CheckoutFlow.tsx";
 import EdTreatment from "./pages/EdTreatment.tsx";
 import Testosterone from "./pages/Testosterone.tsx";
 import HairLoss from "./pages/HairLoss.tsx";
@@ -102,7 +104,10 @@ const App = () => (
           <Route path="/intake/:category" element={<Intake />} />
 
           {/* Products */}
-          <Route path="/weight-loss" element={<WeightLoss />} />
+          <Route path="/weight-loss" element={<WeightLossCategory />} />
+          <Route path="/weight-loss/semaglutide" element={<WeightLoss />} />
+          <Route path="/weight-loss/tirzepatide" element={<WeightLoss />} />
+          <Route path="/checkout" element={<CheckoutFlow />} />
           <Route path="/ed-treatment" element={<EdTreatment />} />
           <Route path="/testosterone" element={<Testosterone />} />
           <Route path="/hair-loss" element={<HairLoss />} />
