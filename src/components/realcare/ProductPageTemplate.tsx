@@ -457,7 +457,7 @@ const ProductPageTemplate = ({
               How It Works
             </p>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight mb-5">
-              Real Doctors. Real Medication.<br />Real Change.
+              Real Doctors. Real Medication. Real Change.
             </h2>
             <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-xl mx-auto">
               No insurance required. No waiting rooms. A licensed provider reviews your health,
