@@ -421,10 +421,13 @@ const ProductPageTemplate = ({
 
               <div className="mt-5 pt-5 border-t border-warm-100 flex flex-wrap items-center justify-between gap-3 text-[0.72rem] text-warm-600">
                 <div className="flex items-center gap-1.5">
-                  <MapPin size={12} className="text-red" /> Compounded In The U.S.A.
+                  <BadgeCheck size={12} className="text-emerald-600" /> FSA & HSA Eligible
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <BadgeCheck size={12} className="text-emerald-600" /> FSA & HSA Eligible
+                  <Shield size={12} className="text-emerald-600" /> No Insurance Needed
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <MapPin size={12} className="text-red" /> Compounded In The U.S.A.
                 </div>
               </div>
             </div>
