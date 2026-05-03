@@ -269,17 +269,19 @@ type Nav = ReturnType<typeof useNavigate>;
 
 const carouselCards = [
   {
-    name: "GLP-1",
+    name: "Compounded Semaglutide",
     sub: "Starting at $179/mo",
     bg: "bg-[#EFF6EE]",
     href: "/weight-loss/semaglutide",
-    type: "image" as const,
+    type: "hero" as const,
     img: productGlp1,
     alt: "Compounded Semaglutide GLP-1 injection vial",
-    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15))",
+    heroTitle: "Personalized GLP-1 Injections",
+    heroBg: "bg-[#5B9BD5]",
+    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))",
   },
   {
-    name: "GLP-1 + GIP",
+    name: "Compounded Tirzepatide",
     sub: "Starting at $279/mo",
     bg: "bg-[#EEF3FB]",
     href: "/weight-loss/tirzepatide",
