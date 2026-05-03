@@ -81,12 +81,16 @@ const Nav = () => {
       <Logo href="/" />
 
       <div className="hidden lg:flex items-center gap-1">
-        <a href="/#women" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Women</a>
-        <a href="/#men" className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">Men</a>
-        <div className="w-px h-[18px] bg-warm-200 mx-1" />
-        <a href="/health-check" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">Health Check</a>
-        <a href="/how-it-works" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">How It Works</a>
-        <a href="/our-doctors" className="text-[0.82rem] font-medium text-warm-600 px-3.5 py-1.5 rounded-md hover:bg-warm-50 hover:text-warm-800 transition-colors">Our Doctors</a>
+        {[
+          { label: "Weight", href: "/weight-loss" },
+          { label: "Sex", href: "/ed-treatment" },
+          { label: "Hair", href: "/hair-loss" },
+          { label: "Skin", href: "/skincare" },
+          { label: "Mood", href: "/mental-health" },
+          { label: "Performance", href: "/testosterone" },
+        ].map((link) => (
+          <a key={link.label} href={link.href} className="text-[0.82rem] font-semibold text-warm-800 px-3.5 py-1.5 rounded-md hover:bg-red/[0.07] hover:text-red transition-colors">{link.label}</a>
+        ))}
       </div>
 
 
