@@ -361,6 +361,11 @@ const ProductPageTemplate = ({
               <div className="text-center text-[0.7rem] text-warm-500 mt-2">
                 Discount Auto-Applied At Checkout
               </div>
+              <p className="text-center text-[0.65rem] text-warm-400 leading-[1.6] mt-3">
+                *First month pricing shown. Ongoing rate depends on plan and medication prescribed.<br />
+                **The FDA does not review or approve compounded medications for safety or effectiveness.{" "}
+                <a href="/safety-info" className="underline hover:text-warm-700">Important Safety Information</a>.
+              </p>
             </div>
 
             {/* Tabs: Benefits / Description */}
@@ -555,7 +560,7 @@ const ProductPageTemplate = ({
       <div className="bg-warm-50 px-5 md:px-12 pt-14 pb-14 border-b border-warm-100">
         <div className="max-w-[1280px] mx-auto fade-up">
           <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">How It Works</div>
+            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Why It Works</div>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">{howTitle}</h2>
           </div>
           <div
@@ -581,64 +586,66 @@ const ProductPageTemplate = ({
       </div>
 
       {/* Treatments */}
-      <div className="bg-background px-5 md:px-12 pt-14 pb-16" id="treatments">
-        <div className="max-w-[1280px] mx-auto fade-up">
-          <div className="text-center mb-10">
-            <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Treatment Options</div>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">Choose Your Plan</h2>
-            <p className="text-[0.85rem] text-warm-600 mt-3 max-w-[440px] mx-auto">
-              Your provider recommends the right option based on your health profile and goals.
-            </p>
-          </div>
-          <div
-            className={`grid gap-5 ${
-              medications.length <= 2
-                ? "max-w-[800px] mx-auto md:grid-cols-2"
-                : medications.length === 3
-                ? "lg:grid-cols-3"
-                : "md:grid-cols-2 lg:grid-cols-4"
-            }`}
-          >
-            {medications.map((med) => (
-              <div
-                key={med.name}
-                className={`bg-card rounded-2xl border overflow-hidden ${
-                  med.popular ? "border-red shadow-soft" : "border-warm-100"
-                }`}
-              >
-                {med.popular && (
-                  <div className="bg-red text-primary-foreground text-center text-[0.65rem] font-bold tracking-[0.1em] uppercase py-2">
-                    Most Popular
+      {!plans && (
+        <div className="bg-background px-5 md:px-12 pt-14 pb-16" id="treatments">
+          <div className="max-w-[1280px] mx-auto fade-up">
+            <div className="text-center mb-10">
+              <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Treatment Options</div>
+              <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)]">Choose Your Plan</h2>
+              <p className="text-[0.85rem] text-warm-600 mt-3 max-w-[440px] mx-auto">
+                Your provider recommends the right option based on your health profile and goals.
+              </p>
+            </div>
+            <div
+              className={`grid gap-5 ${
+                medications.length <= 2
+                  ? "max-w-[800px] mx-auto md:grid-cols-2"
+                  : medications.length === 3
+                  ? "lg:grid-cols-3"
+                  : "md:grid-cols-2 lg:grid-cols-4"
+              }`}
+            >
+              {medications.map((med) => (
+                <div
+                  key={med.name}
+                  className={`bg-card rounded-2xl border overflow-hidden ${
+                    med.popular ? "border-red shadow-soft" : "border-warm-100"
+                  }`}
+                >
+                  {med.popular && (
+                    <div className="bg-red text-primary-foreground text-center text-[0.65rem] font-bold tracking-[0.1em] uppercase py-2">
+                      Most Popular
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h3 className="font-display font-bold text-warm-800 text-lg mb-1">{med.name}</h3>
+                    <p className="text-[0.78rem] text-warm-400 italic mb-4">{med.desc}</p>
+                    <div className="space-y-2 mb-6">
+                      {med.bullets.map((b) => (
+                        <div key={b} className="flex items-start gap-2 text-[0.81rem] text-warm-600 leading-[1.55]">
+                          <span className="text-red flex-shrink-0 mt-0.5"><Check /></span>
+                          {b}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="border-t border-warm-100 pt-4 mb-4">
+                      <div className="text-red font-bold text-lg">{med.price}</div>
+                      <div className="text-[0.67rem] text-warm-400">Doctor Consult · Medication · Shipping · Support</div>
+                      <div className="text-[0.67rem] text-warm-400 mt-0.5">No Membership Fee. Cancel Anytime.</div>
+                    </div>
+                    <a
+                      href="/health-check"
+                      className="w-full bg-red hover:bg-red-dark text-primary-foreground font-bold py-2.5 rounded-lg text-[0.85rem] flex items-center justify-center gap-1 transition-colors"
+                    >
+                      Get Started <ChevronRight size={14} />
+                    </a>
                   </div>
-                )}
-                <div className="p-6">
-                  <h3 className="font-display font-bold text-warm-800 text-lg mb-1">{med.name}</h3>
-                  <p className="text-[0.78rem] text-warm-400 italic mb-4">{med.desc}</p>
-                  <div className="space-y-2 mb-6">
-                    {med.bullets.map((b) => (
-                      <div key={b} className="flex items-start gap-2 text-[0.81rem] text-warm-600 leading-[1.55]">
-                        <span className="text-red flex-shrink-0 mt-0.5"><Check /></span>
-                        {b}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="border-t border-warm-100 pt-4 mb-4">
-                    <div className="text-red font-bold text-lg">{med.price}</div>
-                    <div className="text-[0.67rem] text-warm-400">Doctor Consult · Medication · Shipping · Support</div>
-                    <div className="text-[0.67rem] text-warm-400 mt-0.5">No Membership Fee. Cancel Anytime.</div>
-                  </div>
-                  <a
-                    href="/health-check"
-                    className="w-full bg-red hover:bg-red-dark text-primary-foreground font-bold py-2.5 rounded-lg text-[0.85rem] flex items-center justify-center gap-1 transition-colors"
-                  >
-                    Get Started <ChevronRight size={14} />
-                  </a>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Reviews — More from our members */}
       <div className="bg-warm-50 px-5 md:px-12 py-16 border-y border-warm-100">

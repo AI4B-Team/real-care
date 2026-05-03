@@ -155,37 +155,10 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-white/15"></div>
 
-        {/* Disclaimer block */}
-        <div className="pt-8 space-y-4 text-[0.72rem] text-white/55 leading-[1.7]">
-          <p>
-            <span className="text-white/75 font-medium">Care Model:</span> Clinical care is delivered by Real Care Affiliated P.C.s and a network of independent, board-certified providers via OpenLoop Health. Treatment is only prescribed after a licensed provider reviews your intake and confirms it's clinically appropriate for you. Not every patient qualifies.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Medications & Pharmacy:</span> When approved, prescriptions are filled by partner state-licensed pharmacies and shipped directly to your door. Some treatments may include compounded formulations, which are not reviewed or approved by the FDA for safety, effectiveness, or quality. Physicians may prescribe compounded medications as needed to meet individual patient requirements. Product appearance and packaging may vary.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Not Medical Advice:</span> The information on this website is provided for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment. It should not be used as a substitute for advice from a qualified healthcare professional. Always consult a licensed healthcare provider before starting any new medication, supplement, or weight loss program.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Stopping Treatment:</span> Clinical evidence indicates that stopping GLP-1 treatment may result in weight regain. Long-term use in combination with diet, exercise, and lifestyle modification is generally recommended to maintain results. Discuss your long-term treatment strategy with your licensed medical provider.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Testimonials & Results:</span> Customer testimonials and before-and-after images featured on this site are provided by real Real Care members and reflect their individual experiences. Results have not been independently verified. Individual results will vary based on health history, lifestyle, medication adherence, and biological response to treatment.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Trademarks:</span> Ozempic®, Wegovy®, Zepbound®, Mounjaro®, and Rybelsus® are registered trademarks of Novo Nordisk A/S and Eli Lilly and Company, respectively. Real Care Inc. is not affiliated with, endorsed by, or sponsored by Novo Nordisk, Eli Lilly, or any manufacturer of branded medications. Brand-name medications are dispensed through licensed pharmacies by prescription only and are not manufactured or sold by Real Care.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Pricing & Guarantee:</span> Our "Same Price at Every Dose" promise keeps your monthly cost flat as your provider adjusts your dosage (introductory offers and limited-time plans excluded). The 90-Day Results Guarantee applies to GLP-1 weight loss plans only, requires adherence to prescribed treatment and monthly check-ins for 90 consecutive days, and covers medication costs paid during the guarantee period. Consultation fees are included in plan pricing and are not separately deducted. First-time patients only. Full terms at realcare.com/refund-policy. HSA/FSA acceptance varies by plan. People shown in marketing may be models or paid actors.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Data & Advertising:</span> By using our services, you agree to our <a href="/privacy" className="underline hover:text-white">Privacy Policy</a>. Real Care may use de-identified or aggregated information to improve our services and for advertising purposes in compliance with applicable law. We do not share individually identifiable health information with advertisers. To opt out, contact <a href="mailto:privacy@realcare.com" className="underline hover:text-white">privacy@realcare.com</a>.
-          </p>
-          <p>
-            <span className="text-white/75 font-medium">Accessibility:</span> Real Care Inc. is committed to equal digital access for all users. For accessibility feedback, email <a href="mailto:accessibility@realcare.com" className="underline hover:text-white">accessibility@realcare.com</a>.
-          </p>
-          <p className="text-white/45">
-            Real Care Inc. • Jacksonville, FL • <a href="mailto:support@realcare.com" className="underline hover:text-white/70">support@realcare.com</a>
+        {/* Simplified disclaimer */}
+        <div className="pt-8">
+          <p className="text-[0.7rem] text-white/55 leading-[1.85] max-w-[900px] mx-auto text-center">
+            The statements on this site have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease. Compounded medications are not FDA-reviewed or approved for safety or effectiveness. Prescription medication is only available if prescribed after an online consultation with a U.S.-licensed provider — all clinical decisions are at the sole discretion of your provider, and payment does not guarantee prescribing. Individual results vary. Plans are a subscription service — cancel anytime. Stopping GLP-1 treatment may result in weight regain. Testimonials reflect individual experiences and have not been independently verified. Actual product packaging may differ from images shown. People shown may be models or paid actors. Ozempic®, Wegovy®, Zepbound®, and Mounjaro® are registered trademarks of Novo Nordisk A/S and Eli Lilly and Company; Real Care is not affiliated with these manufacturers. The 90-Day Results Guarantee applies to GLP-1 weight loss plans only and requires adherence to your prescribed treatment and monthly check-ins for 90 consecutive days — full terms at <a href="/refund-policy" className="underline hover:text-white">realcare.com/refund-policy</a>. Same-dose pricing may not apply during promotional periods. HSA/FSA eligibility varies by plan administrator. Questions: <a href="mailto:support@realcare.com" className="underline hover:text-white">support@realcare.com</a>.
           </p>
         </div>
 
@@ -202,7 +175,7 @@ const Footer = () => {
 
         {/* Copyright bar */}
         <div className="border-t border-white/10 mt-6 pt-6">
-          <p className="text-[0.75rem] text-white/55 text-center">© 2026 Real Care Inc. All Rights Reserved.</p>
+          <p className="text-[0.75rem] text-white/55 text-center">© 2026 Real Care Inc. · Jacksonville, FL · All Rights Reserved.</p>
         </div>
       </div>
     </footer>
