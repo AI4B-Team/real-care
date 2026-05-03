@@ -210,7 +210,7 @@ const Pricing = () => {
               Take Your Free Health Check →
             </a>
             <div className="flex items-center justify-center gap-6 mt-5 flex-wrap text-[0.72rem] text-warm-500">
-              {["No Membership Fee", "Money-Back Guarantee", "HSA/FSA Accepted", "Cancel Anytime"].map((t) => (
+              {["No Membership Fee", "90-Day Results Guarantee", "HSA/FSA Accepted", "Cancel Anytime"].map((t) => (
                 <div key={t} className="flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-red" />
                   {t}
