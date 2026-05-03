@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PageLayout from "@/components/realcare/PageLayout";
 import { Shield, ChevronRight, ChevronLeft } from "lucide-react";
 import productGlp1 from "@/assets/product-glp1.jpg";
+import calculatorWoman from "@/assets/weight-loss-hero-woman.jpg";
 
 const WeightLossCategory = () => {
   const navigate = useNavigate();
@@ -115,70 +116,82 @@ const WeightLossCategory = () => {
 
       {/* Calculator */}
       <section className="bg-white px-5 md:px-12 py-14">
-        <div className="max-w-[640px] mx-auto bg-warm-50 rounded-3xl border border-warm-100 p-6 md:p-8">
-          <h2 className="font-display font-bold text-warm-800 text-[1.4rem] mb-2 text-center">
-            How Much Can You Lose?
-          </h2>
-          <p className="text-center text-[0.85rem] text-warm-500 mb-6">
-            Estimate your results based on clinical GLP-1 outcomes. Individual results vary.
-          </p>
-
-          <label className="text-[0.8rem] font-medium text-warm-700 block mb-2">
-            Current weight: <span className="text-red font-bold">{currentWeight} lbs</span>
-          </label>
-          <input
-            type="range"
-            min={150}
-            max={400}
-            value={currentWeight}
-            onChange={(e) => {
-              const v = Number(e.target.value);
-              setCurrentWeight(v);
-              if (goalWeight > v - 10) setGoalWeight(v - 10);
-            }}
-            className="w-full accent-red"
-          />
-
-          <label className="text-[0.8rem] font-medium text-warm-700 block mt-4 mb-2">
-            Goal weight: <span className="text-red font-bold">{goalWeight} lbs</span>
-          </label>
-          <input
-            type="range"
-            min={100}
-            max={currentWeight - 10}
-            value={goalWeight}
-            onChange={(e) => setGoalWeight(Number(e.target.value))}
-            className="w-full accent-red"
-          />
-
-          <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-            <div className="bg-white rounded-xl p-4 border border-warm-100">
-              <div className="text-[0.7rem] uppercase tracking-wider text-warm-500 mb-1">Goal</div>
-              <div className="font-display font-black text-warm-800 text-[1.5rem]">{lossNeeded}</div>
-              <div className="text-[0.7rem] text-warm-500">lbs to lose</div>
-            </div>
-            <div className="bg-white rounded-xl p-4 border border-warm-100">
-              <div className="text-[0.7rem] uppercase tracking-wider text-warm-500 mb-1">Time</div>
-              <div className="font-display font-black text-warm-800 text-[1.5rem]">{weeksEst}</div>
-              <div className="text-[0.7rem] text-warm-500">weeks</div>
-            </div>
-            <div className="bg-white rounded-xl p-4 border border-warm-100">
-              <div className="text-[0.7rem] uppercase tracking-wider text-warm-500 mb-1">≈</div>
-              <div className="font-display font-black text-warm-800 text-[1.5rem]">{monthsEst}</div>
-              <div className="text-[0.7rem] text-warm-500">months</div>
-            </div>
+        <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 items-center">
+          <div className="hidden md:block rounded-3xl overflow-hidden bg-warm-50">
+            <img
+              src={calculatorWoman}
+              alt="Happy woman celebrating weight loss results"
+              loading="lazy"
+              width={896}
+              height={1216}
+              className="w-full h-full object-cover"
+            />
           </div>
+          <div className="bg-warm-50 rounded-3xl border border-warm-100 p-6 md:p-8">
+            <h2 className="font-display font-bold text-warm-800 text-[1.4rem] mb-2 text-center">
+              How Much Can You Lose?
+            </h2>
+            <p className="text-center text-[0.85rem] text-warm-500 mb-6">
+              Estimate your results based on clinical GLP-1 outcomes. Individual results vary.
+            </p>
 
-          <p className="text-[0.7rem] text-warm-400 text-center mt-4">
-            Based on avg GLP-1 clinical results of ~5% body weight per 3 months. Individual results vary. Not a medical estimate.
-          </p>
+            <label className="text-[0.8rem] font-medium text-warm-700 block mb-2">
+              Current weight: <span className="text-red font-bold">{currentWeight} lbs</span>
+            </label>
+            <input
+              type="range"
+              min={150}
+              max={400}
+              value={currentWeight}
+              onChange={(e) => {
+                const v = Number(e.target.value);
+                setCurrentWeight(v);
+                if (goalWeight > v - 10) setGoalWeight(v - 10);
+              }}
+              className="w-full accent-red"
+            />
 
-          <button
-            onClick={() => navigate("/health-check")}
-            className="mt-5 w-full bg-red hover:bg-red-dark text-white font-bold py-3 rounded-xl text-[0.9rem] transition-colors"
-          >
-            Start Your Assessment →
-          </button>
+            <label className="text-[0.8rem] font-medium text-warm-700 block mt-4 mb-2">
+              Goal weight: <span className="text-red font-bold">{goalWeight} lbs</span>
+            </label>
+            <input
+              type="range"
+              min={100}
+              max={currentWeight - 10}
+              value={goalWeight}
+              onChange={(e) => setGoalWeight(Number(e.target.value))}
+              className="w-full accent-red"
+            />
+
+            <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+              <div className="bg-white rounded-xl p-4 border border-warm-100">
+                <div className="text-[0.7rem] uppercase tracking-wider text-warm-500 mb-1">Goal</div>
+                <div className="font-display font-black text-warm-800 text-[1.5rem]">{lossNeeded}</div>
+                <div className="text-[0.7rem] text-warm-500">lbs to lose</div>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-warm-100">
+                <div className="text-[0.7rem] uppercase tracking-wider text-warm-500 mb-1">Time</div>
+                <div className="font-display font-black text-warm-800 text-[1.5rem]">{weeksEst}</div>
+                <div className="text-[0.7rem] text-warm-500">weeks</div>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-warm-100">
+                <div className="text-[0.7rem] uppercase tracking-wider text-warm-500 mb-1">≈</div>
+                <div className="font-display font-black text-warm-800 text-[1.5rem]">{monthsEst}</div>
+                <div className="text-[0.7rem] text-warm-500">months</div>
+              </div>
+            </div>
+
+            <p className="text-[0.7rem] text-warm-400 text-center mt-4">
+              Based on avg GLP-1 clinical results of ~5% body weight per 3 months. Individual results vary. Not a medical estimate.
+            </p>
+
+            <button
+              onClick={() => navigate("/health-check")}
+              className="mt-5 w-full bg-red hover:bg-red-dark text-white font-bold py-3 rounded-xl text-[0.9rem] transition-colors"
+            >
+              Start Your Assessment →
+            </button>
+          </div>
         </div>
       </section>
 
