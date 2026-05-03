@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PageLayout from "@/components/realcare/PageLayout";
-import { Shield, ChevronRight } from "lucide-react";
+import { Shield, ChevronRight, ChevronLeft } from "lucide-react";
+import productGlp1 from "@/assets/product-glp1.jpg";
 
 const WeightLossCategory = () => {
   const navigate = useNavigate();
@@ -211,44 +212,8 @@ const WeightLossCategory = () => {
         </div>
       </section>
 
-      {/* Product cards */}
-      <section className="bg-white px-5 md:px-12 py-14">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.5vw,2rem)] text-center mb-3">
-            Choose Your Treatment
-          </h2>
-          <p className="text-center text-[0.9rem] text-warm-500 mb-10 max-w-[640px] mx-auto">
-            All options require a licensed provider consultation. Medication prescribed only if clinically appropriate.
-          </p>
-          <div className="grid md:grid-cols-3 gap-5">
-            {products.map((p) => (
-              <div key={p.name} className="bg-card rounded-2xl border border-warm-100 p-6 flex flex-col shadow-soft">
-                <span className={`inline-block self-start text-[0.6rem] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3 ${p.tagBg}`}>
-                  {p.tag}
-                </span>
-                <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-1">{p.name}</h3>
-                <div className="text-red font-black text-[1.3rem]">{p.headline}</div>
-                <div className="text-[0.75rem] text-warm-500 mb-3">{p.sub}</div>
-                <p className="text-[0.83rem] text-warm-600 leading-relaxed mb-4">{p.desc}</p>
-                <ul className="space-y-1.5 mb-6 flex-1">
-                  {p.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-[0.78rem] text-warm-700">
-                      <ChevronRight size={13} className="text-red flex-shrink-0 mt-0.5" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => navigate(p.href)}
-                  className="w-full bg-red hover:bg-red-dark text-white font-bold py-3 rounded-xl text-[0.85rem] transition-colors"
-                >
-                  {p.cta}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Product Showcase Carousel */}
+      <ProductCarousel navigate={navigate} />
 
       {/* Comparison Table */}
       <section className="bg-warm-50 px-5 md:px-12 py-14">
@@ -284,6 +249,182 @@ const WeightLossCategory = () => {
         </div>
       </section>
     </PageLayout>
+  );
+};
+
+type Nav = ReturnType<typeof useNavigate>;
+
+const carouselCards = [
+  {
+    name: "GLP-1",
+    sub: "Starting at $149/mo",
+    bg: "bg-[#EFF6EE]",
+    href: "/weight-loss/semaglutide",
+    type: "image" as const,
+    img: productGlp1,
+    alt: "Compounded Semaglutide GLP-1 injection vial",
+    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15))",
+  },
+  {
+    name: "GLP-1 + GIP",
+    sub: "Starting at $249/mo",
+    bg: "bg-[#EEF3FB]",
+    href: "/weight-loss/tirzepatide",
+    type: "image" as const,
+    img: productGlp1,
+    alt: "Compounded Tirzepatide GLP-1 + GIP injection vial",
+    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15)) hue-rotate(200deg) saturate(1.3)",
+  },
+  {
+    name: "Ozempic®",
+    sub: "Starting at $1,028/mo",
+    bg: "bg-[#EAF2FA]",
+    href: "/weight-loss/semaglutide#branded",
+    type: "pen" as const,
+    penColor: "#3B7BC8",
+    penDark: "#2C5F9E",
+    label: "Ozempic",
+    sublabel: "semaglutide",
+    caption: "Ozempic® pen",
+  },
+  {
+    name: "Mounjaro®",
+    sub: "Starting at $1,122/mo",
+    bg: "bg-[#F1ECF8]",
+    href: "/weight-loss/semaglutide#branded",
+    type: "pen" as const,
+    penColor: "#7B3FA0",
+    penDark: "#5E2E82",
+    label: "Mounjaro",
+    sublabel: "tirzepatide",
+    caption: "Mounjaro® pen",
+  },
+  {
+    name: "Zepbound®",
+    sub: "Starting at $1,128/mo",
+    bg: "bg-[#EAF5EE]",
+    href: "/weight-loss/semaglutide#branded",
+    type: "pen" as const,
+    penColor: "#3FA060",
+    penDark: "#2E824A",
+    label: "Zepbound",
+    sublabel: "tirzepatide",
+    caption: "Zepbound® pen",
+  },
+  {
+    name: "Wegovy®",
+    sub: "Starting at $1,415/mo",
+    bg: "bg-[#FBF1E8]",
+    href: "/weight-loss/semaglutide#branded",
+    type: "pen" as const,
+    penColor: "#D4681A",
+    penDark: "#A04E10",
+    label: "Wegovy",
+    sublabel: "semaglutide",
+    caption: "Wegovy® pen",
+  },
+];
+
+const ProductCarousel = ({ navigate }: { navigate: Nav }) => {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const scrollBy = (dir: 1 | -1) => {
+    scrollerRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
+  };
+
+  return (
+    <section className="bg-white px-5 md:px-12 py-16">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="font-display font-black text-warm-800 text-[1.7rem] mb-2">
+          Your Personal Weight Loss Solutions
+        </h2>
+        <p className="text-[0.88rem] text-warm-500 mb-10 italic">
+          Find the perfect treatment for real results.
+        </p>
+
+        <div className="relative">
+          <div
+            ref={scrollerRef}
+            className="flex gap-5 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {carouselCards.map((c) => (
+              <div
+                key={c.name}
+                onClick={() => navigate(c.href)}
+                className={`flex-shrink-0 w-[280px] snap-start ${c.bg} rounded-2xl p-6 flex flex-col cursor-pointer hover:shadow-lg transition-shadow`}
+              >
+                <div className="flex-1 flex flex-col items-center justify-center mb-4" style={{ minHeight: "220px" }}>
+                  {c.type === "image" ? (
+                    <img
+                      src={c.img}
+                      alt={c.alt}
+                      className="w-auto h-[200px] object-contain"
+                      style={{ filter: c.filter }}
+                    />
+                  ) : (
+                    <>
+                      <svg width="80" height="180" viewBox="0 0 80 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="28" y="5" width="24" height="145" rx="12" fill={c.penColor} opacity="0.9" />
+                        <circle cx="40" cy="5" r="12" fill={c.penDark} />
+                        <rect x="26" y="50" width="28" height="50" rx="2" fill={c.penDark} />
+                        <rect x="33" y="150" width="14" height="20" rx="4" fill="#888" />
+                        <text x="40" y="80" textAnchor="middle" fill="white" fontSize="6.5" fontFamily="sans-serif" fontWeight="bold">{c.label}</text>
+                        <text x="40" y="91" textAnchor="middle" fill="white" fontSize="4.5" fontFamily="sans-serif">{c.sublabel}</text>
+                      </svg>
+                      <p className="text-[0.6rem] text-warm-400 mt-1">{c.caption}</p>
+                    </>
+                  )}
+                </div>
+                <div className="mt-auto">
+                  <h3 className="font-display font-bold text-warm-800 text-[1.05rem] mb-0.5">{c.name}</h3>
+                  <p className="text-[0.82rem] text-warm-500 mb-4">{c.sub}</p>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
+                      className="flex-1 bg-[#E8A020] hover:bg-[#D4901C] text-white font-bold py-2.5 rounded-lg text-[0.8rem] transition-colors"
+                    >
+                      Get Started
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); navigate("/safety-info"); }}
+                      className="flex-1 border border-warm-300 text-warm-700 font-medium py-2.5 rounded-lg text-[0.8rem] hover:bg-warm-50 transition-colors"
+                    >
+                      Important Info
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-end gap-2 mt-4">
+            <button
+              onClick={() => scrollBy(-1)}
+              aria-label="Previous"
+              className="w-10 h-10 rounded-full border border-warm-200 flex items-center justify-center hover:bg-warm-50 transition-colors"
+            >
+              <ChevronLeft size={18} className="text-warm-700" />
+            </button>
+            <button
+              onClick={() => scrollBy(1)}
+              aria-label="Next"
+              className="w-10 h-10 rounded-full border border-warm-200 flex items-center justify-center hover:bg-warm-50 transition-colors"
+            >
+              <ChevronRight size={18} className="text-warm-700" />
+            </button>
+          </div>
+
+          <p className="text-[0.7rem] text-warm-400 leading-[1.75] mt-6 text-center max-w-[800px] mx-auto">
+            Real Care connects patients with independent licensed providers who may prescribe medication through state-licensed pharmacies.
+            Prescription medication only available if prescribed after an online consultation with a licensed healthcare provider.
+            Compounded medications are not FDA-approved for safety or effectiveness. Results may vary. Plans are a subscription
+            service — cancel anytime. Actual product packaging may appear differently than shown.
+            Ozempic® and Wegovy® are trademarks of Novo Nordisk A/S. Mounjaro® and Zepbound® are trademarks of Eli Lilly and Company.
+            Real Care is not affiliated with these manufacturers.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 };
 
