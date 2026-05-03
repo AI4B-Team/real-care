@@ -464,7 +464,7 @@ const ProductPageTemplate = ({
               { step: "3", title: "Receive 24/7 Support And Ongoing Care", desc: "We'll be with you every step of the way, with regular check-ins and on-demand medical support to keep you on track.", img: step3Img, alt: "Patient receiving a message from her provider" },
             ].map((s) => (
               <div key={s.step} className="bg-warm-50 border border-warm-100 rounded-3xl p-7 flex flex-col">
-                <div className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-warm-500 mb-3">Step {s.step}</div>
+                <div className="text-[0.95rem] font-bold tracking-[0.18em] uppercase text-warm-500 mb-4">Step {s.step}</div>
                 <h3 className="font-display font-bold text-warm-800 text-[1.05rem] leading-snug mb-4">
                   {s.title}
                 </h3>
