@@ -797,6 +797,61 @@ export default function SafetyInfoPage() {
             <ReturnLink />
             <SectionDivider />
 
+            {/* ════ SKINCARE ════ */}
+
+            <SectionHeader id="tretinoin" title="Tretinoin" badge="Rx" category="Skincare" />
+            <p className="text-xs text-gray-500 italic mb-4">Topical tretinoin (a retinoid) is FDA-approved for acne vulgaris and used off-label for photoaging, fine lines, and hyperpigmentation. Available by prescription only.</p>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Skin redness, dryness, peeling, or flaking (especially during first 2–6 weeks)",
+              "Mild burning or stinging upon application",
+              "Increased skin sensitivity",
+              "Temporary worsening of acne ('purge') in the first several weeks",
+              "Increased sensitivity to sun (photosensitivity)",
+            ]} />
+
+            <SubHead>Warnings</SubHead>
+            <BulletList items={[
+              "Do not use if pregnant, planning pregnancy, or breastfeeding — topical retinoids may pose risk to a developing fetus.",
+              "Avoid sun exposure and use broad-spectrum SPF 30+ daily — tretinoin increases UV sensitivity.",
+              "Do not apply to broken, sunburned, or eczematous skin.",
+              "Avoid concurrent use of harsh exfoliants (AHAs/BHAs at high strength), benzoyl peroxide (unless directed), or waxing of treated areas.",
+              "Discontinue and contact your provider if severe irritation, blistering, or allergic reaction occurs.",
+            ]} />
+
+            <SubHead>Drug Interactions</SubHead>
+            <p className="text-sm text-gray-700 leading-relaxed">Concurrent use of medicated soaps, abrasive cleansers, products with high concentrations of alcohol, astringents, spices, or lime, and other topicals containing sulfur, resorcinol, or salicylic acid may increase irritation. Use cautiously with photosensitizing medications (thiazide diuretics, tetracyclines, fluoroquinolones, sulfonamides, phenothiazines).</p>
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
+            <SectionHeader id="skincare-compound" title="Compounded Skincare Rx" badge="Compounded" category="Skincare" />
+            <p className="text-xs text-gray-500 italic mb-4">*Compounded skincare formulations (e.g., tretinoin + niacinamide + azelaic acid; hydroquinone + tretinoin + hydrocortisone; melasma blends) are prepared by state-licensed compounding pharmacies based on a licensed provider's prescription. Compounded products are not FDA-approved.</p>
+
+            <SubHead>Common Side Effects</SubHead>
+            <BulletList items={[
+              "Skin irritation, redness, peeling, or dryness",
+              "Stinging or burning upon application",
+              "Increased photosensitivity",
+              "Temporary hyperpigmentation or hypopigmentation (with hydroquinone)",
+              "Contact dermatitis (rare)",
+            ]} />
+
+            <SubHead>Warnings</SubHead>
+            <BulletList items={[
+              "Do not use during pregnancy or breastfeeding.",
+              "Hydroquinone-containing formulas: limit duration of use as directed by your provider; long-term unsupervised use may cause ochronosis (paradoxical darkening of skin).",
+              "Hydrocortisone-containing formulas: limit to short-term use under provider supervision to avoid skin atrophy, telangiectasia, and rebound effects.",
+              "Use broad-spectrum SPF 30+ daily.",
+              "Discontinue if severe irritation or allergic reaction occurs and notify your provider.",
+            ]} />
+
+            <FDAParagraph />
+            <ReturnLink />
+            <SectionDivider />
+
             {/* ════ MENTAL HEALTH ════ */}
 
             <SectionHeader id="naltrexone" title="Naltrexone / Bupropion" badge="Compounded" category="Mental Health" />
