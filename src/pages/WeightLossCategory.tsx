@@ -269,17 +269,19 @@ type Nav = ReturnType<typeof useNavigate>;
 
 const carouselCards = [
   {
-    name: "GLP-1",
+    name: "Compounded Semaglutide",
     sub: "Starting at $179/mo",
     bg: "bg-[#EFF6EE]",
     href: "/weight-loss/semaglutide",
-    type: "image" as const,
+    type: "hero" as const,
     img: productGlp1,
     alt: "Compounded Semaglutide GLP-1 injection vial",
-    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15))",
+    heroTitle: "Personalized GLP-1 Injections",
+    heroBg: "bg-[#5B9BD5]",
+    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.25))",
   },
   {
-    name: "GLP-1 + GIP",
+    name: "Compounded Tirzepatide",
     sub: "Starting at $279/mo",
     bg: "bg-[#EEF3FB]",
     href: "/weight-loss/tirzepatide",
@@ -365,55 +367,91 @@ const ProductCarousel = ({ navigate }: { navigate: Nav }) => {
                 key={c.name}
                 className="flex-shrink-0 w-[320px] snap-start flex flex-col"
               >
-                <div
-                  onClick={() => navigate(c.href)}
-                  className="bg-white border border-warm-100 rounded-2xl p-5 flex flex-col cursor-pointer hover:shadow-lg transition-shadow"
-                >
-                  <div className={`${c.bg} rounded-xl flex items-center justify-center mb-5`} style={{ height: "300px" }}>
-                    {c.type === "image" ? (
-                      <img
-                        src={c.img}
-                        alt={c.alt}
-                        className="w-auto h-[260px] object-contain"
-                        style={{ filter: c.filter }}
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center">
-                        <svg width="110" height="240" viewBox="0 0 80 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect x="28" y="5" width="24" height="145" rx="12" fill={c.penColor} opacity="0.9" />
-                          <circle cx="40" cy="5" r="12" fill={c.penDark} />
-                          <rect x="26" y="50" width="28" height="50" rx="2" fill={c.penDark} />
-                          <rect x="33" y="150" width="14" height="20" rx="4" fill="#888" />
-                          <text x="40" y="80" textAnchor="middle" fill="white" fontSize="6.5" fontFamily="sans-serif" fontWeight="bold">{c.label}</text>
-                          <text x="40" y="91" textAnchor="middle" fill="white" fontSize="4.5" fontFamily="sans-serif">{c.sublabel}</text>
-                        </svg>
-                        <p className="text-[0.65rem] text-warm-400 mt-1">{c.caption}</p>
+                {c.type === "hero" ? (
+                  <>
+                    <div
+                      onClick={() => navigate(c.href)}
+                      className={`${c.heroBg} rounded-2xl p-6 flex flex-col cursor-pointer hover:shadow-lg transition-shadow`}
+                      style={{ minHeight: "440px" }}
+                    >
+                      <h3 className="font-display font-black text-white text-[1.6rem] leading-tight mb-3">
+                        {c.heroTitle}
+                      </h3>
+                      <div className="flex-1 flex items-center justify-center">
+                        <img
+                          src={c.img}
+                          alt={c.alt}
+                          className="w-auto h-[240px] object-contain"
+                          style={{ filter: c.filter }}
+                        />
                       </div>
-                    )}
-                  </div>
-                  <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-0.5">{c.name}</h3>
-                  <p className="text-[0.85rem] text-warm-500 mb-4">{c.sub}</p>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
-                      className="flex-1 bg-[#E8A020] hover:bg-[#D4901C] text-white font-bold py-2.5 rounded-lg text-[0.8rem] transition-colors"
+                      <button
+                        onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
+                        className="w-full bg-warm-900 hover:bg-black text-white font-semibold py-3.5 rounded-full text-[0.95rem] transition-colors mt-2"
+                      >
+                        See if you qualify
+                      </button>
+                    </div>
+                    <a
+                      href="/safety-info"
+                      className="text-center text-[0.78rem] text-warm-500 hover:text-red underline mt-3"
                     >
-                      Get Started
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
-                      className="flex-1 border border-warm-300 text-warm-700 font-medium py-2.5 rounded-lg text-[0.8rem] hover:bg-warm-50 transition-colors"
+                      Important safety information
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <div
+                      onClick={() => navigate(c.href)}
+                      className="bg-white border border-warm-100 rounded-2xl p-5 flex flex-col cursor-pointer hover:shadow-lg transition-shadow"
                     >
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-                <a
-                  href="/safety-info"
-                  className="text-center text-[0.78rem] text-warm-500 hover:text-red underline mt-3"
-                >
-                  Important safety information
-                </a>
+                      <div className={`${c.bg} rounded-xl flex items-center justify-center mb-5`} style={{ height: "300px" }}>
+                        {c.type === "image" ? (
+                          <img
+                            src={c.img}
+                            alt={c.alt}
+                            className="w-auto h-[260px] object-contain"
+                            style={{ filter: c.filter }}
+                          />
+                        ) : (
+                          <div className="flex flex-col items-center">
+                            <svg width="110" height="240" viewBox="0 0 80 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="28" y="5" width="24" height="145" rx="12" fill={c.penColor} opacity="0.9" />
+                              <circle cx="40" cy="5" r="12" fill={c.penDark} />
+                              <rect x="26" y="50" width="28" height="50" rx="2" fill={c.penDark} />
+                              <rect x="33" y="150" width="14" height="20" rx="4" fill="#888" />
+                              <text x="40" y="80" textAnchor="middle" fill="white" fontSize="6.5" fontFamily="sans-serif" fontWeight="bold">{c.label}</text>
+                              <text x="40" y="91" textAnchor="middle" fill="white" fontSize="4.5" fontFamily="sans-serif">{c.sublabel}</text>
+                            </svg>
+                            <p className="text-[0.65rem] text-warm-400 mt-1">{c.caption}</p>
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-0.5">{c.name}</h3>
+                      <p className="text-[0.85rem] text-warm-500 mb-4">{c.sub}</p>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
+                          className="flex-1 bg-[#E8A020] hover:bg-[#D4901C] text-white font-bold py-2.5 rounded-lg text-[0.8rem] transition-colors"
+                        >
+                          Get Started
+                        </button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); navigate(c.href); }}
+                          className="flex-1 border border-warm-300 text-warm-700 font-medium py-2.5 rounded-lg text-[0.8rem] hover:bg-warm-50 transition-colors"
+                        >
+                          Learn More
+                        </button>
+                      </div>
+                    </div>
+                    <a
+                      href="/safety-info"
+                      className="text-center text-[0.78rem] text-warm-500 hover:text-red underline mt-3"
+                    >
+                      Important safety information
+                    </a>
+                  </>
+                )}
               </div>
             ))}
           </div>
