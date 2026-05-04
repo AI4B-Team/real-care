@@ -756,45 +756,6 @@ const ProductPageTemplate = ({
       </div>
 
 
-      {/* Disclaimer */}
-      <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
-        <div className="max-w-[1080px] mx-auto fade-up">
-          <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
-          <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
-            {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
-          </p>
-        </div>
-      </div>
-
-      {/* You may also be interested in */}
-      {relatedProducts && relatedProducts.length > 0 && (
-        <div className="bg-warm-50 px-5 md:px-12 py-16 border-b border-warm-100">
-          <div className="max-w-[1280px] mx-auto fade-up">
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center mb-10">
-              You May Also Be Interested In
-            </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-              {relatedProducts.map((p) => (
-                <div key={p.name} className="group">
-                  <div className={`aspect-square rounded-2xl ${p.bg} overflow-hidden mb-4 relative`}>
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-x-0 bottom-0 p-3 flex flex-col gap-2 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Link to={p.href} className="bg-warm-800 hover:bg-warm-900 text-white text-center font-bold py-2 rounded-full text-[0.78rem]">
-                        Get Started
-                      </Link>
-                      <Link to={p.href} className="bg-background text-warm-800 text-center font-bold py-2 rounded-full text-[0.78rem]">
-                        Learn More
-                      </Link>
-                    </div>
-                  </div>
-                  <h4 className="font-display font-bold text-warm-800 text-[0.95rem] text-center">{p.name}</h4>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* 90-Day Results Guarantee — gated to weight loss */}
       {showGuarantee && (
         <div className="bg-warm-50 border-t border-warm-100 px-5 md:px-12 py-16">
@@ -849,6 +810,45 @@ const ProductPageTemplate = ({
           </div>
         </div>
       </div>
+
+      {/* Disclaimer */}
+      <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
+        <div className="max-w-[1080px] mx-auto fade-up">
+          <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
+          <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
+            {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
+          </p>
+        </div>
+      </div>
+
+      {/* You may also be interested in */}
+      {relatedProducts && relatedProducts.length > 0 && (
+        <div className="bg-warm-50 px-5 md:px-12 py-16 border-b border-warm-100">
+          <div className="max-w-[1280px] mx-auto fade-up">
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center mb-10">
+              You May Also Be Interested In
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+              {relatedProducts.map((p) => (
+                <div key={p.name} className="group">
+                  <div className={`aspect-square rounded-2xl ${p.bg} overflow-hidden mb-4 relative`}>
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 p-3 flex flex-col gap-2 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Link to={p.href} className="bg-warm-800 hover:bg-warm-900 text-white text-center font-bold py-2 rounded-full text-[0.78rem]">
+                        Get Started
+                      </Link>
+                      <Link to={p.href} className="bg-background text-warm-800 text-center font-bold py-2 rounded-full text-[0.78rem]">
+                        Learn More
+                      </Link>
+                    </div>
+                  </div>
+                  <h4 className="font-display font-bold text-warm-800 text-[0.95rem] text-center">{p.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </PageLayout>
   );
 };
