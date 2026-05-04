@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import PageLayout from "@/components/realcare/PageLayout";
 import { Shield, ChevronRight, ChevronLeft } from "lucide-react";
 import productGlp1 from "@/assets/product-glp1.jpg";
+import productSemaglutide from "@/assets/product-semaglutide.jpg";
+import productTirzepatide from "@/assets/product-tirzepatide.jpg";
+import productOzempic from "@/assets/product-ozempic.jpg";
+import productMounjaro from "@/assets/product-mounjaro.jpg";
+import productZepbound from "@/assets/product-zepbound.jpg";
+import productWegovy from "@/assets/product-wegovy.jpg";
 import calculatorWoman from "@/assets/weight-loss-hero-woman.jpg";
 
 const WeightLossCategory = () => {
@@ -285,70 +291,62 @@ const carouselCards = [
   {
     name: "Compounded Semaglutide",
     sub: "Starting at $179/mo",
-    bg: "bg-[#EFF6EE]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide",
     type: "image" as const,
-    img: productGlp1,
+    img: productSemaglutide,
     alt: "Compounded Semaglutide vial",
-    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15))",
+    filter: "none",
   },
   {
     name: "Compounded Tirzepatide",
     sub: "Starting at $279/mo",
-    bg: "bg-[#EEF3FB]",
+    bg: "bg-white",
     href: "/weight-loss/tirzepatide",
     type: "image" as const,
-    img: productGlp1,
+    img: productTirzepatide,
     alt: "Compounded Tirzepatide GLP-1 + GIP injection vial",
-    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15)) hue-rotate(200deg) saturate(1.3)",
+    filter: "none",
   },
   {
     name: "Ozempic®",
     sub: "Starting at $1,028/mo",
-    bg: "bg-[#EAF2FA]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#3B7BC8",
-    penDark: "#2C5F9E",
-    label: "Ozempic",
-    sublabel: "semaglutide",
-    caption: "Ozempic® pen",
+    type: "image" as const,
+    img: productOzempic,
+    alt: "Ozempic injection pen",
+    filter: "none",
   },
   {
     name: "Mounjaro®",
     sub: "Starting at $1,122/mo",
-    bg: "bg-[#F1ECF8]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#7B3FA0",
-    penDark: "#5E2E82",
-    label: "Mounjaro",
-    sublabel: "tirzepatide",
-    caption: "Mounjaro® pen",
+    type: "image" as const,
+    img: productMounjaro,
+    alt: "Mounjaro injection pen",
+    filter: "none",
   },
   {
     name: "Zepbound®",
     sub: "Starting at $1,128/mo",
-    bg: "bg-[#EAF5EE]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#3FA060",
-    penDark: "#2E824A",
-    label: "Zepbound",
-    sublabel: "tirzepatide",
-    caption: "Zepbound® pen",
+    type: "image" as const,
+    img: productZepbound,
+    alt: "Zepbound injection pen",
+    filter: "none",
   },
   {
     name: "Wegovy®",
     sub: "Starting at $1,415/mo",
-    bg: "bg-[#FBF1E8]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#D4681A",
-    penDark: "#A04E10",
-    label: "Wegovy",
-    sublabel: "semaglutide",
-    caption: "Wegovy® pen",
+    type: "image" as const,
+    img: productWegovy,
+    alt: "Wegovy injection pen",
+    filter: "none",
   },
 ];
 
