@@ -531,7 +531,7 @@ const ProductPageTemplate = ({
             Why Real Care
           </p>
           <h2 className="font-display font-black text-white text-[clamp(1.6rem,3vw,2.2rem)] leading-tight mb-6">
-            The only GLP-1 platform with no membership fee. Ever.
+            The Only GLP-1 Platform With No Membership Fee. Ever.
           </h2>
           <div className="inline-flex flex-col items-center bg-red rounded-2xl px-10 py-8 mb-8">
             <div className="font-display font-black text-white text-[4rem] leading-none mb-1">$0</div>
@@ -539,8 +539,11 @@ const ProductPageTemplate = ({
               Membership Fee — Guaranteed, Ever
             </div>
           </div>
-          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[440px] mx-auto">
-            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself. Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
+          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto whitespace-normal md:whitespace-nowrap">
+            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself.
+          </p>
+          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto mt-2 whitespace-normal md:whitespace-nowrap">
+            Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
           </p>
           <p className="text-[0.68rem] text-white/30 mt-4">
             Based on publicly available platform pricing as of 2026. Medication costs are additional and vary by plan.
