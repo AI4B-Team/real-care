@@ -29,7 +29,7 @@ const WeightLoss = () => {
       galleryImages={[galleryPenCloseup, galleryVial, galleryPenBlue]}
       heroBg="bg-[#C8E6C9]"
       tagline="Personalized weight management plans, built around you and guided by licensed providers."
-      savingsLabel="First Shipment $120 Off"
+      savingsLabel="Get $120 Off Your First Order"
       plans={[
         {
           group: "Compounded Semaglutide",
