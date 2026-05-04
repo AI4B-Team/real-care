@@ -9,7 +9,7 @@ const steps = [
     img: step1,
     alt: "Complete a quick health assessment on your phone",
     title: "Complete Your Assessment",
-    desc: "Answer a few questions about your health goals and history. Takes under 5 minutes. No waiting room. No judgment.",
+    desc: "Answer a few quick questions about your health goals, history, and lifestyle. Takes under 5 minutes — no waiting rooms, no awkward conversations, no judgment.",
     badge: "Reviewed By A Licensed Provider",
     bullets: [
       "Takes under 5 minutes — no waiting rooms",
