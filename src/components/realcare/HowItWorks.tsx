@@ -1,6 +1,7 @@
 import step1 from "@/assets/step-1-assessment.jpg";
 import step2 from "@/assets/step-2-doctor.jpg";
 import step3 from "@/assets/step-3-delivery.jpg";
+import supportWoman from "@/assets/support-text-woman.jpg";
 
 const steps = [
   {
@@ -105,26 +106,48 @@ const HowItWorks = () => (
       </div>
 
       {/* Always Included — ongoing support banner */}
-      <div className="mt-8 bg-warm-50 border border-warm-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
-        <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-red/10">
-          <div className="w-3 h-3 rounded-full bg-red" />
+      <div className="mt-8 bg-warm-50 border border-warm-100 rounded-2xl overflow-hidden grid md:grid-cols-2 gap-0">
+        <div className="relative min-h-[340px] md:min-h-[420px] bg-warm-100">
+          <img
+            src={supportWoman}
+            alt="Patient receiving a check-in text from her doctor"
+            width={1024}
+            height={1024}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Doctor text bubble overlay */}
+          <div className="absolute left-1/2 top-[58%] -translate-x-1/2 bg-white rounded-xl shadow-soft px-3.5 py-2.5 flex items-start gap-2.5 max-w-[78%]">
+            <div className="w-7 h-7 rounded-full bg-warm-100 flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--red))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z" />
+              </svg>
+            </div>
+            <div className="min-w-0">
+              <div className="text-[0.72rem] font-bold text-warm-800 leading-tight">Dr. Smith</div>
+              <div className="text-[0.72rem] text-warm-600 leading-tight mt-0.5">How are you feeling today?</div>
+            </div>
+          </div>
         </div>
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
+        <div className="p-6 md:p-10 flex flex-col justify-center">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-2 h-2 rounded-full bg-red animate-pulse" />
             <span className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red">
               Included In Every Plan
             </span>
           </div>
-          <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-1">
+          <h3 className="font-display font-bold text-warm-800 text-[1.5rem] md:text-[1.75rem] leading-tight mb-3">
             Support that never stops.
           </h3>
-          <p className="text-[0.83rem] text-warm-600 leading-[1.7]">
+          <p className="text-[0.88rem] text-warm-600 leading-[1.75] mb-6">
             Your dedicated care team is available 24/7 from the moment you enroll — for dosage questions, side effects, refills, and plan adjustments. No extra charge. No appointment needed. Ever.
           </p>
+          <div>
+            <a href="/health-check" className="inline-block bg-red hover:bg-red-dark text-primary-foreground font-bold px-6 py-3 rounded-full text-[0.83rem] transition-colors whitespace-nowrap">
+              Get Started →
+            </a>
+          </div>
         </div>
-        <a href="/health-check" className="flex-shrink-0 bg-red hover:bg-red-dark text-primary-foreground font-bold px-6 py-3 rounded-full text-[0.83rem] transition-colors whitespace-nowrap">
-          Get Started →
-        </a>
       </div>
     </div>
   </section>
