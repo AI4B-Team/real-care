@@ -115,9 +115,9 @@ const WeightLossCategory = () => {
       </section>
 
       {/* Calculator */}
-      <section className="bg-white px-5 md:px-12 py-14">
-        <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 items-center">
-          <div className="hidden md:block rounded-3xl overflow-hidden bg-white">
+      <section className="bg-white md:pl-0 md:pr-12 px-5 py-14 md:py-0">
+        <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-12 items-stretch">
+          <div className="hidden md:block overflow-hidden bg-white self-stretch">
             <img
               src={calculatorWoman}
               alt="Happy woman celebrating weight loss results"
@@ -127,7 +127,7 @@ const WeightLossCategory = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="bg-warm-50 rounded-3xl border border-warm-100 p-6 md:p-8">
+          <div className="bg-warm-50 rounded-3xl border border-warm-100 p-6 md:p-8 my-14 self-center">
             <h2 className="font-display font-bold text-warm-800 text-[1.4rem] mb-2 text-center">
               How Much Can You Lose?
             </h2>
