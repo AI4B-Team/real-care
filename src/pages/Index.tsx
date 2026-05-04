@@ -39,7 +39,7 @@ import pSleepW from "@/assets/p-sleep-w.jpg";
 const menProducts = [
   { img: pWeightM, name: "GLP-1 Weight Loss", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — fraction of the cost.", price: "From $179 first month", pill: "Most Popular" },
   { img: pTrt, name: "Low Testosterone (TRT)", desc: "Lab testing + personalized TRT. More energy, stronger drive, better mood. Results in weeks.", price: "From $99/mo", pill: "Top Rated" },
-  { img: pHairM, name: "Hair Loss & Regrowth", desc: "Finasteride + minoxidil — clinically proven to stop shedding and regrow hair monthly.", price: "From $39/mo" },
+  { img: pHairM, name: "Hair Loss & Regrowth", desc: "Finasteride + minoxidil — the same active ingredients used in clinically studied hair loss treatments.", price: "From $39/mo" },
   { img: pPept, name: "Peptides & Longevity", desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, anti-aging, and peak performance.", price: "From $129/mo", pill: "New" },
   { img: pSleepM, name: "Sleep Better", desc: "Personalized sleep support from licensed providers.", price: "From $39/mo" },
   { img: pMentalM, name: "Mental Health", desc: "Anxiety, depression, and sleep — online prescriptions from licensed providers.", price: "From $49/mo" },
