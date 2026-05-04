@@ -103,6 +103,29 @@ const HowItWorks = () => (
           </div>
         ))}
       </div>
+
+      {/* Always Included — ongoing support banner */}
+      <div className="mt-8 bg-warm-50 border border-warm-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-red/10">
+          <div className="w-3 h-3 rounded-full bg-red" />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-[0.62rem] font-bold tracking-[0.16em] uppercase text-red">
+              Included In Every Plan
+            </span>
+          </div>
+          <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-1">
+            Support that never stops.
+          </h3>
+          <p className="text-[0.83rem] text-warm-600 leading-[1.7]">
+            Your dedicated care team is available 24/7 from the moment you enroll — for dosage questions, side effects, refills, and plan adjustments. No extra charge. No appointment needed. Ever.
+          </p>
+        </div>
+        <a href="/health-check" className="flex-shrink-0 bg-red hover:bg-red-dark text-primary-foreground font-bold px-6 py-3 rounded-full text-[0.83rem] transition-colors whitespace-nowrap">
+          Get Started →
+        </a>
+      </div>
     </div>
   </section>
 );
