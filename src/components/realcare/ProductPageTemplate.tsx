@@ -136,7 +136,7 @@ interface ProductPageProps {
   reviews?: Review[];
   /** Related products ("You may also be interested in"). */
   relatedProducts?: RelatedProduct[];
-  /** Show the Hims/Ro competitor comparison section. Weight loss only. */
+  /** Show the "Why Real Care" no-membership-fee section. Weight loss only. */
   showCompetitorComparison?: boolean;
   /** Show the 90-Day Results Guarantee section. Weight loss only. */
   showGuarantee?: boolean;
@@ -523,32 +523,27 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Competitor comparison — gated to weight loss */}
+      {/* Why Real Care — gated to weight loss */}
       {showCompetitorComparison && (
-      <div className="bg-warm-800 px-5 md:px-12 py-14 border-b border-warm-100">
-        <div className="max-w-[800px] mx-auto text-center fade-up">
-          <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">Why Real Care</p>
-          <h2 className="font-display font-black text-white text-[clamp(1.5rem,2.8vw,2rem)] leading-tight mb-8">
-            Other platforms charge a membership fee just to access the medication.
+      <div className="bg-warm-800 px-5 md:px-12 py-16 border-b border-warm-100">
+        <div className="max-w-[600px] mx-auto text-center fade-up">
+          <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
+            Why Real Care
+          </p>
+          <h2 className="font-display font-black text-white text-[clamp(1.6rem,3vw,2.2rem)] leading-tight mb-6">
+            The only GLP-1 platform with no membership fee. Ever.
           </h2>
-          <div className="grid grid-cols-3 gap-4 text-center">
-            {[
-              { name: "Real Care", fee: "$0", label: "Membership fee — ever", highlight: true },
-              { name: "Hims & Hers", fee: "$149", label: "per month membership", highlight: false },
-              { name: "Ro", fee: "$145", label: "per month membership", highlight: false },
-            ].map((c) => (
-              <div
-                key={c.name}
-                className={`rounded-xl p-5 ${c.highlight ? "bg-red border-2 border-red/30" : "bg-white/[0.05] border border-white/10"}`}
-              >
-                <p className={`text-[0.65rem] font-bold uppercase tracking-widest mb-2 ${c.highlight ? "text-white/80" : "text-white/40"}`}>{c.name}</p>
-                <p className={`font-display font-black text-[2rem] ${c.highlight ? "text-white" : "text-white/50"}`}>{c.fee}</p>
-                <p className={`text-[0.72rem] ${c.highlight ? "text-white/85" : "text-white/40"}`}>{c.label}</p>
-              </div>
-            ))}
+          <div className="inline-flex flex-col items-center bg-red rounded-2xl px-10 py-8 mb-8">
+            <div className="font-display font-black text-white text-[4rem] leading-none mb-1">$0</div>
+            <div className="text-[0.72rem] font-bold uppercase tracking-[0.15em] text-white/70">
+              Membership Fee — Guaranteed, Ever
+            </div>
           </div>
-          <p className="text-[0.72rem] text-white/40 mt-6">
-            Based on published membership pricing. Medication costs are additional and vary by platform and plan.
+          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[440px] mx-auto">
+            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself. Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
+          </p>
+          <p className="text-[0.68rem] text-white/30 mt-4">
+            Based on publicly available platform pricing as of 2026. Medication costs are additional and vary by plan.
           </p>
         </div>
       </div>

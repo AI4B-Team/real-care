@@ -115,7 +115,7 @@ export const SEO_CONFIGS = {
   },
   pricing: {
     title: "Pricing — One Price, Everything Included",
-    description: "Real Care pricing starts at $20/mo. No membership fees. No hidden charges. Doctor consult, medication, and free shipping all included. Unlike Hims and Ro, we charge $0 membership fee.",
+    description: "Real Care pricing starts from $179 first month. No membership fees. No hidden charges. Consultation, medication, and free shipping all included in one plan price.",
     canonical: "https://realcare.com/pricing",
   },
   men: {

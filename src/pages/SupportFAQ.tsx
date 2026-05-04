@@ -62,7 +62,7 @@ const faqs = [
       },
       {
         q: "Is there a membership fee?",
-        a: "Never. Real Care charges $0 in membership fees — ever. Unlike Hims ($149/mo membership) and Ro ($145/mo membership), your plan price covers everything.",
+        a: "Never. Real Care charges $0 in membership fees — ever. Some platforms charge $100-149/month in membership fees on top of medication costs. At Real Care, your plan price covers your consultation, medication, and free discreet shipping. Nothing extra.",
       },
       {
         q: "Can I pay with my HSA or FSA card?",

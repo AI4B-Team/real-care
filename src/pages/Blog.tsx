@@ -49,10 +49,10 @@ const posts = [
   },
   {
     category: "Pricing",
-    title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison (2026)",
-    excerpt: "We break down exactly what you pay at each platform — including the membership fees most comparison sites won't mention.",
+    title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust",
+    excerpt: "What to look for before enrolling: what's included in the price, whether there are membership fees, and how refund policies work.",
     readTime: "8 min read",
-    href: "/blog/real-care-vs-hims-vs-ro",
+    href: "/blog/glp1-telehealth-how-to-choose",
   },
   {
     category: "Weight Loss",
