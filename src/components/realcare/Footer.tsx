@@ -175,7 +175,7 @@ const Footer = () => {
 
         {/* Copyright bar */}
         <div className="border-t border-white/10 mt-6 pt-6">
-          <p className="text-[0.75rem] text-white/55 text-center">© 2026 Real Care Inc. · Jacksonville, FL · All Rights Reserved.</p>
+          <p className="text-[0.75rem] text-white/55 text-center">© 2026 Real Care Inc. · All Rights Reserved.</p>
         </div>
       </div>
     </footer>
