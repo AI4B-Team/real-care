@@ -22,7 +22,7 @@ const steps = [
     img: step2,
     alt: "Meet with a licensed doctor over video on your phone",
     title: "Meet Your Doctor",
-    desc: "A licensed medical provider reviews your intake and creates a personalized treatment plan. 1:1 physician guidance and 24/7 support included throughout your entire treatment — no extra charge.",
+    desc: "A licensed provider reviews your intake and creates a personalized treatment plan — with 1:1 guidance and 24/7 support included.",
     badge: "1:1 Physician Guidance",
     bullets: [
       "Shipped from U.S.–licensed pharmacies",
