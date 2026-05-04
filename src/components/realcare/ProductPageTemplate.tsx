@@ -523,34 +523,6 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* Why Real Care — gated to weight loss */}
-      {showCompetitorComparison && (
-      <div className="bg-warm-800 px-5 md:px-12 py-16 border-b border-warm-100">
-        <div className="max-w-[600px] mx-auto text-center fade-up">
-          <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
-            Why Real Care
-          </p>
-          <h2 className="font-display font-black text-white text-[clamp(1.6rem,3vw,2.2rem)] leading-tight mb-6">
-            The Only GLP-1 Platform <br />With No Membership Fee. Ever.
-          </h2>
-          <div className="inline-flex flex-col items-center bg-red rounded-2xl px-10 py-8 mb-8">
-            <div className="font-display font-black text-white text-[4rem] leading-none mb-1">$0</div>
-            <div className="text-[0.72rem] font-bold uppercase tracking-[0.15em] text-white/70">
-              Membership Fee — Guaranteed, Ever
-            </div>
-          </div>
-          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto text-center whitespace-normal md:whitespace-nowrap">
-            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself.
-          </p>
-          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto mt-2 text-center whitespace-normal md:whitespace-nowrap">
-            Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
-          </p>
-          <p className="text-[0.68rem] text-white/30 mt-4">
-            Based on publicly available platform pricing as of 2026. Medication costs are additional and vary by plan.
-          </p>
-        </div>
-      </div>
-      )}
       <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
         <div className="max-w-[1180px] mx-auto fade-up">
           <div className="text-center mb-16">
@@ -660,6 +632,35 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
+      {/* Why Real Care — gated to weight loss */}
+      {showCompetitorComparison && (
+      <div className="bg-warm-800 px-5 md:px-12 py-16 border-b border-warm-100">
+        <div className="max-w-[600px] mx-auto text-center fade-up">
+          <p className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
+            Why Real Care
+          </p>
+          <h2 className="font-display font-black text-white text-[clamp(1.6rem,3vw,2.2rem)] leading-tight mb-6">
+            The Only GLP-1 Platform <br />With No Membership Fee. Ever.
+          </h2>
+          <div className="inline-flex flex-col items-center bg-red rounded-2xl px-10 py-8 mb-8">
+            <div className="font-display font-black text-white text-[4rem] leading-none mb-1">$0</div>
+            <div className="text-[0.72rem] font-bold uppercase tracking-[0.15em] text-white/70">
+              Membership Fee — Guaranteed, Ever
+            </div>
+          </div>
+          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto text-center whitespace-normal md:whitespace-nowrap">
+            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself.
+          </p>
+          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto mt-2 text-center whitespace-normal md:whitespace-nowrap">
+            Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
+          </p>
+          <p className="text-[0.68rem] text-white/30 mt-4">
+            Based on publicly available platform pricing as of 2026. Medication costs are additional and vary by plan.
+          </p>
+        </div>
+      </div>
+      )}
+
       {/* Treatments */}
       {!plans && (
         <div className="bg-background px-5 md:px-12 pt-14 pb-16" id="treatments">
@@ -722,45 +723,6 @@ const ProductPageTemplate = ({
         </div>
       )}
 
-      {/* Disclaimer */}
-      <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
-        <div className="max-w-[1080px] mx-auto fade-up">
-          <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
-          <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
-            {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
-          </p>
-        </div>
-      </div>
-
-      {/* You may also be interested in */}
-      {relatedProducts && relatedProducts.length > 0 && (
-        <div className="bg-warm-50 px-5 md:px-12 py-16 border-b border-warm-100">
-          <div className="max-w-[1280px] mx-auto fade-up">
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center mb-10">
-              You May Also Be Interested In
-            </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-              {relatedProducts.map((p) => (
-                <div key={p.name} className="group">
-                  <div className={`aspect-square rounded-2xl ${p.bg} overflow-hidden mb-4 relative`}>
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-x-0 bottom-0 p-3 flex flex-col gap-2 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Link to={p.href} className="bg-warm-800 hover:bg-warm-900 text-white text-center font-bold py-2 rounded-full text-[0.78rem]">
-                        Get Started
-                      </Link>
-                      <Link to={p.href} className="bg-background text-warm-800 text-center font-bold py-2 rounded-full text-[0.78rem]">
-                        Learn More
-                      </Link>
-                    </div>
-                  </div>
-                  <h4 className="font-display font-bold text-warm-800 text-[0.95rem] text-center">{p.name}</h4>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* FAQ */}
       <div className="bg-background px-5 md:px-12 py-14 border-b border-warm-100">
         <div className="max-w-[820px] mx-auto fade-up">
@@ -792,6 +754,7 @@ const ProductPageTemplate = ({
           </div>
         </div>
       </div>
+
 
       {/* 90-Day Results Guarantee — gated to weight loss */}
       {showGuarantee && (
@@ -847,6 +810,45 @@ const ProductPageTemplate = ({
           </div>
         </div>
       </div>
+
+      {/* Disclaimer */}
+      <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
+        <div className="max-w-[1080px] mx-auto fade-up">
+          <h4 className="font-display font-bold text-warm-800 text-[0.95rem] mb-2">Disclaimer</h4>
+          <p className="text-[0.78rem] text-warm-500 leading-[1.75]">
+            {disclaimer || "Only available if prescribed after an online consultation with a healthcare provider. Benefits outlined are based on third-party studies. Plans are offered as a subscription service which can be canceled at any time. Actual product packaging may appear differently than shown. Physicians may prescribe compounded medications as needed to meet patient requirements. The FDA does not review or approve any compounded medications for safety or effectiveness. Statements on this page have not been evaluated by the FDA. Results may vary. If you notice any side effects while using this treatment, contact your healthcare provider immediately."}
+          </p>
+        </div>
+      </div>
+
+      {/* You may also be interested in */}
+      {relatedProducts && relatedProducts.length > 0 && (
+        <div className="bg-warm-50 px-5 md:px-12 py-16 border-b border-warm-100">
+          <div className="max-w-[1280px] mx-auto fade-up">
+            <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center mb-10">
+              You May Also Be Interested In
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+              {relatedProducts.map((p) => (
+                <div key={p.name} className="group">
+                  <div className={`aspect-square rounded-2xl ${p.bg} overflow-hidden mb-4 relative`}>
+                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 p-3 flex flex-col gap-2 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Link to={p.href} className="bg-warm-800 hover:bg-warm-900 text-white text-center font-bold py-2 rounded-full text-[0.78rem]">
+                        Get Started
+                      </Link>
+                      <Link to={p.href} className="bg-background text-warm-800 text-center font-bold py-2 rounded-full text-[0.78rem]">
+                        Learn More
+                      </Link>
+                    </div>
+                  </div>
+                  <h4 className="font-display font-bold text-warm-800 text-[0.95rem] text-center">{p.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </PageLayout>
   );
 };
