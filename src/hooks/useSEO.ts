@@ -85,7 +85,7 @@ export const SEO_CONFIGS = {
   },
   hairLoss: {
     title: "Hair Loss Treatment for Men & Women",
-    description: "Prescription finasteride and minoxidil for men and women from $39/mo. Clinically proven to stop shedding and regrow hair. Doctor-prescribed, delivered monthly.",
+    description: "Prescription finasteride and minoxidil for men and women from $39/mo. The same active ingredients used in clinically studied hair loss treatments. Doctor-prescribed, delivered monthly.",
     canonical: "https://realcare.com/hair-loss",
   },
   skincare: {
