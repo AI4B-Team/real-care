@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import PageLayout from "@/components/realcare/PageLayout";
 import { Shield, ChevronRight, ChevronLeft } from "lucide-react";
 import productGlp1 from "@/assets/product-glp1.jpg";
+import productSemaglutide from "@/assets/product-semaglutide.jpg";
+import productTirzepatide from "@/assets/product-tirzepatide.jpg";
+import productOzempic from "@/assets/product-ozempic.jpg";
+import productMounjaro from "@/assets/product-mounjaro.jpg";
+import productZepbound from "@/assets/product-zepbound.jpg";
+import productWegovy from "@/assets/product-wegovy.jpg";
 import calculatorWoman from "@/assets/weight-loss-hero-woman.jpg";
 
 const WeightLossCategory = () => {
@@ -285,70 +291,62 @@ const carouselCards = [
   {
     name: "Compounded Semaglutide",
     sub: "Starting at $179/mo",
-    bg: "bg-[#EFF6EE]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide",
     type: "image" as const,
-    img: productGlp1,
+    img: productSemaglutide,
     alt: "Compounded Semaglutide vial",
-    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15))",
+    filter: "none",
   },
   {
     name: "Compounded Tirzepatide",
     sub: "Starting at $279/mo",
-    bg: "bg-[#EEF3FB]",
+    bg: "bg-white",
     href: "/weight-loss/tirzepatide",
     type: "image" as const,
-    img: productGlp1,
+    img: productTirzepatide,
     alt: "Compounded Tirzepatide GLP-1 + GIP injection vial",
-    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.15)) hue-rotate(200deg) saturate(1.3)",
+    filter: "none",
   },
   {
     name: "Ozempic®",
     sub: "Starting at $1,028/mo",
-    bg: "bg-[#EAF2FA]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#3B7BC8",
-    penDark: "#2C5F9E",
-    label: "Ozempic",
-    sublabel: "semaglutide",
-    caption: "Ozempic® pen",
+    type: "image" as const,
+    img: productOzempic,
+    alt: "Ozempic injection pen",
+    filter: "none",
   },
   {
     name: "Mounjaro®",
     sub: "Starting at $1,122/mo",
-    bg: "bg-[#F1ECF8]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#7B3FA0",
-    penDark: "#5E2E82",
-    label: "Mounjaro",
-    sublabel: "tirzepatide",
-    caption: "Mounjaro® pen",
+    type: "image" as const,
+    img: productMounjaro,
+    alt: "Mounjaro injection pen",
+    filter: "none",
   },
   {
     name: "Zepbound®",
     sub: "Starting at $1,128/mo",
-    bg: "bg-[#EAF5EE]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#3FA060",
-    penDark: "#2E824A",
-    label: "Zepbound",
-    sublabel: "tirzepatide",
-    caption: "Zepbound® pen",
+    type: "image" as const,
+    img: productZepbound,
+    alt: "Zepbound injection pen",
+    filter: "none",
   },
   {
     name: "Wegovy®",
     sub: "Starting at $1,415/mo",
-    bg: "bg-[#FBF1E8]",
+    bg: "bg-white",
     href: "/weight-loss/semaglutide#branded",
-    type: "pen" as const,
-    penColor: "#D4681A",
-    penDark: "#A04E10",
-    label: "Wegovy",
-    sublabel: "semaglutide",
-    caption: "Wegovy® pen",
+    type: "image" as const,
+    img: productWegovy,
+    alt: "Wegovy injection pen",
+    filter: "none",
   },
 ];
 
@@ -412,26 +410,13 @@ const ProductCarousel = ({ navigate }: { navigate: Nav }) => {
                       className="bg-white border border-warm-100 rounded-2xl p-5 flex flex-col cursor-pointer hover:shadow-lg transition-shadow"
                     >
                       <div className={`${c.bg} rounded-xl flex items-center justify-center mb-5`} style={{ height: "300px" }}>
-                        {c.type === "image" ? (
-                          <img
-                            src={c.img}
-                            alt={c.alt}
-                            className="w-auto h-[260px] object-contain"
-                            style={{ filter: c.filter }}
-                          />
-                        ) : (
-                          <div className="flex flex-col items-center">
-                            <svg width="110" height="240" viewBox="0 0 80 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect x="28" y="5" width="24" height="145" rx="12" fill={c.penColor} opacity="0.9" />
-                              <circle cx="40" cy="5" r="12" fill={c.penDark} />
-                              <rect x="26" y="50" width="28" height="50" rx="2" fill={c.penDark} />
-                              <rect x="33" y="150" width="14" height="20" rx="4" fill="#888" />
-                              <text x="40" y="80" textAnchor="middle" fill="white" fontSize="6.5" fontFamily="sans-serif" fontWeight="bold">{c.label}</text>
-                              <text x="40" y="91" textAnchor="middle" fill="white" fontSize="4.5" fontFamily="sans-serif">{c.sublabel}</text>
-                            </svg>
-                            <p className="text-[0.65rem] text-warm-400 mt-1">{c.caption}</p>
-                          </div>
-                        )}
+                        <img
+                          src={c.img}
+                          alt={c.alt}
+                          className="w-auto h-[260px] object-contain"
+                          style={{ filter: c.filter }}
+                          loading="lazy"
+                        />
                       </div>
                       <h3 className="font-display font-bold text-warm-800 text-[1.15rem] mb-0.5">{c.name}</h3>
                       <p className="text-[0.85rem] text-warm-500 mb-4">{c.sub}</p>
