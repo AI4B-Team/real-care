@@ -123,7 +123,7 @@ const WeightLoss = () => {
         },
         {
           q: "How Soon Will I See Weight-Loss Results?",
-          a: "Most patients begin to notice reduced appetite within the first 1–2 weeks. Meaningful weight changes typically appear over 8–12 weeks and continue throughout your dose escalation. Individual results vary.",
+          a: "Many patients report noticing reduced appetite within the first few weeks. Meaningful weight changes may appear over the course of 8–12 weeks and often continue throughout dose escalation. Results vary significantly between individuals based on health history, adherence, diet, lifestyle, and biological response to treatment. These are not guaranteed outcomes.",
         },
         {
           q: "What Are The Common Side Effects?",

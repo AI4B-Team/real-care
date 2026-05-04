@@ -71,7 +71,7 @@ const About = () => (
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
-            { title: "Honest Pricing", desc: "No membership fees, no hidden charges, no bait-and-switch. One price that includes everything. We say it loudly because most competitors won't." },
+            { title: "Honest Pricing", desc: "No membership fees, no hidden charges, no bait-and-switch. One plan price that includes your consultation, medication, and free shipping — nothing extra, nothing hidden." },
             { title: "Real Doctors", desc: "Every prescription is reviewed by a board-certified U.S. physician. No AI prescribing, no fake doctor personas, no shortcuts." },
             { title: "Radical Transparency", desc: "We tell you exactly what compounded medications are and aren't. You deserve the full picture before you decide." },
             { title: "Co-Ed Care", desc: "We built the only telehealth platform that serves men and women equally — with treatments for both on a single platform." },

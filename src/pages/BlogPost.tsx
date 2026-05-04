@@ -37,7 +37,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "ED in Young Men: Why It's More Common Than You Think", href: "/blog/ed-in-young-men", category: "Men's Health" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "perimenopause-vs-menopause": {
@@ -60,7 +60,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Female Hair Loss: The Hormonal Connection Nobody Explains", href: "/blog/female-hair-loss-hormones", category: "Women's Health" },
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "glp1-side-effects": {
@@ -83,7 +83,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "Does Compounded Semaglutide Actually Work?", href: "/blog/compounded-semaglutide", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "ed-in-young-men": {
@@ -105,7 +105,7 @@ const POSTS: Record<string, {
     related: [
       { title: "7 Signs of Low Testosterone (And What To Do About It)", href: "/blog/low-testosterone-signs", category: "Men's Health" },
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "tretinoin-vs-retinol": {
@@ -127,26 +127,24 @@ const POSTS: Record<string, {
     related: [
       { title: "Female Hair Loss: The Hormonal Connection Nobody Explains", href: "/blog/female-hair-loss-hormones", category: "Women's Health" },
       { title: "Perimenopause vs. Menopause: What's Actually Different?", href: "/blog/perimenopause-vs-menopause", category: "Women's Health" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
-  "real-care-vs-hims-vs-ro": {
-    title: "Real Care vs. Hims vs. Ro: The Honest Pricing Comparison",
+  "glp1-telehealth-how-to-choose": {
+    title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust",
     category: "Pricing",
     readTime: "7 min read",
     published: "April 22, 2026",
     author: "Real Care Medical Team",
     authorRole: "Real Care Inc.",
-    intro: "GLP-1 telehealth is a crowded market — and the pricing is deliberately confusing. This is an honest, line-by-line comparison of what you actually pay at Real Care, Hims & Hers, and Ro. No affiliate spin. Just the math.",
+    intro: "GLP-1 telehealth is a crowded market — and the pricing is deliberately confusing. Before enrolling, here is what to actually look for: what is included in the price, whether there are membership fees, and how refund policies work. No affiliate spin. Just the key questions.",
     sections: [
-      { heading: "The Hidden Cost: Membership Fees", body: "The biggest difference most people miss when comparing telehealth platforms is the membership fee. Hims & Hers charges $149/month for their Weight Loss Membership — separate from the cost of medication. Ro charges $145/month for their Body Program membership — again, on top of medication. Real Care charges $0 in membership fees. Ever. This is not a promotion or introductory rate. It's the permanent model. One price covers your doctor consultation, medication, and free shipping. Nothing extra." },
-      { heading: "GLP-1 Weight Loss: True Cost Comparison", body: "Real Care: $179 first month, then $299/mo (no membership fee). 3-month plan from $209/mo. Hims: medication starts at ~$199/month + $149/month membership = $348+/month true cost. Ro: medication starts at ~$199/month + $145/month membership = $344+/month true cost. Annual difference: Hims and Ro patients pay $1,740+ more per year in membership fees alone compared to Real Care — for the same class of medication. This is money that funds Hims & Hers' 2,400-person payroll and investor returns, not your care." },
-      { heading: "What's Actually Included", body: "Real Care: Doctor consultation included. Medication included. Free discreet shipping included. 24/7 provider messaging included. No membership fee. HSA/FSA accepted. Hims: Doctor consultation included in membership. Medication priced separately. Shipping included. Support available. Membership required. Ro: Doctor consultation included in Body Program. Medication priced separately. Shipping included. Insurance concierge available (adds significant value if you have insurance coverage). Membership required." },
-      { heading: "Where Ro Has an Advantage", body: "Ro's insurance concierge service is genuinely valuable if you have insurance coverage for GLP-1 medications. For patients with coverage, Ro can navigate prior authorization and get branded Wegovy at $50-$90/month copay — potentially far cheaper than any compounded option. If you have insurance coverage for GLP-1 medications, check Ro's insurance concierge first. Real Care is a cash-pay platform and does not navigate insurance. If you do not have insurance coverage — which applies to most patients in this market — Real Care's pricing is the most transparent in the space." },
-      { heading: "The Co-Ed Differentiator", body: "Real Care is the only major telehealth platform built for both men and women on a single platform. Hims serves men (and Hers serves women) on separate brands with separate websites. Ro serves both but on a single brand without a unified experience." },
-      { heading: "The Bottom Line", body: "If you have insurance that covers GLP-1 medications: check Ro's insurance concierge first. If you are paying cash and want the most transparent pricing with no membership fees: Real Care's model is straightforward — one price, everything included. This comparison reflects publicly available pricing as of April 2026 and may change. Always verify current pricing directly with each provider." },
+      { heading: "The Hidden Cost: Membership Fees", body: "The most common pricing trap in telehealth is the membership or subscription access fee — a monthly charge just to use the platform, separate from what you pay for medication. Some platforms charge $100-149/month in membership fees on top of medication costs. At Real Care, there is no membership fee. Ever. One plan price covers your consultation, medication, and free shipping. Nothing extra. Before enrolling anywhere, confirm: is the price shown the total price, or is there an additional platform fee?" },
+      { heading: "GLP-1 Weight Loss: Questions to Ask", body: "Before choosing a GLP-1 telehealth platform, ask: (1) Is the monthly price shown all-inclusive, or does it exclude the medication, lab work, or consultations? (2) Does the price stay flat as your dose increases, or does it go up? (3) Is there a money-back or results guarantee, and what are the conditions? (4) What happens if your provider determines you are not eligible — do you receive a full refund? Real Care's answer to all four: the plan price is all-inclusive, the price stays flat at every dose, there is a 90-day results guarantee, and medically ineligible patients receive a full refund." },
+      { heading: "What's Actually Included", body: "A compliant, transparent telehealth GLP-1 platform should include in its plan price: licensed provider consultation, compounded medication (if prescribed), free discreet shipping, ongoing provider messaging, and dosage adjustment support. Watch out for: platforms that quote a low monthly rate but charge separately for the consultation, or require lab work (which can cost $100-300) before prescribing without disclosing this upfront. Real Care includes the consultation and medication in one plan price. Lab work requirements vary by treatment — testosterone therapy, for example, requires lab review before prescribing." },
+      { heading: "The Bottom Line", body: "The most important question when comparing GLP-1 telehealth platforms is not 'what is the monthly price' — it is 'what is the monthly price and what does it include.' Always verify directly with the platform before enrolling. Prices and policies in this category change frequently. This article reflects Real Care's understanding of the market as of 2026. Real Care is the publisher of this content and has a commercial interest in your enrollment. We encourage you to verify all claims independently." },
     ],
-    disclaimer: "Pricing data reflects publicly available information as of April 2026. Real Care is the publisher of this article. We have attempted to represent competitor pricing accurately but encourage readers to verify directly with each platform. This is not independent journalism.",
+    disclaimer: "Real Care is the publisher of this article. This is not independent journalism. All pricing and policy information about other platforms is based on publicly available information and may not be current. Verify directly with any platform before enrolling.",
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
@@ -173,7 +171,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "female-hair-loss-hormones": {
@@ -195,7 +193,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Perimenopause vs. Menopause: What's Actually Different?", href: "/blog/perimenopause-vs-menopause", category: "Women's Health" },
       { title: "Tretinoin vs. Retinol: The Difference That Actually Matters", href: "/blog/tretinoin-vs-retinol", category: "Skincare" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "semaglutide-vs-tirzepatide": {
@@ -217,7 +215,7 @@ const POSTS: Record<string, {
     related: [
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
       { title: "Does Compounded Semaglutide Actually Work?", href: "/blog/compounded-semaglutide", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
 };

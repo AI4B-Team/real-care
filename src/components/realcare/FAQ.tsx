@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "Do you charge a membership fee?",
-    a: "Never. One simple price covers your doctor consultation, medication, and free discreet shipping. No membership fee. No hidden charges. What you see is what you pay — period. Unlike Hims ($149/mo membership) and Ro ($145/mo membership), everything at Real Care is included in one price.",
+    a: "Never. One plan price covers your consultation, medication, and free discreet shipping — no membership fees, no hidden charges. Some platforms charge $100-149/month in membership fees on top of medication costs. Real Care charges $0. What you see is what you pay.",
   },
   {
     q: "Is shipping really free?",
