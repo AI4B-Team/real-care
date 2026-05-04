@@ -147,7 +147,7 @@ interface ProductPageProps {
 }
 
 const DEFAULT_FAQS: FAQ[] = [
-  { q: "What's Included In My Real Care Plan?", a: "Your plan includes an online medical assessment, ongoing access to a U.S.-licensed provider, your prescribed medication if appropriate for your health profile, free discreet shipping, and unlimited messaging support — all for one flat monthly price." },
+  { q: "What's Included In My Real Care Plan?", a: "Your plan includes an online medical assessment, ongoing access to a U.S.-licensed provider, your prescribed medication if appropriate for your health profile, free discreet shipping, and unlimited messaging support — all included in one plan price with no hidden fees." },
   { q: "How Soon Will I See Results?", a: "Timelines vary by treatment and individual response. Most patients begin to notice changes within the first 30–90 days of consistent use. Your provider will set realistic expectations based on your specific plan and check in regularly." },
   { q: "Do I Need Insurance?", a: "No. Real Care is cash-pay only — no insurance is required. We accept HSA and FSA cards, which can effectively reduce your cost by up to 30–40% depending on your tax bracket." },
   { q: "Can I Cancel Anytime?", a: "Yes. There is no membership fee and no long-term contract. You can pause or cancel your plan at any time directly from your patient portal." },

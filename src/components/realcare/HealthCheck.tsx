@@ -1,41 +1,35 @@
 import { useState } from "react";
 import SectionHeader from "./SectionHeader";
 
-type Who = "him" | "her" | "both";
+type Who = "him" | "her";
 type Goal = "weight" | "sex" | "hair" | "energy" | "mental";
 
 const recommendations: Record<Goal, Record<Who, { n: string; p: string }[]>> = {
   weight: {
     him: [{ n: "GLP-1 Weight Loss", p: "From $179 first month" }, { n: "Testosterone Support", p: "From $99/mo" }],
     her: [{ n: "GLP-1 Weight Loss", p: "From $179 first month" }, { n: "Hormone Balance", p: "From $89/mo" }],
-    both: [{ n: "GLP-1 Weight Loss", p: "From $179 first month" }, { n: "Couples Weight Plan", p: "From $279/mo (both)" }],
   },
   sex: {
     him: [{ n: "ED Treatment", p: "From $2/dose" }, { n: "Testosterone (TRT)", p: "From $99/mo" }],
     her: [{ n: "Sexual Health & Libido", p: "From $49/mo" }, { n: "Hormone Balance", p: "From $89/mo" }],
-    both: [{ n: "ED Treatment (Him)", p: "From $2/dose" }, { n: "Libido Care (Her)", p: "From $49/mo" }],
   },
   hair: {
     him: [{ n: "Hair Loss Treatment", p: "From $39/mo" }, { n: "Finasteride Stack", p: "From $55/mo" }],
     her: [{ n: "Fuller, Thicker Hair", p: "From $39/mo" }, { n: "Hair Serum Blend", p: "From $59/mo" }],
-    both: [{ n: "Fuller Hair (Her)", p: "From $39/mo" }, { n: "Hair Loss (Him)", p: "From $39/mo" }],
   },
   energy: {
     him: [{ n: "Testosterone (TRT)", p: "From $99/mo" }, { n: "Peptides & Longevity", p: "From $129/mo" }],
     her: [{ n: "Menopause Relief", p: "From $89/mo" }, { n: "Hormone Balance", p: "From $89/mo" }],
-    both: [{ n: "Testosterone (Him)", p: "From $99/mo" }, { n: "Hormone Balance (Her)", p: "From $89/mo" }],
   },
   mental: {
     him: [{ n: "Mental Health Care", p: "From $49/mo" }, { n: "Anxiety Treatment", p: "From $49/mo" }],
     her: [{ n: "Mental Health Care", p: "From $49/mo" }, { n: "Anxiety & Burnout", p: "From $49/mo" }],
-    both: [{ n: "Mental Health (Him)", p: "From $49/mo" }, { n: "Mental Health (Her)", p: "From $49/mo" }],
   },
 };
 
 const whoOpts: { val: Who; icon: string; name: string; sub: string }[] = [
   { val: "him", icon: "♂", name: "For Him", sub: "Men's health & performance" },
   { val: "her", icon: "♀", name: "For Her", sub: "Women's health & wellness" },
-  { val: "both", icon: "♥", name: "For Both Of Us", sub: "Couples plan available from $279/mo" },
 ];
 
 const goalOpts: { val: Goal; icon: string; name: string; sub: string }[] = [

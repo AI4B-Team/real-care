@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Do I need insurance?",
-    a: "No. Real Care is 100% cash-pay with no insurance required. There are no surprise bills, no prior authorization battles, and no claim denials. One flat monthly price covers everything.",
+    a: "No. Real Care is 100% cash-pay with no insurance required. There are no surprise bills, no prior authorization battles, and no claim denials. One plan price covers everything — no hidden fees, no membership charges.",
   },
   {
     q: "Can I cancel anytime?",

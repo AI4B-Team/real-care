@@ -136,23 +136,6 @@ const faqs = [
       },
     ],
   },
-  {
-    category: "Couples Plan",
-    items: [
-      {
-        q: "How does the couples plan work?",
-        a: "When both partners enroll in Real Care, each person saves 15% off their individual monthly treatment price. Each person still completes their own separate health assessment and receives their own personalized treatment plan. The 15% discount is applied automatically — no code needed.",
-      },
-      {
-        q: "Do we have to be on the same treatment?",
-        a: "No. Each partner chooses their own treatment independently. One partner could be on GLP-1 weight loss while the other is on TRT or HRT — the 15% discount applies to both regardless of which treatments you choose.",
-      },
-      {
-        q: "Can we share a patient portal?",
-        a: "No. Each patient has their own private, secure patient portal. Health information is never shared between accounts, even for couples.",
-      },
-    ],
-  },
 ];
 
 const AccordionItem = ({ q, a }: { q: string; a: string }) => {

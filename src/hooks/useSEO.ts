@@ -128,11 +128,6 @@ export const SEO_CONFIGS = {
     description: "Doctor-prescribed women's health treatments online. GLP-1 weight loss, menopause HRT, skincare, hair regrowth, and more. No membership fees, no waiting rooms.",
     canonical: "https://realcare.com/women",
   },
-  couples: {
-    title: "Couples Plan — Save 15% When You Both Enroll",
-    description: "The only telehealth platform built for couples. Each person gets their own treatment plan. Save 15% every month when you both enroll. No membership fees.",
-    canonical: "https://realcare.com/couples",
-  },
   blog: {
     title: "Real Health Blog — Evidence-Based Health",
     description: "Evidence-based health guides written by board-certified physicians. No hype, no fluff. GLP-1 weight loss, testosterone, menopause, skincare, and more.",

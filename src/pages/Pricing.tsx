@@ -160,23 +160,6 @@ const Pricing = () => {
             </div>
           </div>
 
-          {/* Couples plan */}
-          <div className="mt-6 bg-warm-800 rounded-2xl px-7 py-7 flex flex-col sm:flex-row items-center justify-between gap-5 fade-up">
-            <div>
-              <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-red mb-1">Couples Plan</div>
-              <div className="font-display font-bold text-primary-foreground text-xl mb-1">Better Together — Save 15% Both</div>
-              <p className="text-[0.8rem] text-primary-foreground/60">
-                When both partners enroll, you each save an additional 15% on top of your chosen plan.
-              </p>
-            </div>
-            <a
-              href="/couples"
-              className="inline-block bg-red hover:bg-red-dark text-primary-foreground text-[0.85rem] font-bold px-6 py-2.5 rounded-lg transition-colors whitespace-nowrap"
-            >
-              See Couples Plan →
-            </a>
-          </div>
-
           {/* FAQ */}
           <div className="mt-12 fade-up">
             <h3 className="font-display text-2xl font-black text-warm-800 text-center mb-7">Pricing Questions</h3>

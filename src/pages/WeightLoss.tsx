@@ -55,7 +55,7 @@ const WeightLoss = () => {
       }
       sub="Personalized weight management plans prescribed by U.S.-licensed providers when clinically appropriate. Online consultations, ongoing provider support, and discreet home delivery — no insurance required."
       trustBullets={[
-        "From $179 First Month — All-Inclusive",
+        "From $174/Mo — All-Inclusive",
         "Same Price At Every Dose",
         "UNLIMITED On-Demand Medical Support",
         "No Membership Fee. No Hidden Fees",
@@ -114,7 +114,7 @@ const WeightLoss = () => {
         },
       ]}
       ctaHeadline="90-Day Results Guarantee — Or Your Medication Costs Back"
-      ctaSub={`Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your licensed provider determines you have not achieved measurable weight loss, we will refund your medication costs in full. Results may vary. Individual response to GLP-1 therapy differs based on health history, adherence, and lifestyle. See full guarantee terms at <a href="/refund-policy" class="underline hover:text-white">realcare.com/refund-policy</a>.`}
+      ctaSub={`Start with a free health check. If prescribed, your medication ships in 48 hours. Follow your plan for 90 days — if it doesn't work, we refund your medication costs. <a href="/refund-policy" class="underline hover:text-white">90-Day Results Guarantee →</a>`}
       disclaimer="The FDA does not review or approve any compounded medications for safety or effectiveness. Compounded medications contain the same active ingredients as their FDA-approved counterparts but are prepared by state-licensed pharmacies and have not been evaluated by the FDA for safety, efficacy, or quality. Available only if prescribed by a licensed provider after an online consultation. Individual results vary. Ozempic®, Wegovy®, Mounjaro®, and Zepbound® are registered trademarks of their respective owners. Real Care is not affiliated with Novo Nordisk or Eli Lilly. Payment does not guarantee prescribing — all clinical decisions are at the sole discretion of your licensed provider. HSA / FSA eligibility varies by plan administrator."
       faqs={[
         {
@@ -135,7 +135,7 @@ const WeightLoss = () => {
         },
         {
           q: "Will My Price Change As My Dose Increases?",
-          a: "No. Real Care's 'Same Price At Every Dose' policy keeps your monthly cost flat as your provider adjusts your dosage throughout your program (excluding new-member intro offers and limited-time plans).",
+          a: "No. Real Care's 'Same Price At Every Dose' policy keeps your plan rate flat as your provider adjusts your dosage. Your rate is locked for the duration of your plan — intro pricing (if applicable) applies to your first billing cycle only, after which your standard plan rate applies.",
         },
       ]}
     />
