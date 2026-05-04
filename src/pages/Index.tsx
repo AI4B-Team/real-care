@@ -98,7 +98,7 @@ const Index = () => {
         ctaText="See All Men's Treatments →"
         featured={{
           img: featMen,
-          pill: "#1 For Men",
+          pill: "Most Popular",
           title: <>Better Sex.<br />Every Time.</>,
           desc: "Prescription ED treatment prescribed online and shipped to your door. Fast-acting, discreet packaging, licensed U.S. providers.",
           tags: ["Generic Viagra (Sildenafil)", "Generic Cialis (Tadalafil)", "Fast-Acting Chewables", "Premature Ejaculation"],
