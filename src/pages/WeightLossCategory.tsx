@@ -115,9 +115,9 @@ const WeightLossCategory = () => {
       </section>
 
       {/* Calculator */}
-      <section className="bg-white px-5 md:px-12 py-14">
-        <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 items-center">
-          <div className="hidden md:block rounded-3xl overflow-hidden bg-white">
+      <section className="bg-white md:pl-0 md:pr-12 px-5 py-14 md:py-0">
+        <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-12 items-stretch">
+          <div className="hidden md:block overflow-hidden bg-white self-stretch">
             <img
               src={calculatorWoman}
               alt="Happy woman celebrating weight loss results"
