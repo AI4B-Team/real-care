@@ -137,7 +137,7 @@ const HowItWorks = () => (
             </span>
           </div>
           <h3 className="font-display font-bold text-warm-800 text-[1.5rem] md:text-[1.75rem] leading-tight mb-3">
-            Support that never stops.
+            Support That Never Stops.
           </h3>
           <p className="text-[0.88rem] text-warm-600 leading-[1.75] mb-6">
             Your dedicated care team is available 24/7 from the moment you enroll — for dosage questions, side effects, refills, and plan adjustments. No extra charge. No appointment needed. Ever.
