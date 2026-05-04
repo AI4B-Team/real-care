@@ -755,60 +755,6 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      {/* 90-Day Results Guarantee — gated to weight loss */}
-      {showGuarantee && (
-        <div className="bg-warm-50 border-t border-warm-100 px-5 md:px-12 py-16">
-          <div className="max-w-[820px] mx-auto fade-up bg-card border-2 border-red rounded-3xl p-8 md:p-10 text-center">
-            <div className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-red mb-3">
-              90-Day Results Guarantee
-            </div>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.6vw,2.1rem)] leading-tight mb-4">
-              Real results in 90 days — or your medication costs back.
-            </h2>
-            <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-6">
-              Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your provider determines you have not achieved measurable weight loss, we will refund your medication costs in full.
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-5">
-              {["Stay on prescribed dose", "Complete monthly check-ins", "Follow lifestyle guidance"].map((t) => (
-                <span key={t} className="inline-flex items-center gap-1.5 bg-warm-50 border border-warm-100 rounded-full px-3 py-1.5 text-[0.72rem] font-semibold text-warm-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red" />
-                  {t}
-                </span>
-              ))}
-            </div>
-            <a href="/refund-policy" className="text-[0.78rem] text-warm-700 underline underline-offset-4 hover:text-warm-900">
-              See full guarantee terms →
-            </a>
-          </div>
-        </div>
-      )}
-
-      {/* Final CTA */}
-      <div className="bg-red px-5 md:px-12 py-14 text-center fade-up">
-        <div className="max-w-[560px] mx-auto">
-          <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-primary-foreground/60 mb-3">
-            {ctaHeadline.toLowerCase().includes("guarantee") ? "90-Day Results Guarantee" : "Get Started"}
-          </div>
-          <h2 className="font-display font-black text-primary-foreground text-[clamp(1.8rem,3vw,2.4rem)] mb-4">
-            {ctaHeadline}
-          </h2>
-          <p className="text-[0.88rem] text-primary-foreground/80 mb-6" dangerouslySetInnerHTML={{ __html: ctaSub }} />
-          <a
-            href="/health-check"
-            className="inline-block bg-background text-red font-bold px-8 py-3.5 rounded-lg hover:bg-warm-50 transition-colors text-[0.9rem]"
-          >
-            Take Your Health Check →
-          </a>
-          <div className="flex flex-wrap justify-center gap-5 mt-5">
-            {["No Membership Fee", "24/7 Provider Access", "Free Discreet Shipping", "Cancel Anytime"].map((t) => (
-              <div key={t} className="flex items-center gap-1.5 text-[0.7rem] text-primary-foreground/70">
-                <Check />
-                {t}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Disclaimer */}
       <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
