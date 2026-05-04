@@ -79,7 +79,7 @@ const Nav = () => {
     <nav className="bg-background border-b border-warm-100 flex items-center justify-between px-5 md:px-12 h-16 sticky top-0 z-50 shadow-[0_1px_0_hsl(var(--warm-100))]">
       <Logo href="/" />
 
-      <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+      <div className="hidden lg:flex items-center gap-3 xl:gap-5 absolute left-1/2 -translate-x-1/2">
         {[
           { label: "Weight", href: "/weight-loss" },
           { label: "Sex", href: "/ed-treatment" },
