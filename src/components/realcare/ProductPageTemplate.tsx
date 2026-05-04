@@ -293,7 +293,7 @@ const ProductPageTemplate = ({
 
             {savingsLabel && (
               <div className="flex items-center justify-center gap-2 bg-yellow-300 text-yellow-950 text-[0.85rem] font-bold rounded-2xl py-2.5 px-4 mb-3 shadow-sm">
-                <Hand size={16} className="text-yellow-800 -rotate-90" />
+                <span className="text-base leading-none">👉</span>
                 {savingsLabel}
               </div>
             )}
