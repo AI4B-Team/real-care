@@ -208,7 +208,7 @@ const WeightLossCategory = () => {
             {[
               { label: "Branded Ozempic (cash pay)", price: "$1,028/mo", sub: "$12,336/yr", dim: true },
               { label: "Real Care Semaglutide", price: "$149", sub: "your first month" },
-              { label: "You save vs Ozempic", price: `$${savings.toLocaleString()}`, sub: "estimated first year", green: true },
+              { label: "You Save Vs Ozempic", price: `$${savings.toLocaleString()}`, sub: "estimated first year", green: true },
             ].map((c) => (
               <div key={c.label} className={`rounded-2xl p-6 ${c.green ? "bg-emerald-500/20 border border-emerald-400/40" : "bg-white/5 border border-white/10"}`}>
                 <div className="text-white/70 text-[0.78rem] mb-2">{c.label}</div>
