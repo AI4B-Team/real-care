@@ -531,7 +531,7 @@ const ProductPageTemplate = ({
             Why Real Care
           </p>
           <h2 className="font-display font-black text-white text-[clamp(1.6rem,3vw,2.2rem)] leading-tight mb-6">
-            The Only GLP-1 Platform With No Membership Fee. Ever.
+            The Only GLP-1 Platform <br />With No Membership Fee. Ever.
           </h2>
           <div className="inline-flex flex-col items-center bg-red rounded-2xl px-10 py-8 mb-8">
             <div className="font-display font-black text-white text-[4rem] leading-none mb-1">$0</div>
