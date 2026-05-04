@@ -220,7 +220,7 @@ const WeightLossCategory = () => {
             ))}
           </div>
           <p className="text-white/50 text-[0.7rem] mt-6 max-w-[600px] mx-auto">
-            Savings estimated vs Ozempic cash-pay retail. Branded price from Beluga Health pharmacy schedule.
+            Savings estimated vs Ozempic cash-pay retail. Branded price based on publicly available pharmacy retail data.
             <br />
             Actual savings vary by plan selected and duration.
           </p>
