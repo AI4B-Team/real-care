@@ -387,7 +387,7 @@ const ProductPageTemplate = ({
               </div>
               <p className="text-center text-[0.65rem] text-warm-400 leading-[1.6] mt-3">
                 *First month pricing shown. Ongoing rate depends on plan and medication prescribed.<br />
-                **The FDA does not review or approve compounded medications for safety or effectiveness.{" "}
+                **The FDA does not review or approve compounded medications for safety or effectiveness.<br />
                 <a href="/safety-info" className="underline hover:text-warm-700">Important Safety Information</a>.
               </p>
             </div>
