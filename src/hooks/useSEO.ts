@@ -75,7 +75,7 @@ export const SEO_CONFIGS = {
   },
   edTreatment: {
     title: "ED Treatment — Generic Viagra, Cialis & Chewables",
-    description: "Prescription ED treatment from $2/dose. Works in 15 minutes, lasts up to 36 hours. Sildenafil, Tadalafil, and fast-acting chewables prescribed online and shipped discreetly.",
+    description: "Prescription ED treatment from $2/dose. Sildenafil, Tadalafil, and fast-acting chewables prescribed online and shipped discreetly.",
     canonical: "https://realcare.com/ed-treatment",
   },
   testosterone: {
