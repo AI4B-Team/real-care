@@ -52,7 +52,7 @@ const Affiliates = () => {
           <span className="text-red">Per Patient You Refer</span>
         </h1>
         <p className="text-[0.9rem] text-white/70 leading-[1.75] max-w-[520px] mx-auto mb-8">
-          Partner with the fastest-growing co-ed telehealth brand in America. No membership fees means higher conversion. Multiple products means higher lifetime value.
+          Partner with one of the fastest-growing telehealth brands in the GLP-1 space. No membership fees means higher conversion. Multiple products means higher lifetime value.
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <a href="#apply" className="bg-red hover:bg-red-dark text-primary-foreground font-bold px-8 py-3.5 rounded-lg text-[0.9rem] transition-colors">
