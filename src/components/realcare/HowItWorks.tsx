@@ -55,7 +55,7 @@ const HowItWorks = () => (
             Your Treatment In <span className="text-red">3 Simple Steps</span>
           </h2>
           <p className="text-[0.88rem] text-warm-600 leading-[1.75] mt-3">
-            Most patients go from first question to first delivery in under 48 hours.
+            Provider review within 48 hours. Most patients receive their first delivery within days.
           </p>
         </div>
         <a href="/health-check" className="bg-red hover:bg-red-dark text-primary-foreground text-[0.85rem] font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5">
