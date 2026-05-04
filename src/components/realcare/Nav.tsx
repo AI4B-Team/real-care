@@ -39,7 +39,6 @@ const navGroups: NavGroup[] = [
       { title: "How It Works", href: "/how-it-works" },
       { title: "Our Doctors", href: "/our-doctors" },
       { title: "Pricing", href: "/pricing" },
-      { title: "Couples", href: "/couples" },
       { title: "Blog", href: "/blog" },
       { title: "FAQ", href: "/faq" },
       { title: "About", href: "/about" },

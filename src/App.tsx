@@ -21,7 +21,6 @@ import Affiliates from "./pages/Affiliates.tsx";
 import About from "./pages/About.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
-import Couples from "./pages/Couples.tsx";
 import HealthCheck from "./pages/HealthCheck.tsx";
 
 // Account
@@ -91,7 +90,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/couples" element={<Couples />} />
           <Route path="/health-check" element={<HealthCheck />} />
 
           {/* Account */}

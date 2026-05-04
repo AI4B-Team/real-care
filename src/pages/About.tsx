@@ -74,7 +74,7 @@ const About = () => (
             { title: "Honest Pricing", desc: "No membership fees, no hidden charges, no bait-and-switch. One price that includes everything. We say it loudly because most competitors won't." },
             { title: "Real Doctors", desc: "Every prescription is reviewed by a board-certified U.S. physician. No AI prescribing, no fake doctor personas, no shortcuts." },
             { title: "Radical Transparency", desc: "We tell you exactly what compounded medications are and aren't. You deserve the full picture before you decide." },
-            { title: "Co-Ed Care", desc: "We built the only telehealth platform that serves men and women equally — with a couples plan nobody else offers." },
+            { title: "Co-Ed Care", desc: "We built the only telehealth platform that serves men and women equally — with treatments for both on a single platform." },
             { title: "Compliance First", desc: "LegitScript certified. HIPAA compliant. Licensed in all 50 states. We do this right or we don't do it." },
             { title: "Patient-First Always", desc: "If a provider determines you're not eligible for treatment, you'll know immediately and be fully refunded. Your health comes before our revenue." },
           ].map((v) => (

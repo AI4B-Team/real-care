@@ -9,7 +9,6 @@ import ProductSection from "@/components/realcare/ProductSection";
 import HowItWorks from "@/components/realcare/HowItWorks";
 import Reviews from "@/components/realcare/Reviews";
 import StatsCTA from "@/components/realcare/StatsCTA";
-import Couples from "@/components/realcare/Couples";
 import Doctors from "@/components/realcare/Doctors";
 import Positioning from "@/components/realcare/Positioning";
 import FAQ from "@/components/realcare/FAQ";
@@ -111,7 +110,6 @@ const Index = () => {
       <Doctors />
       <Reviews />
       <StatsCTA />
-      <Couples />
       <FAQ />
       <Footer />
     </main>
