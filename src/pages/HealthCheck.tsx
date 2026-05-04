@@ -225,7 +225,6 @@ const HealthCheck = () => {
                 <div className="text-[0.64rem] font-bold tracking-[0.16em] uppercase text-red mb-3">Tell Us About You</div>
                 <h2 className="font-display font-black text-warm-800 text-2xl mb-2">Who are we helping today?</h2>
                 <p className="text-[0.82rem] text-warm-600 mb-7">We'll personalize your treatment options based on your answer.</p>
-                <div className="grid grid-cols-3 gap-3">
                 <div className="grid grid-cols-2 gap-3">
                   {([
                     { id: "male" as Gender, label: "Him", sub: "Men's Treatments" },
