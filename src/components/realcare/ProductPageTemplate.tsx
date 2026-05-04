@@ -615,12 +615,6 @@ const ProductPageTemplate = ({
             ].map((s) => (
               <div key={s.number} className="flex flex-col">
                 <div
-                  className="rounded-2xl overflow-hidden aspect-[4/3] mb-6"
-                  style={{ background: s.imageBg }}
-                >
-                  <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
-                </div>
-                <div
                   className="font-display font-black leading-none -mb-3 select-none"
                   style={{ fontSize: "72px", color: "#F5EDE0", letterSpacing: "-3px" }}
                 >
@@ -633,6 +627,12 @@ const ProductPageTemplate = ({
                   {s.headline}
                 </h3>
                 <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.body}</p>
+                <div
+                  className="rounded-2xl overflow-hidden aspect-[4/3] mb-5"
+                  style={{ background: s.imageBg }}
+                >
+                  <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
+                </div>
                 <div className="space-y-2.5 mt-auto">
                   {s.trust.map((t) => (
                     <div key={t} className="flex items-center gap-3">
