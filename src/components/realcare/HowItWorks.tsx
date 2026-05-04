@@ -151,7 +151,7 @@ const HowItWorks = () => (
               </svg>
             </div>
             <div className="min-w-0">
-              <div className="text-[0.72rem] font-bold text-warm-800 leading-tight">Dr. Smith</div>
+              <div className="text-[0.72rem] font-bold text-warm-800 leading-tight">Your Care Team</div>
               <div className="text-[0.72rem] text-warm-600 leading-tight mt-0.5">How are you feeling today?</div>
             </div>
           </div>
