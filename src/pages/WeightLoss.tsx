@@ -113,7 +113,7 @@ const WeightLoss = () => {
           ],
         },
       ]}
-      ctaHeadline="Get Prescribed in 48 Hours. Ship Free. Results Guaranteed."
+      ctaHeadline="Get Prescribed in 48 Hours. Ship Free. Try Risk-Free."
       ctaSub={`Start with a free health check. If prescribed, your medication ships in 48 hours. Follow your plan for 90 days — if it doesn't work, we refund your medication costs. <a href="/refund-policy" class="underline hover:text-white">90-Day Results Guarantee →</a>`}
       disclaimer="The FDA does not review or approve any compounded medications for safety or effectiveness. Compounded medications contain the same active ingredients as their FDA-approved counterparts but are prepared by state-licensed pharmacies and have not been evaluated by the FDA for safety, efficacy, or quality. Available only if prescribed by a licensed provider after an online consultation. Individual results vary. Ozempic®, Wegovy®, Mounjaro®, and Zepbound® are registered trademarks of their respective owners. Real Care is not affiliated with Novo Nordisk or Eli Lilly. Payment does not guarantee prescribing — all clinical decisions are at the sole discretion of your licensed provider. HSA / FSA eligibility varies by plan administrator."
       faqs={[

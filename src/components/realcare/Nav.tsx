@@ -24,7 +24,7 @@ const navGroups: NavGroup[] = [
     label: "Men",
     items: [
       { title: "Weight Loss", href: "/weight-loss", desc: "GLP-1 from $179 first month", badge: "Popular" },
-      { title: "Better Sex", href: "/ed-treatment", desc: "ED from $2/dose", badge: "#1" },
+      { title: "Better Sex", href: "/ed-treatment", desc: "ED from $2/dose" },
       { title: "Testosterone", href: "/testosterone", desc: "TRT from $99/mo" },
       { title: "Hair Loss", href: "/hair-loss", desc: "From $39/mo" },
       { title: "Peptides", href: "/peptides", desc: "From $129/mo", badge: "New" },

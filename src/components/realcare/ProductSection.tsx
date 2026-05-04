@@ -107,7 +107,7 @@ const ProductSection = ({ id, bg, label, title, sub, ctaText, featured, products
                 )}
                 {isGLP1 && (
                   <span className="absolute bottom-2.5 left-2.5 right-2.5 bg-red text-primary-foreground text-[0.56rem] font-bold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full inline-flex items-center justify-center gap-1 shadow-soft">
-                    Lose Weight Or Your Money Back
+                    Backed By Our 90-Day Guarantee
                   </span>
                 )}
               </div>

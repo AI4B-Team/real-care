@@ -7,7 +7,7 @@ import benefit4 from "@/assets/benefit-4.jpg";
 const items = [
   { img: benefit1, badge: "Always Available", title: "Message Your Doctor 24/7", desc: "Your care team responds fast — day or night, weekends included. No appointment needed. Ever." },
   { img: benefit2, badge: "All In One Place", title: "Manage Everything", desc: "Track your progress, adjust your plan, and manage all prescriptions from one simple dashboard." },
-  { img: benefit3, badge: "No Hidden Fees", title: "Clinically-Proven Treatments", desc: "Licensed U.S. pharmacies. No insurance required. Clear starting prices — no surprises at checkout." },
+  { img: benefit3, badge: "No Hidden Fees", title: "Clinically-Studied Ingredients", desc: "Licensed U.S. pharmacies. No insurance required. Clear starting prices — no surprises at checkout." },
   { img: benefit4, badge: "Fast & Discreet", title: "Free Shipping To Your Door", desc: "Plain packaging. Free expedited delivery. Start your treatment within days — not weeks." },
 ];
 

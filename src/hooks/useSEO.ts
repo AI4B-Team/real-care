@@ -75,7 +75,7 @@ export const SEO_CONFIGS = {
   },
   edTreatment: {
     title: "ED Treatment — Generic Viagra, Cialis & Chewables",
-    description: "Prescription ED treatment from $2/dose. Works in 15 minutes, lasts up to 36 hours. Sildenafil, Tadalafil, and fast-acting chewables prescribed online and shipped discreetly.",
+    description: "Prescription ED treatment from $2/dose. Sildenafil, Tadalafil, and fast-acting chewables prescribed online and shipped discreetly.",
     canonical: "https://realcare.com/ed-treatment",
   },
   testosterone: {
@@ -85,7 +85,7 @@ export const SEO_CONFIGS = {
   },
   hairLoss: {
     title: "Hair Loss Treatment for Men & Women",
-    description: "Prescription finasteride and minoxidil for men and women from $39/mo. Clinically proven to stop shedding and regrow hair. Doctor-prescribed, delivered monthly.",
+    description: "Prescription finasteride and minoxidil for men and women from $39/mo. The same active ingredients used in clinically studied hair loss treatments. Doctor-prescribed, delivered monthly.",
     canonical: "https://realcare.com/hair-loss",
   },
   skincare: {

@@ -16,15 +16,15 @@ const EdTreatment = () => (
       { name: "Lab Testing", image: labsImg, bg: "bg-[#F0E5BD]", href: "/lab-testing" },
     ]}
     label="Men's Health · ED Treatment"
-    pill="Works In 15 Minutes"
+    pill="Fast-Acting"
     productImage={productImage}
     productImageAlt="Generic ED tablets in blister pack"
     heroBg="bg-[#BFD9E8]"
     tagline="Better sex, prescribed online and shipped discreetly."
     savingsLabel="Discreet Shipping On Every Order"
     headline={<>Better Sex.<br /><span className="text-red">Every Time.</span></>}
-    sub="Doctor-prescribed ED treatment ordered online and shipped to your door in plain packaging. Works in as little as 15 minutes — and may last up to 36 hours, if appropriate for you."
-    trustBullets={["From $2 / Dose", "Works In 15–30 Min", "Lasts Up To 36 Hours", "No Membership Fee", "Free Discreet Shipping"]}
+    sub="Doctor-prescribed ED treatment ordered online and shipped to your door in plain packaging. Onset and duration vary by patient and formulation — your provider will guide your dosing."
+    trustBullets={["From $2 / Dose", "Fast-Acting", "Doctor-Prescribed", "No Membership Fee", "Free Discreet Shipping"]}
     howTitle="How ED Treatment Works"
     howItems={[
       { title: "Complete Your Assessment", desc: "Answer questions about your health history online. Your information is reviewed by a licensed provider." },

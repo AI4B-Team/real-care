@@ -10,9 +10,9 @@ const Check = () => (
 
 const treatments = [
   { name: "GLP-1 Weight Loss", sub: "From $179 first month", href: "/weight-loss", badge: "Most Popular", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — at a fraction of the cost." },
-  { name: "Better Sex (ED)", sub: "From $2/dose", href: "/ed-treatment", badge: "#1 For Men", desc: "Fast-acting ED treatment. Works in 15 minutes, lasts up to 36 hours. Plain packaging." },
+  { name: "Better Sex (ED)", sub: "From $2/dose", href: "/ed-treatment", desc: "Fast-acting ED treatment. Prescribed by licensed providers. Plain, discreet packaging." },
   { name: "Testosterone (TRT)", sub: "From $99/mo", href: "/testosterone", desc: "Lab testing + personalized TRT. More energy, stronger drive, better mood." },
-  { name: "Hair Loss & Regrowth", sub: "From $39/mo", href: "/hair-loss", desc: "Finasteride + minoxidil — clinically proven to stop shedding and regrow hair." },
+  { name: "Hair Loss & Regrowth", sub: "From $39/mo", href: "/hair-loss", desc: "Finasteride + minoxidil — the same active ingredients used in clinically studied hair loss treatments." },
   { name: "Peptides & Longevity", sub: "From $129/mo", href: "/peptides", badge: "Coming Soon", comingSoon: true, desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, and peak performance." },
   { name: "Mental Health", sub: "From $49/mo", href: "/mental-health", desc: "Anxiety, depression, and sleep — online prescriptions from licensed psychiatric providers." },
   { name: "Comprehensive Lab Testing", sub: "From $149", href: "/lab-testing", desc: "40+ biomarkers. Doctor-reviewed results and personalized action plan included." },

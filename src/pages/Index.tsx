@@ -39,7 +39,7 @@ import pSleepW from "@/assets/p-sleep-w.jpg";
 const menProducts = [
   { img: pWeightM, name: "GLP-1 Weight Loss", desc: "Semaglutide & tirzepatide. Same active ingredient as Ozempic® — fraction of the cost.", price: "From $179 first month", pill: "Most Popular" },
   { img: pTrt, name: "Low Testosterone (TRT)", desc: "Lab testing + personalized TRT. More energy, stronger drive, better mood. Results in weeks.", price: "From $99/mo", pill: "Top Rated" },
-  { img: pHairM, name: "Hair Loss & Regrowth", desc: "Finasteride + minoxidil — clinically proven to stop shedding and regrow hair monthly.", price: "From $39/mo" },
+  { img: pHairM, name: "Hair Loss & Regrowth", desc: "Finasteride + minoxidil — the same active ingredients used in clinically studied hair loss treatments.", price: "From $39/mo" },
   { img: pPept, name: "Peptides & Longevity", desc: "BPC-157, Sermorelin, CJC-1295 for recovery, muscle, anti-aging, and peak performance.", price: "From $129/mo", pill: "New" },
   { img: pSleepM, name: "Sleep Better", desc: "Personalized sleep support from licensed providers.", price: "From $39/mo" },
   { img: pMentalM, name: "Mental Health", desc: "Anxiety, depression, and sleep — online prescriptions from licensed providers.", price: "From $49/mo" },
@@ -80,9 +80,9 @@ const Index = () => {
         ctaText="See All Women's Treatments →"
         featured={{
           img: featWomenWeight,
-          pill: "#1 For Women",
+          pill: "Most Popular",
           title: <>Lose Weight.<br />Keep It Off.</>,
-          desc: "Clinically proven weight loss without the guesswork. GLP-1 treatment for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a 90-day results guarantee (terms apply).",
+          desc: "Doctor-guided weight loss without the guesswork. GLP-1 treatment for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a 90-day guarantee (terms apply).",
           tags: ["Semaglutide (Generic Ozempic®)", "Tirzepatide (Generic Mounjaro®)", "Doctor-Guided Plan", "90-Day Results Guarantee"],
           price: <>From <strong className="text-warm-800 text-base">$179 first month</strong> — $299/mo after</>,
           cta: "Start Weight Loss →",
@@ -98,9 +98,9 @@ const Index = () => {
         ctaText="See All Men's Treatments →"
         featured={{
           img: featMen,
-          pill: "#1 For Men",
+          pill: "Most Popular",
           title: <>Better Sex.<br />Every Time.</>,
-          desc: "FDA-approved ED treatment prescribed online and shipped to your door in 24 hours. Works in 15 minutes. Lasts up to 36 hours. Plain packaging — always guaranteed.",
+          desc: "Prescription ED treatment prescribed online and shipped to your door. Fast-acting, discreet packaging, licensed U.S. providers.",
           tags: ["Generic Viagra (Sildenafil)", "Generic Cialis (Tadalafil)", "Fast-Acting Chewables", "Premature Ejaculation"],
           price: <>From <strong className="text-warm-800 text-base">$2/dose</strong> — discreet packaging guaranteed</>,
           cta: "Get ED Treatment →",
