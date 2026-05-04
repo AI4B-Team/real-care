@@ -7,6 +7,7 @@ import step1Img from "@/assets/step-1-phone-form.jpg";
 import step2Img from "@/assets/realcare-box.png";
 import step3Img from "@/assets/step-3-support.jpg";
 import PageLayout from "./PageLayout";
+import HowItWorks from "./HowItWorks";
 import {
   ChevronRight,
   ChevronDown,
