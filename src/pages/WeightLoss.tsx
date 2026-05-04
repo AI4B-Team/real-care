@@ -35,7 +35,7 @@ const WeightLoss = () => {
           group: "Compounded Semaglutide",
           options: [
             { label: "12-Month Plan", price: "$174", priceSuffix: "/Mo", afterPrice: "$2,088/yr · Save $1,370 vs Monthly", badge: "Best Deal" },
-            { label: "6-Month Plan", price: "$191", priceSuffix: "/Mo", afterPrice: "$1,146/6mo · Save $526 vs Monthly", badge: "6 Months" },
+            { label: "6-Month Plan", price: "$191", priceSuffix: "/Mo", afterPrice: "$1,146/6mo · Save $526 vs Monthly" },
             { label: "3-Month Plan", price: "$209", priceSuffix: "/Mo", afterPrice: "$627/quarter · Save $149 vs Monthly", badge: "Most Popular" },
             { label: "Monthly Plan", price: "$179", priceSuffix: "First Month", afterPrice: "$299/Mo After — Save $120 Today" },
           ],
@@ -44,7 +44,7 @@ const WeightLoss = () => {
           group: "Compounded Tirzepatide",
           options: [
             { label: "12-Month Plan", price: "$263", priceSuffix: "/Mo", afterPrice: "$3,156/yr · Save $1,632 vs Monthly", badge: "Best Deal" },
-            { label: "6-Month Plan", price: "$299", priceSuffix: "/Mo", afterPrice: "$1,794/6mo · Save $600 vs Monthly", badge: "6 Months" },
+            { label: "6-Month Plan", price: "$299", priceSuffix: "/Mo", afterPrice: "$1,794/6mo · Save $600 vs Monthly" },
             { label: "3-Month Plan", price: "$316", priceSuffix: "/Mo", afterPrice: "$948/quarter · Save $249 vs Monthly", badge: "Most Popular" },
             { label: "Monthly Plan", price: "$279", priceSuffix: "First Month", afterPrice: "$399/Mo After — Save $120 Today" },
           ],
