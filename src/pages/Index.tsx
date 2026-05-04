@@ -100,7 +100,7 @@ const Index = () => {
           img: featMen,
           pill: "#1 For Men",
           title: <>Better Sex.<br />Every Time.</>,
-          desc: "FDA-approved ED treatment prescribed online and shipped to your door in 24 hours. Works in 15 minutes. Lasts up to 36 hours. Plain packaging — always guaranteed.",
+          desc: "Prescription ED treatment prescribed online and shipped to your door. Fast-acting, discreet packaging, licensed U.S. providers.",
           tags: ["Generic Viagra (Sildenafil)", "Generic Cialis (Tadalafil)", "Fast-Acting Chewables", "Premature Ejaculation"],
           price: <>From <strong className="text-warm-800 text-base">$2/dose</strong> — discreet packaging guaranteed</>,
           cta: "Get ED Treatment →",
