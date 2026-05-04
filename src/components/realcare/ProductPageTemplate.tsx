@@ -12,7 +12,6 @@ import {
   ChevronDown,
   CheckCircle2,
   ShieldCheck,
-  Hand,
   MapPin,
   Stethoscope,
   Truck,
@@ -293,7 +292,7 @@ const ProductPageTemplate = ({
 
             {savingsLabel && (
               <div className="flex items-center justify-center gap-2 bg-yellow-300 text-yellow-950 text-[0.85rem] font-bold rounded-2xl py-2.5 px-4 mb-3 shadow-sm">
-                <span className="text-base leading-none">👉</span>
+                <ArrowRight size={16} className="text-yellow-800" strokeWidth={2.5} />
                 {savingsLabel}
               </div>
             )}
