@@ -11,6 +11,11 @@ const steps = [
     title: "Complete Your Assessment",
     desc: "Answer a few questions about your health goals and history. Takes under 5 minutes. No waiting room. No judgment.",
     badge: "Reviewed By A Licensed Provider",
+    bullets: [
+      "Licensed providers in all 50 states",
+      "100% online — no waiting rooms, no commutes",
+      "Free consultation — no commitment required",
+    ],
   },
   {
     n: "02",
@@ -19,6 +24,11 @@ const steps = [
     title: "Meet Your Doctor",
     desc: "A licensed medical provider reviews your intake and creates a personalized treatment plan. 1:1 physician guidance and 24/7 support included throughout your entire treatment — no extra charge.",
     badge: "1:1 Physician Guidance",
+    bullets: [
+      "Shipped from U.S.–licensed pharmacies",
+      "Free expedited delivery on every order",
+      "FSA & HSA eligible · No hidden fees",
+    ],
   },
   {
     n: "03",
@@ -27,6 +37,11 @@ const steps = [
     title: "Treatment Delivered To You",
     desc: "Your prescription ships free from a certified U.S. pharmacy in discreet packaging — directly to your door in days, not weeks.",
     badge: "Ongoing Support, 24/7 Access",
+    bullets: [
+      "24/7 provider messaging — always available",
+      "Dosage adjustments & plan changes included",
+      "Cancel anytime · No membership fees",
+    ],
   },
 ];
 
@@ -97,9 +112,21 @@ const HowItWorks = () => (
                 )}
               </div>
             </div>
-            <div className="p-6 pt-5">
+            <div className="p-6 pt-5 flex flex-col flex-1">
               <div className="font-display text-xl font-bold text-warm-800 mb-2.5">{s.title}</div>
               <p className="text-[0.81rem] text-warm-600 leading-[1.75]">{s.desc}</p>
+              <ul className="mt-5 pt-5 border-t border-warm-100 space-y-2.5">
+                {s.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2.5 text-[0.81rem] text-warm-800 leading-[1.5]">
+                    <span className="flex-shrink-0 mt-0.5 w-4 h-4 rounded-full bg-red/10 flex items-center justify-center">
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--red))" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
