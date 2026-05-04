@@ -80,7 +80,7 @@ const Index = () => {
         ctaText="See All Women's Treatments →"
         featured={{
           img: featWomenWeight,
-          pill: "#1 For Women",
+          pill: "Most Popular",
           title: <>Lose Weight.<br />Keep It Off.</>,
           desc: "Doctor-guided weight loss without the guesswork. GLP-1 treatment for women — semaglutide and tirzepatide, the same active ingredients as Ozempic® and Mounjaro®. Doctor-guided, shipped monthly, with a 90-day guarantee (terms apply).",
           tags: ["Semaglutide (Generic Ozempic®)", "Tirzepatide (Generic Mounjaro®)", "Doctor-Guided Plan", "90-Day Results Guarantee"],
