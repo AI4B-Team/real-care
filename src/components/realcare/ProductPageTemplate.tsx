@@ -7,6 +7,7 @@ import step1Img from "@/assets/step-1-phone-form.jpg";
 import step2Img from "@/assets/realcare-box.png";
 import step3Img from "@/assets/step-3-support.jpg";
 import PageLayout from "./PageLayout";
+import HowItWorks from "./HowItWorks";
 import {
   ChevronRight,
   ChevronDown,
@@ -523,114 +524,7 @@ const ProductPageTemplate = ({
         </div>
       </div>
 
-      <div className="bg-background px-5 md:px-12 py-20 border-b border-warm-100">
-        <div className="max-w-[1180px] mx-auto fade-up">
-          <div className="text-center mb-16">
-            <p className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-red mb-4">
-              How It Works
-            </p>
-            <h2 className="font-display font-black text-warm-800 text-[clamp(1.9rem,3.5vw,2.8rem)] leading-tight mb-5">
-              Real Doctors. Real Medication. Real Change.
-            </h2>
-            <p className="text-[0.9rem] text-warm-600 leading-[1.75] max-w-xl mx-auto">
-              No insurance required. No waiting rooms. A licensed provider reviews your health,
-              writes your prescription, and your medication ships free — direct to your door.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                number: "01",
-                label: "Consult",
-                headline: "Tell us about yourself.\nA real doctor reviews — not an algorithm.",
-                body: "Complete a brief online health questionnaire at your own pace. A licensed medical provider — a real physician authorized in your state — personally reviews your intake and consults with you 100% online. You'll know quickly whether prescription treatment may be an appropriate option for you.",
-                trust: [
-                  "Licensed providers in all 50 states",
-                  "100% online — no waiting rooms, no commutes",
-                  "Free consultation — no commitment required",
-                ],
-                img: step1Img,
-                alt: "Hands holding a phone with the Real Care intake form",
-                imageBg: "#F5EDE0",
-              },
-              {
-                number: "02",
-                label: "Prescribed",
-                headline: "If it's right for you,\nit ships directly to your door.",
-                body: "If your provider determines prescription medication is clinically appropriate, your personalized treatment is dispensed from a U.S.-licensed compounding pharmacy and shipped directly to you — fast, free, and discreetly packaged. Often delivered within 48 hours of your prescription being written.",
-                trust: [
-                  "Shipped from U.S.-licensed pharmacies",
-                  "Free expedited delivery on every order",
-                  "FSA & HSA eligible · No hidden fees",
-                ],
-                img: step2Img,
-                alt: "Discreet shipping package",
-                imageBg: "#EDE8E0",
-              },
-              {
-                number: "03",
-                label: "Supported",
-                headline: "Your care team doesn't\nclock out when you do.",
-                body: "Real Care isn't a prescription vending machine. Your dedicated medical team is available around the clock — for dosage questions, side effect check-ins, and progress reviews. We adjust your plan as your body responds.",
-                trust: [
-                  "24/7 provider messaging — always available",
-                  "Dosage adjustments & plan changes included",
-                  "Cancel anytime · No membership fees",
-                ],
-                img: step3Img,
-                alt: "Patient receiving a message from her provider",
-                imageBg: "#E8E4DC",
-              },
-            ].map((s) => (
-              <div key={s.number} className="flex flex-col">
-                <div
-                  className="font-display font-black leading-none -mb-3 select-none"
-                  style={{ fontSize: "72px", color: "#F5EDE0", letterSpacing: "-3px" }}
-                >
-                  {s.number}
-                </div>
-                <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-red mb-2">
-                  {s.label}
-                </p>
-                <h3 className="font-display text-xl font-bold text-warm-800 leading-snug mb-5 whitespace-pre-line">
-                  {s.headline}
-                </h3>
-                <div
-                  className="rounded-2xl overflow-hidden aspect-[4/3] mb-5"
-                  style={{ background: s.imageBg }}
-                >
-                  <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
-                </div>
-                <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-5">{s.body}</p>
-                <div className="space-y-2.5 mt-auto">
-                  {s.trust.map((t) => (
-                    <div key={t} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#F5EDE0] flex items-center justify-center shrink-0">
-                        <CheckIcon size={10} className="text-red" strokeWidth={3} />
-                      </div>
-                      <span className="text-[0.78rem] font-semibold text-warm-700">{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-14">
-            <a
-              href="/health-check"
-              className="inline-flex items-center gap-2 bg-red hover:bg-red-dark text-white font-bold px-8 py-4 rounded-full text-[0.9rem] transition-colors"
-            >
-              Take Your Free Health Check
-              <ArrowRight size={16} />
-            </a>
-            <p className="text-[0.72rem] text-warm-400 mt-3">
-              No insurance · No commitment · Licensed providers in all 50 states
-            </p>
-          </div>
-        </div>
-      </div>
+      <HowItWorks />
 
       {/* Why Real Care — gated to weight loss */}
       {showCompetitorComparison && (
