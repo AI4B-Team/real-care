@@ -127,7 +127,7 @@ const WeightLossCategory = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="bg-warm-50 rounded-3xl border border-warm-100 p-6 md:p-8">
+          <div className="bg-warm-50 rounded-3xl border border-warm-100 p-6 md:p-8 my-14 self-center">
             <h2 className="font-display font-bold text-warm-800 text-[1.4rem] mb-2 text-center">
               How Much Can You Lose?
             </h2>
