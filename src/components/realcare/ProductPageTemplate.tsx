@@ -722,7 +722,6 @@ const ProductPageTemplate = ({
         </div>
       )}
 
-
       {/* Disclaimer */}
       <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
         <div className="max-w-[1080px] mx-auto fade-up">
