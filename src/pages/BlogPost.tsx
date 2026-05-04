@@ -37,7 +37,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "ED in Young Men: Why It's More Common Than You Think", href: "/blog/ed-in-young-men", category: "Men's Health" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "perimenopause-vs-menopause": {
@@ -60,7 +60,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Female Hair Loss: The Hormonal Connection Nobody Explains", href: "/blog/female-hair-loss-hormones", category: "Women's Health" },
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "glp1-side-effects": {
@@ -83,7 +83,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "Does Compounded Semaglutide Actually Work?", href: "/blog/compounded-semaglutide", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "ed-in-young-men": {
@@ -105,7 +105,7 @@ const POSTS: Record<string, {
     related: [
       { title: "7 Signs of Low Testosterone (And What To Do About It)", href: "/blog/low-testosterone-signs", category: "Men's Health" },
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "tretinoin-vs-retinol": {
@@ -127,7 +127,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Female Hair Loss: The Hormonal Connection Nobody Explains", href: "/blog/female-hair-loss-hormones", category: "Women's Health" },
       { title: "Perimenopause vs. Menopause: What's Actually Different?", href: "/blog/perimenopause-vs-menopause", category: "Women's Health" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "real-care-vs-hims-vs-ro": {
@@ -173,7 +173,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Semaglutide vs. Tirzepatide: Which GLP-1 Is Right For You?", href: "/blog/semaglutide-vs-tirzepatide", category: "Weight Loss" },
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "female-hair-loss-hormones": {
@@ -195,7 +195,7 @@ const POSTS: Record<string, {
     related: [
       { title: "Perimenopause vs. Menopause: What's Actually Different?", href: "/blog/perimenopause-vs-menopause", category: "Women's Health" },
       { title: "Tretinoin vs. Retinol: The Difference That Actually Matters", href: "/blog/tretinoin-vs-retinol", category: "Skincare" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
   "semaglutide-vs-tirzepatide": {
@@ -217,7 +217,7 @@ const POSTS: Record<string, {
     related: [
       { title: "GLP-1 Side Effects: What To Expect and How To Manage Them", href: "/blog/glp1-side-effects", category: "Weight Loss" },
       { title: "Does Compounded Semaglutide Actually Work?", href: "/blog/compounded-semaglutide", category: "Weight Loss" },
-      { title: "Real Care vs. Hims vs. Ro: Honest Pricing Comparison", href: "/blog/real-care-vs-hims-vs-ro", category: "Pricing" },
+      { title: "GLP-1 Telehealth in 2026: How to Find a Platform You Can Trust", href: "/blog/glp1-telehealth-how-to-choose", category: "Pricing" },
     ],
   },
 };
