@@ -658,7 +658,7 @@ const ProductPageTemplate = ({
               90-Day Results Guarantee
             </div>
             <h2 className="font-display font-black text-warm-800 text-[clamp(1.6rem,2.6vw,2.1rem)] leading-tight mb-4">
-              Real results in 90 days — or your medication costs back.
+              Real Results In 90 Days<br />Or Your Medication Costs Back.
             </h2>
             <p className="text-[0.85rem] text-warm-600 leading-[1.75] mb-6">
               Take your prescribed medication as directed, complete your monthly provider check-ins, and follow the recommended lifestyle guidance for 90 consecutive days. If your provider determines you have not achieved measurable weight loss, we will refund your medication costs in full.
