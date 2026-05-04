@@ -170,7 +170,7 @@ const HowItWorks = () => (
             Your dedicated care team is available 24/7 from the moment you enroll — for dosage questions, side effects, refills, and plan adjustments. No extra charge. No appointment needed. Ever.
           </p>
           <div>
-            <a href="/health-check" className="inline-block bg-red hover:bg-red-dark text-primary-foreground font-bold px-6 py-3 rounded-full text-[0.83rem] transition-colors whitespace-nowrap">
+            <a href="/health-check" className="inline-block bg-red hover:bg-red-dark text-primary-foreground font-bold px-6 py-3 rounded-lg text-[0.83rem] transition-colors whitespace-nowrap">
               Get Started →
             </a>
           </div>
