@@ -722,36 +722,6 @@ const ProductPageTemplate = ({
         </div>
       )}
 
-      {/* Reviews — More from our members */}
-      <div className="bg-warm-50 px-5 md:px-12 py-16 border-y border-warm-100">
-        <div className="max-w-[1280px] mx-auto fade-up">
-          <h2 className="font-display font-black text-warm-800 text-[clamp(1.8rem,3vw,2.4rem)] text-center">
-            More From Our Members
-          </h2>
-          <div className="mb-10" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {reviews.slice(0, 5).map((r) => (
-              <div key={r.name} className="bg-card border border-warm-100 rounded-2xl p-6 flex flex-col">
-                <div className="flex gap-0.5 text-amber-400 mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
-                  ))}
-                </div>
-                <p className="text-[0.85rem] text-warm-700 leading-[1.65] flex-1">{r.text}</p>
-                <div className="mt-5 pt-4 border-t border-warm-100">
-                  <div className="font-display font-bold text-warm-800 text-[0.9rem]">{r.name}</div>
-                  <div className="inline-flex items-center gap-1 mt-1 text-[0.68rem] text-warm-500">
-                    <BadgeCheck size={12} className="text-emerald-600" /> Verified Customer
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-[0.7rem] text-warm-500 mt-8">
-            Individual results may vary. Testimonials reflect personal experiences and do not guarantee outcomes.
-          </p>
-        </div>
-      </div>
 
       {/* Disclaimer */}
       <div className="bg-background px-5 md:px-12 py-12 border-b border-warm-100">
