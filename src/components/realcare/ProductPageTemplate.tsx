@@ -12,7 +12,6 @@ import {
   ChevronDown,
   CheckCircle2,
   ShieldCheck,
-  ArrowRight,
   MapPin,
   Stethoscope,
   Truck,
