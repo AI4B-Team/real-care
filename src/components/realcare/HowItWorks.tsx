@@ -12,9 +12,9 @@ const steps = [
     desc: "Answer a few questions about your health goals and history. Takes under 5 minutes. No waiting room. No judgment.",
     badge: "Reviewed By A Licensed Provider",
     bullets: [
-      "Licensed providers in all 50 states",
-      "100% online — no waiting rooms, no commutes",
-      "Free consultation — no commitment required",
+      "Takes under 5 minutes — no waiting rooms",
+      "100% online · no commutes, no commitment",
+      "Free to start — no card required upfront",
     ],
   },
   {
@@ -25,9 +25,9 @@ const steps = [
     desc: "A licensed provider reviews your intake and creates a personalized treatment plan — with 1:1 guidance and 24/7 support included.",
     badge: "1:1 Physician Guidance",
     bullets: [
-      "Shipped from U.S.–licensed pharmacies",
-      "Free expedited delivery on every order",
-      "FSA & HSA eligible · No hidden fees",
+      "Licensed providers in all 50 states",
+      "Personalized plan built around your goals",
+      "24/7 messaging — dosage & plan adjustments",
     ],
   },
   {
@@ -38,9 +38,9 @@ const steps = [
     desc: "Your prescription ships free from a certified U.S. pharmacy in discreet packaging — directly to your door in days, not weeks.",
     badge: "Ongoing Support, 24/7 Access",
     bullets: [
-      "24/7 provider messaging — always available",
-      "Dosage adjustments & plan changes included",
-      "Cancel anytime · No membership fees",
+      "Shipped from U.S.–licensed pharmacies",
+      "Free expedited delivery · discreet packaging",
+      "FSA & HSA eligible · cancel anytime",
     ],
   },
 ];
