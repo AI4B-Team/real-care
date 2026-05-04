@@ -114,8 +114,8 @@ const HowItWorks = () => (
             </div>
             <div className="p-6 pt-5 flex flex-col flex-1">
               <div className="font-display text-xl font-bold text-warm-800 mb-2.5">{s.title}</div>
-              <p className="text-[0.81rem] text-warm-600 leading-[1.75] min-h-[7.5rem]">{s.desc}</p>
-              <ul className="mt-auto pt-5 border-t border-warm-100 space-y-2.5">
+              <p className="text-[0.81rem] text-warm-600 leading-[1.75]">{s.desc}</p>
+              <ul className="mt-5 pt-5 border-t border-warm-100 space-y-2.5">
                 {s.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-[0.81rem] text-warm-800 leading-[1.5]">
                     <span className="flex-shrink-0 mt-0.5 w-4 h-4 rounded-full bg-red/10 flex items-center justify-center">
