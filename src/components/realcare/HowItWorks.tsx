@@ -67,8 +67,8 @@ const HowItWorks = () => (
           <div key={s.n} className="bg-card rounded-2xl border border-warm-100 overflow-hidden flex flex-col">
             <div className="flex items-center justify-between gap-3 px-6 pt-5 pb-3">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-warm-800 text-primary-foreground font-display text-[0.95rem] font-bold flex items-center justify-center">
-                  {parseInt(s.n)}
+                <div className="w-9 h-9 rounded-full bg-warm-800 text-primary-foreground font-sans text-[0.95rem] font-semibold leading-none flex items-center justify-center tabular-nums">
+                  <span className="-mt-px">{parseInt(s.n)}</span>
                 </div>
                 <div className="text-[0.62rem] font-bold tracking-[0.14em] uppercase text-warm-400">
                   Step {parseInt(s.n)} of 3
