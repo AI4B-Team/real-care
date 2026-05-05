@@ -669,7 +669,7 @@ const ProductPageTemplate = ({
               ))}
             </div>
             <a href="/refund-policy" className="text-[0.78rem] text-warm-700 underline underline-offset-4 hover:text-warm-900">
-              See full guarantee terms →
+              See Full Guarantee Terms →
             </a>
           </div>
         </div>
