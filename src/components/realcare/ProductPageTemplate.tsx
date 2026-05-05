@@ -543,10 +543,7 @@ const ProductPageTemplate = ({
             </div>
           </div>
           <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto text-center">
-            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself.
-          </p>
-          <p className="text-[0.88rem] text-white/60 leading-[1.7] max-w-[760px] mx-auto mt-2 text-center">
-            Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
+            Some platforms charge up to $149/month just to access their medication — on top of what you pay for the prescription itself. Real Care charges $0. One plan price covers your consultation, medication, and free shipping. Nothing extra.
           </p>
           <p className="text-[0.68rem] text-white/30 mt-4">
             Based on publicly available platform pricing as of 2026. Medication costs are additional and vary by plan.
