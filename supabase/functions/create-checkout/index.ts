@@ -12,11 +12,25 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
+    // Require authentication
+    const authHeader = req.headers.get("authorization")?.replace("Bearer ", "");
+    if (!authHeader) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const { data: { user }, error: authError } = await supabase.auth.getUser(authHeader);
+    if (authError || !user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const {
       priceId,
       quantity,
-      customerEmail,
-      userId,
       treatmentCategory,
       returnUrl,
       environment,
@@ -28,6 +42,10 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
+    // Derive identity from verified session — never trust the body
+    const userId = user.id;
+    const customerEmail = user.email;
 
     const env = (environment || "sandbox") as StripeEnv;
     const stripe = createStripeClient(env);
@@ -42,37 +60,53 @@ serve(async (req) => {
     const stripePrice = prices.data[0];
     const isRecurring = stripePrice.type === "recurring";
 
-    // Auto-apply couples discount if patient is linked to a partner
+    // Server-side couples-discount validation: requires a confirmed, distinct, mutually-linked partner
     let discounts: { coupon: string }[] | undefined;
-    if (userId && isRecurring) {
+    if (isRecurring) {
       const { data: patient } = await supabase
         .from("patients")
-        .select("couples_discount_active")
+        .select("id, couples_discount_active, partner_patient_id")
         .eq("user_id", userId)
         .maybeSingle();
-      if (patient?.couples_discount_active) {
-        try {
-          // Use a stable coupon id; create on first use
-          const couponId = "couples15";
+
+      if (
+        patient?.couples_discount_active &&
+        patient.partner_patient_id &&
+        patient.partner_patient_id !== patient.id
+      ) {
+        const { data: partner } = await supabase
+          .from("patients")
+          .select("id, partner_patient_id, couples_discount_active")
+          .eq("id", patient.partner_patient_id)
+          .maybeSingle();
+
+        const mutual =
+          partner &&
+          partner.partner_patient_id === patient.id &&
+          partner.couples_discount_active === true;
+
+        if (mutual) {
           try {
-            await stripe.coupons.retrieve(couponId);
-          } catch {
-            await stripe.coupons.create({
-              id: couponId,
-              percent_off: 15,
-              duration: "forever",
-              name: "Couples 15% off",
-            });
+            const couponId = "couples15";
+            try {
+              await stripe.coupons.retrieve(couponId);
+            } catch {
+              await stripe.coupons.create({
+                id: couponId,
+                percent_off: 15,
+                duration: "forever",
+                name: "Couples 15% off",
+              });
+            }
+            discounts = [{ coupon: couponId }];
+          } catch (e) {
+            console.error("coupon apply failed", e);
           }
-          discounts = [{ coupon: couponId }];
-        } catch (e) {
-          console.error("coupon apply failed", e);
         }
       }
     }
 
-    const metadata: Record<string, string> = {};
-    if (userId) metadata.userId = userId;
+    const metadata: Record<string, string> = { userId };
     if (treatmentCategory) metadata.treatmentCategory = treatmentCategory;
     if (priceId) metadata.priceId = priceId;
 
@@ -95,10 +129,10 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (e) {
-    console.error(e);
-    return new Response(JSON.stringify({ error: (e as Error).message }), {
-      status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    console.error("[create-checkout] error:", e);
+    return new Response(
+      JSON.stringify({ error: "An internal error occurred. Please try again." }),
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    );
   }
 });
