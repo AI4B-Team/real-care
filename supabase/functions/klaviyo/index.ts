@@ -3,6 +3,12 @@
 // can call it without error during development.
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
+import { createClient } from "npm:@supabase/supabase-js@2";
+
+const supabase = createClient(
+  Deno.env.get("SUPABASE_URL")!,
+  Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+);
 
 const KLAVIYO_API_KEY = Deno.env.get("KLAVIYO_API_KEY");
 const KLAVIYO_BASE = "https://a.klaviyo.com/api";
@@ -33,6 +39,20 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
+    // Require authentication
+    const authHeader = req.headers.get("authorization")?.replace("Bearer ", "");
+    if (!authHeader) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const { data: { user }, error: authError } = await supabase.auth.getUser(authHeader);
+    if (authError || !user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const body = (await req.json().catch(() => ({}))) as RequestBody;
     const { action, payload } = body;
 
@@ -40,9 +60,16 @@ serve(async (req) => {
 
     switch (action) {
       case "trigger_onboarding": {
-        const { email, firstName, treatmentCategory, metadata } = payload as {
-          email: string; firstName?: string; treatmentCategory?: string; metadata?: Record<string, unknown>;
+        const { firstName, treatmentCategory, metadata } = payload as {
+          firstName?: string; treatmentCategory?: string; metadata?: Record<string, unknown>;
         };
+        // Always use the authenticated user's email — never trust the body
+        const email = user.email;
+        if (!email) {
+          return new Response(JSON.stringify({ error: "Email not available on session" }), {
+            status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
         result = await klaviyoFetch("/profiles/", {
           method: "POST",
           body: JSON.stringify({
@@ -59,7 +86,13 @@ serve(async (req) => {
         break;
       }
       case "subscribe": {
-        const { email, listId } = payload as { email: string; listId?: string };
+        const { listId } = payload as { listId?: string };
+        const email = user.email;
+        if (!email) {
+          return new Response(JSON.stringify({ error: "Email not available on session" }), {
+            status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
         result = await klaviyoFetch(`/lists/${listId || "default"}/relationships/profiles/`, {
           method: "POST",
           body: JSON.stringify({ data: [{ type: "profile", attributes: { email } }] }),
@@ -67,7 +100,9 @@ serve(async (req) => {
         break;
       }
       case "track_event": {
-        result = await klaviyoFetch("/events/", { method: "POST", body: JSON.stringify(payload) });
+        // Tag event with the authenticated user's email so callers can't spoof identity
+        const enriched = { ...(payload as Record<string, unknown>), authenticated_email: user.email };
+        result = await klaviyoFetch("/events/", { method: "POST", body: JSON.stringify(enriched) });
         break;
       }
       default:
@@ -81,8 +116,9 @@ serve(async (req) => {
     });
   } catch (e) {
     console.error("klaviyo error:", e);
-    return new Response(JSON.stringify({ error: (e as Error).message }), {
-      status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ error: "An internal error occurred. Please try again." }),
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    );
   }
 });
