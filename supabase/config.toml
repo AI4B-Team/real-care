@@ -1,7 +1,7 @@
 project_id = "vkdlheveupytqjqrchuz"
 
 [functions.create-checkout]
-verify_jwt = false
+verify_jwt = true
 
 [functions.get-stripe-price]
 verify_jwt = false
@@ -13,4 +13,4 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.klaviyo]
-verify_jwt = false
+verify_jwt = true
