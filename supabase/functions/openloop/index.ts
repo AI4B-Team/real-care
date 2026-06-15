@@ -51,6 +51,13 @@ serve(async (req) => {
       });
     }
 
+    // Resolve the caller's own patient record once; never trust client-supplied patientId
+    const { data: ownPatient } = await supabase
+      .from("patients")
+      .select("id")
+      .eq("user_id", user.id)
+      .maybeSingle();
+
     const body = (await req.json().catch(() => ({}))) as RequestBody;
     const { action, payload } = body;
 
@@ -72,13 +79,18 @@ serve(async (req) => {
       }
       case "submit_intake": {
         const { patientId, treatmentCategory } = payload as { patientId: string; treatmentCategory: string };
+        if (!ownPatient || ownPatient.id !== patientId) {
+          return new Response(JSON.stringify({ error: "Forbidden" }), {
+            status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
         const remote = await callOpenLoop("/v1/cases", {
           method: "POST",
           body: JSON.stringify(payload),
         });
         const remoteCaseId = (remote as { id?: string }).id || `stub_${crypto.randomUUID()}`;
         const { data: caseRow } = await supabase.from("cases").insert({
-          patient_id: patientId,
+          patient_id: ownPatient.id,
           treatment_category: treatmentCategory,
           openloop_case_id: remoteCaseId,
           status: "provider_review",
@@ -89,6 +101,19 @@ serve(async (req) => {
       }
       case "sync_case": {
         const { caseId } = payload as { caseId: string };
+        // Verify the case belongs to the caller's patient
+        if (!ownPatient) {
+          return new Response(JSON.stringify({ error: "Forbidden" }), {
+            status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
+        const { data: ownedCase } = await supabase
+          .from("cases").select("id").eq("id", caseId).eq("patient_id", ownPatient.id).maybeSingle();
+        if (!ownedCase) {
+          return new Response(JSON.stringify({ error: "Forbidden" }), {
+            status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" },
+          });
+        }
         result = await callOpenLoop(`/v1/cases/${caseId}`, { method: "GET" });
         break;
       }
@@ -98,13 +123,16 @@ serve(async (req) => {
         });
     }
 
+
     return new Response(JSON.stringify(result), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (e) {
     console.error("openloop error:", e);
-    return new Response(JSON.stringify({ error: (e as Error).message }), {
-      status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ error: "An internal error occurred. Please try again." }),
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+    );
   }
 });
+

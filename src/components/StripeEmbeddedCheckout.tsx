@@ -22,8 +22,6 @@ export function StripeEmbeddedCheckout({
       body: {
         priceId,
         treatmentCategory,
-        customerEmail,
-        userId,
         returnUrl,
         environment: getStripeEnvironment(),
       },
@@ -33,6 +31,7 @@ export function StripeEmbeddedCheckout({
     }
     return data.clientSecret;
   };
+
 
   return (
     <div id="checkout" className="w-full">
